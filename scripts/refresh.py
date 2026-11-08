@@ -16,7 +16,10 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
-from scripts.network import graph_snapshot
+try:
+    from scripts.network import graph_snapshot
+except ModuleNotFoundError:
+    from network import graph_snapshot
 TICKERS = tuple(row["ticker"] for row in graph_snapshot()[0]["suppliers"])
 CLIENTS = ("AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA")
 WEIGHTS = {"acceleration": .30, "demand": .25, "tightness": .15, "customer_momentum": .15, "policy": .10, "residual_momentum": .05}
