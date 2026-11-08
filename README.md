@@ -16,6 +16,19 @@
 
 GitHub Actions 的 CI 增加真实 headless Chrome 浏览器测试，验证 47 个节点、关系边以及因子图 DOM 均生成；不再只依靠 JS 语法检查。
 
+## v3.2: Data coverage and synchronized source audit
+
+**What changed:** Added 10 new dated, primary-source M7 supply/power purchase relationships in `config/supply_graph.json`, bringing the evidence graph to 33 verifiable links. Added a reviewed set of six annual customer cash capital expenditure figures in `config/capex_primary_seed.json`; these are annual actuals from SEC or Microsoft Annual Reports and are **NOT consensus CapEx surprises**. The amount definition and fiscal-year end vary by client and are retained per record.
+
+`scripts/enrichment.py` computes percentage-point changes from explicit customer revenue concentration disclosures (e.g. FN, ANET, STM, CRUS, SWKS). This is not proven order acceleration: source and method are attached to each factor and visible on the dashboard. True 6-factor Alpha is still `N/A` until a defensible quantitative firm-level policy exposure exists.
+
+**New Market Monitor (P)** covers all suppliers with sufficient verified exchange-close history: cross-sectional score = 60% industry-adjusted 20-session residual momentum rank plus 40% 5-session stock return rank. It is a **PRICE-ONLY watch score**, not a supply-chain Alpha or return probability. Do not compare older v3.1 provisional scores with v3.2 proxy definitions.
+
+**Refresh:** GitHub Actions runs twice daily at 13:30 UTC and 22:30 UTC (scheduled runs may be delayed); prior-close-only selection uses America/New_York time and discards in-progress sessions. Published GitHub Pages reads `data/latest.json` at page load and periodically checks for changes. `data/snapshots` stores dated daily snapshots.
+
+**Optional live SEC:** Set repository Actions variable `SEC_USER_AGENT` containing an accurate research contact email. Then the script fetches newer companyfacts and recent 8-K/10-K/10-Q filing candidates from the SEC. Without this setting, six manually reviewed audited fiscal-year figures remain an explicitly labeled fallback. Companyfacts tags, ongoing news, and government policy candidates need careful validation; no keyword hit is scored as a policy shock.
+
+The dashboard Data Audit panel lists factor completeness, CapEx source count and independent market-only monitoring coverage. Selecting a supplier opens factor-level sources and methods. Missing sources are reported as `N/A` rather than estimated contracts.
 ## v3.1: 40-stock and multi-hop supply graph
 
 40家公司固定研究池（12家核心 + 28家新增候选），参见 config/universe.json。候选公司不等于已确认的M7供应商。只有双方、原始证据链接和披露日期均明确的供应关系才可进入可计算网络。未知不等于零。
