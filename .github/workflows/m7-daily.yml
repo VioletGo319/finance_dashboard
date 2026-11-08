@@ -58,5 +58,17 @@ jobs:
           git add data/latest.json data/snapshots/ data/quant/latest.json data/quant/snapshots/ data/quant/fundamentals_cache.json
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh M7 supply-chain research"
-            git push origin HEAD:main
+            # Concurrent documentation/Pages commits may advance main during SEC fetch.
+            # Replay this data-only commit on top of the current branch before publishing.
+            for attempt in 1 2 3; do
+              git fetch origin main
+              git rebase origin/main || { git rebase --abort; exit 1; }
+              if git push origin HEAD:main; then
+                echo "Research data published"
+                exit 0
+              fi
+              echo "Concurrent commit detected; retrying ($attempt/3)"
+            done
+            echo "Unable to publish daily research data after three retries" >&2
+            exit 1
           fi
