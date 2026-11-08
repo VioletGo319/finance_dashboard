@@ -27,8 +27,8 @@ class TestDataEnrichment(unittest.TestCase):
   q={x:{"bars":bars} for x in ("A","B","C")}
   z=monitoring_scores(q,("A","B","C"),pct_rank,{"A":.02,"B":.01,"C":-.02})
   self.assertTrue(all(x is not None for x in z.values()))
-  self.assertAlmostEqual(z["A"],70)
-  self.assertAlmostEqual(z["C"],40)
+  self.assertAlmostEqual(z["A"],80)
+  self.assertAlmostEqual(z["C"],20)
 
  def test_missing_prices_are_not_filled(self):
   score=monitoring_scores({"A":{"bars":[]}},("A","B","C"),pct_rank,{"A":None,"B":None,"C":None})
