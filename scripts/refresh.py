@@ -16,7 +16,8 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
-TICKERS = ("TSM", "AVGO", "ANET", "COHR", "LITE", "FN", "GLW", "CLS", "MU", "VRT", "APH", "STM")
+from scripts.network import graph_snapshot
+TICKERS = tuple(row["ticker"] for row in graph_snapshot()[0]["suppliers"])
 CLIENTS = ("AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA")
 WEIGHTS = {"acceleration": .30, "demand": .25, "tightness": .15, "customer_momentum": .15, "policy": .10, "residual_momentum": .05}
 UA = "M7 Supplier Alpha academic public data research (non-commercial)"
@@ -91,20 +92,20 @@ def residual(bars, market):
     return a[sessions[-1]]/a[sessions[-21]]-1 - beta*(b[sessions[-1]]/b[sessions[-21]]-1)
 
 def calculate(base, quotes):
+    network=base.get("network") or {"exposures":{}}
+    weighted=network.get("exposures",{})
     verified=[e for e in base.get("relationships",[]) if e.get("verified") is True and e.get("date") and e["date"] <= AS_OF and str(e.get("source","")).startswith("https://")]
     out=[]
     benchmark=quotes.get("XLK",{}).get("bars",[])
     raw_customer={}
     raw_residual={}
     for ticker in TICKERS:
-        edges=[e for e in verified if e.get("supplier")==ticker and e.get("customer") in CLIENTS]
+        weights=weighted.get(ticker,{}).get("by_customer",{})
         numerator=0.0
         denominator=0.0
-        for e in edges:
-            customer=e["customer"]
+        for customer,w in weights.items():
             v=twenty_day_return(quotes.get(customer,{}).get("bars",[]))
-            if v is None: continue
-            w=1.25 if isinstance(e.get("revenue_share"),(int,float)) else 1.0
+            if v is None or not w: continue
             numerator+=w*v
             denominator+=w
         raw_customer[ticker]=(numerator/denominator if denominator else None)
@@ -121,7 +122,9 @@ def calculate(base, quotes):
                     "price_source":q.get("url"),
                     "price_provider":q.get("provider"),
                     "price_fresh":bool(bars)})
-        scores=dict(row.get("factors") or {})
+        scores={key:None for key in WEIGHTS}
+        scores["tightness"]=pct_rank(weighted.get(ticker,{}).get("reach") if weighted.get(ticker,{}).get("verified_in_graph") else None,
+                     [v["reach"] for v in weighted.values() if v.get("verified_in_graph")])
         scores["customer_momentum"]=pct_rank(raw_customer[ticker], list(raw_customer.values()))
         scores["residual_momentum"]=pct_rank(raw_residual[ticker], list(raw_residual.values()))
         # Keep only previously verified structural factors; no guessing missing policy/CapEx.
@@ -132,6 +135,10 @@ def calculate(base, quotes):
         complete=coverage > 0.9999
         provisional=(sum(WEIGHTS[k]*v for k,v in scores.items() if k in WEIGHTS and v is not None)/coverage
                      if coverage>=.19 and sum(v is not None for v in scores.values())>=2 else None)
+        row["network_reach"]=weighted.get(ticker,{}).get("reach") if weighted.get(ticker,{}).get("verified_in_graph") else None
+        row["direct_clients"]=weighted.get(ticker,{}).get("direct_customers",0)
+        row["indirect_clients"]=weighted.get(ticker,{}).get("indirect_customers",0)
+        row["paths"]=weighted.get(ticker,{}).get("paths",0)
         row["factors"]=scores
         row["coverage"]=round(coverage,4)
         row["alpha"]=round(sum(WEIGHTS[k]*scores[k] for k in WEIGHTS),2) if complete else None
@@ -143,6 +150,7 @@ def calculate(base, quotes):
         row["previous_provisional_alpha"]=(prior_prov if prev.get("coverage")==row["coverage"]
                                           and prev.get("model_version")==row.get("model_version") else None)
         row["confidence"]="研究探索" if not complete else "六因子已覆盖"
+        row["model_version"]=base.get("model_version","v3.0-40-twohop")
         row["explanation"]=(f"已核实客户关系；行情来自 {q.get('provider') or '不可用'}。"
                             +("六因子数据不完整，仅提供带覆盖率的探索性评分。" if not complete else "六因子完整。"))
         hist=list(row.get("history") or [])
@@ -165,6 +173,8 @@ def calculate(base, quotes):
     audit["official_alpha_count"]=sum(s["alpha"] is not None for s in out)
     audit["provisional_count"]=sum(s["provisional_alpha"] is not None for s in out)
     audit["market_qa_errors"]=[{"ticker":t,"message":quotes[t]["error"]} for t in TICKERS if quotes[t].get("error")]
+    audit["verified_graph_paths"]=len(network.get("paths",[]))
+    audit["verified_graph_edges"]=len(network.get("verified_edges",[]))
     audit["model_caveat"]="6-factor alpha is N/A until ALL validated factors available. Partial scores are exploratory."
     result["audit"]=audit
     return result
@@ -304,6 +314,21 @@ def load_infrastructure_attributes(as_of=AS_OF):
 def main():
     src=ROOT/"data"/"latest.json"
     base=json.loads(src.read_text(encoding="utf-8"))
+    universe,network=graph_snapshot(AS_OF)
+    existing={r["ticker"]:r for r in base.get("suppliers",[])}
+    refreshed=[]
+    for spec in universe["suppliers"]:
+        old=existing.get(spec["ticker"],{})
+        row={"ticker":spec["ticker"],"name":spec["name"],
+             "sector":spec["sector"],"cohort":spec["cohort"],
+             "model_version":"v3.0-40-twohop",
+             "history":[h for h in old.get("history",[]) if h.get("mode")=="v3-official"],
+             "factors":{key:None for key in WEIGHTS}}
+        refreshed.append(row)
+    base["suppliers"]=refreshed
+    base["universe"]=universe
+    base["network"]=network
+    base["model_version"]="v3.0-40-twohop"
     base["infrastructure"] = load_infrastructure_attributes()
     universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK",)))
     quotes={}
