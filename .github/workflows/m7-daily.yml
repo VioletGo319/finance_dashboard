@@ -1,8 +1,6 @@
 name: M7 Supplier Alpha Daily Research
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
   schedule:
     # 23:20 UTC is after the US closing bell all year.
