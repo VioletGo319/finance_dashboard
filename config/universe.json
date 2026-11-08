@@ -1,0 +1,289 @@
+{
+  "version": "3.0-40-tier2",
+  "effective_date": "2026-11-07",
+  "scope": "US-listed equities and ADRs selected as SUPPLY CHAIN candidates, not all verified direct Magnificent Seven vendors",
+  "selection_method": "industry relevance plus existing sourced M7/tier2 relationships; evidence status determined by dated graph edges",
+  "comparison": "12 historical core + 28 expansion candidates; do not compare v2 historical 12-stock cross-sectional scores with v3 40-stock scores",
+  "suppliers": [
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor",
+      "sector": "先进代工",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom",
+      "sector": "ASIC/网络",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "ANET",
+      "name": "Arista Networks",
+      "sector": "AI网络",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "COHR",
+      "name": "Coherent",
+      "sector": "光通信",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "LITE",
+      "name": "Lumentum",
+      "sector": "光通信",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "FN",
+      "name": "Fabrinet",
+      "sector": "光学制造",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "GLW",
+      "name": "Corning",
+      "sector": "光纤/玻璃",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "CLS",
+      "name": "Celestica",
+      "sector": "服务器/制造",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron",
+      "sector": "HBM/内存",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv",
+      "sector": "供配电/制冷",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "APH",
+      "name": "Amphenol",
+      "sector": "电力/高速互连",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "STM",
+      "name": "STMicroelectronics",
+      "sector": "功率半导体",
+      "cohort": "core",
+      "verification": "existing_research_pool"
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices",
+      "sector": "AI GPU/CPU",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "MRVL",
+      "name": "Marvell Technology",
+      "sector": "数据中心ASIC/互连",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "CRUS",
+      "name": "Cirrus Logic",
+      "sector": "手机模拟芯片",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "QCOM",
+      "name": "Qualcomm",
+      "sector": "移动/连接芯片",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "SWKS",
+      "name": "Skyworks Solutions",
+      "sector": "RF射频器件",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "QRVO",
+      "name": "Qorvo",
+      "sector": "RF射频器件",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "ON",
+      "name": "onsemi",
+      "sector": "功率半导体",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "NXPI",
+      "name": "NXP Semiconductors",
+      "sector": "汽车/功率芯片",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "MPWR",
+      "name": "Monolithic Power Systems",
+      "sector": "功率管理IC",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "MCHP",
+      "name": "Microchip Technology",
+      "sector": "嵌入式/功率芯片",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "AMAT",
+      "name": "Applied Materials",
+      "sector": "晶圆制造设备",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "LRCX",
+      "name": "Lam Research",
+      "sector": "半导体刻蚀设备",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "KLAC",
+      "name": "KLA Corporation",
+      "sector": "晶圆检测/计量",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "ASML",
+      "name": "ASML Holding",
+      "sector": "EUV光刻设备",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "ONTO",
+      "name": "Onto Innovation",
+      "sector": "晶圆计量/检测",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "ACLS",
+      "name": "Axcelis Technologies",
+      "sector": "离子注入设备",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "ENTG",
+      "name": "Entegris",
+      "sector": "半导体材料/洁净",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "MKSI",
+      "name": "MKS Instruments",
+      "sector": "半导体工艺组件",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "FORM",
+      "name": "FormFactor",
+      "sector": "芯片测试探针",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies",
+      "sector": "AI服务器",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise",
+      "sector": "AI服务器/网络",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "SMCI",
+      "name": "Super Micro Computer",
+      "sector": "AI服务器/液冷",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "ETN",
+      "name": "Eaton",
+      "sector": "电网/配电",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "HUBB",
+      "name": "Hubbell",
+      "sector": "电网输配电",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "POWL",
+      "name": "Powell Industries",
+      "sector": "电气设备",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "GEV",
+      "name": "GE Vernova",
+      "sector": "发电/电网",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "CEG",
+      "name": "Constellation Energy",
+      "sector": "发电/能源",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    },
+    {
+      "ticker": "VST",
+      "name": "Vistra",
+      "sector": "发电/储能",
+      "cohort": "expansion_candidate",
+      "verification": "pending_relationship_evidence"
+    }
+  ]
+}
