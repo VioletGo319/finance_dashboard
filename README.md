@@ -2,6 +2,35 @@
 
 中文研究版可视化看板，研究 Magnificent Seven（AAPL/MSFT/GOOGL/AMZN/NVDA/META/TSLA）上游上市供应商。**研究原型，不构成投资建议；部分数据不完整时不会制造“正式 Alpha”或收益预测概率。**
 
+## Quantitative Research / Investing & Backtest Lab (v4.0)
+
+The **Quant Research** tab has two strictly separated research activities:
+
+**1. Today's investability screen (not historical backtest).** For the latest 40 publicly traded equities the cross-sectional score is:
+- 30% documented provisional supply-chain Alpha, used only where factor coverage >=45%
+- 20% independent PRICE-only monitor
+- 20% as-filed annual revenue growth
+- 15% lower price-to-sales proxy (close × SEC-reported shares divided by annual revenue)
+- 5% indicative size (log of that market-cap proxy)
+- 10% inverse realized 60-session volatility
+
+Available inputs are percentile-ranked, weighted and normalized. Minimum 75% of the planned weights **and** at least one of revenue growth or P/S is required for a ranking. Companies failing that evidence threshold appear as N/A rather than obtaining false precision. Non-US ADRs and unverified share-class/split adjustments produce N/A for market capitalization. The score is an **investment screening indicator, not a forecast probability or a validated trading strategy**.
+
+Financial sources: **SEC EDGAR CompanyFacts API** with annual 10-K/20-F revenue, filing date, fiscal end, share-count disclosure and SEC source URL; the exact as-filed cutoff is stored per snapshot. Local cached SEC facts are never treated as live real-time quotes. The selected SEC taxonomy and potential multiple share classes have limitations; large-company annual revenue tags may not be comparable under different accounting standards.
+
+**2. Historical price-only strategy diagnostic (NEVER blended with today's 2026 Alpha).** Uses the present 40-stock candidate list for a transparent survivorship-biased diagnostic, not claimed as true out-of-sample validation. The strategy:
+- Each trading month rank shares using 30% 5-session price momentum, 40% 20-session excess return over XLK, 20% 60-session momentum, 10% lower realized volatility (peer percentile)
+- Select up to 8, equally weighted, maximum 3 per broad industry bucket. Trade on the *next session's closing price* after the prior session's signal; no same-close execution assumption
+- Carry actual drifting weights between monthly rebalances; charge 10 bps per dollar traded, gross of unmodeled market impact
+- Compare against SPY and XLK, with net cumulative return, annualized return/volatility, Sharpe (risk-free rate 0 assumed), Sortino, maximum drawdown, information ratio, costs, monthly return heatmap and trade/rebalance log
+- Recompute 5 sensitivity cases with varying hold counts (5, 8, 10) and per-side transaction-cost assumptions (5, 10, 20 bps)
+
+**Critical limitations:** Current 40-stock roster has survivorship/selection bias. Price feed historical closes were not independently verified for dividends/splits/delistings; data only span the last ~330 calendar days, and no fees/impact measured from real executions. Results must not be represented as an unbiased full-cycle strategy performance record. If an aligned benchmark or holding history is missing, the engine deliberately declines to print a fabricated return.
+
+**3. Prospective paper portfolio.** On a refreshed timestamped investability screen, generate a *future signal only* (top-8 eligible, equal weight, sector cap). It has no historical P&L, no orders placed, and no filled-execution claims. To validate the actual combined Alpha+fundamental strategy, collect daily as-filed signals and forward outcomes over time; future monitoring is distinct from the price-only diagnostic.
+
+Files: `scripts/quant_fundamentals.py`, `scripts/quant_strategy.py`, `scripts/quant_pipeline.py`, `data/quant/latest.json` (generated), `quant-lab.js`, `quant-lab.css`, `tests/test_quant_research.py`. The daily GitHub Actions research refresh exports this quant dataset to GitHub Pages alongside the original dashboard. The quant module does not place trades or connect to Robinhood.
+
 ## Complete five-language user interface (v3.3)
 
 The dashboard now supports **English (default), 简体中文, Français, Español, 日本語** across the overview, factor research, supply-network graph, energy/power/storage taxonomy, policy and event disclosures, factor-level evidence methods, audit panels, buttons, and dynamic warnings. Language is set from the top-right selector, can be opened with `?lang=fr` and saved to browser storage; switching also updates the URL to keep refreshes consistent.
