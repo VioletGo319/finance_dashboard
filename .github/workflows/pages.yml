@@ -1,0 +1,54 @@
+name: Publish M7 Research Dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'data/latest.json'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: m7-pages-deployment
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout dashboard
+        uses: actions/checkout@v4
+      - name: Validate dashboard and prepare static site
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          page=Path('index.html').read_text(encoding='utf-8')
+          assert '<!doctype html>' in page.lower()
+          assert '</html>' in page.lower()
+          snapshot=json.loads(Path('data/latest.json').read_text(encoding='utf-8'))
+          assert len(snapshot.get('suppliers', []))==12
+          print('Dashboard ready; latest research snapshot date:',snapshot.get('as_of'))
+          PY
+          mkdir -p _site/data
+          cp index.html _site/index.html
+          cp data/latest.json _site/data/latest.json
+          touch _site/.nojekyll
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
