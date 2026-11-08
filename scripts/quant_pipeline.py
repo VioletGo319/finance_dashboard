@@ -81,16 +81,25 @@ def build_quant(result,quotes,as_of,write=True):
         s["realized_vol_60d"]=vol*(252**.5) if vol is not None else None
         meta[t]=s
     ranked=investment_score(tickers,facts,meta)
-    backtest=simulate_daily_close(quotes,tickers,top_n=8,trade_bps=10)
+    # Use the most recent common completed benchmark session as the fixed end date.
+    common_dates=sorted(set(dict(quotes.get("QQQ",{}).get("bars") or []))
+                        & set(dict(quotes.get("XLK",{}).get("bars") or [])))
+    cutoff=date.fromisoformat(common_dates[-1]) if common_dates else date.fromisoformat(as_of)
+    horizons={"1Y":365,"3Y":1095,"5Y":1826}
     scenarios={}
-    for n,cost in ((5,10),(8,5),(8,10),(8,20),(10,10)):
-        key=f"Top {n} · {cost} bps"
-        scenarios[key]=simulate_daily_close(quotes,tickers,top_n=n,trade_bps=cost)
+    for label,days in horizons.items():
+        start=(cutoff-timedelta(days=days)).isoformat()
+        for n,cost in ((5,10),(8,5),(8,10),(8,20),(10,10)):
+            key=f"{label} · Top {n} · {cost} bps"
+            scenarios[key]=simulate_daily_close(quotes,tickers,initial_date=start,top_n=n,trade_bps=cost)
+            scenarios[key]["requested_horizon"]=label
+            scenarios[key]["requested_start"]=start
+    backtest=scenarios["1Y · Top 8 · 10 bps"]
 
     if backtest.get("status")=="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
         portfolio_status="HISTORICAL_PRICE_ONLY_RESEARCH_DIAGNOSTIC"
     else:portfolio_status="NOT_COMPUTABLE"
-    payload={"schema_version":"1.0","as_of":as_of,
+    payload={"schema_version":"1.1","as_of":as_of,
         "generated_at_utc":datetime.now(timezone.utc).isoformat(),
         "universe":tickers,"fundamental_audit":audit,
         "fundamentals_filing_cutoff":as_of,
@@ -106,6 +115,8 @@ def build_quant(result,quotes,as_of,write=True):
         },
         "backtest":{"status":portfolio_status,**backtest},
         "backtest_scenarios":scenarios,
+        "benchmark_primary":"QQQ",
+        "comparison_horizons":["1Y","3Y","5Y"],
         "prospective_screen_portfolio":prospectively_select(ranked,result.get("price_date"),as_of),
         "separation_rule":"Current 2026 supply Alpha/revenue metrics are NEVER fed into historical price-only backtest. To backtest the full ranking, accumulate or reconstruct as-filed metrics and point-in-time graph edges.",
         "not_included":["survivorship-bias-free historical membership","corporate-action/dividend independently validated prices","historical fundamentals published after each rebalance","historical six-factor Alpha","slippage/market impact measured from executions"],
