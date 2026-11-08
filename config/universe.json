@@ -125,11 +125,11 @@
       "verification": "pending_relationship_evidence"
     },
     {
-      "ticker": "QRVO",
-      "name": "Qorvo",
-      "sector": "RF射频器件",
+      "ticker": "UCTT",
+      "name": "Ultra Clean Holdings",
+      "sector": "半导体设备子系统与超净清洗",
       "cohort": "expansion_candidate",
-      "verification": "pending_relationship_evidence"
+      "verification": "verified_supplier_to_equipment_makers"
     },
     {
       "ticker": "ON",
@@ -284,6 +284,18 @@
       "sector": "发电/储能",
       "cohort": "expansion_candidate",
       "verification": "pending_relationship_evidence"
+    }
+  ],
+  "replacements": [
+    {
+      "removed": "QRVO",
+      "added": "UCTT",
+      "effective_date": "2026-11-07",
+      "reason": "Qorvo delisted following 2026-10-05 merger with Skyworks; UCTT is NASDAQ-listed",
+      "sources": [
+        "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2026-702",
+        "https://www.sec.gov/Archives/edgar/data/1275014/000162828026010744/uctt-20251226.htm"
+      ]
     }
   ]
 }
