@@ -1,6 +1,10 @@
 name: M7 Supplier Alpha Daily Research
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/m7-daily.yml'
   workflow_dispatch:
   schedule:
     # After regular US market close: 17:30 EST / 18:30 EDT
