@@ -150,13 +150,13 @@
     <div class="g-viewport" id="gViewport"><canvas id="graphCanvas" role="img" aria-label="Interactive supplier graph with nodes and documented directed supply links" tabindex="0"></canvas>
       <div id="gTooltip" class="g-tooltip" hidden></div>
       <div class="g-floating">
-        <div class="g-stat"><strong id="gNodeTotal">47</strong><small>NODES</small></div>
-        <div class="g-stat"><strong id="gEdgeTotal">—</strong><small>EDGES</small></div>
-        <div class="g-stat"><strong id="gPathTotal">—</strong><small>PATHS</small></div>
+        <div class="g-stat"><strong id="gNodeTotal">47</strong><small id="gNodesLabel">NODES</small></div>
+        <div class="g-stat"><strong id="gEdgeTotal">—</strong><small id="gEdgesLabel">EDGES</small></div>
+        <div class="g-stat"><strong id="gPathTotal">—</strong><small id="gPathsLabel">PATHS</small></div>
       </div>
       <div class="g-zoom"><button type="button" id="gPlus" aria-label="Zoom in">+</button><button type="button" id="gMinus" aria-label="Zoom out">−</button></div>
     </div>
-    <aside class="g-side"><div class="g-sidehead"><span id="gModel">v3</span><span class="g-side-pulse">● LIVE GRAPH</span></div><div id="gInsight" class="g-insight" aria-live="polite"><div class="g-placeholder">Select a node to trace its supply paths.</div></div>
+    <aside class="g-side"><div class="g-sidehead"><span id="gModel">v3</span><span class="g-side-pulse">● <span id="gLiveLabel">INTERACTIVE GRAPH</span></span></div><div id="gInsight" class="g-insight" aria-live="polite"><div class="g-placeholder">Select a node to trace its supply paths.</div></div>
       <div class="g-options">
         <label class="g-check"><input id="gAll" type="checkbox"><span id="gAllLabel">Show all 47 nodes</span></label>
         <label class="g-check"><input id="gFlow" type="checkbox" checked><span id="gFlowLabel">Flow</span></label>
