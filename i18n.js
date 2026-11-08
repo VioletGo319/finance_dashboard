@@ -159,6 +159,9 @@
    current=LOCALES.includes(locale)?locale:'en';
    if(selector)selector.value=current;
    try{localStorage.setItem('m7-language',current)}catch(_){}
+   // Keep URL and preference synchronized, so a bookmark with ?lang=en
+   // does not silently overwrite a language selected later by the user.
+   try{const url=new URL(location.href);url.searchParams.set('lang',current);history.replaceState(null,'',url.href)}catch(_){}
    apply();
  }
  if(selector){
