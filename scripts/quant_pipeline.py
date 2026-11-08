@@ -48,7 +48,10 @@ def collect_fundamentals(tickers,as_of):
 
 def prospectively_select(ranked,price_date,as_of):
     """New research paper-trading target; no prior returns implied."""
-    from scripts.quant_strategy import SECTOR_BANDS
+    try:
+        from scripts.quant_strategy import SECTOR_BANDS
+    except ModuleNotFoundError:
+        from quant_strategy import SECTOR_BANDS
     chosen=[];counts={}
     for r in ranked:
         if not r.get("rank_eligible"):continue
