@@ -1,0 +1,67 @@
+"""Run the actual Quant Lab UI in Chrome with repository's non-synthetic snapshot."""
+from pathlib import Path
+import json,re,subprocess,shutil,sys
+ROOT=Path(__file__).resolve().parents[1]
+BROWSER=next((shutil.which(x) for x in ("google-chrome","chromium","google-chrome-stable") if shutil.which(x)),None)
+if not BROWSER:
+    print("Chrome unavailable; skip browser smoke test (JS syntax CI still enforced)")
+    sys.exit(0)
+data_path=ROOT/"data"/"quant"/"latest.json"
+if not data_path.exists():
+    print("Quant snapshot not yet published; skip DOM smoke until first successful pipeline refresh")
+    sys.exit(0)
+data=json.loads(data_path.read_text())
+assert len(data.get("screener",{}).get("ranked",[]))==40
+assert len(data.get("backtest",{}).get("curve",[]))>20
+page=(ROOT/"index.html").read_text(encoding="utf-8")
+payload=json.dumps(data,ensure_ascii=False).replace("</script>","<\\/script>")
+inject=f"""<script>
+const QUANT_SMOKE_DATA={payload};
+const originalFetch=window.fetch.bind(window);
+window.fetch=(input,opts)=>String(input).includes('data/quant/latest.json')?
+ Promise.resolve({{ok:true,json:async()=>QUANT_SMOKE_DATA}}):originalFetch(input,opts);
+</script>
+"""
+# Source is in the same directory as assets; browser can read scripts from file URL.
+anchor='<script src="quant-lab.js?v=quant1"></script>'
+assert anchor in page
+page=page.replace(anchor,inject+anchor)
+audit="""<script>
+ setTimeout(()=>{
+  document.querySelector('[data-tab="quant"]')?.click();
+  setTimeout(()=>{
+   try{
+    const data=window.M7QuantLab?.data;
+    const rows=document.querySelectorAll('#qRanking tr').length;
+    const graph=document.querySelector('#qChart svg path');
+    const bench=document.querySelector('#qMetrics')?.textContent||'';
+    const scenarios=document.querySelector('#qScenario')?.options?.length||0;
+    const paper=document.querySelector('#qPaper')?.textContent||'';
+    const success=data?.screener?.eligible_count>0 && data?.backtest?.curve?.length>20 &&
+       rows===40 && !!graph && bench.includes('SPY') && scenarios>=4 &&
+       paper.includes('AMD');
+    document.documentElement.dataset.quantSmoke=success?'PASS':'FAIL';
+    document.documentElement.dataset.quantRows=rows;
+    document.documentElement.dataset.quantScenarios=scenarios;
+    const sel=document.getElementById('qScenario');
+    if(sel&&sel.options.length){
+       sel.value=sel.options[0].value;sel.dispatchEvent(new Event('change'));
+       document.documentElement.dataset.quantScenario=sel.value;
+    }
+   }catch(e){document.documentElement.dataset.quantSmoke='ERROR:'+String(e.message)}
+  },800);
+ },350);
+</script>"""
+page=page.replace("</body>",audit+"</body>")
+tmp=ROOT/"quant-browser-smoke.html"
+tmp.write_text(page)
+cmd=[BROWSER,"--headless","--no-sandbox","--disable-gpu","--disable-dev-shm-usage",
+     "--virtual-time-budget=4500","--dump-dom",tmp.as_uri()]
+r=subprocess.run(cmd,capture_output=True,text=True,timeout=45)
+match=re.search(r'data-quant-smoke="([^"]+)"',r.stdout)
+status=match.group(1) if match else None
+print("Quant smoke:",status)
+if status!="PASS":
+    print("Missing data/DOM; browser stderr:",r.stderr[-900:])
+    raise SystemExit(1)
+print("Quant research UI rendered 40 ranked rows, multiple benchmark scenarios, paper signal and live chart.")
