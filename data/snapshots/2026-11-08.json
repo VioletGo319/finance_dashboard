@@ -4,7 +4,7 @@
   "previous_price_date": "2026-11-05",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-08T18:26:39.042195+00:00",
+  "retrieved_at_utc": "2026-11-08T23:34:47.251080+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -3223,7 +3223,9 @@
       "AMZN",
       "TSLA",
       "AAPL"
-    ]
+    ],
+    "quant_status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
+    "quant_eligible_count": 13
   },
   "capex_sources": {
     "MSFT": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
@@ -3360,8 +3362,8 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "storage": 2,
       "energy": 1,
+      "storage": 2,
       "power": 3
     },
     "unverified_is_unknown": true

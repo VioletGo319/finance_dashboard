@@ -1,0 +1,6384 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-11-08",
+  "generated_at_utc": "2026-11-08T23:35:04.925263+00:00",
+  "universe": [
+    "TSM",
+    "AVGO",
+    "ANET",
+    "COHR",
+    "LITE",
+    "FN",
+    "GLW",
+    "CLS",
+    "MU",
+    "VRT",
+    "APH",
+    "STM",
+    "AMD",
+    "MRVL",
+    "CRUS",
+    "QCOM",
+    "SWKS",
+    "UCTT",
+    "ON",
+    "NXPI",
+    "MPWR",
+    "MCHP",
+    "AMAT",
+    "LRCX",
+    "KLAC",
+    "ASML",
+    "ONTO",
+    "ACLS",
+    "ENTG",
+    "MKSI",
+    "FORM",
+    "DELL",
+    "HPE",
+    "SMCI",
+    "ETN",
+    "HUBB",
+    "POWL",
+    "GEV",
+    "CEG",
+    "VST"
+  ],
+  "fundamental_audit": {
+    "source": "SEC EDGAR companyfacts",
+    "cutoff": "2026-11-08",
+    "sec_user_agent_configured": true,
+    "errors": {},
+    "revenue_covered": 38,
+    "share_count_covered": 37,
+    "status": "retrieved",
+    "cached_records_used": 0
+  },
+  "fundamentals_filing_cutoff": "2026-11-08",
+  "fundamentals_coverage": {
+    "fiscal_revenue": 38,
+    "revenue_growth": 38,
+    "shares_outstanding": 37
+  },
+  "screener": {
+    "status": "CURRENT_CROSS_SECTION_ONLY",
+    "as_of": "2026-11-08",
+    "formula": "30% sourced supply-chain exploratory Alpha (if 45%+ coverage), 20% price monitor, 20% revenue growth, 15% inverse P/S, 5% log market cap, 10% inverse realized volatility; available weights renormalized, min 75% and at least one fundamental factor",
+    "universe_survivorship": "Current 40 names, not historical constituents",
+    "ranked": [
+      {
+        "ticker": "AMD",
+        "investability_score": 70.77,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 100.0,
+          "monitor": 79.4872,
+          "growth": 83.7838,
+          "value": 5.555599999999998,
+          "size": 94.4444,
+          "risk": 25.641000000000005
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 736464779189,
+        "price_to_sales_proxy": 21.261,
+        "revenue_fy_usd": 34639000000.0,
+        "revenue_growth_yoy": 0.3433779329067288,
+        "revenue_filed": "2026-02-04",
+        "shares_filed": "2026-11-04",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 1
+      },
+      {
+        "ticker": "CEG",
+        "investability_score": 66.64,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 83.3333,
+          "monitor": 41.0256,
+          "growth": 62.1622,
+          "value": 66.66669999999999,
+          "size": 61.1111,
+          "risk": 79.4872
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 88559129381,
+        "price_to_sales_proxy": 3.908,
+        "revenue_fy_usd": 22663000000.0,
+        "revenue_growth_yoy": 0.1950537861210715,
+        "revenue_filed": "2026-02-24",
+        "shares_filed": "2026-08-06",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CEG?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001868275.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 2
+      },
+      {
+        "ticker": "ANET",
+        "investability_score": 64.88,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 66.6667,
+          "monitor": 87.1795,
+          "growth": 81.0811,
+          "value": 0.0,
+          "size": 86.1111,
+          "risk": 69.2308
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 215789118818,
+        "price_to_sales_proxy": 23.961,
+        "revenue_fy_usd": 9005700000.0,
+        "revenue_growth_yoy": 0.28595907526666764,
+        "revenue_filed": "2026-02-17",
+        "shares_filed": "2026-11-04",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ANET?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001596532.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 3
+      },
+      {
+        "ticker": "STM",
+        "investability_score": 61.69,
+        "rank_eligible": true,
+        "factor_coverage": 0.8,
+        "component_scores": {
+          "supply_alpha": 91.6667,
+          "monitor": 74.359,
+          "growth": 5.4054,
+          "value": null,
+          "size": null,
+          "risk": 58.9744
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": null,
+        "price_to_sales_proxy": null,
+        "revenue_fy_usd": 11800000000.0,
+        "revenue_growth_yoy": -0.11070917175371164,
+        "revenue_filed": "2026-02-26",
+        "shares_filed": null,
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/STM?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000932787.json",
+        "adr_caution": true,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 4
+      },
+      {
+        "ticker": "CRUS",
+        "investability_score": 55.97,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 25.0,
+          "monitor": 98.7179,
+          "growth": 32.4324,
+          "value": 80.5556,
+          "size": 8.3333,
+          "risk": 97.4359
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 5663331866,
+        "price_to_sales_proxy": 2.835,
+        "revenue_fy_usd": 1997379000.0,
+        "revenue_growth_yoy": 0.053427155120809866,
+        "revenue_filed": "2026-05-21",
+        "shares_filed": "2026-11-04",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CRUS?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000772406.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 5
+      },
+      {
+        "ticker": "GLW",
+        "investability_score": 52.46,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 75.0,
+          "monitor": 23.0769,
+          "growth": 59.4595,
+          "value": 44.4444,
+          "size": 63.8889,
+          "risk": 35.897400000000005
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 91420499380,
+        "price_to_sales_proxy": 5.849,
+        "revenue_fy_usd": 15629000000.0,
+        "revenue_growth_yoy": 0.1914163744473243,
+        "revenue_filed": "2026-02-12",
+        "shares_filed": "2026-10-29",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/GLW?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000024741.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 6
+      },
+      {
+        "ticker": "VST",
+        "investability_score": 52.0,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 50.0,
+          "monitor": 28.2051,
+          "growth": 56.7568,
+          "value": 86.1111,
+          "size": 44.4444,
+          "risk": 48.7179
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 41887272336,
+        "price_to_sales_proxy": 2.382,
+        "revenue_fy_usd": 17586000000.0,
+        "revenue_growth_yoy": 0.1913826976492108,
+        "revenue_filed": "2026-02-27",
+        "shares_filed": "2026-08-10",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VST?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001692819.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 7
+      },
+      {
+        "ticker": "AVGO",
+        "investability_score": 51.17,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 41.6667,
+          "monitor": 53.8462,
+          "growth": 67.5676,
+          "value": 2.777799999999999,
+          "size": 100.0,
+          "risk": 89.7436
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 1401967355052,
+        "price_to_sales_proxy": 21.944,
+        "revenue_fy_usd": 63887000000.0,
+        "revenue_growth_yoy": 0.23874432853763516,
+        "revenue_filed": "2025-12-18",
+        "shares_filed": "2026-09-10",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 8
+      },
+      {
+        "ticker": "CLS",
+        "investability_score": 50.88,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 58.3333,
+          "monitor": 2.5641,
+          "growth": 78.3784,
+          "value": 88.8889,
+          "size": 36.1111,
+          "risk": 20.5128
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 26064788477,
+        "price_to_sales_proxy": 2.104,
+        "revenue_fy_usd": 12390900000.0,
+        "revenue_growth_yoy": 0.2845635496578893,
+        "revenue_filed": "2026-02-27",
+        "shares_filed": "2026-10-26",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CLS?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001030894.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 9
+      },
+      {
+        "ticker": "FN",
+        "investability_score": 48.32,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 0.0,
+          "monitor": 83.3333,
+          "growth": 86.4865,
+          "value": 83.33330000000001,
+          "size": 16.6667,
+          "risk": 10.2564
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 11684271009,
+        "price_to_sales_proxy": 2.518,
+        "revenue_fy_usd": 4641097000.0,
+        "revenue_growth_yoy": 0.3573130034068108,
+        "revenue_filed": "2026-08-18",
+        "shares_filed": "2026-11-03",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/FN?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001408710.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 10
+      },
+      {
+        "ticker": "QCOM",
+        "investability_score": 47.54,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 16.6667,
+          "monitor": 98.7179,
+          "growth": 10.8108,
+          "value": 63.8889,
+          "size": 72.2222,
+          "risk": 74.35900000000001
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 176988700000,
+        "price_to_sales_proxy": 4.105,
+        "revenue_fy_usd": 43120000000.0,
+        "revenue_growth_yoy": -0.026284888447294708,
+        "revenue_filed": "2026-11-04",
+        "shares_filed": "2026-11-04",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/QCOM?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000804328.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 11
+      },
+      {
+        "ticker": "SWKS",
+        "investability_score": 42.46,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 8.3333,
+          "monitor": 89.7436,
+          "growth": 13.5135,
+          "value": 77.7778,
+          "size": 19.4444,
+          "risk": 66.66669999999999
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 12367357953,
+        "price_to_sales_proxy": 3.026,
+        "revenue_fy_usd": 4086900000.0,
+        "revenue_growth_yoy": -0.021804691239827645,
+        "revenue_filed": "2025-11-07",
+        "shares_filed": "2026-07-28",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/SWKS?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000004127.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 12
+      },
+      {
+        "ticker": "MRVL",
+        "investability_score": 34.54,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 33.3333,
+          "monitor": 0.0,
+          "growth": 89.1892,
+          "value": 13.888900000000007,
+          "size": 66.6667,
+          "risk": 12.820499999999996
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 123818280000,
+        "price_to_sales_proxy": 15.11,
+        "revenue_fy_usd": 8194600000.0,
+        "revenue_growth_yoy": 0.42087285211450776,
+        "revenue_filed": "2026-03-11",
+        "shares_filed": "2026-08-28",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835632.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 13
+      },
+      {
+        "ticker": "ACLS",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 56.4103,
+          "growth": 0.0,
+          "value": 72.2222,
+          "size": 2.7778,
+          "risk": 46.1538
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 3064899877,
+        "price_to_sales_proxy": 3.653,
+        "revenue_fy_usd": 839048000.0,
+        "revenue_growth_yoy": -0.17567850353435865,
+        "revenue_filed": "2026-02-26",
+        "shares_filed": "2026-11-05",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ACLS?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001113232.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "AMAT",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 15.3846,
+          "growth": 29.7297,
+          "value": 22.2222,
+          "size": 91.6667,
+          "risk": 53.8462
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 264045741235,
+        "price_to_sales_proxy": 9.308,
+        "revenue_fy_usd": 28368000000.0,
+        "revenue_growth_yoy": 0.04386223138063006,
+        "revenue_filed": "2025-12-12",
+        "shares_filed": "2026-08-20",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000006951.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "APH",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 83.3333,
+          "growth": 91.8919,
+          "value": 30.5556,
+          "size": 77.7778,
+          "risk": 84.6154
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 184182192013,
+        "price_to_sales_proxy": 7.975,
+        "revenue_fy_usd": 23094700000.0,
+        "revenue_growth_yoy": 0.5171224552806006,
+        "revenue_filed": "2026-02-11",
+        "shares_filed": "2026-10-30",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/APH?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000820313.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "ASML",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.3,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 48.7179,
+          "growth": null,
+          "value": null,
+          "size": null,
+          "risk": 87.1795
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": null,
+        "price_to_sales_proxy": null,
+        "revenue_fy_usd": null,
+        "revenue_growth_yoy": null,
+        "revenue_filed": null,
+        "shares_filed": null,
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000937966.json",
+        "adr_caution": true,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "COHR",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 64.1026,
+          "growth": 64.8649,
+          "value": 50.0,
+          "size": 41.6667,
+          "risk": 5.128200000000007
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 37975600970,
+        "price_to_sales_proxy": 5.335,
+        "revenue_fy_usd": 7118181000.0,
+        "revenue_growth_yoy": 0.22513599128416573,
+        "revenue_filed": "2026-08-14",
+        "shares_filed": "2026-11-04",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/COHR?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000820318.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "DELL",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 7.6923,
+          "growth": 54.0541,
+          "value": 91.6667,
+          "size": 83.3333,
+          "risk": 15.384600000000006
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 210259200000,
+        "price_to_sales_proxy": 1.852,
+        "revenue_fy_usd": 113538000000.0,
+        "revenue_growth_yoy": 0.1880460828528676,
+        "revenue_filed": "2026-03-16",
+        "shares_filed": "2026-09-08",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/DELL?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001571996.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "ENTG",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 58.9744,
+          "growth": 18.9189,
+          "value": 38.8889,
+          "size": 27.7778,
+          "risk": 33.333299999999994
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 19555344000,
+        "price_to_sales_proxy": 6.118,
+        "revenue_fy_usd": 3196600000.0,
+        "revenue_growth_yoy": -0.013760335678143942,
+        "revenue_filed": "2026-02-11",
+        "shares_filed": "2026-10-29",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ENTG?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001101302.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "ETN",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 61.5385,
+          "growth": 45.9459,
+          "value": 55.5556,
+          "size": 69.4444,
+          "risk": 82.0513
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 132758220000,
+        "price_to_sales_proxy": 4.837,
+        "revenue_fy_usd": 27448000000.0,
+        "revenue_growth_yoy": 0.10330412412573353,
+        "revenue_filed": "2026-02-26",
+        "shares_filed": "2026-11-03",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ETN?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001551182.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "FORM",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 51.2821,
+          "growth": 24.3243,
+          "value": 27.7778,
+          "size": 11.1111,
+          "risk": 2.5640999999999963
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 6360060689,
+        "price_to_sales_proxy": 8.102,
+        "revenue_fy_usd": 784993000.0,
+        "revenue_growth_yoy": 0.028017323228553215,
+        "revenue_filed": "2026-02-20",
+        "shares_filed": "2026-11-03",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/FORM?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001039399.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "GEV",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 38.4615,
+          "growth": 37.8378,
+          "value": 47.2222,
+          "size": 80.5556,
+          "risk": 71.7949
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 204889163561,
+        "price_to_sales_proxy": 5.382,
+        "revenue_fy_usd": 38068000000.0,
+        "revenue_growth_yoy": 0.08968083583798481,
+        "revenue_filed": "2026-01-29",
+        "shares_filed": "2026-10-28",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/GEV?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001996810.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "HPE",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 10.2564,
+          "growth": 51.3514,
+          "value": 94.4444,
+          "size": 52.7778,
+          "risk": 28.2051
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 59430598156,
+        "price_to_sales_proxy": 1.733,
+        "revenue_fy_usd": 34296000000.0,
+        "revenue_growth_yoy": 0.13838085438311154,
+        "revenue_filed": "2025-12-18",
+        "shares_filed": "2026-09-03",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/HPE?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001645590.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "HUBB",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 76.9231,
+          "growth": 27.027,
+          "value": 69.4444,
+          "size": 30.5556,
+          "risk": 100.0
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 22690005781,
+        "price_to_sales_proxy": 3.882,
+        "revenue_fy_usd": 5844600000.0,
+        "revenue_growth_yoy": 0.03839388824731271,
+        "revenue_filed": "2026-02-12",
+        "shares_filed": "2026-10-28",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/HUBB?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000048898.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "KLAC",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 30.7692,
+          "growth": 48.6486,
+          "value": 16.666700000000006,
+          "size": 75.0,
+          "risk": 56.4103
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 180447267623,
+        "price_to_sales_proxy": 13.288,
+        "revenue_fy_usd": 13579476000.0,
+        "revenue_growth_yoy": 0.1170858038910636,
+        "revenue_filed": "2026-08-06",
+        "shares_filed": "2026-10-29",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/KLAC?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000319201.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "LITE",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 5.1282,
+          "growth": 97.2973,
+          "value": 11.111099999999993,
+          "size": 47.2222,
+          "risk": 0.0
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 48850113000,
+        "price_to_sales_proxy": 16.208,
+        "revenue_fy_usd": 3014000000.0,
+        "revenue_growth_yoy": 0.8322188449848025,
+        "revenue_filed": "2026-08-17",
+        "shares_filed": "2026-11-03",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/LITE?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001633978.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "LRCX",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 12.8205,
+          "growth": 70.2703,
+          "value": 19.4444,
+          "size": 88.8889,
+          "risk": 38.4615
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 250383835240,
+        "price_to_sales_proxy": 10.777,
+        "revenue_fy_usd": 23232690000.0,
+        "revenue_growth_yoy": 0.26020858240997,
+        "revenue_filed": "2026-08-07",
+        "shares_filed": "2026-10-22",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000707549.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "MCHP",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 17.9487,
+          "growth": 35.1351,
+          "value": 36.1111,
+          "size": 38.8889,
+          "risk": 76.9231
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 31755448635,
+        "price_to_sales_proxy": 6.738,
+        "revenue_fy_usd": 4713100000.0,
+        "revenue_growth_yoy": 0.07076972010178118,
+        "revenue_filed": "2026-05-21",
+        "shares_filed": "2026-11-05",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MCHP?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000827054.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "MKSI",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 66.6667,
+          "growth": 43.2432,
+          "value": 75.0,
+          "size": 22.2222,
+          "risk": 51.2821
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 13001388728,
+        "price_to_sales_proxy": 3.307,
+        "revenue_fy_usd": 3931000000.0,
+        "revenue_growth_yoy": 0.09620747350808712,
+        "revenue_filed": "2026-02-24",
+        "shares_filed": "2026-11-05",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MKSI?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001049502.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "MPWR",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 92.3077,
+          "growth": 72.973,
+          "value": 8.333299999999994,
+          "size": 50.0,
+          "risk": 61.5385
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 58055373043,
+        "price_to_sales_proxy": 20.805,
+        "revenue_fy_usd": 2790459000.0,
+        "revenue_growth_yoy": 0.2643101807802093,
+        "revenue_filed": "2026-02-27",
+        "shares_filed": "2026-11-03",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MPWR?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001280452.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "MU",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 20.5128,
+          "growth": 100.0,
+          "value": 41.6667,
+          "size": 97.2222,
+          "risk": 41.0256
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 780682016280,
+        "price_to_sales_proxy": 5.862,
+        "revenue_fy_usd": 133188000000.0,
+        "revenue_growth_yoy": 2.563272513243084,
+        "revenue_filed": "2026-10-09",
+        "shares_filed": "2026-10-09",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000723125.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "NXPI",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 94.8718,
+          "growth": 8.1081,
+          "value": 52.7778,
+          "size": 55.5556,
+          "risk": 94.87180000000001
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 62582236391,
+        "price_to_sales_proxy": 5.101,
+        "revenue_fy_usd": 12269000000.0,
+        "revenue_growth_yoy": -0.027350562866656047,
+        "revenue_filed": "2026-02-19",
+        "shares_filed": "2026-10-27",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/NXPI?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001413447.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "ON",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 69.2308,
+          "growth": 2.7027,
+          "value": 61.1111,
+          "size": 33.3333,
+          "risk": 64.1026
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 24645600999,
+        "price_to_sales_proxy": 4.111,
+        "revenue_fy_usd": 5995400000.0,
+        "revenue_growth_yoy": -0.15346709402312808,
+        "revenue_filed": "2026-02-09",
+        "shares_filed": "2026-11-02",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ON?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001097864.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "ONTO",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 25.641,
+          "growth": 21.6216,
+          "value": 25.0,
+          "size": 13.8889,
+          "risk": 17.948700000000002
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 8503585520,
+        "price_to_sales_proxy": 8.459,
+        "revenue_fy_usd": 1005263000.0,
+        "revenue_growth_yoy": 0.018172407960531656,
+        "revenue_filed": "2026-02-24",
+        "shares_filed": "2026-08-06",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ONTO?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000704532.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "POWL",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 34.6154,
+          "growth": 40.5405,
+          "value": 58.3333,
+          "size": 5.5556,
+          "risk": 43.5897
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 4849902920,
+        "price_to_sales_proxy": 4.392,
+        "revenue_fy_usd": 1104318000.0,
+        "revenue_growth_yoy": 0.09083958607446396,
+        "revenue_filed": "2025-11-19",
+        "shares_filed": "2026-08-04",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/POWL?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000080420.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "SMCI",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 43.5897,
+          "growth": 94.5946,
+          "value": 100.0,
+          "size": 25.0,
+          "risk": 30.769199999999998
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 18959379075,
+        "price_to_sales_proxy": 0.485,
+        "revenue_fy_usd": 39063072000.0,
+        "revenue_growth_yoy": 0.7778535103837869,
+        "revenue_filed": "2026-08-31",
+        "shares_filed": "2026-11-06",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/SMCI?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001375365.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "TSM",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.3,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 71.7949,
+          "growth": null,
+          "value": null,
+          "size": null,
+          "risk": 92.3077
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": null,
+        "price_to_sales_proxy": null,
+        "revenue_fy_usd": null,
+        "revenue_growth_yoy": null,
+        "revenue_filed": null,
+        "shares_filed": null,
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json",
+        "adr_caution": true,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "UCTT",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 34.6154,
+          "growth": 16.2162,
+          "value": 97.2222,
+          "size": 0.0,
+          "risk": 7.692300000000003
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 1972601340,
+        "price_to_sales_proxy": 0.96,
+        "revenue_fy_usd": 2054000000.0,
+        "revenue_growth_yoy": -0.020785659801678125,
+        "revenue_filed": "2026-02-23",
+        "shares_filed": "2026-10-28",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/UCTT?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001275014.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      },
+      {
+        "ticker": "VRT",
+        "investability_score": null,
+        "rank_eligible": false,
+        "factor_coverage": 0.7,
+        "component_scores": {
+          "supply_alpha": null,
+          "monitor": 46.1538,
+          "growth": 75.6757,
+          "value": 33.333299999999994,
+          "size": 58.3333,
+          "risk": 23.076899999999995
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 70412148584,
+        "price_to_sales_proxy": 6.883,
+        "revenue_fy_usd": 10229900000.0,
+        "revenue_growth_yoy": 0.2768541401432887,
+        "revenue_filed": "2026-02-13",
+        "shares_filed": "2026-10-28",
+        "price_date": "2026-11-06",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VRT?range=9mo&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001674101.json",
+        "adr_caution": false,
+        "status": "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"
+      }
+    ],
+    "eligible_count": 13,
+    "warning": "Not a return forecast. Price×SEC shares is indicative, stale-share/ADR/split checks are required before live investing. Revenue data from 10-K/20-F as filed."
+  },
+  "backtest": {
+    "status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
+    "strategy_id": "M7-MOMENTUM-8-MONTHLY-v1",
+    "start_date": "2026-06-12",
+    "end_date": "2026-11-06",
+    "universe": 40,
+    "min_history": 65,
+    "signal": "30% 5-session momentum + 40% 20-session XLK-excess + 20% 60-session momentum + 10% inverse realized volatility percentile; no fundamentals or current Alpha",
+    "rebalance": "monthly, next-trading-day close fill after prior-close signal",
+    "risk": "equal weight top 8, max 3 names per sector, no leverage",
+    "one_way_bps": 10,
+    "metrics": {
+      "total_return": -0.422402,
+      "cagr_annualized": -0.738908,
+      "annualized_volatility": 0.59502,
+      "sharpe_rf0": -1.952,
+      "sortino_rf0": -2.393,
+      "max_drawdown": -0.488595,
+      "positive_day_rate": 0.5534,
+      "days": 103,
+      "turnover_one_way": 4.25797,
+      "total_transaction_cost_bps": 85.1594,
+      "ending_nav": 0.577598
+    },
+    "benchmarks": {
+      "SPY": {
+        "total_return": -0.003348,
+        "cagr_annualized": -0.008171,
+        "annualized_volatility": 0.136746,
+        "sharpe_rf0": 0.008,
+        "sortino_rf0": 0.011,
+        "max_drawdown": -0.059159,
+        "positive_day_rate": 0.466,
+        "days": 103,
+        "turnover_one_way": 0,
+        "total_transaction_cost_bps": 0,
+        "ending_nav": 0.996652
+      },
+      "XLK": {
+        "total_return": -0.100813,
+        "cagr_annualized": -0.228938,
+        "annualized_volatility": 0.314064,
+        "sharpe_rf0": -0.671,
+        "sortino_rf0": -0.885,
+        "max_drawdown": -0.196139,
+        "positive_day_rate": 0.4854,
+        "days": 103,
+        "turnover_one_way": 0,
+        "total_transaction_cost_bps": 0,
+        "ending_nav": 0.899187
+      }
+    },
+    "information_ratio": -2.223,
+    "curve": [
+      {
+        "date": "2026-06-12",
+        "strategy_nav": 1.011185,
+        "spy_nav": 1.005408,
+        "xlk_nav": 1.008679
+      },
+      {
+        "date": "2026-06-15",
+        "strategy_nav": 1.044376,
+        "spy_nav": 1.023138,
+        "xlk_nav": 1.046831
+      },
+      {
+        "date": "2026-06-16",
+        "strategy_nav": 1.001097,
+        "spy_nav": 1.017038,
+        "xlk_nav": 1.01763
+      },
+      {
+        "date": "2026-06-17",
+        "strategy_nav": 1.020803,
+        "spy_nav": 1.004337,
+        "xlk_nav": 1.014137
+      },
+      {
+        "date": "2026-06-18",
+        "strategy_nav": 1.055616,
+        "spy_nav": 1.012172,
+        "xlk_nav": 1.044921
+      },
+      {
+        "date": "2026-06-22",
+        "strategy_nav": 1.074209,
+        "spy_nav": 1.008987,
+        "xlk_nav": 1.048796
+      },
+      {
+        "date": "2026-06-23",
+        "strategy_nav": 1.012808,
+        "spy_nav": 0.994334,
+        "xlk_nav": 1.005349
+      },
+      {
+        "date": "2026-06-24",
+        "strategy_nav": 1.013306,
+        "spy_nav": 0.993873,
+        "xlk_nav": 0.999127
+      },
+      {
+        "date": "2026-06-25",
+        "strategy_nav": 1.041367,
+        "spy_nav": 0.99531,
+        "xlk_nav": 1.007423
+      },
+      {
+        "date": "2026-06-26",
+        "strategy_nav": 0.999387,
+        "spy_nav": 0.988113,
+        "xlk_nav": 0.988538
+      },
+      {
+        "date": "2026-06-29",
+        "strategy_nav": 1.055104,
+        "spy_nav": 1.004392,
+        "xlk_nav": 1.012008
+      },
+      {
+        "date": "2026-06-30",
+        "strategy_nav": 1.105049,
+        "spy_nav": 1.012213,
+        "xlk_nav": 1.0399
+      },
+      {
+        "date": "2026-07-01",
+        "strategy_nav": 1.034147,
+        "spy_nav": 1.010844,
+        "xlk_nav": 1.013154
+      },
+      {
+        "date": "2026-07-02",
+        "strategy_nav": 0.945315,
+        "spy_nav": 1.009515,
+        "xlk_nav": 0.985699
+      },
+      {
+        "date": "2026-07-06",
+        "strategy_nav": 0.956241,
+        "spy_nav": 1.018326,
+        "xlk_nav": 1.001965
+      },
+      {
+        "date": "2026-07-07",
+        "strategy_nav": 0.888191,
+        "spy_nav": 1.013487,
+        "xlk_nav": 0.978003
+      },
+      {
+        "date": "2026-07-08",
+        "strategy_nav": 0.902757,
+        "spy_nav": 1.010356,
+        "xlk_nav": 0.990121
+      },
+      {
+        "date": "2026-07-09",
+        "strategy_nav": 0.936538,
+        "spy_nav": 1.018909,
+        "xlk_nav": 1.011681
+      },
+      {
+        "date": "2026-07-10",
+        "strategy_nav": 0.938059,
+        "spy_nav": 1.0233,
+        "xlk_nav": 1.014028
+      },
+      {
+        "date": "2026-07-13",
+        "strategy_nav": 0.893477,
+        "spy_nav": 1.015466,
+        "xlk_nav": 0.989466
+      },
+      {
+        "date": "2026-07-14",
+        "strategy_nav": 0.919656,
+        "spy_nav": 1.019071,
+        "xlk_nav": 1.002238
+      },
+      {
+        "date": "2026-07-15",
+        "strategy_nav": 0.889753,
+        "spy_nav": 1.02311,
+        "xlk_nav": 0.991103
+      },
+      {
+        "date": "2026-07-16",
+        "strategy_nav": 0.844392,
+        "spy_nav": 1.017567,
+        "xlk_nav": 0.968943
+      },
+      {
+        "date": "2026-07-17",
+        "strategy_nav": 0.832546,
+        "spy_nav": 1.007496,
+        "xlk_nav": 0.958408
+      },
+      {
+        "date": "2026-07-20",
+        "strategy_nav": 0.834459,
+        "spy_nav": 1.005869,
+        "xlk_nav": 0.959063
+      },
+      {
+        "date": "2026-07-21",
+        "strategy_nav": 0.887153,
+        "spy_nav": 1.014259,
+        "xlk_nav": 0.986736
+      },
+      {
+        "date": "2026-07-22",
+        "strategy_nav": 0.867513,
+        "spy_nav": 1.01308,
+        "xlk_nav": 0.983953
+      },
+      {
+        "date": "2026-07-23",
+        "strategy_nav": 0.872892,
+        "spy_nav": 1.000569,
+        "xlk_nav": 0.974019
+      },
+      {
+        "date": "2026-07-24",
+        "strategy_nav": 0.833516,
+        "spy_nav": 1.001586,
+        "xlk_nav": 0.959991
+      },
+      {
+        "date": "2026-07-27",
+        "strategy_nav": 0.805059,
+        "spy_nav": 1.001803,
+        "xlk_nav": 0.951367
+      },
+      {
+        "date": "2026-07-28",
+        "strategy_nav": 0.744624,
+        "spy_nav": 1.004202,
+        "xlk_nav": 0.933846
+      },
+      {
+        "date": "2026-07-29",
+        "strategy_nav": 0.706342,
+        "spy_nav": 0.98875,
+        "xlk_nav": 0.909175
+      },
+      {
+        "date": "2026-07-30",
+        "strategy_nav": 0.783571,
+        "spy_nav": 1.005327,
+        "xlk_nav": 0.959172
+      },
+      {
+        "date": "2026-07-31",
+        "strategy_nav": 0.789224,
+        "spy_nav": 1.012565,
+        "xlk_nav": 0.957098
+      },
+      {
+        "date": "2026-08-03",
+        "strategy_nav": 0.810863,
+        "spy_nav": 1.026987,
+        "xlk_nav": 0.971781
+      },
+      {
+        "date": "2026-08-04",
+        "strategy_nav": 0.847093,
+        "spy_nav": 1.045503,
+        "xlk_nav": 1.020141
+      },
+      {
+        "date": "2026-08-05",
+        "strategy_nav": 0.852293,
+        "spy_nav": 1.043415,
+        "xlk_nav": 1.014737
+      },
+      {
+        "date": "2026-08-06",
+        "strategy_nav": 0.834266,
+        "spy_nav": 1.041748,
+        "xlk_nav": 1.011571
+      },
+      {
+        "date": "2026-08-07",
+        "strategy_nav": 0.845355,
+        "spy_nav": 1.048119,
+        "xlk_nav": 1.025981
+      },
+      {
+        "date": "2026-08-10",
+        "strategy_nav": 0.841178,
+        "spy_nav": 1.047807,
+        "xlk_nav": 1.016975
+      },
+      {
+        "date": "2026-08-11",
+        "strategy_nav": 0.845001,
+        "spy_nav": 1.044459,
+        "xlk_nav": 1.01572
+      },
+      {
+        "date": "2026-08-12",
+        "strategy_nav": 0.875204,
+        "spy_nav": 1.047075,
+        "xlk_nav": 1.030839
+      },
+      {
+        "date": "2026-08-13",
+        "strategy_nav": 0.867679,
+        "spy_nav": 1.054381,
+        "xlk_nav": 1.041264
+      },
+      {
+        "date": "2026-08-14",
+        "strategy_nav": 0.855849,
+        "spy_nav": 1.052293,
+        "xlk_nav": 1.037116
+      },
+      {
+        "date": "2026-08-17",
+        "strategy_nav": 0.857863,
+        "spy_nav": 1.047319,
+        "xlk_nav": 1.038808
+      },
+      {
+        "date": "2026-08-18",
+        "strategy_nav": 0.817963,
+        "spy_nav": 1.040243,
+        "xlk_nav": 1.013154
+      },
+      {
+        "date": "2026-08-19",
+        "strategy_nav": 0.797394,
+        "spy_nav": 1.042426,
+        "xlk_nav": 1.002347
+      },
+      {
+        "date": "2026-08-20",
+        "strategy_nav": 0.791937,
+        "spy_nav": 1.033669,
+        "xlk_nav": 0.9994
+      },
+      {
+        "date": "2026-08-21",
+        "strategy_nav": 0.797699,
+        "spy_nav": 1.037898,
+        "xlk_nav": 1.000546
+      },
+      {
+        "date": "2026-08-24",
+        "strategy_nav": 0.786135,
+        "spy_nav": 1.034849,
+        "xlk_nav": 0.982752
+      },
+      {
+        "date": "2026-08-25",
+        "strategy_nav": 0.79446,
+        "spy_nav": 1.038156,
+        "xlk_nav": 0.991976
+      },
+      {
+        "date": "2026-08-26",
+        "strategy_nav": 0.809543,
+        "spy_nav": 1.038386,
+        "xlk_nav": 0.99798
+      },
+      {
+        "date": "2026-08-27",
+        "strategy_nav": 0.815352,
+        "spy_nav": 1.045191,
+        "xlk_nav": 1.029474
+      },
+      {
+        "date": "2026-08-28",
+        "strategy_nav": 0.789725,
+        "spy_nav": 1.042819,
+        "xlk_nav": 1.013536
+      },
+      {
+        "date": "2026-08-31",
+        "strategy_nav": 0.793535,
+        "spy_nav": 1.039701,
+        "xlk_nav": 1.017957
+      },
+      {
+        "date": "2026-09-01",
+        "strategy_nav": 0.782874,
+        "spy_nav": 1.032558,
+        "xlk_nav": 1.002347
+      },
+      {
+        "date": "2026-09-02",
+        "strategy_nav": 0.80608,
+        "spy_nav": 1.037139,
+        "xlk_nav": 1.002129
+      },
+      {
+        "date": "2026-09-03",
+        "strategy_nav": 0.816781,
+        "spy_nav": 1.047997,
+        "xlk_nav": 1.015065
+      },
+      {
+        "date": "2026-09-04",
+        "strategy_nav": 0.834539,
+        "spy_nav": 1.043957,
+        "xlk_nav": 1.022215
+      },
+      {
+        "date": "2026-09-08",
+        "strategy_nav": 0.859311,
+        "spy_nav": 1.038224,
+        "xlk_nav": 1.025435
+      },
+      {
+        "date": "2026-09-09",
+        "strategy_nav": 0.864167,
+        "spy_nav": 1.033398,
+        "xlk_nav": 1.025435
+      },
+      {
+        "date": "2026-09-10",
+        "strategy_nav": 0.830607,
+        "spy_nav": 1.027204,
+        "xlk_nav": 1.010971
+      },
+      {
+        "date": "2026-09-11",
+        "strategy_nav": 0.871826,
+        "spy_nav": 1.03596,
+        "xlk_nav": 1.024344
+      },
+      {
+        "date": "2026-09-14",
+        "strategy_nav": 0.812568,
+        "spy_nav": 1.031338,
+        "xlk_nav": 1.00584
+      },
+      {
+        "date": "2026-09-15",
+        "strategy_nav": 0.818933,
+        "spy_nav": 1.026608,
+        "xlk_nav": 1.002893
+      },
+      {
+        "date": "2026-09-16",
+        "strategy_nav": 0.837739,
+        "spy_nav": 1.02208,
+        "xlk_nav": 1.00393
+      },
+      {
+        "date": "2026-09-17",
+        "strategy_nav": 0.868075,
+        "spy_nav": 1.033669,
+        "xlk_nav": 1.026472
+      },
+      {
+        "date": "2026-09-18",
+        "strategy_nav": 0.858372,
+        "spy_nav": 1.032436,
+        "xlk_nav": 1.034878
+      },
+      {
+        "date": "2026-09-21",
+        "strategy_nav": 0.888533,
+        "spy_nav": 1.048444,
+        "xlk_nav": 1.063534
+      },
+      {
+        "date": "2026-09-22",
+        "strategy_nav": 0.889181,
+        "spy_nav": 1.048281,
+        "xlk_nav": 1.071284
+      },
+      {
+        "date": "2026-09-23",
+        "strategy_nav": 0.886759,
+        "spy_nav": 1.040731,
+        "xlk_nav": 1.066208
+      },
+      {
+        "date": "2026-09-24",
+        "strategy_nav": 0.884682,
+        "spy_nav": 1.039877,
+        "xlk_nav": 1.062769
+      },
+      {
+        "date": "2026-09-25",
+        "strategy_nav": 0.901542,
+        "spy_nav": 1.04553,
+        "xlk_nav": 1.071284
+      },
+      {
+        "date": "2026-09-28",
+        "strategy_nav": 0.876953,
+        "spy_nav": 1.037749,
+        "xlk_nav": 1.061787
+      },
+      {
+        "date": "2026-09-29",
+        "strategy_nav": 0.877287,
+        "spy_nav": 1.035838,
+        "xlk_nav": 1.061623
+      },
+      {
+        "date": "2026-09-30",
+        "strategy_nav": 0.878066,
+        "spy_nav": 1.03371,
+        "xlk_nav": 1.068446
+      },
+      {
+        "date": "2026-10-01",
+        "strategy_nav": 0.895314,
+        "spy_nav": 1.035554,
+        "xlk_nav": 1.07969
+      },
+      {
+        "date": "2026-10-02",
+        "strategy_nav": 0.928194,
+        "spy_nav": 1.043212,
+        "xlk_nav": 1.090606
+      },
+      {
+        "date": "2026-10-05",
+        "strategy_nav": 0.918678,
+        "spy_nav": 1.050247,
+        "xlk_nav": 1.09672
+      },
+      {
+        "date": "2026-10-06",
+        "strategy_nav": 0.924941,
+        "spy_nav": 1.056021,
+        "xlk_nav": 1.10256
+      },
+      {
+        "date": "2026-10-07",
+        "strategy_nav": 0.917902,
+        "spy_nav": 1.053486,
+        "xlk_nav": 1.09923
+      },
+      {
+        "date": "2026-10-08",
+        "strategy_nav": 0.886797,
+        "spy_nav": 1.049027,
+        "xlk_nav": 1.079526
+      },
+      {
+        "date": "2026-10-09",
+        "strategy_nav": 0.892545,
+        "spy_nav": 1.055316,
+        "xlk_nav": 1.084984
+      },
+      {
+        "date": "2026-10-12",
+        "strategy_nav": 0.846699,
+        "spy_nav": 1.054679,
+        "xlk_nav": 1.071776
+      },
+      {
+        "date": "2026-10-13",
+        "strategy_nav": 0.841507,
+        "spy_nav": 1.054557,
+        "xlk_nav": 1.071339
+      },
+      {
+        "date": "2026-10-14",
+        "strategy_nav": 0.786925,
+        "spy_nav": 1.043158,
+        "xlk_nav": 1.039408
+      },
+      {
+        "date": "2026-10-15",
+        "strategy_nav": 0.765023,
+        "spy_nav": 1.046126,
+        "xlk_nav": 1.03264
+      },
+      {
+        "date": "2026-10-16",
+        "strategy_nav": 0.727463,
+        "spy_nav": 1.034551,
+        "xlk_nav": 1.001419
+      },
+      {
+        "date": "2026-10-19",
+        "strategy_nav": 0.744309,
+        "spy_nav": 1.038929,
+        "xlk_nav": 1.01501
+      },
+      {
+        "date": "2026-10-20",
+        "strategy_nav": 0.742823,
+        "spy_nav": 1.042412,
+        "xlk_nav": 1.012172
+      },
+      {
+        "date": "2026-10-21",
+        "strategy_nav": 0.762994,
+        "spy_nav": 1.047888,
+        "xlk_nav": 1.029092
+      },
+      {
+        "date": "2026-10-22",
+        "strategy_nav": 0.700137,
+        "spy_nav": 1.035513,
+        "xlk_nav": 0.995251
+      },
+      {
+        "date": "2026-10-23",
+        "strategy_nav": 0.711871,
+        "spy_nav": 1.030105,
+        "xlk_nav": 1.000109
+      },
+      {
+        "date": "2026-10-26",
+        "strategy_nav": 0.732454,
+        "spy_nav": 1.037424,
+        "xlk_nav": 1.016975
+      },
+      {
+        "date": "2026-10-27",
+        "strategy_nav": 0.765278,
+        "spy_nav": 1.043239,
+        "xlk_nav": 1.034278
+      },
+      {
+        "date": "2026-10-28",
+        "strategy_nav": 0.784573,
+        "spy_nav": 1.046831,
+        "xlk_nav": 1.042519
+      },
+      {
+        "date": "2026-10-29",
+        "strategy_nav": 0.757825,
+        "spy_nav": 1.042832,
+        "xlk_nav": 1.030184
+      },
+      {
+        "date": "2026-10-30",
+        "strategy_nav": 0.695588,
+        "spy_nav": 1.024344,
+        "xlk_nav": 0.979805
+      },
+      {
+        "date": "2026-11-02",
+        "strategy_nav": 0.643787,
+        "spy_nav": 1.019437,
+        "xlk_nav": 0.950931
+      },
+      {
+        "date": "2026-11-03",
+        "strategy_nav": 0.660639,
+        "spy_nav": 1.022487,
+        "xlk_nav": 0.96343
+      },
+      {
+        "date": "2026-11-04",
+        "strategy_nav": 0.617898,
+        "spy_nav": 1.039376,
+        "xlk_nav": 0.963375
+      },
+      {
+        "date": "2026-11-05",
+        "strategy_nav": 0.565128,
+        "spy_nav": 0.993548,
+        "xlk_nav": 0.886305
+      },
+      {
+        "date": "2026-11-06",
+        "strategy_nav": 0.577598,
+        "spy_nav": 0.996652,
+        "xlk_nav": 0.899187
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2026-06",
+        "strategy": 0.10505,
+        "spy": 0.01221,
+        "xlk": 0.0399
+      },
+      {
+        "month": "2026-07",
+        "strategy": -0.2858,
+        "spy": 0.00035,
+        "xlk": -0.07962
+      },
+      {
+        "month": "2026-08",
+        "strategy": 0.00546,
+        "spy": 0.0268,
+        "xlk": 0.06359
+      },
+      {
+        "month": "2026-09",
+        "strategy": 0.10652,
+        "spy": -0.00576,
+        "xlk": 0.0496
+      },
+      {
+        "month": "2026-10",
+        "strategy": -0.20782,
+        "spy": -0.00906,
+        "xlk": -0.08296
+      },
+      {
+        "month": "2026-11",
+        "strategy": -0.16963,
+        "spy": -0.02703,
+        "xlk": -0.08228
+      }
+    ],
+    "trades": [
+      {
+        "date": "2026-06-11",
+        "signal_date": "2026-06-10",
+        "tickers": [
+          "KLAC",
+          "AMAT",
+          "APH",
+          "STM",
+          "ASML",
+          "DELL",
+          "MRVL",
+          "HPE"
+        ],
+        "execution": "following completed close after signal",
+        "one_way_turnover": 0.5,
+        "cost_fraction": 0.001
+      },
+      {
+        "date": "2026-07-01",
+        "signal_date": "2026-06-30",
+        "tickers": [
+          "AMAT",
+          "UCTT",
+          "KLAC",
+          "GLW",
+          "AMD",
+          "MRVL",
+          "GEV",
+          "APH"
+        ],
+        "execution": "following completed close after signal",
+        "one_way_turnover": 0.507972,
+        "cost_fraction": 0.0010159
+      },
+      {
+        "date": "2026-08-03",
+        "signal_date": "2026-07-31",
+        "tickers": [
+          "ANET",
+          "HPE",
+          "APH",
+          "MPWR",
+          "ETN",
+          "AVGO",
+          "SWKS",
+          "CLS"
+        ],
+        "execution": "following completed close after signal",
+        "one_way_turnover": 0.875,
+        "cost_fraction": 0.00175
+      },
+      {
+        "date": "2026-09-01",
+        "signal_date": "2026-08-31",
+        "tickers": [
+          "LITE",
+          "DELL",
+          "ANET",
+          "MU",
+          "QCOM",
+          "SMCI",
+          "CEG",
+          "HPE"
+        ],
+        "execution": "following completed close after signal",
+        "one_way_turnover": 0.75,
+        "cost_fraction": 0.0015
+      },
+      {
+        "date": "2026-10-01",
+        "signal_date": "2026-09-30",
+        "tickers": [
+          "FORM",
+          "HPE",
+          "ONTO",
+          "ACLS",
+          "AMD",
+          "MRVL",
+          "LITE",
+          "SWKS"
+        ],
+        "execution": "following completed close after signal",
+        "one_way_turnover": 0.75,
+        "cost_fraction": 0.0015
+      },
+      {
+        "date": "2026-11-02",
+        "signal_date": "2026-10-30",
+        "tickers": [
+          "NXPI",
+          "SWKS",
+          "ENTG",
+          "MCHP",
+          "CEG",
+          "APH",
+          "VRT",
+          "VST"
+        ],
+        "execution": "following completed close after signal",
+        "one_way_turnover": 0.875,
+        "cost_fraction": 0.00175
+      }
+    ],
+    "limitations": [
+      "Current 40-stock universe used historically: strong survivorship/selection bias",
+      "No delisted securities, adjusted dividends or splits separately audited; provider close data as delivered",
+      "No intraday fill or market-impact estimates; close-price execution assumes liquidity",
+      "Realized returns based on prior-day signals with one-session close execution lag",
+      "SEC as-filed fundamentals and 2026 M7 supply Alpha NOT incorporated in historical returns",
+      "Short historical window (up to 330 calendar days): insufficient to validate a robust trading edge"
+    ]
+  },
+  "backtest_scenarios": {
+    "Top 5 · 10 bps": {
+      "status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
+      "strategy_id": "M7-MOMENTUM-8-MONTHLY-v1",
+      "start_date": "2026-06-12",
+      "end_date": "2026-11-06",
+      "universe": 40,
+      "min_history": 65,
+      "signal": "30% 5-session momentum + 40% 20-session XLK-excess + 20% 60-session momentum + 10% inverse realized volatility percentile; no fundamentals or current Alpha",
+      "rebalance": "monthly, next-trading-day close fill after prior-close signal",
+      "risk": "equal weight top 8, max 3 names per sector, no leverage",
+      "one_way_bps": 10,
+      "metrics": {
+        "total_return": -0.452244,
+        "cagr_annualized": -0.770688,
+        "annualized_volatility": 0.649943,
+        "sharpe_rf0": -1.933,
+        "sortino_rf0": -2.404,
+        "max_drawdown": -0.521134,
+        "positive_day_rate": 0.5146,
+        "days": 103,
+        "turnover_one_way": 4.9,
+        "total_transaction_cost_bps": 98.0,
+        "ending_nav": 0.547756
+      },
+      "benchmarks": {
+        "SPY": {
+          "total_return": -0.003348,
+          "cagr_annualized": -0.008171,
+          "annualized_volatility": 0.136746,
+          "sharpe_rf0": 0.008,
+          "sortino_rf0": 0.011,
+          "max_drawdown": -0.059159,
+          "positive_day_rate": 0.466,
+          "days": 103,
+          "turnover_one_way": 0,
+          "total_transaction_cost_bps": 0,
+          "ending_nav": 0.996652
+        },
+        "XLK": {
+          "total_return": -0.100813,
+          "cagr_annualized": -0.228938,
+          "annualized_volatility": 0.314064,
+          "sharpe_rf0": -0.671,
+          "sortino_rf0": -0.885,
+          "max_drawdown": -0.196139,
+          "positive_day_rate": 0.4854,
+          "days": 103,
+          "turnover_one_way": 0,
+          "total_transaction_cost_bps": 0,
+          "ending_nav": 0.899187
+        }
+      },
+      "information_ratio": -2.168,
+      "curve": [
+        {
+          "date": "2026-06-12",
+          "strategy_nav": 1.011256,
+          "spy_nav": 1.005408,
+          "xlk_nav": 1.008679
+        },
+        {
+          "date": "2026-06-15",
+          "strategy_nav": 1.033072,
+          "spy_nav": 1.023138,
+          "xlk_nav": 1.046831
+        },
+        {
+          "date": "2026-06-16",
+          "strategy_nav": 0.990608,
+          "spy_nav": 1.017038,
+          "xlk_nav": 1.01763
+        },
+        {
+          "date": "2026-06-17",
+          "strategy_nav": 1.007391,
+          "spy_nav": 1.004337,
+          "xlk_nav": 1.014137
+        },
+        {
+          "date": "2026-06-18",
+          "strategy_nav": 1.0565,
+          "spy_nav": 1.012172,
+          "xlk_nav": 1.044921
+        },
+        {
+          "date": "2026-06-22",
+          "strategy_nav": 1.079258,
+          "spy_nav": 1.008987,
+          "xlk_nav": 1.048796
+        },
+        {
+          "date": "2026-06-23",
+          "strategy_nav": 0.99468,
+          "spy_nav": 0.994334,
+          "xlk_nav": 1.005349
+        },
+        {
+          "date": "2026-06-24",
+          "strategy_nav": 0.994663,
+          "spy_nav": 0.993873,
+          "xlk_nav": 0.999127
+        },
+        {
+          "date": "2026-06-25",
+          "strategy_nav": 1.057542,
+          "spy_nav": 0.99531,
+          "xlk_nav": 1.007423
+        },
+        {
+          "date": "2026-06-26",
+          "strategy_nav": 1.018623,
+          "spy_nav": 0.988113,
+          "xlk_nav": 0.988538
+        },
+        {
+          "date": "2026-06-29",
+          "strategy_nav": 1.089249,
+          "spy_nav": 1.004392,
+          "xlk_nav": 1.012008
+        },
+        {
+          "date": "2026-06-30",
+          "strategy_nav": 1.143237,
+          "spy_nav": 1.012213,
+          "xlk_nav": 1.0399
+        },
+        {
+          "date": "2026-07-01",
+          "strategy_nav": 1.056307,
+          "spy_nav": 1.010844,
+          "xlk_nav": 1.013154
+        },
+        {
+          "date": "2026-07-02",
+          "strategy_nav": 0.945676,
+          "spy_nav": 1.009515,
+          "xlk_nav": 0.985699
+        },
+        {
+          "date": "2026-07-06",
+          "strategy_nav": 0.950481,
+          "spy_nav": 1.018326,
+          "xlk_nav": 1.001965
+        },
+        {
+          "date": "2026-07-07",
+          "strategy_nav": 0.877682,
+          "spy_nav": 1.013487,
+          "xlk_nav": 0.978003
+        },
+        {
+          "date": "2026-07-08",
+          "strategy_nav": 0.90231,
+          "spy_nav": 1.010356,
+          "xlk_nav": 0.990121
+        },
+        {
+          "date": "2026-07-09",
+          "strategy_nav": 0.94282,
+          "spy_nav": 1.018909,
+          "xlk_nav": 1.011681
+        },
+        {
+          "date": "2026-07-10",
+          "strategy_nav": 0.951953,
+          "spy_nav": 1.0233,
+          "xlk_nav": 1.014028
+        },
+        {
+          "date": "2026-07-13",
+          "strategy_nav": 0.906156,
+          "spy_nav": 1.015466,
+          "xlk_nav": 0.989466
+        },
+        {
+          "date": "2026-07-14",
+          "strategy_nav": 0.937853,
+          "spy_nav": 1.019071,
+          "xlk_nav": 1.002238
+        },
+        {
+          "date": "2026-07-15",
+          "strategy_nav": 0.905165,
+          "spy_nav": 1.02311,
+          "xlk_nav": 0.991103
+        },
+        {
+          "date": "2026-07-16",
+          "strategy_nav": 0.853301,
+          "spy_nav": 1.017567,
+          "xlk_nav": 0.968943
+        },
+        {
+          "date": "2026-07-17",
+          "strategy_nav": 0.832007,
+          "spy_nav": 1.007496,
+          "xlk_nav": 0.958408
+        },
+        {
+          "date": "2026-07-20",
+          "strategy_nav": 0.827153,
+          "spy_nav": 1.005869,
+          "xlk_nav": 0.959063
+        },
+        {
+          "date": "2026-07-21",
+          "strategy_nav": 0.89428,
+          "spy_nav": 1.014259,
+          "xlk_nav": 0.986736
+        },
+        {
+          "date": "2026-07-22",
+          "strategy_nav": 0.877649,
+          "spy_nav": 1.01308,
+          "xlk_nav": 0.983953
+        },
+        {
+          "date": "2026-07-23",
+          "strategy_nav": 0.879246,
+          "spy_nav": 1.000569,
+          "xlk_nav": 0.974019
+        },
+        {
+          "date": "2026-07-24",
+          "strategy_nav": 0.8355,
+          "spy_nav": 1.001586,
+          "xlk_nav": 0.959991
+        },
+        {
+          "date": "2026-07-27",
+          "strategy_nav": 0.800462,
+          "spy_nav": 1.001803,
+          "xlk_nav": 0.951367
+        },
+        {
+          "date": "2026-07-28",
+          "strategy_nav": 0.729663,
+          "spy_nav": 1.004202,
+          "xlk_nav": 0.933846
+        },
+        {
+          "date": "2026-07-29",
+          "strategy_nav": 0.6758,
+          "spy_nav": 0.98875,
+          "xlk_nav": 0.909175
+        },
+        {
+          "date": "2026-07-30",
+          "strategy_nav": 0.759706,
+          "spy_nav": 1.005327,
+          "xlk_nav": 0.959172
+        },
+        {
+          "date": "2026-07-31",
+          "strategy_nav": 0.763016,
+          "spy_nav": 1.012565,
+          "xlk_nav": 0.957098
+        },
+        {
+          "date": "2026-08-03",
+          "strategy_nav": 0.787252,
+          "spy_nav": 1.026987,
+          "xlk_nav": 0.971781
+        },
+        {
+          "date": "2026-08-04",
+          "strategy_nav": 0.806159,
+          "spy_nav": 1.045503,
+          "xlk_nav": 1.020141
+        },
+        {
+          "date": "2026-08-05",
+          "strategy_nav": 0.817529,
+          "spy_nav": 1.043415,
+          "xlk_nav": 1.014737
+        },
+        {
+          "date": "2026-08-06",
+          "strategy_nav": 0.811167,
+          "spy_nav": 1.041748,
+          "xlk_nav": 1.011571
+        },
+        {
+          "date": "2026-08-07",
+          "strategy_nav": 0.814299,
+          "spy_nav": 1.048119,
+          "xlk_nav": 1.025981
+        },
+        {
+          "date": "2026-08-10",
+          "strategy_nav": 0.816141,
+          "spy_nav": 1.047807,
+          "xlk_nav": 1.016975
+        },
+        {
+          "date": "2026-08-11",
+          "strategy_nav": 0.827725,
+          "spy_nav": 1.044459,
+          "xlk_nav": 1.01572
+        },
+        {
+          "date": "2026-08-12",
+          "strategy_nav": 0.857814,
+          "spy_nav": 1.047075,
+          "xlk_nav": 1.030839
+        },
+        {
+          "date": "2026-08-13",
+          "strategy_nav": 0.841459,
+          "spy_nav": 1.054381,
+          "xlk_nav": 1.041264
+        },
+        {
+          "date": "2026-08-14",
+          "strategy_nav": 0.839176,
+          "spy_nav": 1.052293,
+          "xlk_nav": 1.037116
+        },
+        {
+          "date": "2026-08-17",
+          "strategy_nav": 0.844915,
+          "spy_nav": 1.047319,
+          "xlk_nav": 1.038808
+        },
+        {
+          "date": "2026-08-18",
+          "strategy_nav": 0.802401,
+          "spy_nav": 1.040243,
+          "xlk_nav": 1.013154
+        },
+        {
+          "date": "2026-08-19",
+          "strategy_nav": 0.779027,
+          "spy_nav": 1.042426,
+          "xlk_nav": 1.002347
+        },
+        {
+          "date": "2026-08-20",
+          "strategy_nav": 0.771022,
+          "spy_nav": 1.033669,
+          "xlk_nav": 0.9994
+        },
+        {
+          "date": "2026-08-21",
+          "strategy_nav": 0.782756,
+          "spy_nav": 1.037898,
+          "xlk_nav": 1.000546
+        },
+        {
+          "date": "2026-08-24",
+          "strategy_nav": 0.770307,
+          "spy_nav": 1.034849,
+          "xlk_nav": 0.982752
+        },
+        {
+          "date": "2026-08-25",
+          "strategy_nav": 0.78137,
+          "spy_nav": 1.038156,
+          "xlk_nav": 0.991976
+        },
+        {
+          "date": "2026-08-26",
+          "strategy_nav": 0.802685,
+          "spy_nav": 1.038386,
+          "xlk_nav": 0.99798
+        },
+        {
+          "date": "2026-08-27",
+          "strategy_nav": 0.798795,
+          "spy_nav": 1.045191,
+          "xlk_nav": 1.029474
+        },
+        {
+          "date": "2026-08-28",
+          "strategy_nav": 0.772709,
+          "spy_nav": 1.042819,
+          "xlk_nav": 1.013536
+        },
+        {
+          "date": "2026-08-31",
+          "strategy_nav": 0.774555,
+          "spy_nav": 1.039701,
+          "xlk_nav": 1.017957
+        },
+        {
+          "date": "2026-09-01",
+          "strategy_nav": 0.760367,
+          "spy_nav": 1.032558,
+          "xlk_nav": 1.002347
+        },
+        {
+          "date": "2026-09-02",
+          "strategy_nav": 0.787688,
+          "spy_nav": 1.037139,
+          "xlk_nav": 1.002129
+        },
+        {
+          "date": "2026-09-03",
+          "strategy_nav": 0.79563,
+          "spy_nav": 1.047997,
+          "xlk_nav": 1.015065
+        },
+        {
+          "date": "2026-09-04",
+          "strategy_nav": 0.815857,
+          "spy_nav": 1.043957,
+          "xlk_nav": 1.022215
+        },
+        {
+          "date": "2026-09-08",
+          "strategy_nav": 0.839502,
+          "spy_nav": 1.038224,
+          "xlk_nav": 1.025435
+        },
+        {
+          "date": "2026-09-09",
+          "strategy_nav": 0.846768,
+          "spy_nav": 1.033398,
+          "xlk_nav": 1.025435
+        },
+        {
+          "date": "2026-09-10",
+          "strategy_nav": 0.816314,
+          "spy_nav": 1.027204,
+          "xlk_nav": 1.010971
+        },
+        {
+          "date": "2026-09-11",
+          "strategy_nav": 0.849267,
+          "spy_nav": 1.03596,
+          "xlk_nav": 1.024344
+        },
+        {
+          "date": "2026-09-14",
+          "strategy_nav": 0.801955,
+          "spy_nav": 1.031338,
+          "xlk_nav": 1.00584
+        },
+        {
+          "date": "2026-09-15",
+          "strategy_nav": 0.817527,
+          "spy_nav": 1.026608,
+          "xlk_nav": 1.002893
+        },
+        {
+          "date": "2026-09-16",
+          "strategy_nav": 0.839552,
+          "spy_nav": 1.02208,
+          "xlk_nav": 1.00393
+        },
+        {
+          "date": "2026-09-17",
+          "strategy_nav": 0.857428,
+          "spy_nav": 1.033669,
+          "xlk_nav": 1.026472
+        },
+        {
+          "date": "2026-09-18",
+          "strategy_nav": 0.852781,
+          "spy_nav": 1.032436,
+          "xlk_nav": 1.034878
+        },
+        {
+          "date": "2026-09-21",
+          "strategy_nav": 0.883956,
+          "spy_nav": 1.048444,
+          "xlk_nav": 1.063534
+        },
+        {
+          "date": "2026-09-22",
+          "strategy_nav": 0.884975,
+          "spy_nav": 1.048281,
+          "xlk_nav": 1.071284
+        },
+        {
+          "date": "2026-09-23",
+          "strategy_nav": 0.877517,
+          "spy_nav": 1.040731,
+          "xlk_nav": 1.066208
+        },
+        {
+          "date": "2026-09-24",
+          "strategy_nav": 0.871673,
+          "spy_nav": 1.039877,
+          "xlk_nav": 1.062769
+        },
+        {
+          "date": "2026-09-25",
+          "strategy_nav": 0.891469,
+          "spy_nav": 1.04553,
+          "xlk_nav": 1.071284
+        },
+        {
+          "date": "2026-09-28",
+          "strategy_nav": 0.861848,
+          "spy_nav": 1.037749,
+          "xlk_nav": 1.061787
+        },
+        {
+          "date": "2026-09-29",
+          "strategy_nav": 0.866665,
+          "spy_nav": 1.035838,
+          "xlk_nav": 1.061623
+        },
+        {
+          "date": "2026-09-30",
+          "strategy_nav": 0.866225,
+          "spy_nav": 1.03371,
+          "xlk_nav": 1.068446
+        },
+        {
+          "date": "2026-10-01",
+          "strategy_nav": 0.884796,
+          "spy_nav": 1.035554,
+          "xlk_nav": 1.07969
+        },
+        {
+          "date": "2026-10-02",
+          "strategy_nav": 0.923674,
+          "spy_nav": 1.043212,
+          "xlk_nav": 1.090606
+        },
+        {
+          "date": "2026-10-05",
+          "strategy_nav": 0.910643,
+          "spy_nav": 1.050247,
+          "xlk_nav": 1.09672
+        },
+        {
+          "date": "2026-10-06",
+          "strategy_nav": 0.905489,
+          "spy_nav": 1.056021,
+          "xlk_nav": 1.10256
+        },
+        {
+          "date": "2026-10-07",
+          "strategy_nav": 0.898311,
+          "spy_nav": 1.053486,
+          "xlk_nav": 1.09923
+        },
+        {
+          "date": "2026-10-08",
+          "strategy_nav": 0.871994,
+          "spy_nav": 1.049027,
+          "xlk_nav": 1.079526
+        },
+        {
+          "date": "2026-10-09",
+          "strategy_nav": 0.880768,
+          "spy_nav": 1.055316,
+          "xlk_nav": 1.084984
+        },
+        {
+          "date": "2026-10-12",
+          "strategy_nav": 0.836251,
+          "spy_nav": 1.054679,
+          "xlk_nav": 1.071776
+        },
+        {
+          "date": "2026-10-13",
+          "strategy_nav": 0.823458,
+          "spy_nav": 1.054557,
+          "xlk_nav": 1.071339
+        },
+        {
+          "date": "2026-10-14",
+          "strategy_nav": 0.767423,
+          "spy_nav": 1.043158,
+          "xlk_nav": 1.039408
+        },
+        {
+          "date": "2026-10-15",
+          "strategy_nav": 0.735299,
+          "spy_nav": 1.046126,
+          "xlk_nav": 1.03264
+        },
+        {
+          "date": "2026-10-16",
+          "strategy_nav": 0.691168,
+          "spy_nav": 1.034551,
+          "xlk_nav": 1.001419
+        },
+        {
+          "date": "2026-10-19",
+          "strategy_nav": 0.708812,
+          "spy_nav": 1.038929,
+          "xlk_nav": 1.01501
+        },
+        {
+          "date": "2026-10-20",
+          "strategy_nav": 0.704024,
+          "spy_nav": 1.042412,
+          "xlk_nav": 1.012172
+        },
+        {
+          "date": "2026-10-21",
+          "strategy_nav": 0.726329,
+          "spy_nav": 1.047888,
+          "xlk_nav": 1.029092
+        },
+        {
+          "date": "2026-10-22",
+          "strategy_nav": 0.65723,
+          "spy_nav": 1.035513,
+          "xlk_nav": 0.995251
+        },
+        {
+          "date": "2026-10-23",
+          "strategy_nav": 0.669632,
+          "spy_nav": 1.030105,
+          "xlk_nav": 1.000109
+        },
+        {
+          "date": "2026-10-26",
+          "strategy_nav": 0.688423,
+          "spy_nav": 1.037424,
+          "xlk_nav": 1.016975
+        },
+        {
+          "date": "2026-10-27",
+          "strategy_nav": 0.721184,
+          "spy_nav": 1.043239,
+          "xlk_nav": 1.034278
+        },
+        {
+          "date": "2026-10-28",
+          "strategy_nav": 0.734571,
+          "spy_nav": 1.046831,
+          "xlk_nav": 1.042519
+        },
+        {
+          "date": "2026-10-29",
+          "strategy_nav": 0.708628,
+          "spy_nav": 1.042832,
+          "xlk_nav": 1.030184
+        },
+        {
+          "date": "2026-10-30",
+          "strategy_nav": 0.641962,
+          "spy_nav": 1.024344,
+          "xlk_nav": 0.979805
+        },
+        {
+          "date": "2026-11-02",
+          "strategy_nav": 0.608073,
+          "spy_nav": 1.019437,
+          "xlk_nav": 0.950931
+        },
+        {
+          "date": "2026-11-03",
+          "strategy_nav": 0.61654,
+          "spy_nav": 1.022487,
+          "xlk_nav": 0.96343
+        },
+        {
+          "date": "2026-11-04",
+          "strategy_nav": 0.593708,
+          "spy_nav": 1.039376,
+          "xlk_nav": 0.963375
+        },
+        {
+          "date": "2026-11-05",
+          "strategy_nav": 0.547457,
+          "spy_nav": 0.993548,
+          "xlk_nav": 0.886305
+        },
+        {
+          "date": "2026-11-06",
+          "strategy_nav": 0.547756,
+          "spy_nav": 0.996652,
+          "xlk_nav": 0.899187
+        }
+      ],
+      "monthly": [
+        {
+          "month": "2026-06",
+          "strategy": 0.14324,
+          "spy": 0.01221,
+          "xlk": 0.0399
+        },
+        {
+          "month": "2026-07",
+          "strategy": -0.33258,
+          "spy": 0.00035,
+          "xlk": -0.07962
+        },
+        {
+          "month": "2026-08",
+          "strategy": 0.01512,
+          "spy": 0.0268,
+          "xlk": 0.06359
+        },
+        {
+          "month": "2026-09",
+          "strategy": 0.11835,
+          "spy": -0.00576,
+          "xlk": 0.0496
+        },
+        {
+          "month": "2026-10",
+          "strategy": -0.2589,
+          "spy": -0.00906,
+          "xlk": -0.08296
+        },
+        {
+          "month": "2026-11",
+          "strategy": -0.14675,
+          "spy": -0.02703,
+          "xlk": -0.08228
+        }
+      ],
+      "trades": [
+        {
+          "date": "2026-06-11",
+          "signal_date": "2026-06-10",
+          "tickers": [
+            "KLAC",
+            "AMAT",
+            "APH",
+            "STM",
+            "ASML"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.5,
+          "cost_fraction": 0.001
+        },
+        {
+          "date": "2026-07-01",
+          "signal_date": "2026-06-30",
+          "tickers": [
+            "AMAT",
+            "UCTT",
+            "KLAC",
+            "GLW",
+            "AMD"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.6,
+          "cost_fraction": 0.0012
+        },
+        {
+          "date": "2026-08-03",
+          "signal_date": "2026-07-31",
+          "tickers": [
+            "ANET",
+            "HPE",
+            "APH",
+            "MPWR",
+            "ETN"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 1.0,
+          "cost_fraction": 0.002
+        },
+        {
+          "date": "2026-09-01",
+          "signal_date": "2026-08-31",
+          "tickers": [
+            "LITE",
+            "DELL",
+            "ANET",
+            "MU",
+            "QCOM"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.8,
+          "cost_fraction": 0.0016
+        },
+        {
+          "date": "2026-10-01",
+          "signal_date": "2026-09-30",
+          "tickers": [
+            "FORM",
+            "HPE",
+            "ONTO",
+            "ACLS",
+            "AMD"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 1.0,
+          "cost_fraction": 0.002
+        },
+        {
+          "date": "2026-11-02",
+          "signal_date": "2026-10-30",
+          "tickers": [
+            "NXPI",
+            "SWKS",
+            "ENTG",
+            "MCHP",
+            "CEG"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 1.0,
+          "cost_fraction": 0.002
+        }
+      ],
+      "limitations": [
+        "Current 40-stock universe used historically: strong survivorship/selection bias",
+        "No delisted securities, adjusted dividends or splits separately audited; provider close data as delivered",
+        "No intraday fill or market-impact estimates; close-price execution assumes liquidity",
+        "Realized returns based on prior-day signals with one-session close execution lag",
+        "SEC as-filed fundamentals and 2026 M7 supply Alpha NOT incorporated in historical returns",
+        "Short historical window (up to 330 calendar days): insufficient to validate a robust trading edge"
+      ]
+    },
+    "Top 8 · 5 bps": {
+      "status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
+      "strategy_id": "M7-MOMENTUM-8-MONTHLY-v1",
+      "start_date": "2026-06-12",
+      "end_date": "2026-11-06",
+      "universe": 40,
+      "min_history": 65,
+      "signal": "30% 5-session momentum + 40% 20-session XLK-excess + 20% 60-session momentum + 10% inverse realized volatility percentile; no fundamentals or current Alpha",
+      "rebalance": "monthly, next-trading-day close fill after prior-close signal",
+      "risk": "equal weight top 8, max 3 names per sector, no leverage",
+      "one_way_bps": 5,
+      "metrics": {
+        "total_return": -0.419976,
+        "cagr_annualized": -0.736218,
+        "annualized_volatility": 0.595414,
+        "sharpe_rf0": -1.934,
+        "sortino_rf0": -2.373,
+        "max_drawdown": -0.486701,
+        "positive_day_rate": 0.5534,
+        "days": 103,
+        "turnover_one_way": 4.25797,
+        "total_transaction_cost_bps": 42.5797,
+        "ending_nav": 0.580024
+      },
+      "benchmarks": {
+        "SPY": {
+          "total_return": -0.003348,
+          "cagr_annualized": -0.008171,
+          "annualized_volatility": 0.136746,
+          "sharpe_rf0": 0.008,
+          "sortino_rf0": 0.011,
+          "max_drawdown": -0.059159,
+          "positive_day_rate": 0.466,
+          "days": 103,
+          "turnover_one_way": 0,
+          "total_transaction_cost_bps": 0,
+          "ending_nav": 0.996652
+        },
+        "XLK": {
+          "total_return": -0.100813,
+          "cagr_annualized": -0.228938,
+          "annualized_volatility": 0.314064,
+          "sharpe_rf0": -0.671,
+          "sortino_rf0": -0.885,
+          "max_drawdown": -0.196139,
+          "positive_day_rate": 0.4854,
+          "days": 103,
+          "turnover_one_way": 0,
+          "total_transaction_cost_bps": 0,
+          "ending_nav": 0.899187
+        }
+      },
+      "information_ratio": -2.202,
+      "curve": [
+        {
+          "date": "2026-06-12",
+          "strategy_nav": 1.011685,
+          "spy_nav": 1.005408,
+          "xlk_nav": 1.008679
+        },
+        {
+          "date": "2026-06-15",
+          "strategy_nav": 1.044892,
+          "spy_nav": 1.023138,
+          "xlk_nav": 1.046831
+        },
+        {
+          "date": "2026-06-16",
+          "strategy_nav": 1.001592,
+          "spy_nav": 1.017038,
+          "xlk_nav": 1.01763
+        },
+        {
+          "date": "2026-06-17",
+          "strategy_nav": 1.021308,
+          "spy_nav": 1.004337,
+          "xlk_nav": 1.014137
+        },
+        {
+          "date": "2026-06-18",
+          "strategy_nav": 1.056138,
+          "spy_nav": 1.012172,
+          "xlk_nav": 1.044921
+        },
+        {
+          "date": "2026-06-22",
+          "strategy_nav": 1.07474,
+          "spy_nav": 1.008987,
+          "xlk_nav": 1.048796
+        },
+        {
+          "date": "2026-06-23",
+          "strategy_nav": 1.013309,
+          "spy_nav": 0.994334,
+          "xlk_nav": 1.005349
+        },
+        {
+          "date": "2026-06-24",
+          "strategy_nav": 1.013807,
+          "spy_nav": 0.993873,
+          "xlk_nav": 0.999127
+        },
+        {
+          "date": "2026-06-25",
+          "strategy_nav": 1.041882,
+          "spy_nav": 0.99531,
+          "xlk_nav": 1.007423
+        },
+        {
+          "date": "2026-06-26",
+          "strategy_nav": 0.999881,
+          "spy_nav": 0.988113,
+          "xlk_nav": 0.988538
+        },
+        {
+          "date": "2026-06-29",
+          "strategy_nav": 1.055626,
+          "spy_nav": 1.004392,
+          "xlk_nav": 1.012008
+        },
+        {
+          "date": "2026-06-30",
+          "strategy_nav": 1.105596,
+          "spy_nav": 1.012213,
+          "xlk_nav": 1.0399
+        },
+        {
+          "date": "2026-07-01",
+          "strategy_nav": 1.034658,
+          "spy_nav": 1.010844,
+          "xlk_nav": 1.013154
+        },
+        {
+          "date": "2026-07-02",
+          "strategy_nav": 0.946308,
+          "spy_nav": 1.009515,
+          "xlk_nav": 0.985699
+        },
+        {
+          "date": "2026-07-06",
+          "strategy_nav": 0.957245,
+          "spy_nav": 1.018326,
+          "xlk_nav": 1.001965
+        },
+        {
+          "date": "2026-07-07",
+          "strategy_nav": 0.889124,
+          "spy_nav": 1.013487,
+          "xlk_nav": 0.978003
+        },
+        {
+          "date": "2026-07-08",
+          "strategy_nav": 0.903706,
+          "spy_nav": 1.010356,
+          "xlk_nav": 0.990121
+        },
+        {
+          "date": "2026-07-09",
+          "strategy_nav": 0.937521,
+          "spy_nav": 1.018909,
+          "xlk_nav": 1.011681
+        },
+        {
+          "date": "2026-07-10",
+          "strategy_nav": 0.939044,
+          "spy_nav": 1.0233,
+          "xlk_nav": 1.014028
+        },
+        {
+          "date": "2026-07-13",
+          "strategy_nav": 0.894416,
+          "spy_nav": 1.015466,
+          "xlk_nav": 0.989466
+        },
+        {
+          "date": "2026-07-14",
+          "strategy_nav": 0.920622,
+          "spy_nav": 1.019071,
+          "xlk_nav": 1.002238
+        },
+        {
+          "date": "2026-07-15",
+          "strategy_nav": 0.890687,
+          "spy_nav": 1.02311,
+          "xlk_nav": 0.991103
+        },
+        {
+          "date": "2026-07-16",
+          "strategy_nav": 0.845279,
+          "spy_nav": 1.017567,
+          "xlk_nav": 0.968943
+        },
+        {
+          "date": "2026-07-17",
+          "strategy_nav": 0.833421,
+          "spy_nav": 1.007496,
+          "xlk_nav": 0.958408
+        },
+        {
+          "date": "2026-07-20",
+          "strategy_nav": 0.835335,
+          "spy_nav": 1.005869,
+          "xlk_nav": 0.959063
+        },
+        {
+          "date": "2026-07-21",
+          "strategy_nav": 0.888085,
+          "spy_nav": 1.014259,
+          "xlk_nav": 0.986736
+        },
+        {
+          "date": "2026-07-22",
+          "strategy_nav": 0.868424,
+          "spy_nav": 1.01308,
+          "xlk_nav": 0.983953
+        },
+        {
+          "date": "2026-07-23",
+          "strategy_nav": 0.873809,
+          "spy_nav": 1.000569,
+          "xlk_nav": 0.974019
+        },
+        {
+          "date": "2026-07-24",
+          "strategy_nav": 0.834391,
+          "spy_nav": 1.001586,
+          "xlk_nav": 0.959991
+        },
+        {
+          "date": "2026-07-27",
+          "strategy_nav": 0.805904,
+          "spy_nav": 1.001803,
+          "xlk_nav": 0.951367
+        },
+        {
+          "date": "2026-07-28",
+          "strategy_nav": 0.745407,
+          "spy_nav": 1.004202,
+          "xlk_nav": 0.933846
+        },
+        {
+          "date": "2026-07-29",
+          "strategy_nav": 0.707084,
+          "spy_nav": 0.98875,
+          "xlk_nav": 0.909175
+        },
+        {
+          "date": "2026-07-30",
+          "strategy_nav": 0.784394,
+          "spy_nav": 1.005327,
+          "xlk_nav": 0.959172
+        },
+        {
+          "date": "2026-07-31",
+          "strategy_nav": 0.790053,
+          "spy_nav": 1.012565,
+          "xlk_nav": 0.957098
+        },
+        {
+          "date": "2026-08-03",
+          "strategy_nav": 0.811715,
+          "spy_nav": 1.026987,
+          "xlk_nav": 0.971781
+        },
+        {
+          "date": "2026-08-04",
+          "strategy_nav": 0.848694,
+          "spy_nav": 1.045503,
+          "xlk_nav": 1.020141
+        },
+        {
+          "date": "2026-08-05",
+          "strategy_nav": 0.853903,
+          "spy_nav": 1.043415,
+          "xlk_nav": 1.014737
+        },
+        {
+          "date": "2026-08-06",
+          "strategy_nav": 0.835842,
+          "spy_nav": 1.041748,
+          "xlk_nav": 1.011571
+        },
+        {
+          "date": "2026-08-07",
+          "strategy_nav": 0.846952,
+          "spy_nav": 1.048119,
+          "xlk_nav": 1.025981
+        },
+        {
+          "date": "2026-08-10",
+          "strategy_nav": 0.842767,
+          "spy_nav": 1.047807,
+          "xlk_nav": 1.016975
+        },
+        {
+          "date": "2026-08-11",
+          "strategy_nav": 0.846598,
+          "spy_nav": 1.044459,
+          "xlk_nav": 1.01572
+        },
+        {
+          "date": "2026-08-12",
+          "strategy_nav": 0.876857,
+          "spy_nav": 1.047075,
+          "xlk_nav": 1.030839
+        },
+        {
+          "date": "2026-08-13",
+          "strategy_nav": 0.869318,
+          "spy_nav": 1.054381,
+          "xlk_nav": 1.041264
+        },
+        {
+          "date": "2026-08-14",
+          "strategy_nav": 0.857466,
+          "spy_nav": 1.052293,
+          "xlk_nav": 1.037116
+        },
+        {
+          "date": "2026-08-17",
+          "strategy_nav": 0.859483,
+          "spy_nav": 1.047319,
+          "xlk_nav": 1.038808
+        },
+        {
+          "date": "2026-08-18",
+          "strategy_nav": 0.819508,
+          "spy_nav": 1.040243,
+          "xlk_nav": 1.013154
+        },
+        {
+          "date": "2026-08-19",
+          "strategy_nav": 0.7989,
+          "spy_nav": 1.042426,
+          "xlk_nav": 1.002347
+        },
+        {
+          "date": "2026-08-20",
+          "strategy_nav": 0.793433,
+          "spy_nav": 1.033669,
+          "xlk_nav": 0.9994
+        },
+        {
+          "date": "2026-08-21",
+          "strategy_nav": 0.799206,
+          "spy_nav": 1.037898,
+          "xlk_nav": 1.000546
+        },
+        {
+          "date": "2026-08-24",
+          "strategy_nav": 0.78762,
+          "spy_nav": 1.034849,
+          "xlk_nav": 0.982752
+        },
+        {
+          "date": "2026-08-25",
+          "strategy_nav": 0.795961,
+          "spy_nav": 1.038156,
+          "xlk_nav": 0.991976
+        },
+        {
+          "date": "2026-08-26",
+          "strategy_nav": 0.811073,
+          "spy_nav": 1.038386,
+          "xlk_nav": 0.99798
+        },
+        {
+          "date": "2026-08-27",
+          "strategy_nav": 0.816893,
+          "spy_nav": 1.045191,
+          "xlk_nav": 1.029474
+        },
+        {
+          "date": "2026-08-28",
+          "strategy_nav": 0.791217,
+          "spy_nav": 1.042819,
+          "xlk_nav": 1.013536
+        },
+        {
+          "date": "2026-08-31",
+          "strategy_nav": 0.795034,
+          "spy_nav": 1.039701,
+          "xlk_nav": 1.017957
+        },
+        {
+          "date": "2026-09-01",
+          "strategy_nav": 0.784352,
+          "spy_nav": 1.032558,
+          "xlk_nav": 1.002347
+        },
+        {
+          "date": "2026-09-02",
+          "strategy_nav": 0.808191,
+          "spy_nav": 1.037139,
+          "xlk_nav": 1.002129
+        },
+        {
+          "date": "2026-09-03",
+          "strategy_nav": 0.81892,
+          "spy_nav": 1.047997,
+          "xlk_nav": 1.015065
+        },
+        {
+          "date": "2026-09-04",
+          "strategy_nav": 0.836724,
+          "spy_nav": 1.043957,
+          "xlk_nav": 1.022215
+        },
+        {
+          "date": "2026-09-08",
+          "strategy_nav": 0.861562,
+          "spy_nav": 1.038224,
+          "xlk_nav": 1.025435
+        },
+        {
+          "date": "2026-09-09",
+          "strategy_nav": 0.86643,
+          "spy_nav": 1.033398,
+          "xlk_nav": 1.025435
+        },
+        {
+          "date": "2026-09-10",
+          "strategy_nav": 0.832782,
+          "spy_nav": 1.027204,
+          "xlk_nav": 1.010971
+        },
+        {
+          "date": "2026-09-11",
+          "strategy_nav": 0.874109,
+          "spy_nav": 1.03596,
+          "xlk_nav": 1.024344
+        },
+        {
+          "date": "2026-09-14",
+          "strategy_nav": 0.814695,
+          "spy_nav": 1.031338,
+          "xlk_nav": 1.00584
+        },
+        {
+          "date": "2026-09-15",
+          "strategy_nav": 0.821077,
+          "spy_nav": 1.026608,
+          "xlk_nav": 1.002893
+        },
+        {
+          "date": "2026-09-16",
+          "strategy_nav": 0.839933,
+          "spy_nav": 1.02208,
+          "xlk_nav": 1.00393
+        },
+        {
+          "date": "2026-09-17",
+          "strategy_nav": 0.870348,
+          "spy_nav": 1.033669,
+          "xlk_nav": 1.026472
+        },
+        {
+          "date": "2026-09-18",
+          "strategy_nav": 0.86062,
+          "spy_nav": 1.032436,
+          "xlk_nav": 1.034878
+        },
+        {
+          "date": "2026-09-21",
+          "strategy_nav": 0.89086,
+          "spy_nav": 1.048444,
+          "xlk_nav": 1.063534
+        },
+        {
+          "date": "2026-09-22",
+          "strategy_nav": 0.89151,
+          "spy_nav": 1.048281,
+          "xlk_nav": 1.071284
+        },
+        {
+          "date": "2026-09-23",
+          "strategy_nav": 0.889081,
+          "spy_nav": 1.040731,
+          "xlk_nav": 1.066208
+        },
+        {
+          "date": "2026-09-24",
+          "strategy_nav": 0.886999,
+          "spy_nav": 1.039877,
+          "xlk_nav": 1.062769
+        },
+        {
+          "date": "2026-09-25",
+          "strategy_nav": 0.903902,
+          "spy_nav": 1.04553,
+          "xlk_nav": 1.071284
+        },
+        {
+          "date": "2026-09-28",
+          "strategy_nav": 0.87925,
+          "spy_nav": 1.037749,
+          "xlk_nav": 1.061787
+        },
+        {
+          "date": "2026-09-29",
+          "strategy_nav": 0.879585,
+          "spy_nav": 1.035838,
+          "xlk_nav": 1.061623
+        },
+        {
+          "date": "2026-09-30",
+          "strategy_nav": 0.880366,
+          "spy_nav": 1.03371,
+          "xlk_nav": 1.068446
+        },
+        {
+          "date": "2026-10-01",
+          "strategy_nav": 0.897659,
+          "spy_nav": 1.035554,
+          "xlk_nav": 1.07969
+        },
+        {
+          "date": "2026-10-02",
+          "strategy_nav": 0.931298,
+          "spy_nav": 1.043212,
+          "xlk_nav": 1.090606
+        },
+        {
+          "date": "2026-10-05",
+          "strategy_nav": 0.921751,
+          "spy_nav": 1.050247,
+          "xlk_nav": 1.09672
+        },
+        {
+          "date": "2026-10-06",
+          "strategy_nav": 0.928034,
+          "spy_nav": 1.056021,
+          "xlk_nav": 1.10256
+        },
+        {
+          "date": "2026-10-07",
+          "strategy_nav": 0.920971,
+          "spy_nav": 1.053486,
+          "xlk_nav": 1.09923
+        },
+        {
+          "date": "2026-10-08",
+          "strategy_nav": 0.889762,
+          "spy_nav": 1.049027,
+          "xlk_nav": 1.079526
+        },
+        {
+          "date": "2026-10-09",
+          "strategy_nav": 0.89553,
+          "spy_nav": 1.055316,
+          "xlk_nav": 1.084984
+        },
+        {
+          "date": "2026-10-12",
+          "strategy_nav": 0.84953,
+          "spy_nav": 1.054679,
+          "xlk_nav": 1.071776
+        },
+        {
+          "date": "2026-10-13",
+          "strategy_nav": 0.844321,
+          "spy_nav": 1.054557,
+          "xlk_nav": 1.071339
+        },
+        {
+          "date": "2026-10-14",
+          "strategy_nav": 0.789557,
+          "spy_nav": 1.043158,
+          "xlk_nav": 1.039408
+        },
+        {
+          "date": "2026-10-15",
+          "strategy_nav": 0.767581,
+          "spy_nav": 1.046126,
+          "xlk_nav": 1.03264
+        },
+        {
+          "date": "2026-10-16",
+          "strategy_nav": 0.729896,
+          "spy_nav": 1.034551,
+          "xlk_nav": 1.001419
+        },
+        {
+          "date": "2026-10-19",
+          "strategy_nav": 0.746798,
+          "spy_nav": 1.038929,
+          "xlk_nav": 1.01501
+        },
+        {
+          "date": "2026-10-20",
+          "strategy_nav": 0.745307,
+          "spy_nav": 1.042412,
+          "xlk_nav": 1.012172
+        },
+        {
+          "date": "2026-10-21",
+          "strategy_nav": 0.765546,
+          "spy_nav": 1.047888,
+          "xlk_nav": 1.029092
+        },
+        {
+          "date": "2026-10-22",
+          "strategy_nav": 0.702479,
+          "spy_nav": 1.035513,
+          "xlk_nav": 0.995251
+        },
+        {
+          "date": "2026-10-23",
+          "strategy_nav": 0.714251,
+          "spy_nav": 1.030105,
+          "xlk_nav": 1.000109
+        },
+        {
+          "date": "2026-10-26",
+          "strategy_nav": 0.734903,
+          "spy_nav": 1.037424,
+          "xlk_nav": 1.016975
+        },
+        {
+          "date": "2026-10-27",
+          "strategy_nav": 0.767837,
+          "spy_nav": 1.043239,
+          "xlk_nav": 1.034278
+        },
+        {
+          "date": "2026-10-28",
+          "strategy_nav": 0.787196,
+          "spy_nav": 1.046831,
+          "xlk_nav": 1.042519
+        },
+        {
+          "date": "2026-10-29",
+          "strategy_nav": 0.760359,
+          "spy_nav": 1.042832,
+          "xlk_nav": 1.030184
+        },
+        {
+          "date": "2026-10-30",
+          "strategy_nav": 0.697914,
+          "spy_nav": 1.024344,
+          "xlk_nav": 0.979805
+        },
+        {
+          "date": "2026-11-02",
+          "strategy_nav": 0.64594,
+          "spy_nav": 1.019437,
+          "xlk_nav": 0.950931
+        },
+        {
+          "date": "2026-11-03",
+          "strategy_nav": 0.663413,
+          "spy_nav": 1.022487,
+          "xlk_nav": 0.96343
+        },
+        {
+          "date": "2026-11-04",
+          "strategy_nav": 0.620493,
+          "spy_nav": 1.039376,
+          "xlk_nav": 0.963375
+        },
+        {
+          "date": "2026-11-05",
+          "strategy_nav": 0.567501,
+          "spy_nav": 0.993548,
+          "xlk_nav": 0.886305
+        },
+        {
+          "date": "2026-11-06",
+          "strategy_nav": 0.580024,
+          "spy_nav": 0.996652,
+          "xlk_nav": 0.899187
+        }
+      ],
+      "monthly": [
+        {
+          "month": "2026-06",
+          "strategy": 0.1056,
+          "spy": 0.01221,
+          "xlk": 0.0399
+        },
+        {
+          "month": "2026-07",
+          "strategy": -0.28541,
+          "spy": 0.00035,
+          "xlk": -0.07962
+        },
+        {
+          "month": "2026-08",
+          "strategy": 0.0063,
+          "spy": 0.0268,
+          "xlk": 0.06359
+        },
+        {
+          "month": "2026-09",
+          "strategy": 0.10733,
+          "spy": -0.00576,
+          "xlk": 0.0496
+        },
+        {
+          "month": "2026-10",
+          "strategy": -0.20725,
+          "spy": -0.00906,
+          "xlk": -0.08296
+        },
+        {
+          "month": "2026-11",
+          "strategy": -0.16892,
+          "spy": -0.02703,
+          "xlk": -0.08228
+        }
+      ],
+      "trades": [
+        {
+          "date": "2026-06-11",
+          "signal_date": "2026-06-10",
+          "tickers": [
+            "KLAC",
+            "AMAT",
+            "APH",
+            "STM",
+            "ASML",
+            "DELL",
+            "MRVL",
+            "HPE"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.5,
+          "cost_fraction": 0.0005
+        },
+        {
+          "date": "2026-07-01",
+          "signal_date": "2026-06-30",
+          "tickers": [
+            "AMAT",
+            "UCTT",
+            "KLAC",
+            "GLW",
+            "AMD",
+            "MRVL",
+            "GEV",
+            "APH"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.507972,
+          "cost_fraction": 0.000508
+        },
+        {
+          "date": "2026-08-03",
+          "signal_date": "2026-07-31",
+          "tickers": [
+            "ANET",
+            "HPE",
+            "APH",
+            "MPWR",
+            "ETN",
+            "AVGO",
+            "SWKS",
+            "CLS"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.875,
+          "cost_fraction": 0.000875
+        },
+        {
+          "date": "2026-09-01",
+          "signal_date": "2026-08-31",
+          "tickers": [
+            "LITE",
+            "DELL",
+            "ANET",
+            "MU",
+            "QCOM",
+            "SMCI",
+            "CEG",
+            "HPE"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.75,
+          "cost_fraction": 0.00075
+        },
+        {
+          "date": "2026-10-01",
+          "signal_date": "2026-09-30",
+          "tickers": [
+            "FORM",
+            "HPE",
+            "ONTO",
+            "ACLS",
+            "AMD",
+            "MRVL",
+            "LITE",
+            "SWKS"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.75,
+          "cost_fraction": 0.00075
+        },
+        {
+          "date": "2026-11-02",
+          "signal_date": "2026-10-30",
+          "tickers": [
+            "NXPI",
+            "SWKS",
+            "ENTG",
+            "MCHP",
+            "CEG",
+            "APH",
+            "VRT",
+            "VST"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.875,
+          "cost_fraction": 0.000875
+        }
+      ],
+      "limitations": [
+        "Current 40-stock universe used historically: strong survivorship/selection bias",
+        "No delisted securities, adjusted dividends or splits separately audited; provider close data as delivered",
+        "No intraday fill or market-impact estimates; close-price execution assumes liquidity",
+        "Realized returns based on prior-day signals with one-session close execution lag",
+        "SEC as-filed fundamentals and 2026 M7 supply Alpha NOT incorporated in historical returns",
+        "Short historical window (up to 330 calendar days): insufficient to validate a robust trading edge"
+      ]
+    },
+    "Top 8 · 10 bps": {
+      "status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
+      "strategy_id": "M7-MOMENTUM-8-MONTHLY-v1",
+      "start_date": "2026-06-12",
+      "end_date": "2026-11-06",
+      "universe": 40,
+      "min_history": 65,
+      "signal": "30% 5-session momentum + 40% 20-session XLK-excess + 20% 60-session momentum + 10% inverse realized volatility percentile; no fundamentals or current Alpha",
+      "rebalance": "monthly, next-trading-day close fill after prior-close signal",
+      "risk": "equal weight top 8, max 3 names per sector, no leverage",
+      "one_way_bps": 10,
+      "metrics": {
+        "total_return": -0.422402,
+        "cagr_annualized": -0.738908,
+        "annualized_volatility": 0.59502,
+        "sharpe_rf0": -1.952,
+        "sortino_rf0": -2.393,
+        "max_drawdown": -0.488595,
+        "positive_day_rate": 0.5534,
+        "days": 103,
+        "turnover_one_way": 4.25797,
+        "total_transaction_cost_bps": 85.1594,
+        "ending_nav": 0.577598
+      },
+      "benchmarks": {
+        "SPY": {
+          "total_return": -0.003348,
+          "cagr_annualized": -0.008171,
+          "annualized_volatility": 0.136746,
+          "sharpe_rf0": 0.008,
+          "sortino_rf0": 0.011,
+          "max_drawdown": -0.059159,
+          "positive_day_rate": 0.466,
+          "days": 103,
+          "turnover_one_way": 0,
+          "total_transaction_cost_bps": 0,
+          "ending_nav": 0.996652
+        },
+        "XLK": {
+          "total_return": -0.100813,
+          "cagr_annualized": -0.228938,
+          "annualized_volatility": 0.314064,
+          "sharpe_rf0": -0.671,
+          "sortino_rf0": -0.885,
+          "max_drawdown": -0.196139,
+          "positive_day_rate": 0.4854,
+          "days": 103,
+          "turnover_one_way": 0,
+          "total_transaction_cost_bps": 0,
+          "ending_nav": 0.899187
+        }
+      },
+      "information_ratio": -2.223,
+      "curve": [
+        {
+          "date": "2026-06-12",
+          "strategy_nav": 1.011185,
+          "spy_nav": 1.005408,
+          "xlk_nav": 1.008679
+        },
+        {
+          "date": "2026-06-15",
+          "strategy_nav": 1.044376,
+          "spy_nav": 1.023138,
+          "xlk_nav": 1.046831
+        },
+        {
+          "date": "2026-06-16",
+          "strategy_nav": 1.001097,
+          "spy_nav": 1.017038,
+          "xlk_nav": 1.01763
+        },
+        {
+          "date": "2026-06-17",
+          "strategy_nav": 1.020803,
+          "spy_nav": 1.004337,
+          "xlk_nav": 1.014137
+        },
+        {
+          "date": "2026-06-18",
+          "strategy_nav": 1.055616,
+          "spy_nav": 1.012172,
+          "xlk_nav": 1.044921
+        },
+        {
+          "date": "2026-06-22",
+          "strategy_nav": 1.074209,
+          "spy_nav": 1.008987,
+          "xlk_nav": 1.048796
+        },
+        {
+          "date": "2026-06-23",
+          "strategy_nav": 1.012808,
+          "spy_nav": 0.994334,
+          "xlk_nav": 1.005349
+        },
+        {
+          "date": "2026-06-24",
+          "strategy_nav": 1.013306,
+          "spy_nav": 0.993873,
+          "xlk_nav": 0.999127
+        },
+        {
+          "date": "2026-06-25",
+          "strategy_nav": 1.041367,
+          "spy_nav": 0.99531,
+          "xlk_nav": 1.007423
+        },
+        {
+          "date": "2026-06-26",
+          "strategy_nav": 0.999387,
+          "spy_nav": 0.988113,
+          "xlk_nav": 0.988538
+        },
+        {
+          "date": "2026-06-29",
+          "strategy_nav": 1.055104,
+          "spy_nav": 1.004392,
+          "xlk_nav": 1.012008
+        },
+        {
+          "date": "2026-06-30",
+          "strategy_nav": 1.105049,
+          "spy_nav": 1.012213,
+          "xlk_nav": 1.0399
+        },
+        {
+          "date": "2026-07-01",
+          "strategy_nav": 1.034147,
+          "spy_nav": 1.010844,
+          "xlk_nav": 1.013154
+        },
+        {
+          "date": "2026-07-02",
+          "strategy_nav": 0.945315,
+          "spy_nav": 1.009515,
+          "xlk_nav": 0.985699
+        },
+        {
+          "date": "2026-07-06",
+          "strategy_nav": 0.956241,
+          "spy_nav": 1.018326,
+          "xlk_nav": 1.001965
+        },
+        {
+          "date": "2026-07-07",
+          "strategy_nav": 0.888191,
+          "spy_nav": 1.013487,
+          "xlk_nav": 0.978003
+        },
+        {
+          "date": "2026-07-08",
+          "strategy_nav": 0.902757,
+          "spy_nav": 1.010356,
+          "xlk_nav": 0.990121
+        },
+        {
+          "date": "2026-07-09",
+          "strategy_nav": 0.936538,
+          "spy_nav": 1.018909,
+          "xlk_nav": 1.011681
+        },
+        {
+          "date": "2026-07-10",
+          "strategy_nav": 0.938059,
+          "spy_nav": 1.0233,
+          "xlk_nav": 1.014028
+        },
+        {
+          "date": "2026-07-13",
+          "strategy_nav": 0.893477,
+          "spy_nav": 1.015466,
+          "xlk_nav": 0.989466
+        },
+        {
+          "date": "2026-07-14",
+          "strategy_nav": 0.919656,
+          "spy_nav": 1.019071,
+          "xlk_nav": 1.002238
+        },
+        {
+          "date": "2026-07-15",
+          "strategy_nav": 0.889753,
+          "spy_nav": 1.02311,
+          "xlk_nav": 0.991103
+        },
+        {
+          "date": "2026-07-16",
+          "strategy_nav": 0.844392,
+          "spy_nav": 1.017567,
+          "xlk_nav": 0.968943
+        },
+        {
+          "date": "2026-07-17",
+          "strategy_nav": 0.832546,
+          "spy_nav": 1.007496,
+          "xlk_nav": 0.958408
+        },
+        {
+          "date": "2026-07-20",
+          "strategy_nav": 0.834459,
+          "spy_nav": 1.005869,
+          "xlk_nav": 0.959063
+        },
+        {
+          "date": "2026-07-21",
+          "strategy_nav": 0.887153,
+          "spy_nav": 1.014259,
+          "xlk_nav": 0.986736
+        },
+        {
+          "date": "2026-07-22",
+          "strategy_nav": 0.867513,
+          "spy_nav": 1.01308,
+          "xlk_nav": 0.983953
+        },
+        {
+          "date": "2026-07-23",
+          "strategy_nav": 0.872892,
+          "spy_nav": 1.000569,
+          "xlk_nav": 0.974019
+        },
+        {
+          "date": "2026-07-24",
+          "strategy_nav": 0.833516,
+          "spy_nav": 1.001586,
+          "xlk_nav": 0.959991
+        },
+        {
+          "date": "2026-07-27",
+          "strategy_nav": 0.805059,
+          "spy_nav": 1.001803,
+          "xlk_nav": 0.951367
+        },
+        {
+          "date": "2026-07-28",
+          "strategy_nav": 0.744624,
+          "spy_nav": 1.004202,
+          "xlk_nav": 0.933846
+        },
+        {
+          "date": "2026-07-29",
+          "strategy_nav": 0.706342,
+          "spy_nav": 0.98875,
+          "xlk_nav": 0.909175
+        },
+        {
+          "date": "2026-07-30",
+          "strategy_nav": 0.783571,
+          "spy_nav": 1.005327,
+          "xlk_nav": 0.959172
+        },
+        {
+          "date": "2026-07-31",
+          "strategy_nav": 0.789224,
+          "spy_nav": 1.012565,
+          "xlk_nav": 0.957098
+        },
+        {
+          "date": "2026-08-03",
+          "strategy_nav": 0.810863,
+          "spy_nav": 1.026987,
+          "xlk_nav": 0.971781
+        },
+        {
+          "date": "2026-08-04",
+          "strategy_nav": 0.847093,
+          "spy_nav": 1.045503,
+          "xlk_nav": 1.020141
+        },
+        {
+          "date": "2026-08-05",
+          "strategy_nav": 0.852293,
+          "spy_nav": 1.043415,
+          "xlk_nav": 1.014737
+        },
+        {
+          "date": "2026-08-06",
+          "strategy_nav": 0.834266,
+          "spy_nav": 1.041748,
+          "xlk_nav": 1.011571
+        },
+        {
+          "date": "2026-08-07",
+          "strategy_nav": 0.845355,
+          "spy_nav": 1.048119,
+          "xlk_nav": 1.025981
+        },
+        {
+          "date": "2026-08-10",
+          "strategy_nav": 0.841178,
+          "spy_nav": 1.047807,
+          "xlk_nav": 1.016975
+        },
+        {
+          "date": "2026-08-11",
+          "strategy_nav": 0.845001,
+          "spy_nav": 1.044459,
+          "xlk_nav": 1.01572
+        },
+        {
+          "date": "2026-08-12",
+          "strategy_nav": 0.875204,
+          "spy_nav": 1.047075,
+          "xlk_nav": 1.030839
+        },
+        {
+          "date": "2026-08-13",
+          "strategy_nav": 0.867679,
+          "spy_nav": 1.054381,
+          "xlk_nav": 1.041264
+        },
+        {
+          "date": "2026-08-14",
+          "strategy_nav": 0.855849,
+          "spy_nav": 1.052293,
+          "xlk_nav": 1.037116
+        },
+        {
+          "date": "2026-08-17",
+          "strategy_nav": 0.857863,
+          "spy_nav": 1.047319,
+          "xlk_nav": 1.038808
+        },
+        {
+          "date": "2026-08-18",
+          "strategy_nav": 0.817963,
+          "spy_nav": 1.040243,
+          "xlk_nav": 1.013154
+        },
+        {
+          "date": "2026-08-19",
+          "strategy_nav": 0.797394,
+          "spy_nav": 1.042426,
+          "xlk_nav": 1.002347
+        },
+        {
+          "date": "2026-08-20",
+          "strategy_nav": 0.791937,
+          "spy_nav": 1.033669,
+          "xlk_nav": 0.9994
+        },
+        {
+          "date": "2026-08-21",
+          "strategy_nav": 0.797699,
+          "spy_nav": 1.037898,
+          "xlk_nav": 1.000546
+        },
+        {
+          "date": "2026-08-24",
+          "strategy_nav": 0.786135,
+          "spy_nav": 1.034849,
+          "xlk_nav": 0.982752
+        },
+        {
+          "date": "2026-08-25",
+          "strategy_nav": 0.79446,
+          "spy_nav": 1.038156,
+          "xlk_nav": 0.991976
+        },
+        {
+          "date": "2026-08-26",
+          "strategy_nav": 0.809543,
+          "spy_nav": 1.038386,
+          "xlk_nav": 0.99798
+        },
+        {
+          "date": "2026-08-27",
+          "strategy_nav": 0.815352,
+          "spy_nav": 1.045191,
+          "xlk_nav": 1.029474
+        },
+        {
+          "date": "2026-08-28",
+          "strategy_nav": 0.789725,
+          "spy_nav": 1.042819,
+          "xlk_nav": 1.013536
+        },
+        {
+          "date": "2026-08-31",
+          "strategy_nav": 0.793535,
+          "spy_nav": 1.039701,
+          "xlk_nav": 1.017957
+        },
+        {
+          "date": "2026-09-01",
+          "strategy_nav": 0.782874,
+          "spy_nav": 1.032558,
+          "xlk_nav": 1.002347
+        },
+        {
+          "date": "2026-09-02",
+          "strategy_nav": 0.80608,
+          "spy_nav": 1.037139,
+          "xlk_nav": 1.002129
+        },
+        {
+          "date": "2026-09-03",
+          "strategy_nav": 0.816781,
+          "spy_nav": 1.047997,
+          "xlk_nav": 1.015065
+        },
+        {
+          "date": "2026-09-04",
+          "strategy_nav": 0.834539,
+          "spy_nav": 1.043957,
+          "xlk_nav": 1.022215
+        },
+        {
+          "date": "2026-09-08",
+          "strategy_nav": 0.859311,
+          "spy_nav": 1.038224,
+          "xlk_nav": 1.025435
+        },
+        {
+          "date": "2026-09-09",
+          "strategy_nav": 0.864167,
+          "spy_nav": 1.033398,
+          "xlk_nav": 1.025435
+        },
+        {
+          "date": "2026-09-10",
+          "strategy_nav": 0.830607,
+          "spy_nav": 1.027204,
+          "xlk_nav": 1.010971
+        },
+        {
+          "date": "2026-09-11",
+          "strategy_nav": 0.871826,
+          "spy_nav": 1.03596,
+          "xlk_nav": 1.024344
+        },
+        {
+          "date": "2026-09-14",
+          "strategy_nav": 0.812568,
+          "spy_nav": 1.031338,
+          "xlk_nav": 1.00584
+        },
+        {
+          "date": "2026-09-15",
+          "strategy_nav": 0.818933,
+          "spy_nav": 1.026608,
+          "xlk_nav": 1.002893
+        },
+        {
+          "date": "2026-09-16",
+          "strategy_nav": 0.837739,
+          "spy_nav": 1.02208,
+          "xlk_nav": 1.00393
+        },
+        {
+          "date": "2026-09-17",
+          "strategy_nav": 0.868075,
+          "spy_nav": 1.033669,
+          "xlk_nav": 1.026472
+        },
+        {
+          "date": "2026-09-18",
+          "strategy_nav": 0.858372,
+          "spy_nav": 1.032436,
+          "xlk_nav": 1.034878
+        },
+        {
+          "date": "2026-09-21",
+          "strategy_nav": 0.888533,
+          "spy_nav": 1.048444,
+          "xlk_nav": 1.063534
+        },
+        {
+          "date": "2026-09-22",
+          "strategy_nav": 0.889181,
+          "spy_nav": 1.048281,
+          "xlk_nav": 1.071284
+        },
+        {
+          "date": "2026-09-23",
+          "strategy_nav": 0.886759,
+          "spy_nav": 1.040731,
+          "xlk_nav": 1.066208
+        },
+        {
+          "date": "2026-09-24",
+          "strategy_nav": 0.884682,
+          "spy_nav": 1.039877,
+          "xlk_nav": 1.062769
+        },
+        {
+          "date": "2026-09-25",
+          "strategy_nav": 0.901542,
+          "spy_nav": 1.04553,
+          "xlk_nav": 1.071284
+        },
+        {
+          "date": "2026-09-28",
+          "strategy_nav": 0.876953,
+          "spy_nav": 1.037749,
+          "xlk_nav": 1.061787
+        },
+        {
+          "date": "2026-09-29",
+          "strategy_nav": 0.877287,
+          "spy_nav": 1.035838,
+          "xlk_nav": 1.061623
+        },
+        {
+          "date": "2026-09-30",
+          "strategy_nav": 0.878066,
+          "spy_nav": 1.03371,
+          "xlk_nav": 1.068446
+        },
+        {
+          "date": "2026-10-01",
+          "strategy_nav": 0.895314,
+          "spy_nav": 1.035554,
+          "xlk_nav": 1.07969
+        },
+        {
+          "date": "2026-10-02",
+          "strategy_nav": 0.928194,
+          "spy_nav": 1.043212,
+          "xlk_nav": 1.090606
+        },
+        {
+          "date": "2026-10-05",
+          "strategy_nav": 0.918678,
+          "spy_nav": 1.050247,
+          "xlk_nav": 1.09672
+        },
+        {
+          "date": "2026-10-06",
+          "strategy_nav": 0.924941,
+          "spy_nav": 1.056021,
+          "xlk_nav": 1.10256
+        },
+        {
+          "date": "2026-10-07",
+          "strategy_nav": 0.917902,
+          "spy_nav": 1.053486,
+          "xlk_nav": 1.09923
+        },
+        {
+          "date": "2026-10-08",
+          "strategy_nav": 0.886797,
+          "spy_nav": 1.049027,
+          "xlk_nav": 1.079526
+        },
+        {
+          "date": "2026-10-09",
+          "strategy_nav": 0.892545,
+          "spy_nav": 1.055316,
+          "xlk_nav": 1.084984
+        },
+        {
+          "date": "2026-10-12",
+          "strategy_nav": 0.846699,
+          "spy_nav": 1.054679,
+          "xlk_nav": 1.071776
+        },
+        {
+          "date": "2026-10-13",
+          "strategy_nav": 0.841507,
+          "spy_nav": 1.054557,
+          "xlk_nav": 1.071339
+        },
+        {
+          "date": "2026-10-14",
+          "strategy_nav": 0.786925,
+          "spy_nav": 1.043158,
+          "xlk_nav": 1.039408
+        },
+        {
+          "date": "2026-10-15",
+          "strategy_nav": 0.765023,
+          "spy_nav": 1.046126,
+          "xlk_nav": 1.03264
+        },
+        {
+          "date": "2026-10-16",
+          "strategy_nav": 0.727463,
+          "spy_nav": 1.034551,
+          "xlk_nav": 1.001419
+        },
+        {
+          "date": "2026-10-19",
+          "strategy_nav": 0.744309,
+          "spy_nav": 1.038929,
+          "xlk_nav": 1.01501
+        },
+        {
+          "date": "2026-10-20",
+          "strategy_nav": 0.742823,
+          "spy_nav": 1.042412,
+          "xlk_nav": 1.012172
+        },
+        {
+          "date": "2026-10-21",
+          "strategy_nav": 0.762994,
+          "spy_nav": 1.047888,
+          "xlk_nav": 1.029092
+        },
+        {
+          "date": "2026-10-22",
+          "strategy_nav": 0.700137,
+          "spy_nav": 1.035513,
+          "xlk_nav": 0.995251
+        },
+        {
+          "date": "2026-10-23",
+          "strategy_nav": 0.711871,
+          "spy_nav": 1.030105,
+          "xlk_nav": 1.000109
+        },
+        {
+          "date": "2026-10-26",
+          "strategy_nav": 0.732454,
+          "spy_nav": 1.037424,
+          "xlk_nav": 1.016975
+        },
+        {
+          "date": "2026-10-27",
+          "strategy_nav": 0.765278,
+          "spy_nav": 1.043239,
+          "xlk_nav": 1.034278
+        },
+        {
+          "date": "2026-10-28",
+          "strategy_nav": 0.784573,
+          "spy_nav": 1.046831,
+          "xlk_nav": 1.042519
+        },
+        {
+          "date": "2026-10-29",
+          "strategy_nav": 0.757825,
+          "spy_nav": 1.042832,
+          "xlk_nav": 1.030184
+        },
+        {
+          "date": "2026-10-30",
+          "strategy_nav": 0.695588,
+          "spy_nav": 1.024344,
+          "xlk_nav": 0.979805
+        },
+        {
+          "date": "2026-11-02",
+          "strategy_nav": 0.643787,
+          "spy_nav": 1.019437,
+          "xlk_nav": 0.950931
+        },
+        {
+          "date": "2026-11-03",
+          "strategy_nav": 0.660639,
+          "spy_nav": 1.022487,
+          "xlk_nav": 0.96343
+        },
+        {
+          "date": "2026-11-04",
+          "strategy_nav": 0.617898,
+          "spy_nav": 1.039376,
+          "xlk_nav": 0.963375
+        },
+        {
+          "date": "2026-11-05",
+          "strategy_nav": 0.565128,
+          "spy_nav": 0.993548,
+          "xlk_nav": 0.886305
+        },
+        {
+          "date": "2026-11-06",
+          "strategy_nav": 0.577598,
+          "spy_nav": 0.996652,
+          "xlk_nav": 0.899187
+        }
+      ],
+      "monthly": [
+        {
+          "month": "2026-06",
+          "strategy": 0.10505,
+          "spy": 0.01221,
+          "xlk": 0.0399
+        },
+        {
+          "month": "2026-07",
+          "strategy": -0.2858,
+          "spy": 0.00035,
+          "xlk": -0.07962
+        },
+        {
+          "month": "2026-08",
+          "strategy": 0.00546,
+          "spy": 0.0268,
+          "xlk": 0.06359
+        },
+        {
+          "month": "2026-09",
+          "strategy": 0.10652,
+          "spy": -0.00576,
+          "xlk": 0.0496
+        },
+        {
+          "month": "2026-10",
+          "strategy": -0.20782,
+          "spy": -0.00906,
+          "xlk": -0.08296
+        },
+        {
+          "month": "2026-11",
+          "strategy": -0.16963,
+          "spy": -0.02703,
+          "xlk": -0.08228
+        }
+      ],
+      "trades": [
+        {
+          "date": "2026-06-11",
+          "signal_date": "2026-06-10",
+          "tickers": [
+            "KLAC",
+            "AMAT",
+            "APH",
+            "STM",
+            "ASML",
+            "DELL",
+            "MRVL",
+            "HPE"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.5,
+          "cost_fraction": 0.001
+        },
+        {
+          "date": "2026-07-01",
+          "signal_date": "2026-06-30",
+          "tickers": [
+            "AMAT",
+            "UCTT",
+            "KLAC",
+            "GLW",
+            "AMD",
+            "MRVL",
+            "GEV",
+            "APH"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.507972,
+          "cost_fraction": 0.0010159
+        },
+        {
+          "date": "2026-08-03",
+          "signal_date": "2026-07-31",
+          "tickers": [
+            "ANET",
+            "HPE",
+            "APH",
+            "MPWR",
+            "ETN",
+            "AVGO",
+            "SWKS",
+            "CLS"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.875,
+          "cost_fraction": 0.00175
+        },
+        {
+          "date": "2026-09-01",
+          "signal_date": "2026-08-31",
+          "tickers": [
+            "LITE",
+            "DELL",
+            "ANET",
+            "MU",
+            "QCOM",
+            "SMCI",
+            "CEG",
+            "HPE"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.75,
+          "cost_fraction": 0.0015
+        },
+        {
+          "date": "2026-10-01",
+          "signal_date": "2026-09-30",
+          "tickers": [
+            "FORM",
+            "HPE",
+            "ONTO",
+            "ACLS",
+            "AMD",
+            "MRVL",
+            "LITE",
+            "SWKS"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.75,
+          "cost_fraction": 0.0015
+        },
+        {
+          "date": "2026-11-02",
+          "signal_date": "2026-10-30",
+          "tickers": [
+            "NXPI",
+            "SWKS",
+            "ENTG",
+            "MCHP",
+            "CEG",
+            "APH",
+            "VRT",
+            "VST"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.875,
+          "cost_fraction": 0.00175
+        }
+      ],
+      "limitations": [
+        "Current 40-stock universe used historically: strong survivorship/selection bias",
+        "No delisted securities, adjusted dividends or splits separately audited; provider close data as delivered",
+        "No intraday fill or market-impact estimates; close-price execution assumes liquidity",
+        "Realized returns based on prior-day signals with one-session close execution lag",
+        "SEC as-filed fundamentals and 2026 M7 supply Alpha NOT incorporated in historical returns",
+        "Short historical window (up to 330 calendar days): insufficient to validate a robust trading edge"
+      ]
+    },
+    "Top 8 · 20 bps": {
+      "status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
+      "strategy_id": "M7-MOMENTUM-8-MONTHLY-v1",
+      "start_date": "2026-06-12",
+      "end_date": "2026-11-06",
+      "universe": 40,
+      "min_history": 65,
+      "signal": "30% 5-session momentum + 40% 20-session XLK-excess + 20% 60-session momentum + 10% inverse realized volatility percentile; no fundamentals or current Alpha",
+      "rebalance": "monthly, next-trading-day close fill after prior-close signal",
+      "risk": "equal weight top 8, max 3 names per sector, no leverage",
+      "one_way_bps": 20,
+      "metrics": {
+        "total_return": -0.427228,
+        "cagr_annualized": -0.744214,
+        "annualized_volatility": 0.594269,
+        "sharpe_rf0": -1.99,
+        "sortino_rf0": -2.434,
+        "max_drawdown": -0.492366,
+        "positive_day_rate": 0.5534,
+        "days": 103,
+        "turnover_one_way": 4.25797,
+        "total_transaction_cost_bps": 170.3189,
+        "ending_nav": 0.572772
+      },
+      "benchmarks": {
+        "SPY": {
+          "total_return": -0.003348,
+          "cagr_annualized": -0.008171,
+          "annualized_volatility": 0.136746,
+          "sharpe_rf0": 0.008,
+          "sortino_rf0": 0.011,
+          "max_drawdown": -0.059159,
+          "positive_day_rate": 0.466,
+          "days": 103,
+          "turnover_one_way": 0,
+          "total_transaction_cost_bps": 0,
+          "ending_nav": 0.996652
+        },
+        "XLK": {
+          "total_return": -0.100813,
+          "cagr_annualized": -0.228938,
+          "annualized_volatility": 0.314064,
+          "sharpe_rf0": -0.671,
+          "sortino_rf0": -0.885,
+          "max_drawdown": -0.196139,
+          "positive_day_rate": 0.4854,
+          "days": 103,
+          "turnover_one_way": 0,
+          "total_transaction_cost_bps": 0,
+          "ending_nav": 0.899187
+        }
+      },
+      "information_ratio": -2.266,
+      "curve": [
+        {
+          "date": "2026-06-12",
+          "strategy_nav": 1.010185,
+          "spy_nav": 1.005408,
+          "xlk_nav": 1.008679
+        },
+        {
+          "date": "2026-06-15",
+          "strategy_nav": 1.043343,
+          "spy_nav": 1.023138,
+          "xlk_nav": 1.046831
+        },
+        {
+          "date": "2026-06-16",
+          "strategy_nav": 1.000107,
+          "spy_nav": 1.017038,
+          "xlk_nav": 1.01763
+        },
+        {
+          "date": "2026-06-17",
+          "strategy_nav": 1.019794,
+          "spy_nav": 1.004337,
+          "xlk_nav": 1.014137
+        },
+        {
+          "date": "2026-06-18",
+          "strategy_nav": 1.054572,
+          "spy_nav": 1.012172,
+          "xlk_nav": 1.044921
+        },
+        {
+          "date": "2026-06-22",
+          "strategy_nav": 1.073147,
+          "spy_nav": 1.008987,
+          "xlk_nav": 1.048796
+        },
+        {
+          "date": "2026-06-23",
+          "strategy_nav": 1.011806,
+          "spy_nav": 0.994334,
+          "xlk_nav": 1.005349
+        },
+        {
+          "date": "2026-06-24",
+          "strategy_nav": 1.012304,
+          "spy_nav": 0.993873,
+          "xlk_nav": 0.999127
+        },
+        {
+          "date": "2026-06-25",
+          "strategy_nav": 1.040337,
+          "spy_nav": 0.99531,
+          "xlk_nav": 1.007423
+        },
+        {
+          "date": "2026-06-26",
+          "strategy_nav": 0.998399,
+          "spy_nav": 0.988113,
+          "xlk_nav": 0.988538
+        },
+        {
+          "date": "2026-06-29",
+          "strategy_nav": 1.054061,
+          "spy_nav": 1.004392,
+          "xlk_nav": 1.012008
+        },
+        {
+          "date": "2026-06-30",
+          "strategy_nav": 1.103957,
+          "spy_nav": 1.012213,
+          "xlk_nav": 1.0399
+        },
+        {
+          "date": "2026-07-01",
+          "strategy_nav": 1.033124,
+          "spy_nav": 1.010844,
+          "xlk_nav": 1.013154
+        },
+        {
+          "date": "2026-07-02",
+          "strategy_nav": 0.943331,
+          "spy_nav": 1.009515,
+          "xlk_nav": 0.985699
+        },
+        {
+          "date": "2026-07-06",
+          "strategy_nav": 0.954233,
+          "spy_nav": 1.018326,
+          "xlk_nav": 1.001965
+        },
+        {
+          "date": "2026-07-07",
+          "strategy_nav": 0.886326,
+          "spy_nav": 1.013487,
+          "xlk_nav": 0.978003
+        },
+        {
+          "date": "2026-07-08",
+          "strategy_nav": 0.900862,
+          "spy_nav": 1.010356,
+          "xlk_nav": 0.990121
+        },
+        {
+          "date": "2026-07-09",
+          "strategy_nav": 0.934572,
+          "spy_nav": 1.018909,
+          "xlk_nav": 1.011681
+        },
+        {
+          "date": "2026-07-10",
+          "strategy_nav": 0.93609,
+          "spy_nav": 1.0233,
+          "xlk_nav": 1.014028
+        },
+        {
+          "date": "2026-07-13",
+          "strategy_nav": 0.891602,
+          "spy_nav": 1.015466,
+          "xlk_nav": 0.989466
+        },
+        {
+          "date": "2026-07-14",
+          "strategy_nav": 0.917726,
+          "spy_nav": 1.019071,
+          "xlk_nav": 1.002238
+        },
+        {
+          "date": "2026-07-15",
+          "strategy_nav": 0.887885,
+          "spy_nav": 1.02311,
+          "xlk_nav": 0.991103
+        },
+        {
+          "date": "2026-07-16",
+          "strategy_nav": 0.84262,
+          "spy_nav": 1.017567,
+          "xlk_nav": 0.968943
+        },
+        {
+          "date": "2026-07-17",
+          "strategy_nav": 0.830799,
+          "spy_nav": 1.007496,
+          "xlk_nav": 0.958408
+        },
+        {
+          "date": "2026-07-20",
+          "strategy_nav": 0.832707,
+          "spy_nav": 1.005869,
+          "xlk_nav": 0.959063
+        },
+        {
+          "date": "2026-07-21",
+          "strategy_nav": 0.885291,
+          "spy_nav": 1.014259,
+          "xlk_nav": 0.986736
+        },
+        {
+          "date": "2026-07-22",
+          "strategy_nav": 0.865692,
+          "spy_nav": 1.01308,
+          "xlk_nav": 0.983953
+        },
+        {
+          "date": "2026-07-23",
+          "strategy_nav": 0.87106,
+          "spy_nav": 1.000569,
+          "xlk_nav": 0.974019
+        },
+        {
+          "date": "2026-07-24",
+          "strategy_nav": 0.831766,
+          "spy_nav": 1.001586,
+          "xlk_nav": 0.959991
+        },
+        {
+          "date": "2026-07-27",
+          "strategy_nav": 0.803369,
+          "spy_nav": 1.001803,
+          "xlk_nav": 0.951367
+        },
+        {
+          "date": "2026-07-28",
+          "strategy_nav": 0.743061,
+          "spy_nav": 1.004202,
+          "xlk_nav": 0.933846
+        },
+        {
+          "date": "2026-07-29",
+          "strategy_nav": 0.704859,
+          "spy_nav": 0.98875,
+          "xlk_nav": 0.909175
+        },
+        {
+          "date": "2026-07-30",
+          "strategy_nav": 0.781926,
+          "spy_nav": 1.005327,
+          "xlk_nav": 0.959172
+        },
+        {
+          "date": "2026-07-31",
+          "strategy_nav": 0.787567,
+          "spy_nav": 1.012565,
+          "xlk_nav": 0.957098
+        },
+        {
+          "date": "2026-08-03",
+          "strategy_nav": 0.809161,
+          "spy_nav": 1.026987,
+          "xlk_nav": 0.971781
+        },
+        {
+          "date": "2026-08-04",
+          "strategy_nav": 0.843899,
+          "spy_nav": 1.045503,
+          "xlk_nav": 1.020141
+        },
+        {
+          "date": "2026-08-05",
+          "strategy_nav": 0.849079,
+          "spy_nav": 1.043415,
+          "xlk_nav": 1.014737
+        },
+        {
+          "date": "2026-08-06",
+          "strategy_nav": 0.83112,
+          "spy_nav": 1.041748,
+          "xlk_nav": 1.011571
+        },
+        {
+          "date": "2026-08-07",
+          "strategy_nav": 0.842167,
+          "spy_nav": 1.048119,
+          "xlk_nav": 1.025981
+        },
+        {
+          "date": "2026-08-10",
+          "strategy_nav": 0.838006,
+          "spy_nav": 1.047807,
+          "xlk_nav": 1.016975
+        },
+        {
+          "date": "2026-08-11",
+          "strategy_nav": 0.841815,
+          "spy_nav": 1.044459,
+          "xlk_nav": 1.01572
+        },
+        {
+          "date": "2026-08-12",
+          "strategy_nav": 0.871903,
+          "spy_nav": 1.047075,
+          "xlk_nav": 1.030839
+        },
+        {
+          "date": "2026-08-13",
+          "strategy_nav": 0.864407,
+          "spy_nav": 1.054381,
+          "xlk_nav": 1.041264
+        },
+        {
+          "date": "2026-08-14",
+          "strategy_nav": 0.852622,
+          "spy_nav": 1.052293,
+          "xlk_nav": 1.037116
+        },
+        {
+          "date": "2026-08-17",
+          "strategy_nav": 0.854628,
+          "spy_nav": 1.047319,
+          "xlk_nav": 1.038808
+        },
+        {
+          "date": "2026-08-18",
+          "strategy_nav": 0.814878,
+          "spy_nav": 1.040243,
+          "xlk_nav": 1.013154
+        },
+        {
+          "date": "2026-08-19",
+          "strategy_nav": 0.794387,
+          "spy_nav": 1.042426,
+          "xlk_nav": 1.002347
+        },
+        {
+          "date": "2026-08-20",
+          "strategy_nav": 0.788951,
+          "spy_nav": 1.033669,
+          "xlk_nav": 0.9994
+        },
+        {
+          "date": "2026-08-21",
+          "strategy_nav": 0.794691,
+          "spy_nav": 1.037898,
+          "xlk_nav": 1.000546
+        },
+        {
+          "date": "2026-08-24",
+          "strategy_nav": 0.783171,
+          "spy_nav": 1.034849,
+          "xlk_nav": 0.982752
+        },
+        {
+          "date": "2026-08-25",
+          "strategy_nav": 0.791464,
+          "spy_nav": 1.038156,
+          "xlk_nav": 0.991976
+        },
+        {
+          "date": "2026-08-26",
+          "strategy_nav": 0.806491,
+          "spy_nav": 1.038386,
+          "xlk_nav": 0.99798
+        },
+        {
+          "date": "2026-08-27",
+          "strategy_nav": 0.812278,
+          "spy_nav": 1.045191,
+          "xlk_nav": 1.029474
+        },
+        {
+          "date": "2026-08-28",
+          "strategy_nav": 0.786747,
+          "spy_nav": 1.042819,
+          "xlk_nav": 1.013536
+        },
+        {
+          "date": "2026-08-31",
+          "strategy_nav": 0.790543,
+          "spy_nav": 1.039701,
+          "xlk_nav": 1.017957
+        },
+        {
+          "date": "2026-09-01",
+          "strategy_nav": 0.779922,
+          "spy_nav": 1.032558,
+          "xlk_nav": 1.002347
+        },
+        {
+          "date": "2026-09-02",
+          "strategy_nav": 0.801871,
+          "spy_nav": 1.037139,
+          "xlk_nav": 1.002129
+        },
+        {
+          "date": "2026-09-03",
+          "strategy_nav": 0.812516,
+          "spy_nav": 1.047997,
+          "xlk_nav": 1.015065
+        },
+        {
+          "date": "2026-09-04",
+          "strategy_nav": 0.830181,
+          "spy_nav": 1.043957,
+          "xlk_nav": 1.022215
+        },
+        {
+          "date": "2026-09-08",
+          "strategy_nav": 0.854824,
+          "spy_nav": 1.038224,
+          "xlk_nav": 1.025435
+        },
+        {
+          "date": "2026-09-09",
+          "strategy_nav": 0.859654,
+          "spy_nav": 1.033398,
+          "xlk_nav": 1.025435
+        },
+        {
+          "date": "2026-09-10",
+          "strategy_nav": 0.826269,
+          "spy_nav": 1.027204,
+          "xlk_nav": 1.010971
+        },
+        {
+          "date": "2026-09-11",
+          "strategy_nav": 0.867273,
+          "spy_nav": 1.03596,
+          "xlk_nav": 1.024344
+        },
+        {
+          "date": "2026-09-14",
+          "strategy_nav": 0.808324,
+          "spy_nav": 1.031338,
+          "xlk_nav": 1.00584
+        },
+        {
+          "date": "2026-09-15",
+          "strategy_nav": 0.814656,
+          "spy_nav": 1.026608,
+          "xlk_nav": 1.002893
+        },
+        {
+          "date": "2026-09-16",
+          "strategy_nav": 0.833364,
+          "spy_nav": 1.02208,
+          "xlk_nav": 1.00393
+        },
+        {
+          "date": "2026-09-17",
+          "strategy_nav": 0.863541,
+          "spy_nav": 1.033669,
+          "xlk_nav": 1.026472
+        },
+        {
+          "date": "2026-09-18",
+          "strategy_nav": 0.853889,
+          "spy_nav": 1.032436,
+          "xlk_nav": 1.034878
+        },
+        {
+          "date": "2026-09-21",
+          "strategy_nav": 0.883893,
+          "spy_nav": 1.048444,
+          "xlk_nav": 1.063534
+        },
+        {
+          "date": "2026-09-22",
+          "strategy_nav": 0.884538,
+          "spy_nav": 1.048281,
+          "xlk_nav": 1.071284
+        },
+        {
+          "date": "2026-09-23",
+          "strategy_nav": 0.882128,
+          "spy_nav": 1.040731,
+          "xlk_nav": 1.066208
+        },
+        {
+          "date": "2026-09-24",
+          "strategy_nav": 0.880062,
+          "spy_nav": 1.039877,
+          "xlk_nav": 1.062769
+        },
+        {
+          "date": "2026-09-25",
+          "strategy_nav": 0.896834,
+          "spy_nav": 1.04553,
+          "xlk_nav": 1.071284
+        },
+        {
+          "date": "2026-09-28",
+          "strategy_nav": 0.872374,
+          "spy_nav": 1.037749,
+          "xlk_nav": 1.061787
+        },
+        {
+          "date": "2026-09-29",
+          "strategy_nav": 0.872706,
+          "spy_nav": 1.035838,
+          "xlk_nav": 1.061623
+        },
+        {
+          "date": "2026-09-30",
+          "strategy_nav": 0.873481,
+          "spy_nav": 1.03371,
+          "xlk_nav": 1.068446
+        },
+        {
+          "date": "2026-10-01",
+          "strategy_nav": 0.890639,
+          "spy_nav": 1.035554,
+          "xlk_nav": 1.07969
+        },
+        {
+          "date": "2026-10-02",
+          "strategy_nav": 0.922011,
+          "spy_nav": 1.043212,
+          "xlk_nav": 1.090606
+        },
+        {
+          "date": "2026-10-05",
+          "strategy_nav": 0.912559,
+          "spy_nav": 1.050247,
+          "xlk_nav": 1.09672
+        },
+        {
+          "date": "2026-10-06",
+          "strategy_nav": 0.918779,
+          "spy_nav": 1.056021,
+          "xlk_nav": 1.10256
+        },
+        {
+          "date": "2026-10-07",
+          "strategy_nav": 0.911787,
+          "spy_nav": 1.053486,
+          "xlk_nav": 1.09923
+        },
+        {
+          "date": "2026-10-08",
+          "strategy_nav": 0.880889,
+          "spy_nav": 1.049027,
+          "xlk_nav": 1.079526
+        },
+        {
+          "date": "2026-10-09",
+          "strategy_nav": 0.886599,
+          "spy_nav": 1.055316,
+          "xlk_nav": 1.084984
+        },
+        {
+          "date": "2026-10-12",
+          "strategy_nav": 0.841058,
+          "spy_nav": 1.054679,
+          "xlk_nav": 1.071776
+        },
+        {
+          "date": "2026-10-13",
+          "strategy_nav": 0.835902,
+          "spy_nav": 1.054557,
+          "xlk_nav": 1.071339
+        },
+        {
+          "date": "2026-10-14",
+          "strategy_nav": 0.781683,
+          "spy_nav": 1.043158,
+          "xlk_nav": 1.039408
+        },
+        {
+          "date": "2026-10-15",
+          "strategy_nav": 0.759927,
+          "spy_nav": 1.046126,
+          "xlk_nav": 1.03264
+        },
+        {
+          "date": "2026-10-16",
+          "strategy_nav": 0.722617,
+          "spy_nav": 1.034551,
+          "xlk_nav": 1.001419
+        },
+        {
+          "date": "2026-10-19",
+          "strategy_nav": 0.739351,
+          "spy_nav": 1.038929,
+          "xlk_nav": 1.01501
+        },
+        {
+          "date": "2026-10-20",
+          "strategy_nav": 0.737875,
+          "spy_nav": 1.042412,
+          "xlk_nav": 1.012172
+        },
+        {
+          "date": "2026-10-21",
+          "strategy_nav": 0.757912,
+          "spy_nav": 1.047888,
+          "xlk_nav": 1.029092
+        },
+        {
+          "date": "2026-10-22",
+          "strategy_nav": 0.695473,
+          "spy_nav": 1.035513,
+          "xlk_nav": 0.995251
+        },
+        {
+          "date": "2026-10-23",
+          "strategy_nav": 0.707128,
+          "spy_nav": 1.030105,
+          "xlk_nav": 1.000109
+        },
+        {
+          "date": "2026-10-26",
+          "strategy_nav": 0.727575,
+          "spy_nav": 1.037424,
+          "xlk_nav": 1.016975
+        },
+        {
+          "date": "2026-10-27",
+          "strategy_nav": 0.76018,
+          "spy_nav": 1.043239,
+          "xlk_nav": 1.034278
+        },
+        {
+          "date": "2026-10-28",
+          "strategy_nav": 0.779346,
+          "spy_nav": 1.046831,
+          "xlk_nav": 1.042519
+        },
+        {
+          "date": "2026-10-29",
+          "strategy_nav": 0.752776,
+          "spy_nav": 1.042832,
+          "xlk_nav": 1.030184
+        },
+        {
+          "date": "2026-10-30",
+          "strategy_nav": 0.690954,
+          "spy_nav": 1.024344,
+          "xlk_nav": 0.979805
+        },
+        {
+          "date": "2026-11-02",
+          "strategy_nav": 0.639498,
+          "spy_nav": 1.019437,
+          "xlk_nav": 0.950931
+        },
+        {
+          "date": "2026-11-03",
+          "strategy_nav": 0.655119,
+          "spy_nav": 1.022487,
+          "xlk_nav": 0.96343
+        },
+        {
+          "date": "2026-11-04",
+          "strategy_nav": 0.612735,
+          "spy_nav": 1.039376,
+          "xlk_nav": 0.963375
+        },
+        {
+          "date": "2026-11-05",
+          "strategy_nav": 0.560406,
+          "spy_nav": 0.993548,
+          "xlk_nav": 0.886305
+        },
+        {
+          "date": "2026-11-06",
+          "strategy_nav": 0.572772,
+          "spy_nav": 0.996652,
+          "xlk_nav": 0.899187
+        }
+      ],
+      "monthly": [
+        {
+          "month": "2026-06",
+          "strategy": 0.10396,
+          "spy": 0.01221,
+          "xlk": 0.0399
+        },
+        {
+          "month": "2026-07",
+          "strategy": -0.2866,
+          "spy": 0.00035,
+          "xlk": -0.07962
+        },
+        {
+          "month": "2026-08",
+          "strategy": 0.00378,
+          "spy": 0.0268,
+          "xlk": 0.06359
+        },
+        {
+          "month": "2026-09",
+          "strategy": 0.10491,
+          "spy": -0.00576,
+          "xlk": 0.0496
+        },
+        {
+          "month": "2026-10",
+          "strategy": -0.20897,
+          "spy": -0.00906,
+          "xlk": -0.08296
+        },
+        {
+          "month": "2026-11",
+          "strategy": -0.17104,
+          "spy": -0.02703,
+          "xlk": -0.08228
+        }
+      ],
+      "trades": [
+        {
+          "date": "2026-06-11",
+          "signal_date": "2026-06-10",
+          "tickers": [
+            "KLAC",
+            "AMAT",
+            "APH",
+            "STM",
+            "ASML",
+            "DELL",
+            "MRVL",
+            "HPE"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.5,
+          "cost_fraction": 0.002
+        },
+        {
+          "date": "2026-07-01",
+          "signal_date": "2026-06-30",
+          "tickers": [
+            "AMAT",
+            "UCTT",
+            "KLAC",
+            "GLW",
+            "AMD",
+            "MRVL",
+            "GEV",
+            "APH"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.507972,
+          "cost_fraction": 0.0020319
+        },
+        {
+          "date": "2026-08-03",
+          "signal_date": "2026-07-31",
+          "tickers": [
+            "ANET",
+            "HPE",
+            "APH",
+            "MPWR",
+            "ETN",
+            "AVGO",
+            "SWKS",
+            "CLS"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.875,
+          "cost_fraction": 0.0035
+        },
+        {
+          "date": "2026-09-01",
+          "signal_date": "2026-08-31",
+          "tickers": [
+            "LITE",
+            "DELL",
+            "ANET",
+            "MU",
+            "QCOM",
+            "SMCI",
+            "CEG",
+            "HPE"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.75,
+          "cost_fraction": 0.003
+        },
+        {
+          "date": "2026-10-01",
+          "signal_date": "2026-09-30",
+          "tickers": [
+            "FORM",
+            "HPE",
+            "ONTO",
+            "ACLS",
+            "AMD",
+            "MRVL",
+            "LITE",
+            "SWKS"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.75,
+          "cost_fraction": 0.003
+        },
+        {
+          "date": "2026-11-02",
+          "signal_date": "2026-10-30",
+          "tickers": [
+            "NXPI",
+            "SWKS",
+            "ENTG",
+            "MCHP",
+            "CEG",
+            "APH",
+            "VRT",
+            "VST"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.875,
+          "cost_fraction": 0.0035
+        }
+      ],
+      "limitations": [
+        "Current 40-stock universe used historically: strong survivorship/selection bias",
+        "No delisted securities, adjusted dividends or splits separately audited; provider close data as delivered",
+        "No intraday fill or market-impact estimates; close-price execution assumes liquidity",
+        "Realized returns based on prior-day signals with one-session close execution lag",
+        "SEC as-filed fundamentals and 2026 M7 supply Alpha NOT incorporated in historical returns",
+        "Short historical window (up to 330 calendar days): insufficient to validate a robust trading edge"
+      ]
+    },
+    "Top 10 · 10 bps": {
+      "status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
+      "strategy_id": "M7-MOMENTUM-8-MONTHLY-v1",
+      "start_date": "2026-06-12",
+      "end_date": "2026-11-06",
+      "universe": 40,
+      "min_history": 65,
+      "signal": "30% 5-session momentum + 40% 20-session XLK-excess + 20% 60-session momentum + 10% inverse realized volatility percentile; no fundamentals or current Alpha",
+      "rebalance": "monthly, next-trading-day close fill after prior-close signal",
+      "risk": "equal weight top 8, max 3 names per sector, no leverage",
+      "one_way_bps": 10,
+      "metrics": {
+        "total_return": -0.413073,
+        "cagr_annualized": -0.72847,
+        "annualized_volatility": 0.579906,
+        "sharpe_rf0": -1.951,
+        "sortino_rf0": -2.376,
+        "max_drawdown": -0.485005,
+        "positive_day_rate": 0.5243,
+        "days": 103,
+        "turnover_one_way": 3.71516,
+        "total_transaction_cost_bps": 74.3032,
+        "ending_nav": 0.586927
+      },
+      "benchmarks": {
+        "SPY": {
+          "total_return": -0.003348,
+          "cagr_annualized": -0.008171,
+          "annualized_volatility": 0.136746,
+          "sharpe_rf0": 0.008,
+          "sortino_rf0": 0.011,
+          "max_drawdown": -0.059159,
+          "positive_day_rate": 0.466,
+          "days": 103,
+          "turnover_one_way": 0,
+          "total_transaction_cost_bps": 0,
+          "ending_nav": 0.996652
+        },
+        "XLK": {
+          "total_return": -0.100813,
+          "cagr_annualized": -0.228938,
+          "annualized_volatility": 0.314064,
+          "sharpe_rf0": -0.671,
+          "sortino_rf0": -0.885,
+          "max_drawdown": -0.196139,
+          "positive_day_rate": 0.4854,
+          "days": 103,
+          "turnover_one_way": 0,
+          "total_transaction_cost_bps": 0,
+          "ending_nav": 0.899187
+        }
+      },
+      "information_ratio": -2.235,
+      "curve": [
+        {
+          "date": "2026-06-12",
+          "strategy_nav": 1.01104,
+          "spy_nav": 1.005408,
+          "xlk_nav": 1.008679
+        },
+        {
+          "date": "2026-06-15",
+          "strategy_nav": 1.044471,
+          "spy_nav": 1.023138,
+          "xlk_nav": 1.046831
+        },
+        {
+          "date": "2026-06-16",
+          "strategy_nav": 1.008904,
+          "spy_nav": 1.017038,
+          "xlk_nav": 1.01763
+        },
+        {
+          "date": "2026-06-17",
+          "strategy_nav": 1.027492,
+          "spy_nav": 1.004337,
+          "xlk_nav": 1.014137
+        },
+        {
+          "date": "2026-06-18",
+          "strategy_nav": 1.065608,
+          "spy_nav": 1.012172,
+          "xlk_nav": 1.044921
+        },
+        {
+          "date": "2026-06-22",
+          "strategy_nav": 1.085141,
+          "spy_nav": 1.008987,
+          "xlk_nav": 1.048796
+        },
+        {
+          "date": "2026-06-23",
+          "strategy_nav": 1.022334,
+          "spy_nav": 0.994334,
+          "xlk_nav": 1.005349
+        },
+        {
+          "date": "2026-06-24",
+          "strategy_nav": 1.025536,
+          "spy_nav": 0.993873,
+          "xlk_nav": 0.999127
+        },
+        {
+          "date": "2026-06-25",
+          "strategy_nav": 1.0504,
+          "spy_nav": 0.99531,
+          "xlk_nav": 1.007423
+        },
+        {
+          "date": "2026-06-26",
+          "strategy_nav": 1.012142,
+          "spy_nav": 0.988113,
+          "xlk_nav": 0.988538
+        },
+        {
+          "date": "2026-06-29",
+          "strategy_nav": 1.061621,
+          "spy_nav": 1.004392,
+          "xlk_nav": 1.012008
+        },
+        {
+          "date": "2026-06-30",
+          "strategy_nav": 1.108716,
+          "spy_nav": 1.012213,
+          "xlk_nav": 1.0399
+        },
+        {
+          "date": "2026-07-01",
+          "strategy_nav": 1.037042,
+          "spy_nav": 1.010844,
+          "xlk_nav": 1.013154
+        },
+        {
+          "date": "2026-07-02",
+          "strategy_nav": 0.959233,
+          "spy_nav": 1.009515,
+          "xlk_nav": 0.985699
+        },
+        {
+          "date": "2026-07-06",
+          "strategy_nav": 0.970717,
+          "spy_nav": 1.018326,
+          "xlk_nav": 1.001965
+        },
+        {
+          "date": "2026-07-07",
+          "strategy_nav": 0.907938,
+          "spy_nav": 1.013487,
+          "xlk_nav": 0.978003
+        },
+        {
+          "date": "2026-07-08",
+          "strategy_nav": 0.92101,
+          "spy_nav": 1.010356,
+          "xlk_nav": 0.990121
+        },
+        {
+          "date": "2026-07-09",
+          "strategy_nav": 0.953447,
+          "spy_nav": 1.018909,
+          "xlk_nav": 1.011681
+        },
+        {
+          "date": "2026-07-10",
+          "strategy_nav": 0.954598,
+          "spy_nav": 1.0233,
+          "xlk_nav": 1.014028
+        },
+        {
+          "date": "2026-07-13",
+          "strategy_nav": 0.911648,
+          "spy_nav": 1.015466,
+          "xlk_nav": 0.989466
+        },
+        {
+          "date": "2026-07-14",
+          "strategy_nav": 0.938728,
+          "spy_nav": 1.019071,
+          "xlk_nav": 1.002238
+        },
+        {
+          "date": "2026-07-15",
+          "strategy_nav": 0.905987,
+          "spy_nav": 1.02311,
+          "xlk_nav": 0.991103
+        },
+        {
+          "date": "2026-07-16",
+          "strategy_nav": 0.864919,
+          "spy_nav": 1.017567,
+          "xlk_nav": 0.968943
+        },
+        {
+          "date": "2026-07-17",
+          "strategy_nav": 0.85639,
+          "spy_nav": 1.007496,
+          "xlk_nav": 0.958408
+        },
+        {
+          "date": "2026-07-20",
+          "strategy_nav": 0.858801,
+          "spy_nav": 1.005869,
+          "xlk_nav": 0.959063
+        },
+        {
+          "date": "2026-07-21",
+          "strategy_nav": 0.910581,
+          "spy_nav": 1.014259,
+          "xlk_nav": 0.986736
+        },
+        {
+          "date": "2026-07-22",
+          "strategy_nav": 0.893033,
+          "spy_nav": 1.01308,
+          "xlk_nav": 0.983953
+        },
+        {
+          "date": "2026-07-23",
+          "strategy_nav": 0.902872,
+          "spy_nav": 1.000569,
+          "xlk_nav": 0.974019
+        },
+        {
+          "date": "2026-07-24",
+          "strategy_nav": 0.863848,
+          "spy_nav": 1.001586,
+          "xlk_nav": 0.959991
+        },
+        {
+          "date": "2026-07-27",
+          "strategy_nav": 0.841445,
+          "spy_nav": 1.001803,
+          "xlk_nav": 0.951367
+        },
+        {
+          "date": "2026-07-28",
+          "strategy_nav": 0.781944,
+          "spy_nav": 1.004202,
+          "xlk_nav": 0.933846
+        },
+        {
+          "date": "2026-07-29",
+          "strategy_nav": 0.738252,
+          "spy_nav": 0.98875,
+          "xlk_nav": 0.909175
+        },
+        {
+          "date": "2026-07-30",
+          "strategy_nav": 0.816513,
+          "spy_nav": 1.005327,
+          "xlk_nav": 0.959172
+        },
+        {
+          "date": "2026-07-31",
+          "strategy_nav": 0.815626,
+          "spy_nav": 1.012565,
+          "xlk_nav": 0.957098
+        },
+        {
+          "date": "2026-08-03",
+          "strategy_nav": 0.834373,
+          "spy_nav": 1.026987,
+          "xlk_nav": 0.971781
+        },
+        {
+          "date": "2026-08-04",
+          "strategy_nav": 0.866654,
+          "spy_nav": 1.045503,
+          "xlk_nav": 1.020141
+        },
+        {
+          "date": "2026-08-05",
+          "strategy_nav": 0.872271,
+          "spy_nav": 1.043415,
+          "xlk_nav": 1.014737
+        },
+        {
+          "date": "2026-08-06",
+          "strategy_nav": 0.855182,
+          "spy_nav": 1.041748,
+          "xlk_nav": 1.011571
+        },
+        {
+          "date": "2026-08-07",
+          "strategy_nav": 0.868083,
+          "spy_nav": 1.048119,
+          "xlk_nav": 1.025981
+        },
+        {
+          "date": "2026-08-10",
+          "strategy_nav": 0.863217,
+          "spy_nav": 1.047807,
+          "xlk_nav": 1.016975
+        },
+        {
+          "date": "2026-08-11",
+          "strategy_nav": 0.871355,
+          "spy_nav": 1.044459,
+          "xlk_nav": 1.01572
+        },
+        {
+          "date": "2026-08-12",
+          "strategy_nav": 0.895142,
+          "spy_nav": 1.047075,
+          "xlk_nav": 1.030839
+        },
+        {
+          "date": "2026-08-13",
+          "strategy_nav": 0.88792,
+          "spy_nav": 1.054381,
+          "xlk_nav": 1.041264
+        },
+        {
+          "date": "2026-08-14",
+          "strategy_nav": 0.880105,
+          "spy_nav": 1.052293,
+          "xlk_nav": 1.037116
+        },
+        {
+          "date": "2026-08-17",
+          "strategy_nav": 0.879214,
+          "spy_nav": 1.047319,
+          "xlk_nav": 1.038808
+        },
+        {
+          "date": "2026-08-18",
+          "strategy_nav": 0.839326,
+          "spy_nav": 1.040243,
+          "xlk_nav": 1.013154
+        },
+        {
+          "date": "2026-08-19",
+          "strategy_nav": 0.823187,
+          "spy_nav": 1.042426,
+          "xlk_nav": 1.002347
+        },
+        {
+          "date": "2026-08-20",
+          "strategy_nav": 0.817285,
+          "spy_nav": 1.033669,
+          "xlk_nav": 0.9994
+        },
+        {
+          "date": "2026-08-21",
+          "strategy_nav": 0.822064,
+          "spy_nav": 1.037898,
+          "xlk_nav": 1.000546
+        },
+        {
+          "date": "2026-08-24",
+          "strategy_nav": 0.812139,
+          "spy_nav": 1.034849,
+          "xlk_nav": 0.982752
+        },
+        {
+          "date": "2026-08-25",
+          "strategy_nav": 0.820061,
+          "spy_nav": 1.038156,
+          "xlk_nav": 0.991976
+        },
+        {
+          "date": "2026-08-26",
+          "strategy_nav": 0.834262,
+          "spy_nav": 1.038386,
+          "xlk_nav": 0.99798
+        },
+        {
+          "date": "2026-08-27",
+          "strategy_nav": 0.839543,
+          "spy_nav": 1.045191,
+          "xlk_nav": 1.029474
+        },
+        {
+          "date": "2026-08-28",
+          "strategy_nav": 0.814862,
+          "spy_nav": 1.042819,
+          "xlk_nav": 1.013536
+        },
+        {
+          "date": "2026-08-31",
+          "strategy_nav": 0.816231,
+          "spy_nav": 1.039701,
+          "xlk_nav": 1.017957
+        },
+        {
+          "date": "2026-09-01",
+          "strategy_nav": 0.807444,
+          "spy_nav": 1.032558,
+          "xlk_nav": 1.002347
+        },
+        {
+          "date": "2026-09-02",
+          "strategy_nav": 0.830322,
+          "spy_nav": 1.037139,
+          "xlk_nav": 1.002129
+        },
+        {
+          "date": "2026-09-03",
+          "strategy_nav": 0.840959,
+          "spy_nav": 1.047997,
+          "xlk_nav": 1.015065
+        },
+        {
+          "date": "2026-09-04",
+          "strategy_nav": 0.859335,
+          "spy_nav": 1.043957,
+          "xlk_nav": 1.022215
+        },
+        {
+          "date": "2026-09-08",
+          "strategy_nav": 0.880404,
+          "spy_nav": 1.038224,
+          "xlk_nav": 1.025435
+        },
+        {
+          "date": "2026-09-09",
+          "strategy_nav": 0.885385,
+          "spy_nav": 1.033398,
+          "xlk_nav": 1.025435
+        },
+        {
+          "date": "2026-09-10",
+          "strategy_nav": 0.865567,
+          "spy_nav": 1.027204,
+          "xlk_nav": 1.010971
+        },
+        {
+          "date": "2026-09-11",
+          "strategy_nav": 0.908391,
+          "spy_nav": 1.03596,
+          "xlk_nav": 1.024344
+        },
+        {
+          "date": "2026-09-14",
+          "strategy_nav": 0.843286,
+          "spy_nav": 1.031338,
+          "xlk_nav": 1.00584
+        },
+        {
+          "date": "2026-09-15",
+          "strategy_nav": 0.860503,
+          "spy_nav": 1.026608,
+          "xlk_nav": 1.002893
+        },
+        {
+          "date": "2026-09-16",
+          "strategy_nav": 0.870365,
+          "spy_nav": 1.02208,
+          "xlk_nav": 1.00393
+        },
+        {
+          "date": "2026-09-17",
+          "strategy_nav": 0.903361,
+          "spy_nav": 1.033669,
+          "xlk_nav": 1.026472
+        },
+        {
+          "date": "2026-09-18",
+          "strategy_nav": 0.891478,
+          "spy_nav": 1.032436,
+          "xlk_nav": 1.034878
+        },
+        {
+          "date": "2026-09-21",
+          "strategy_nav": 0.919486,
+          "spy_nav": 1.048444,
+          "xlk_nav": 1.063534
+        },
+        {
+          "date": "2026-09-22",
+          "strategy_nav": 0.923577,
+          "spy_nav": 1.048281,
+          "xlk_nav": 1.071284
+        },
+        {
+          "date": "2026-09-23",
+          "strategy_nav": 0.922718,
+          "spy_nav": 1.040731,
+          "xlk_nav": 1.066208
+        },
+        {
+          "date": "2026-09-24",
+          "strategy_nav": 0.917528,
+          "spy_nav": 1.039877,
+          "xlk_nav": 1.062769
+        },
+        {
+          "date": "2026-09-25",
+          "strategy_nav": 0.934274,
+          "spy_nav": 1.04553,
+          "xlk_nav": 1.071284
+        },
+        {
+          "date": "2026-09-28",
+          "strategy_nav": 0.912407,
+          "spy_nav": 1.037749,
+          "xlk_nav": 1.061787
+        },
+        {
+          "date": "2026-09-29",
+          "strategy_nav": 0.912944,
+          "spy_nav": 1.035838,
+          "xlk_nav": 1.061623
+        },
+        {
+          "date": "2026-09-30",
+          "strategy_nav": 0.910484,
+          "spy_nav": 1.03371,
+          "xlk_nav": 1.068446
+        },
+        {
+          "date": "2026-10-01",
+          "strategy_nav": 0.9233,
+          "spy_nav": 1.035554,
+          "xlk_nav": 1.07969
+        },
+        {
+          "date": "2026-10-02",
+          "strategy_nav": 0.95749,
+          "spy_nav": 1.043212,
+          "xlk_nav": 1.090606
+        },
+        {
+          "date": "2026-10-05",
+          "strategy_nav": 0.946751,
+          "spy_nav": 1.050247,
+          "xlk_nav": 1.09672
+        },
+        {
+          "date": "2026-10-06",
+          "strategy_nav": 0.956987,
+          "spy_nav": 1.056021,
+          "xlk_nav": 1.10256
+        },
+        {
+          "date": "2026-10-07",
+          "strategy_nav": 0.947902,
+          "spy_nav": 1.053486,
+          "xlk_nav": 1.09923
+        },
+        {
+          "date": "2026-10-08",
+          "strategy_nav": 0.917764,
+          "spy_nav": 1.049027,
+          "xlk_nav": 1.079526
+        },
+        {
+          "date": "2026-10-09",
+          "strategy_nav": 0.925859,
+          "spy_nav": 1.055316,
+          "xlk_nav": 1.084984
+        },
+        {
+          "date": "2026-10-12",
+          "strategy_nav": 0.882817,
+          "spy_nav": 1.054679,
+          "xlk_nav": 1.071776
+        },
+        {
+          "date": "2026-10-13",
+          "strategy_nav": 0.88026,
+          "spy_nav": 1.054557,
+          "xlk_nav": 1.071339
+        },
+        {
+          "date": "2026-10-14",
+          "strategy_nav": 0.815795,
+          "spy_nav": 1.043158,
+          "xlk_nav": 1.039408
+        },
+        {
+          "date": "2026-10-15",
+          "strategy_nav": 0.789845,
+          "spy_nav": 1.046126,
+          "xlk_nav": 1.03264
+        },
+        {
+          "date": "2026-10-16",
+          "strategy_nav": 0.752331,
+          "spy_nav": 1.034551,
+          "xlk_nav": 1.001419
+        },
+        {
+          "date": "2026-10-19",
+          "strategy_nav": 0.766013,
+          "spy_nav": 1.038929,
+          "xlk_nav": 1.01501
+        },
+        {
+          "date": "2026-10-20",
+          "strategy_nav": 0.765665,
+          "spy_nav": 1.042412,
+          "xlk_nav": 1.012172
+        },
+        {
+          "date": "2026-10-21",
+          "strategy_nav": 0.787668,
+          "spy_nav": 1.047888,
+          "xlk_nav": 1.029092
+        },
+        {
+          "date": "2026-10-22",
+          "strategy_nav": 0.72139,
+          "spy_nav": 1.035513,
+          "xlk_nav": 0.995251
+        },
+        {
+          "date": "2026-10-23",
+          "strategy_nav": 0.729442,
+          "spy_nav": 1.030105,
+          "xlk_nav": 1.000109
+        },
+        {
+          "date": "2026-10-26",
+          "strategy_nav": 0.744939,
+          "spy_nav": 1.037424,
+          "xlk_nav": 1.016975
+        },
+        {
+          "date": "2026-10-27",
+          "strategy_nav": 0.785351,
+          "spy_nav": 1.043239,
+          "xlk_nav": 1.034278
+        },
+        {
+          "date": "2026-10-28",
+          "strategy_nav": 0.805633,
+          "spy_nav": 1.046831,
+          "xlk_nav": 1.042519
+        },
+        {
+          "date": "2026-10-29",
+          "strategy_nav": 0.776233,
+          "spy_nav": 1.042832,
+          "xlk_nav": 1.030184
+        },
+        {
+          "date": "2026-10-30",
+          "strategy_nav": 0.711898,
+          "spy_nav": 1.024344,
+          "xlk_nav": 0.979805
+        },
+        {
+          "date": "2026-11-02",
+          "strategy_nav": 0.659752,
+          "spy_nav": 1.019437,
+          "xlk_nav": 0.950931
+        },
+        {
+          "date": "2026-11-03",
+          "strategy_nav": 0.674139,
+          "spy_nav": 1.022487,
+          "xlk_nav": 0.96343
+        },
+        {
+          "date": "2026-11-04",
+          "strategy_nav": 0.631544,
+          "spy_nav": 1.039376,
+          "xlk_nav": 0.963375
+        },
+        {
+          "date": "2026-11-05",
+          "strategy_nav": 0.570983,
+          "spy_nav": 0.993548,
+          "xlk_nav": 0.886305
+        },
+        {
+          "date": "2026-11-06",
+          "strategy_nav": 0.586927,
+          "spy_nav": 0.996652,
+          "xlk_nav": 0.899187
+        }
+      ],
+      "monthly": [
+        {
+          "month": "2026-06",
+          "strategy": 0.10872,
+          "spy": 0.01221,
+          "xlk": 0.0399
+        },
+        {
+          "month": "2026-07",
+          "strategy": -0.26435,
+          "spy": 0.00035,
+          "xlk": -0.07962
+        },
+        {
+          "month": "2026-08",
+          "strategy": 0.00074,
+          "spy": 0.0268,
+          "xlk": 0.06359
+        },
+        {
+          "month": "2026-09",
+          "strategy": 0.11547,
+          "spy": -0.00576,
+          "xlk": 0.0496
+        },
+        {
+          "month": "2026-10",
+          "strategy": -0.21811,
+          "spy": -0.00906,
+          "xlk": -0.08296
+        },
+        {
+          "month": "2026-11",
+          "strategy": -0.17555,
+          "spy": -0.02703,
+          "xlk": -0.08228
+        }
+      ],
+      "trades": [
+        {
+          "date": "2026-06-11",
+          "signal_date": "2026-06-10",
+          "tickers": [
+            "KLAC",
+            "AMAT",
+            "APH",
+            "STM",
+            "ASML",
+            "DELL",
+            "MRVL",
+            "HPE",
+            "TSM",
+            "HUBB"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.5,
+          "cost_fraction": 0.001
+        },
+        {
+          "date": "2026-07-01",
+          "signal_date": "2026-06-30",
+          "tickers": [
+            "AMAT",
+            "UCTT",
+            "KLAC",
+            "GLW",
+            "AMD",
+            "MRVL",
+            "GEV",
+            "APH",
+            "MU",
+            "HUBB"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.506639,
+          "cost_fraction": 0.0010133
+        },
+        {
+          "date": "2026-08-03",
+          "signal_date": "2026-07-31",
+          "tickers": [
+            "ANET",
+            "HPE",
+            "APH",
+            "MPWR",
+            "ETN",
+            "AVGO",
+            "SWKS",
+            "CLS",
+            "CEG",
+            "HUBB"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.8,
+          "cost_fraction": 0.0016
+        },
+        {
+          "date": "2026-09-01",
+          "signal_date": "2026-08-31",
+          "tickers": [
+            "LITE",
+            "DELL",
+            "ANET",
+            "MU",
+            "QCOM",
+            "SMCI",
+            "CEG",
+            "HPE",
+            "APH",
+            "SWKS"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.5,
+          "cost_fraction": 0.001
+        },
+        {
+          "date": "2026-10-01",
+          "signal_date": "2026-09-30",
+          "tickers": [
+            "FORM",
+            "HPE",
+            "ONTO",
+            "ACLS",
+            "AMD",
+            "MRVL",
+            "LITE",
+            "SWKS",
+            "DELL",
+            "CLS"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.6,
+          "cost_fraction": 0.0012
+        },
+        {
+          "date": "2026-11-02",
+          "signal_date": "2026-10-30",
+          "tickers": [
+            "NXPI",
+            "SWKS",
+            "ENTG",
+            "MCHP",
+            "CEG",
+            "APH",
+            "VRT",
+            "VST",
+            "LITE",
+            "ASML"
+          ],
+          "execution": "following completed close after signal",
+          "one_way_turnover": 0.808519,
+          "cost_fraction": 0.001617
+        }
+      ],
+      "limitations": [
+        "Current 40-stock universe used historically: strong survivorship/selection bias",
+        "No delisted securities, adjusted dividends or splits separately audited; provider close data as delivered",
+        "No intraday fill or market-impact estimates; close-price execution assumes liquidity",
+        "Realized returns based on prior-day signals with one-session close execution lag",
+        "SEC as-filed fundamentals and 2026 M7 supply Alpha NOT incorporated in historical returns",
+        "Short historical window (up to 330 calendar days): insufficient to validate a robust trading edge"
+      ]
+    }
+  },
+  "prospective_screen_portfolio": {
+    "status": "SIGNAL_ONLY_EXECUTION_NOT_YET_OBSERVED",
+    "signal_as_of": "2026-11-08",
+    "signal_last_completed_price_date": "2026-11-06",
+    "first_eligible_execution": "next completed US session close after signal snapshot; not a filled order",
+    "rebalancing": "monthly by current SEC+Alpha screening (full historical backtest not available)",
+    "one_way_assumed_fee_bps": 10,
+    "selected": [
+      "AMD",
+      "CEG",
+      "ANET",
+      "STM",
+      "CRUS",
+      "GLW",
+      "VST",
+      "CLS"
+    ],
+    "target_weights": {
+      "AMD": 0.125,
+      "CEG": 0.125,
+      "ANET": 0.125,
+      "STM": 0.125,
+      "CRUS": 0.125,
+      "GLW": 0.125,
+      "VST": 0.125,
+      "CLS": 0.125
+    },
+    "observed_forward_returns": null,
+    "audit": "This is a forward research watch basket; do not interpret as historical performance or real trades."
+  },
+  "separation_rule": "Current 2026 supply Alpha/revenue metrics are NEVER fed into historical price-only backtest. To backtest the full ranking, accumulate or reconstruct as-filed metrics and point-in-time graph edges.",
+  "not_included": [
+    "survivorship-bias-free historical membership",
+    "corporate-action/dividend independently validated prices",
+    "historical fundamentals published after each rebalance",
+    "historical six-factor Alpha",
+    "slippage/market impact measured from executions"
+  ]
+}
