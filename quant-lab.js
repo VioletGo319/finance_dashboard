@@ -50,6 +50,33 @@ ja:{scenario:"バックテスト設定",paper:"前向きペーパーポートフ
 };
 for(const [lang,labels] of Object.entries(labExtras))Object.assign(locales[lang],labels);
 
+const factorKeys=["supply_alpha","monitor","growth","value","size","risk"];
+const factorTexts={
+en:["Supply Alpha†","Price monitor","Revenue growth","Cheap P/S","Size","Low volatility"],
+"zh-CN":["供应链Alpha†","价格动量监控","营收增长","低市销率","公司规模","低波动"],
+fr:["Alpha fournisseur†","Suivi des prix","Croissance revenus","Valorisation P/S","Taille","Faible volatilité"],
+es:["Alfa de proveedor†","Monitor de precios","Crecimiento ingresos","P/S bajo","Tamaño","Baja volatilidad"],
+ja:["供給網Alpha†","株価モニター","売上成長","低P/S","規模","低ボラティリティ"]
+};
+let selectedQuantTicker=null;
+function factorDetail(row){
+ const d=document.getElementById("qFactorDetail");
+ if(!d)return;
+ if(!row){d.innerHTML='<div class="q-empty">'+esc(t("noScore"))+'</div>';return;}
+ const columns=factorKeys.map((k,i)=>{
+  const value=row.component_scores?.[k],weight=row.weights?.[k]??0;
+  const label=factorTexts[L()]?.[i]||factorTexts.en[i];
+  return '<div class="q-metric" style="display:block"><div class="q-group" style="justify-content:space-between"><span>'+esc(label)+' · '+Math.round(weight*100)+'%</span><strong>'+fmt(value)+'</strong></div>'
+      +'<div style="margin:5px 0 0;height:7px;border-radius:3px;background:#233449;overflow:hidden"><div style="height:100%;background:#72dccc;width:'+(value==null?0:Math.min(100,Math.max(0,value)))+'%"></div></div></div>';
+ }).join("");
+ d.innerHTML='<div class="q-insight"><strong>'+esc(row.ticker)+' · '+(row.investability_score==null?"N/A":fmt(row.investability_score)+'/100')+'</strong>'
+  +'<div class="q-muted">'+esc(row.status)+' · '+pc(row.factor_coverage,0)+'</div></div>'
+  +'<div style="margin-top:8px">'+columns+'</div>'
+  +'<div class="q-metric"><span>'+esc(t("period"))+'</span><span>'+esc(row.revenue_filed||"N/A")+'</span></div>'
+  +'<div class="q-metric"><span>'+esc(t("source"))+'</span><span>'+link(row.fundamental_source,"SEC ↗")+'</span></div>'
+  +'<div class="q-note">'+esc(t("sourceWarning"))+'</div>';
+}
+
 let selectedScenario="Top 8 · 10 bps";
 let data=null,showOnly=false,chartMode="nav",seriesActive={strategy:true,spy:true,xlk:true};
 function L(){return (window.M7_I18N&&window.M7_I18N.language)||"en";}
@@ -79,6 +106,7 @@ function renderShell(){
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("rank"))+'</h3><p>'+esc(t("rankNote"))+'</p></div><div class="q-actions"><button type="button" id="qFilter" class="q-action" aria-pressed="'+showOnly+'">'+esc(t(showOnly?"showAll":"hideUnranked"))+'</button></div></div><div class="q-scroll"><table class="q-table"><thead><tr>'
   +[t("ticker"),t("score"),t("status"),t("price"),t("cap"),t("revenue"),t("growth"),t("ps"),t("supply"),t("monitor"),t("source")].map(h=>'<th>'+esc(h)+'</th>').join('')
   +'</tr></thead><tbody id="qRanking"></tbody></table></div></div>'
+  +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("details"))+'</h3><p>'+esc(t("screenNote"))+'</p></div></div><div class="q-body" id="qFactorDetail"></div></div>'
   +'<div class="q-two"><div class="q-panel"><div class="q-head"><div><h3>'+esc(t("paper"))+'</h3><p>'+esc(t("paperNote"))+'</p></div></div><div class="q-body" id="qPaper"></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("sensitivity"))+'</h3></div></div><div class="q-body" id="qScenarioMatrix"></div></div></div>'
   +'<div class="q-two"><div class="q-panel"><div class="q-head"><div><h3>'+esc(t("month"))+'</h3></div></div><div class="q-body" id="qMonthly"></div></div>'
@@ -106,7 +134,7 @@ function renderShell(){
  document.getElementById("qRanking").innerHTML=rank.map(x=>{
   const ticker=x.ticker;
   const row=byTicker[ticker]||{};
-  return '<tr title="'+esc(x.status)+'"><td><strong>'+esc(ticker)+'</strong></td>'
+  return '<tr data-q-ticker="'+esc(ticker)+'" title="'+esc(x.status)+'" style="cursor:pointer"><td><strong>'+esc(ticker)+'</strong></td>'
    +'<td>'+(x.rank?'<span class="q-tag ok">'+esc(x.rank)+" · "+fmt(x.investability_score)+'</span>':'<span class="q-tag warm">'+esc(t("unranked"))+'</span>')+'</td>'
    +'<td>'+pc(x.factor_coverage,0)+'</td>'
    +'<td class="q-number">'+fmt(row.close||null)+'</td>'
@@ -126,6 +154,14 @@ function renderShell(){
  document.getElementById("qScenarioMatrix").innerHTML=Object.keys(scenarios).length
   ?Object.entries(scenarios).map(([k,v])=>'<div class="q-metric"><span>'+esc(k)+'</span><span>'+esc(t("impact"))+': '+pc(v.metrics?.total_return)+' · Sharpe '+fmt(v.metrics?.sharpe_rf0)+'</span></div>').join('')
   :'<div class="q-empty">'+esc(t("none"))+'</div>';
+ if(!selectedQuantTicker)selectedQuantTicker=rank.find(x=>x.rank_eligible)?.ticker||rank[0]?.ticker||null;
+ const shown=(sc.ranked||[]).find(x=>x.ticker===selectedQuantTicker)||rank[0];
+ factorDetail(shown);
+ document.querySelectorAll("#qRanking [data-q-ticker]").forEach(tr=>tr.addEventListener("click",e=>{
+   if(e.target.closest("a"))return;
+   selectedQuantTicker=tr.dataset.qTicker;
+   factorDetail((sc.ranked||[]).find(x=>x.ticker===selectedQuantTicker));
+ }));
  const months=back.monthly||[];
  const rr=months.map(x=>'<div class="q-month" title="'+esc(x.month)+' SPY '+pc(x.spy)+' XLK '+pc(x.xlk)+'" style="background:'+(x.strategy>=0?"#173f3b":"#492b37")+'"><span>'+esc(x.month)+'</span><strong class="'+(x.strategy>=0?"q-positive":"q-negative")+'">'+pc(x.strategy)+'</strong><small class="q-muted">SPY '+pc(x.spy)+'</small></div>').join("");
  document.getElementById("qMonthly").innerHTML=rr?'<div class="q-matrix">'+rr+'</div>':'<div class="q-empty">'+esc(t("none"))+'</div>';
