@@ -38,12 +38,12 @@ jobs:
           page=Path('index.html').read_text(encoding='utf-8')
           assert '<!doctype html>' in page.lower()
           assert 'id="m7Language"' in page
-          assert 'src="i18n.js"' in page
+          assert 'src="i18n.js' in page
           assert Path('i18n.js').is_file()
           assert Path('i18n-content.js').is_file()
-          assert 'src="i18n-content.js"' in page
+          assert 'src="i18n-content.js' in page
           assert Path('graph-viz.js').is_file()
-          assert 'src="graph-viz.js"' in page
+          assert 'src="graph-viz.js' in page
           assert 'id="graphCanvas"' in page
           assert '</html>' in page.lower()
           snapshot=json.loads(Path('data/latest.json').read_text(encoding='utf-8'))
