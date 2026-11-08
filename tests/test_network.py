@@ -44,8 +44,8 @@ class TestGraph(unittest.TestCase):
 
     def test_no_fabricated_paths_from_candidate(self):
         _,g=graph_snapshot("2026-11-07")
-        self.assertEqual(g["exposures"]["VST"]["paths"],0)
-        self.assertTrue(g["exposures"]["VST"]["no_path_is_unknown"])
+        self.assertEqual(g["exposures"]["ACLS"]["paths"],0)
+        self.assertTrue(g["exposures"]["ACLS"]["no_path_is_unknown"])
 
     def test_direct_vs_indirect(self):
         _,g=graph_snapshot("2026-11-07")
