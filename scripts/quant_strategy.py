@@ -9,7 +9,7 @@ import math
 import statistics
 from datetime import date
 
-DEFAULT={"benchmark":"SPY","sector_benchmark":"XLK","top_n":8,
+DEFAULT={"benchmark":"QQQ","sector_benchmark":"XLK","top_n":8,
   "rebalance":"monthly","one_way_bps":10,"min_history":86,
   "max_price_age_days":7,"price_monitor_weight":.20,
   "supply_alpha_weight":.30,"growth_weight":.20,"valuation_weight":.15,
@@ -140,21 +140,25 @@ def _metrics(returns,turnovers,cost_bps,periods=252):
 def simulate_daily_close(quotes,tickers,initial_date=None,top_n=8,trade_bps=10):
     """Monthly selection, next-session-close execution, no same-close fills.
 
-    Date alignment by intersection with SPY and XLK.
+    Date alignment by intersection with QQQ and XLK.
     On rebalance day i, signal is from i-1 and next return is close i -> i+1.
     This is a current-universe diagnostic with survivorship bias; not a claim
     of unbiased historical investability or point-in-time universe.
     """
-    benchmarks=("SPY","XLK")
+    benchmarks=("QQQ","XLK")
     maps={t:dict(quotes.get(t,{}).get("bars") or []) for t in (*tickers,*benchmarks)}
-    if any(len(maps[b])<100 for b in benchmarks):return {"status":"INSUFFICIENT_BENCHMARK_HISTORY","reason":"SPY/XLK close history not available"}
-    dates=sorted(set(maps["SPY"])&set(maps["XLK"]))
+    if any(len(maps[b])<100 for b in benchmarks):return {"status":"INSUFFICIENT_BENCHMARK_HISTORY","reason":"QQQ/XLK close history not available"}
+    dates=sorted(set(maps["QQQ"])&set(maps["XLK"]))
     dates=[d for d in dates if all(maps[b][d]>0 for b in benchmarks)]
     if len(dates)<100:return {"status":"INSUFFICIENT_ALIGNED_HISTORY"}
     holdings={};returns=[];benchmark_returns=[];sector_returns=[];dates_ret=[];turnover=[];costs=[];trades=[];weights_history=[]
     missing_days=0
     start=85
     first=initial_date or dates[start]
+    if initial_date and dates[start]>initial_date:
+        return {"status":"INSUFFICIENT_FULL_HORIZON","requested_start":initial_date,
+                "first_available_signal_date":dates[start],
+                "reason":"Cannot claim full window without preceding warm-up price history"}
     for i in range(start,len(dates)-1):
         day=dates[i]
         if day<first:continue
@@ -207,7 +211,7 @@ def simulate_daily_close(quotes,tickers,initial_date=None,top_n=8,trade_bps=10):
                     "reason":"Cannot assume returns for an untraded/delisted stock"}
         gross=sum(w*(maps[t][dates[i+1]]/maps[t][day]-1) for t,w in holdings.items())
         returns.append(gross-tc)
-        benchmark_returns.append(maps["SPY"][dates[i+1]]/maps["SPY"][day]-1)
+        benchmark_returns.append(maps["QQQ"][dates[i+1]]/maps["QQQ"][day]-1)
         sector_returns.append(maps["XLK"][dates[i+1]]/maps["XLK"][day]-1)
         dates_ret.append(dates[i+1]);costs.append(tc)
         weights_history.append(holdings.copy())
@@ -225,7 +229,7 @@ def simulate_daily_close(quotes,tickers,initial_date=None,top_n=8,trade_bps=10):
     nav=1.;sp=1.;xl=1.;curve=[]
     for d,r,b,x in zip(dates_ret,returns,benchmark_returns,sector_returns):
         nav*=1+r;sp*=1+b;xl*=1+x
-        curve.append({"date":d,"strategy_nav":round(nav,6),"spy_nav":round(sp,6),"xlk_nav":round(xl,6)})
+        curve.append({"date":d,"strategy_nav":round(nav,6),"qqq_nav":round(sp,6),"xlk_nav":round(xl,6)})
     monthly={}
     for row in curve:
         m=row["date"][:7]
@@ -234,7 +238,7 @@ def simulate_daily_close(quotes,tickers,initial_date=None,top_n=8,trade_bps=10):
     for m,row in sorted(monthly.items()):
         current=[row["strategy_nav"],row["spy_nav"],row["xlk_nav"]]
         monthly_returns.append({"month":m,"strategy":round(current[0]/previous[0]-1,5),
-          "spy":round(current[1]/previous[1]-1,5),"xlk":round(current[2]/previous[2]-1,5)})
+          "qqq":round(current[1]/previous[1]-1,5),"xlk":round(current[2]/previous[2]-1,5)})
         previous=current
     return {"status":"COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
         "strategy_id":"M7-MOMENTUM-8-MONTHLY-v1",
@@ -244,7 +248,7 @@ def simulate_daily_close(quotes,tickers,initial_date=None,top_n=8,trade_bps=10):
         "rebalance":"monthly, next-trading-day close fill after prior-close signal",
         "risk":"equal weight top 8, max 3 names per sector, no leverage",
         "one_way_bps":trade_bps,
-        "metrics":res,"benchmarks":{"SPY":bm,"XLK":tech},
+        "metrics":res,"benchmarks":{"QQQ":bm,"XLK":tech},
         "information_ratio":round(alpha,3) if alpha is not None else None,
         "curve":curve,"monthly":monthly_returns,"trades":trades,
         "limitations":["Current 40-stock universe used historically: strong survivorship/selection bias",
@@ -252,4 +256,4 @@ def simulate_daily_close(quotes,tickers,initial_date=None,top_n=8,trade_bps=10):
           "No intraday fill or market-impact estimates; close-price execution assumes liquidity",
           "Realized returns based on prior-day signals with one-session close execution lag",
           "SEC as-filed fundamentals and 2026 M7 supply Alpha NOT incorporated in historical returns",
-          "Short historical window (up to 330 calendar days): insufficient to validate a robust trading edge"]}
+          "Historical price-only research; horizon results are sensitive to current-universe survivorship and data-provider adjustments"]}
