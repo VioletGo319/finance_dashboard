@@ -38,6 +38,47 @@ jobs:
           for script in /tmp/m7-inline-*.js; do node --check "$script"; done
           node --check i18n.js
           node --check graph-viz.js
+      - name: Headless browser smoke check of interactive graph
+        run: |
+          set -e
+          BROWSER=$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)
+          if [ -z "$BROWSER" ]; then
+            echo "No headless Chrome in runner; DOM runtime check skipped, JS syntax checks remain enforced."
+            exit 0
+          fi
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+          shutil.copyfile("index.html","smoke.html")
+          page=Path("smoke.html").read_text(encoding="utf-8")
+          script="""<script>
+          document.querySelector('button[data-tab="network"]').click();
+          setTimeout(()=>{
+           const g=window.M7GraphViz;
+           const ok=!!g && g.state.nodes.length===47 && g.state.edges.length>=20 &&
+              document.getElementById('graphCanvas').width>0 &&
+              !!document.getElementById('factorHeatmap').innerHTML &&
+              !!document.getElementById('contribChart').innerHTML;
+           document.documentElement.dataset.m7Smoke=ok?'PASS':'FAIL';
+           document.documentElement.dataset.m7Nodes=g?g.state.nodes.length:'missing';
+           document.documentElement.dataset.m7Edges=g?g.state.edges.length:'missing';
+          },750);
+          </script>"""
+          page=page.replace("</body>",script+"</body>")
+          Path("smoke.html").write_text(page,encoding="utf-8")
+          PY
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --virtual-time-budget=3500 --dump-dom "file://$PWD/smoke.html" > /tmp/m7-graph-dom.txt 2>/tmp/m7-chrome-errors.txt || {
+            tail -50 /tmp/m7-chrome-errors.txt
+            exit 1
+          }
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          d=Path("/tmp/m7-graph-dom.txt").read_text(encoding="utf-8")
+          m=re.search(r'data-m7-smoke="([^"]+)"',d)
+          print("Graph browser smoke:",m.group(1) if m else "not executed")
+          assert m and m.group(1)=="PASS", "Graph or factor module did not render in Chromium"
+          PY
       - name: Run offline calculation tests
         run: python -m unittest discover -s tests -v
       - name: Verify published files and data integrity
