@@ -35,7 +35,10 @@ js=r"""
      if(p.closest('#m7Language'))continue;
      const text=(node.nodeValue||'').replace(/\s+/g,' ').trim();
      if(!text)continue;
-     if(locale!=='zh-CN' && /[\u3400-\u9fff]/.test(text))issues.push(text);
+     const unrevised=locale==='ja'
+       ? /[电储证据资关动变报买预码单项链费统总维经临区较该]/u.test(text)
+       : (locale!=='zh-CN' && /[\u3400-\u9fff]/u.test(text));
+     if(unrevised) issues.push(text);
    }
    const report={locale,selected:window.M7_I18N?.language,issues:[...new Set(issues)].slice(0,100),
       count:[...new Set(issues)].length,
@@ -60,5 +63,5 @@ for locale in ["en","zh-CN","fr","es","ja"]:
     report=json.loads(html.unescape(unquote(match.group(1))))
     print(locale,"selected="+str(report["selected"]),"untranslated="+str(report["count"]),
           "factors="+str(report["factors"]))
-    for issue in report["issues"][:100] if locale=="en" else report["issues"][:8]:
+    for issue in report["issues"][:70] if locale in ("en","ja") else report["issues"][:8]:
         print("  ",issue[:160])
