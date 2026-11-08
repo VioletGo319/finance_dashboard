@@ -4,7 +4,7 @@
   "previous_price_date": "2026-11-05",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-08T02:54:31.010605+00:00",
+  "retrieved_at_utc": "2026-11-08T03:06:16.927542+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -95,8 +95,8 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
-          "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json"
         ],
         "tightness": [
           "https://www.apple.com/newsroom/2026/07/apple-to-increase-spend-with-broadcom-to-produce-billions-more-us-chips/",
@@ -167,8 +167,8 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.microsoft.com/investor/reports/ar26/index.html",
-          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
         ],
         "acceleration": [
           "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm",
@@ -443,7 +443,7 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
         ],
         "tightness": [
           "https://about.fb.com/news/2026/01/meta-6-billion-agreement-corning-support-us-manufacturing/"
@@ -511,9 +511,9 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
           "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
-          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
         ],
         "tightness": [
           "https://www.sec.gov/Archives/edgar/data/1030894/000103089426000011/cls-20251231.htm"
@@ -733,7 +733,7 @@
       ],
       "factors": {
         "acceleration": 100.0,
-        "demand": 0.0,
+        "demand": 25.0,
         "tightness": 84.09,
         "customer_momentum": 86.36,
         "policy": null,
@@ -741,8 +741,8 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
-          "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
         ],
         "acceleration": [
           "https://www.sec.gov/Archives/edgar/data/932787/000093278726000009/stm-20251231.htm"
@@ -784,7 +784,7 @@
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 66.3,
+      "provisional_alpha": 73.24,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -815,8 +815,8 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.microsoft.com/investor/reports/ar26/index.html",
-          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
         ],
         "tightness": [
           "https://newsroom.amd.com/news/amd-and-meta-announce-expanded-strategic-partnersh/",
@@ -887,7 +887,7 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
           "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
         ],
         "tightness": [
@@ -951,7 +951,7 @@
       ],
       "factors": {
         "acceleration": 75.0,
-        "demand": 16.67,
+        "demand": 8.33,
         "tightness": 47.73,
         "customer_momentum": 95.45,
         "policy": null,
@@ -959,7 +959,7 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
         ],
         "acceleration": [
           "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm"
@@ -1000,7 +1000,7 @@
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 58.62,
+      "provisional_alpha": 56.31,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -1023,7 +1023,7 @@
       ],
       "factors": {
         "acceleration": null,
-        "demand": 16.67,
+        "demand": 8.33,
         "tightness": 47.73,
         "customer_momentum": 95.45,
         "policy": null,
@@ -1031,7 +1031,7 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
         ],
         "tightness": [
           "https://www.qualcomm.com/news/releases/2023/09/qualcomm-announces-agreement-with-apple-for-chip-supply"
@@ -1068,7 +1068,7 @@
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 50.86,
+      "provisional_alpha": 47.39,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -1091,7 +1091,7 @@
       ],
       "factors": {
         "acceleration": 37.5,
-        "demand": 16.67,
+        "demand": 8.33,
         "tightness": 47.73,
         "customer_momentum": 95.45,
         "policy": null,
@@ -1099,7 +1099,7 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
         ],
         "acceleration": [
           "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm"
@@ -1140,7 +1140,7 @@
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 46.26,
+      "provisional_alpha": 43.95,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -2274,8 +2274,8 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.microsoft.com/investor/reports/ar26/index.html",
-          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
         ],
         "tightness": [
           "https://about.fb.com/news/2025/06/meta-constellation-partner-clean-energy-project/",
@@ -2346,7 +2346,7 @@
       },
       "factor_sources": {
         "demand": [
-          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+          "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
         ],
         "tightness": [
           "https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/"
@@ -2686,7 +2686,152 @@
       "description": "CBP公布特定半导体及衍生产品25%附加税规则与例外；不可概括为所有芯片一律25%。"
     }
   ],
-  "filing_candidates": [],
+  "filing_candidates": [
+    {
+      "ticker": "AAPL",
+      "date": "2026-11-03",
+      "title": "AAPL 10-K",
+      "form": "10-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "AAPL",
+      "date": "2026-11-02",
+      "title": "AAPL 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/aapl-20261102.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "MSFT",
+      "date": "2026-11-05",
+      "title": "MSFT 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526448357/d177209d8k.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "MSFT",
+      "date": "2026-11-04",
+      "title": "MSFT 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526447173/d178557d8k.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "MSFT",
+      "date": "2026-10-28",
+      "title": "MSFT 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436149/msft-20261028.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "MSFT",
+      "date": "2026-10-28",
+      "title": "MSFT 10-Q",
+      "form": "10-Q",
+      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "MSFT",
+      "date": "2026-10-28",
+      "title": "MSFT 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "GOOGL",
+      "date": "2026-11-05",
+      "title": "GOOGL 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526449835/d174184d8k.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "GOOGL",
+      "date": "2026-10-29",
+      "title": "GOOGL 10-Q",
+      "form": "10-Q",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "GOOGL",
+      "date": "2026-10-28",
+      "title": "GOOGL 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "AMZN",
+      "date": "2026-10-30",
+      "title": "AMZN 10-Q",
+      "form": "10-Q",
+      "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "AMZN",
+      "date": "2026-10-29",
+      "title": "AMZN 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "META",
+      "date": "2026-11-05",
+      "title": "META 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526450074/d166273d8k.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "META",
+      "date": "2026-10-29",
+      "title": "META 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "META",
+      "date": "2026-10-22",
+      "title": "META 10-Q",
+      "form": "10-Q",
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "META",
+      "date": "2026-10-21",
+      "title": "META 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "TSLA",
+      "date": "2026-10-22",
+      "title": "TSLA 10-Q",
+      "form": "10-Q",
+      "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "TSLA",
+      "date": "2026-10-21",
+      "title": "TSLA 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/tsla-20261021.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    }
+  ],
   "policy_candidates": [
     {
       "date": "2026-11-06",
@@ -2920,12 +3065,12 @@
     ]
   },
   "capex_sources": {
-    "MSFT": "https://www.microsoft.com/investor/reports/ar26/index.html",
-    "GOOGL": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
-    "META": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+    "MSFT": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+    "GOOGL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+    "META": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
     "AMZN": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
-    "TSLA": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
-    "AAPL": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+    "TSLA": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+    "AAPL": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
   },
   "infrastructure": {
     "schema_version": "1.0",
@@ -3054,9 +3199,9 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
+      "energy": 1,
       "power": 3,
-      "storage": 2,
-      "energy": 1
+      "storage": 2
     },
     "unverified_is_unknown": true
   },
@@ -5146,36 +5291,33 @@
   "capex_records": {
     "MSFT": {
       "growth": 0.7962231413920775,
-      "filed": "2026-11-07",
-      "source": "https://www.microsoft.com/investor/reports/ar26/index.html",
-      "url": "https://www.microsoft.com/investor/reports/ar26/index.html",
+      "filed": "2026-07-29",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
       "fy_latest": "2026-06-30",
       "fy_prior": "2025-06-30",
-      "metric": "Additions to property and equipment",
       "method": "annual_capex_yoy_proxy",
-      "quality": "audited_annual_primary_source_fallback"
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+      "quality": "sec_companyfacts"
     },
     "GOOGL": {
-      "growth": 0.740952380952381,
-      "filed": "2026-11-07",
-      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+      "growth": 0.7406871609403256,
+      "filed": "2026-02-05",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
       "fy_latest": "2025-12-31",
       "fy_prior": "2024-12-31",
-      "metric": "Capital expenditures as described in annual 10-K",
       "method": "annual_capex_yoy_proxy",
-      "quality": "audited_annual_primary_source_fallback"
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+      "quality": "sec_companyfacts"
     },
     "META": {
       "growth": 0.8705980244792786,
-      "filed": "2026-11-07",
-      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+      "filed": "2026-01-29",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
       "fy_latest": "2025-12-31",
       "fy_prior": "2024-12-31",
-      "metric": "Purchases of property and equipment",
       "method": "annual_capex_yoy_proxy",
-      "quality": "audited_annual_primary_source_fallback"
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
+      "quality": "sec_companyfacts"
     },
     "AMZN": {
       "growth": 0.6523732261969146,
@@ -5189,26 +5331,24 @@
       "quality": "audited_annual_primary_source_fallback"
     },
     "TSLA": {
-      "growth": -0.24819255863163459,
-      "filed": "2026-11-07",
-      "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+      "growth": -0.24799365023370668,
+      "filed": "2026-01-29",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
       "fy_latest": "2025-12-31",
       "fy_prior": "2024-12-31",
-      "metric": "Purchases of property and equipment excluding finance leases net of sales",
       "method": "annual_capex_yoy_proxy",
-      "quality": "audited_annual_primary_source_fallback"
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "quality": "sec_companyfacts"
     },
     "AAPL": {
-      "growth": 0.34592992484386587,
-      "filed": "2026-11-07",
-      "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
-      "fy_latest": "2025-09-27",
-      "fy_prior": "2024-09-28",
-      "metric": "Payments to acquire property plant equipment",
+      "growth": -0.28895005898545023,
+      "filed": "2026-11-03",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "fy_latest": "2026-09-26",
+      "fy_prior": "2025-09-27",
       "method": "annual_capex_yoy_proxy",
-      "quality": "audited_annual_primary_source_fallback"
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "quality": "sec_companyfacts"
     }
   },
   "customer_share_changes": [
