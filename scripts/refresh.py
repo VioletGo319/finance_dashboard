@@ -265,9 +265,46 @@ def enrich_regulatory_data(base):
     base["capex_sources"]={k:v["url"] for k,v in capex.items()}
     base.setdefault("audit",{})["capex_annual_yoy_clients"]=list(capex)
 
+def load_infrastructure_attributes(as_of=AS_OF):
+    """Load sourced sector capabilities, never inferred customer relationships.
+
+    Treat absent capabilities as UNKNOWN, not as negative or zero exposures.
+    Asset values and contract amounts are intentionally not estimated.
+    """
+    file=ROOT/"config"/"infrastructure_dimensions.json"
+    if not file.exists():
+        return {"schema_version":"1.0","dimensions":[],"exposures":[],
+                "warning":"Classification file unavailable; no exposure claims"}
+    raw=json.loads(file.read_text(encoding="utf-8"))
+    allowed={"energy","power","storage"}
+    dimensions=raw.get("dimensions",[])
+    if set(d["id"] for d in dimensions)!=allowed:
+        raise ValueError("Infrastructure taxonomy must contain precisely energy, power, storage")
+    valid=[]
+    seen=set()
+    for e in raw.get("exposures",[]):
+        ticker=e.get("ticker")
+        category=e.get("dimension")
+        checked=e.get("verified_on")
+        source=e.get("source")
+        if ticker not in TICKERS or category not in allowed: raise ValueError("Unknown ticker or infrastructure dimension")
+        if (ticker,category) in seen: raise ValueError("Duplicate infrastructure attribute")
+        seen.add((ticker,category))
+        if e.get("status")!="verified_product" or not isinstance(source,str) or not source.startswith("https://"):
+            raise ValueError("Infrastructure attributes must link verified primary evidence")
+        if not isinstance(checked,str) or len(checked)!=10: raise ValueError("Missing verification date")
+        date.fromisoformat(checked)
+        if checked>as_of: continue  # point-in-time cutoff, no future information
+        if e.get("customer_verified") is not False: raise ValueError("Product capability is not an M7 contract")
+        valid.append(e)
+    return {**raw,"exposures":valid,"classification_counts":{
+        d:sum(x["dimension"]==d for x in valid) for d in allowed},
+        "unverified_is_unknown":True}
+
 def main():
     src=ROOT/"data"/"latest.json"
     base=json.loads(src.read_text(encoding="utf-8"))
+    base["infrastructure"] = load_infrastructure_attributes()
     universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK",)))
     quotes={}
     for symbol in universe:
