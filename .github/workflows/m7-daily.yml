@@ -42,7 +42,7 @@ jobs:
           import json
           from pathlib import Path
           d=json.loads(Path("data/latest.json").read_text(encoding="utf-8"))
-          assert len(d.get("suppliers",[])) == 12
+          assert len(d.get("suppliers",[])) == 40
           assert d.get("mode") != "fixture"
           assert isinstance(d.get("audit"),dict)
           print("Prices available:",d["audit"].get("market_prices_present"))
