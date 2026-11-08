@@ -8,6 +8,8 @@ on:
       - 'i18n.js'
       - 'i18n-content.js'
       - 'graph-viz.js'
+      - 'quant-lab.js'
+      - 'quant-lab.css'
       - 'config/**'
       - 'tests/**'
       - '.github/workflows/**'
@@ -40,6 +42,7 @@ jobs:
           node --check i18n.js
           node --check i18n-content.js
           node --check graph-viz.js
+          node --check quant-lab.js
       - name: Headless browser smoke check of interactive graph
         run: |
           set -e
@@ -96,6 +99,9 @@ jobs:
           assert Path('i18n-content.js').is_file()
           assert 'src="i18n-content.js' in html
           assert Path('graph-viz.js').is_file()
+          assert Path('quant-lab.js').is_file()
+          assert Path('quant-lab.css').is_file()
+          assert 'data-tab="quant"' in html
           assert 'src="graph-viz.js' in html
           assert 'id="graphCanvas"' in html
           viz=Path('graph-viz.js').read_text(encoding='utf-8')
