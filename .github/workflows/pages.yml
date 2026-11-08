@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'index.html'
+      - 'i18n.js'
       - 'data/latest.json'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -34,6 +35,9 @@ jobs:
           from pathlib import Path
           page=Path('index.html').read_text(encoding='utf-8')
           assert '<!doctype html>' in page.lower()
+          assert 'id="m7Language"' in page
+          assert 'src="i18n.js"' in page
+          assert Path('i18n.js').is_file()
           assert '</html>' in page.lower()
           snapshot=json.loads(Path('data/latest.json').read_text(encoding='utf-8'))
           assert len(snapshot.get('suppliers', []))==40
@@ -41,6 +45,7 @@ jobs:
           PY
           mkdir -p _site/data
           cp index.html _site/index.html
+          cp i18n.js _site/i18n.js
           cp data/latest.json _site/data/latest.json
           touch _site/.nojekyll
       - name: Configure GitHub Pages
