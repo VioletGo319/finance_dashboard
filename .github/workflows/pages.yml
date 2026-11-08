@@ -6,6 +6,7 @@ on:
     paths:
       - 'index.html'
       - 'i18n.js'
+      - 'i18n-content.js'
       - 'graph-viz.js'
       - 'data/latest.json'
       - '.github/workflows/pages.yml'
@@ -39,6 +40,8 @@ jobs:
           assert 'id="m7Language"' in page
           assert 'src="i18n.js"' in page
           assert Path('i18n.js').is_file()
+          assert Path('i18n-content.js').is_file()
+          assert 'src="i18n-content.js"' in page
           assert Path('graph-viz.js').is_file()
           assert 'src="graph-viz.js"' in page
           assert 'id="graphCanvas"' in page
@@ -50,6 +53,7 @@ jobs:
           mkdir -p _site/data
           cp index.html _site/index.html
           cp i18n.js _site/i18n.js
+          cp i18n-content.js _site/i18n-content.js
           cp graph-viz.js _site/graph-viz.js
           cp data/latest.json _site/data/latest.json
           touch _site/.nojekyll
