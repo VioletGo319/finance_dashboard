@@ -1,8 +1,8 @@
 {
-  "version": "3.0-40-tier2",
+  "version": "v3.1-40-multihop",
   "effective_date": "2026-11-07",
   "scope": "US-listed equities and ADRs selected as SUPPLY CHAIN candidates, not all verified direct Magnificent Seven vendors",
-  "selection_method": "industry relevance plus existing sourced M7/tier2 relationships; evidence status determined by dated graph edges",
+  "selection_method": "industry relevance plus existing sourced M7/tier2 relationships; evidence status determined by dated graph edges; delisted tickers excluded via official corporate actions",
   "comparison": "12 historical core + 28 expansion candidates; do not compare v2 historical 12-stock cross-sectional scores with v3 40-stock scores",
   "suppliers": [
     {
