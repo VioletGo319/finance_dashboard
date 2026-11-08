@@ -40,6 +40,17 @@ fr:{lab:"RECHERCHE QUANTITATIVE / INVESTISSEMENT SYSTÉMATIQUE",title:"Investiss
 es:{lab:"INVESTIGACIÓN CUANTITATIVA / INVERSIÓN SISTEMÁTICA",title:"Inversión y laboratorio de estrategias",subtitle:"40 acciones · fundamentales · ejecución diferida · auditoría de fuentes",screen:"PUNTUACIÓN DE INVERSIÓN",screenNote:"Corte actual: Alfa, crecimiento, valoración, tamaño y riesgo. No se traslada al pasado.",return:"Rentabilidad acumulada",cagr:"CAGR anualizado",sharpe:"Sharpe · tasa libre de riesgo 0",drawdown:"Caída máxima",benchmark:"COMPARACIÓN DE ÍNDICES",equity:"Crecimiento de una unidad",draw:"Caída",perf:"RENDIMIENTO DE CARTERA",backtest:"Diagnóstico de backtest",rank:"Clasificación actual de inversión",rankNote:"Requiere datos SEC y cobertura ponderada ≥75 %. Se muestran valores faltantes.",month:"RETORNOS MENSUALES",trades:"REGISTRO DE REBALANCEOS",method:"METODOLOGÍA Y RIESGOS",ticker:"Símbolo",score:"Puntuación",status:"Cobertura",price:"Cierre $",cap:"Capitalización estimada",revenue:"Ingresos anuales",growth:"Crecimiento ingresos",ps:"P/S aproximado",supply:"Alfa de proveedor†",monitor:"Monitor de precios",source:"Fuente SEC",unranked:"Datos insuficientes",ranked:"Calculado",noScore:"No calculable: faltan datos fundamentales con fecha.",monthly:"Retornos mensuales",positions:"Posiciones",tradeDate:"Cierre del rebalanceo",signalDate:"Fecha de señal",turnover:"Rotación unilateral",cost:"Costo estimado",none:"Historial insuficiente para backtest fiable.",backtestOnly:"DIAGNÓSTICO SOLO PRECIOS",screenOnly:"CORTE ACTUAL",notTested:"LA ESTRATEGIA ALFA + FUNDAMENTALES NO ESTÁ BACKTESTEADA",caveat:"El backtest usa solo precios conocidos previamente. No retroproyecta el Alfa actual, vínculos ni fundamentales. La selección de 40 activos contiene sesgo de supervivencia.",sourceWarning:"Capitalización estimada = cierre × acciones SEC, sin validar ADR o splits. P/S entre sectores no es plenamente comparable.",weight:"Pesos de factores",strategy:"Mensual: 8 mejores · igual peso · 3/sector · 10 pb/lado · cierre siguiente",coverage:"Cobertura de ingresos",eligible:"Puntuaciones válidas",fetch:"Cargando datos cuantitativos…",refresh:"Actualizar",loading:"Datos cuantitativos no disponibles. Revise la actualización automática.",trailing:"Periodo de backtest",vol:"Volatilidad anual",sortino:"Sortino · tasa 0",turn:"Rotación",tradeCost:"Costos de transacción",info:"Ratio de información vs SPY",positive:"Días positivos",days:"Sesiones",nav:"Valor del portafolio",priceOnly:"Momentum de precios, no Alfa",spy:"SPY",xlk:"XLK",details:"Factores y fuentes",size:"Tamaño indicativo",sourceData:"Datos SEC según fecha de presentación.",risk:"Limitaciones importantes",statusLine:"Estado de datos",preview:"La puntuación actual no implica rendimiento histórico.",actions:"Controles",hideUnranked:"Solo puntuados",showAll:"Las 40 acciones",noFact:"Sin estados financieros verificados la clasificación es N/A; el backtest de precios es independiente.",shares:"Acciones declaradas SEC",period:"Ejercicio",total:"Retorno total",actual:"Precios históricos",validation:"Diagnóstico, no ejecución real",na:"N/A"},
 ja:{lab:"クオンツ研究・システマティック投資",title:"投資適格性と戦略ラボ",subtitle:"40銘柄・財務データ・翌日終値での取引診断・出典監査",screen:"投資適格性スコア",screenNote:"現時点のAlpha、売上成長、割安度、規模、リスク。過去に遡って適用しません。",return:"累積リターン",cagr:"年率CAGR",sharpe:"シャープ比率・無リスク金利0",drawdown:"最大ドローダウン",benchmark:"ベンチマーク比較",equity:"1単位の資産推移",draw:"ドローダウン",perf:"ポートフォリオ実績",backtest:"バックテスト診断",rank:"現在の投資適格性ランキング",rankNote:"SEC財務データと75%以上の加重カバレッジが必要。未評価銘柄も表示。",month:"月次リターン",trades:"月次リバランス履歴",method:"手法とモデルリスク",ticker:"銘柄",score:"スコア",status:"網羅率",price:"終値 $",cap:"時価総額の参考値",revenue:"年間売上高",growth:"売上成長率",ps:"参考P/S",supply:"供給網Alpha†",monitor:"株価モニター",source:"SEC出典",unranked:"データ不足",ranked:"評価可能",noScore:"財務情報や日時情報が不足し採点できません。",monthly:"月次リターン",positions:"保有銘柄",tradeDate:"リバランス終値日",signalDate:"シグナル日",turnover:"片道回転率",cost:"推定コスト",none:"信頼できるバックテストを行う履歴が不足。",backtestOnly:"株価のみの診断",screenOnly:"現時点の断面評価",notTested:"Alpha＋財務情報の複合戦略は歴史的に検証されていません",caveat:"過去のバックテストには前日に判明した株価のみ使用。現在のAlpha、供給関係、時価総額、売上を過去に持ち込んでいません。現行40銘柄には生存者バイアスがあります。",sourceWarning:"参考時価総額＝終値×SEC申告株式数。ADR・株式分割の調整は未検証。業種間のP/S比較には注意。",weight:"評価ウェイト",strategy:"月次上位8銘柄・等ウェイト・業種上限3・片道10bp・翌取引日終値",coverage:"売上データ網羅率",eligible:"評価可能な銘柄",fetch:"クオンツ研究データを読み込み中…",refresh:"更新",loading:"量的分析データがありません。定期収集の状態をご確認ください。",trailing:"検証期間",vol:"年率ボラティリティ",sortino:"ソルティノ・無リスク金利0",turn:"回転率",tradeCost:"取引費用",info:"対SPY情報比率",positive:"プラスの日",days:"取引日数",nav:"資産曲線",priceOnly:"株価モメンタムのみ。供給網Alphaではありません。",spy:"SPY",xlk:"XLK",details:"因子と出典",size:"規模の参考値",sourceData:"SEC申告時点に基づく財務データです。",risk:"重要な限界",statusLine:"データ状態",preview:"現時点のスコアは過去のリターンを保証しません。",actions:"操作",hideUnranked:"評価可能のみ",showAll:"全40銘柄",noFact:"検証済み財務情報がなければ採点はN/A。価格のみのバックテストは別表示。",shares:"SEC申告株数",period:"会計年度",total:"累積リターン",actual:"過去の実際の価格",validation:"研究診断であり実際の約定ではありません",na:"N/A"}
 };
+
+const labExtras={
+en:{scenario:"Backtest scenario",paper:"Forward Paper Portfolio — Current Investability Signal",paperNote:"New research allocations only. First execution is the next completed close, so there are no fabricated prior returns.",noPaper:"Insufficient SEC+Alpha coverage for a forward paper signal.",sensitivity:"Sensitivity: position count and transaction costs",impact:"Scenario total return",forward:"First eligible execution",notFilled:"NOT FILLED",target:"Target allocation",rankWarning:"Returns below are historical PRICE-ONLY, not returns of the forward Alpha+fundamental basket."},
+"zh-CN":{scenario:"回测情景",paper:"前瞻模拟组合：当前投资性信号",paperNote:"仅生成研究目标持仓。首次可执行价为后续完成交易日的收盘价，历史收益不作虚构。",noPaper:"财务和Alpha覆盖不足，无法生成前瞻组合。",sensitivity:"稳健性：持仓数量与交易成本",impact:"情景累计收益",forward:"最早可执行时点",notFilled:"尚未成交",target:"目标权重",rankWarning:"下方历史回测仅使用价格信号，不代表前瞻Alpha＋基本面组合的历史收益。"},
+fr:{scenario:"Scénario de backtest",paper:"Portefeuille prospectif — signal d'investissabilité",paperNote:"Allocation indicative uniquement ; aucun rendement passé ni exécution réelle ne sont inventés.",noPaper:"Couverture financière insuffisante pour générer un portefeuille prospectif.",sensitivity:"Sensibilité : positions et coûts",impact:"Rendement par scénario",forward:"Première exécution possible",notFilled:"NON EXÉCUTÉ",target:"Poids cible",rankWarning:"Le backtest historique utilise seulement les prix, pas le portefeuille Alpha + fondamentaux."},
+es:{scenario:"Escenario de backtest",paper:"Cartera prospectiva — señal de inversión",paperNote:"Asignación solo de investigación; no implica operaciones ejecutadas ni retornos pasados.",noPaper:"Datos fundamentales insuficientes para una cartera prospectiva.",sensitivity:"Sensibilidad: posiciones y costos",impact:"Retorno del escenario",forward:"Primera ejecución posible",notFilled:"SIN EJECUTAR",target:"Peso objetivo",rankWarning:"El backtest histórico usa solo precios, no la cartera Alfa + fundamentales."},
+ja:{scenario:"バックテスト設定",paper:"前向きペーパーポートフォリオ・現在の投資適格性シグナル",paperNote:"研究用の目標保有のみ。過去の収益や実際の取引は生成しません。",noPaper:"財務データが不足して前向きのポートフォリオを生成できません。",sensitivity:"感応度：保有数・コスト",impact:"シナリオ累積リターン",forward:"最初の想定約定時点",notFilled:"未約定",target:"目標ウェイト",rankWarning:"下記の過去検証は価格のみ。現在のAlphaと財務を含む組合せではありません。"}
+};
+for(const [lang,labels] of Object.entries(labExtras))Object.assign(locales[lang],labels);
+
+let selectedScenario="Top 8 · 10 bps";
 let data=null,showOnly=false,chartMode="nav",seriesActive={strategy:true,spy:true,xlk:true};
 function L(){return (window.M7_I18N&&window.M7_I18N.language)||"en";}
 function t(k){return (locales[L()]||locales.en)[k]||locales.en[k]||k;}
@@ -50,7 +61,7 @@ function compact(v){if(v===null||v===undefined||!Number.isFinite(v))return "N/A"
 function link(url,label){return typeof url==="string"&&url.startsWith("https://")?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(label||"SEC ↗")+'</a>':"N/A";}
 function metric(name,value,sub){return '<div class="q-kpi"><div class="name">'+esc(name)+'</div><div class="value">'+esc(value)+'</div><div class="sub">'+esc(sub||"")+'</div></div>';}
 function renderShell(){
- const q=data||{},sc=q.screener||{},back=q.backtest||{};
+ const q=data||{},sc=q.screener||{},back=q.backtest_scenarios?.[selectedScenario]||q.backtest||{};
  const m=back.metrics||{},bm=back.benchmarks?.SPY||{},secs=q.fundamentals_coverage||{};
  const validity=back.status==="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC";
  host.innerHTML='<div class="q-root">'
@@ -61,12 +72,15 @@ function renderShell(){
   +metric(t("sharpe"),fmt(m.sharpe_rf0),t("priceOnly"))
   +metric(t("drawdown"),pc(m.max_drawdown),t("validation"))+'</div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("benchmark"))+'</h3><p>'+esc(t("strategy"))+'</p></div><div class="q-actions"><button id="qChartNav" aria-pressed="true" class="q-action">'+esc(t("equity"))+'</button><button id="qChartDD" aria-pressed="false" class="q-action">'+esc(t("draw"))+'</button></div></div>'
+  +'<div class="q-body q-group"><label class="q-note" for="qScenario">'+esc(t("scenario"))+'</label><select id="qScenario" class="pick">'+Object.keys(q.backtest_scenarios||{}).map(k=>'<option value="'+esc(k)+'" '+(k===selectedScenario?'selected':'')+'>'+esc(k)+'</option>').join('')+'</select><span class="q-note">'+esc(t("rankWarning"))+'</span></div>'
   +'<div class="q-chart" id="qChart"><div class="q-empty">'+esc(t("loading"))+'</div></div><div class="q-legend"><span><i style="background:#64e3cf"></i>Strategy</span><span><i style="background:#82b2ff"></i>SPY</span><span><i style="background:#ebb67d"></i>XLK</span></div></div>'
   +'<div class="q-two"><div class="q-panel"><div class="q-head"><div><h3>'+esc(t("perf"))+'</h3><p>'+esc(t("backtest"))+'</p></div></div><div class="q-body" id="qMetrics"></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("screen"))+'</h3><p>'+esc(t("screenNote"))+'</p></div></div><div class="q-body" id="qCoverage"></div></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("rank"))+'</h3><p>'+esc(t("rankNote"))+'</p></div><div class="q-actions"><button type="button" id="qFilter" class="q-action" aria-pressed="'+showOnly+'">'+esc(t(showOnly?"showAll":"hideUnranked"))+'</button></div></div><div class="q-scroll"><table class="q-table"><thead><tr>'
   +[t("ticker"),t("score"),t("status"),t("price"),t("cap"),t("revenue"),t("growth"),t("ps"),t("supply"),t("monitor"),t("source")].map(h=>'<th>'+esc(h)+'</th>').join('')
   +'</tr></thead><tbody id="qRanking"></tbody></table></div></div>'
+  +'<div class="q-two"><div class="q-panel"><div class="q-head"><div><h3>'+esc(t("paper"))+'</h3><p>'+esc(t("paperNote"))+'</p></div></div><div class="q-body" id="qPaper"></div></div>'
+  +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("sensitivity"))+'</h3></div></div><div class="q-body" id="qScenarioMatrix"></div></div></div>'
   +'<div class="q-two"><div class="q-panel"><div class="q-head"><div><h3>'+esc(t("month"))+'</h3></div></div><div class="q-body" id="qMonthly"></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("trades"))+'</h3></div></div><div class="q-scroll" id="qTrades"></div></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("method"))+'</h3></div></div><div class="q-body"><div class="q-formula">Investability = 0.30×Supply Alpha† + 0.20×Market Monitor + 0.20×Revenue Growth + 0.15×Inverse P/S + 0.05×Size + 0.10×Inverse Volatility<br>Eligibility: ≥ 75% weighted data coverage + ≥ 1 fundamental component</div><p class="q-note">'+esc(t("sourceWarning"))+'</p><p class="q-note">'+esc(t("sourceData"))+'</p><p class="q-note">'+esc(t("risk"))+': '+esc((back.limitations||[]).join(" | "))+'</p></div></div>'
@@ -104,12 +118,22 @@ function renderShell(){
    +'<td class="q-number">'+fmt(row.monitor_score)+'</td>'
    +'<td>'+link(x.fundamental_source,"SEC ↗")+'</td></tr>';
  }).join("")||'<tr><td colspan="11">'+esc(t("noScore"))+'</td></tr>';
+ const paper=q.prospective_screen_portfolio||{},selected=paper.selected||[];
+ document.getElementById("qPaper").innerHTML=selected.length
+  ?'<div class="q-pills">'+selected.map(x=>'<span>'+esc(x)+' · '+pc(paper.target_weights?.[x])+'</span>').join('')+'</div><div class="q-metric"><span>'+esc(t("forward"))+'</span><span>'+esc(paper.first_eligible_execution||"N/A")+'</span></div><div class="q-alert">'+esc(t("notFilled"))+' · '+esc(t("paperNote"))+'</div>'
+  :'<div class="q-empty">'+esc(t("noPaper"))+'</div>';
+ const scenarios=q.backtest_scenarios||{};
+ document.getElementById("qScenarioMatrix").innerHTML=Object.keys(scenarios).length
+  ?Object.entries(scenarios).map(([k,v])=>'<div class="q-metric"><span>'+esc(k)+'</span><span>'+esc(t("impact"))+': '+pc(v.metrics?.total_return)+' · Sharpe '+fmt(v.metrics?.sharpe_rf0)+'</span></div>').join('')
+  :'<div class="q-empty">'+esc(t("none"))+'</div>';
  const months=back.monthly||[];
  const rr=months.map(x=>'<div class="q-month" title="'+esc(x.month)+' SPY '+pc(x.spy)+' XLK '+pc(x.xlk)+'" style="background:'+(x.strategy>=0?"#173f3b":"#492b37")+'"><span>'+esc(x.month)+'</span><strong class="'+(x.strategy>=0?"q-positive":"q-negative")+'">'+pc(x.strategy)+'</strong><small class="q-muted">SPY '+pc(x.spy)+'</small></div>').join("");
  document.getElementById("qMonthly").innerHTML=rr?'<div class="q-matrix">'+rr+'</div>':'<div class="q-empty">'+esc(t("none"))+'</div>';
  const trs=(back.trades||[]).slice(-18).reverse();
  document.getElementById("qTrades").innerHTML=trs.length?'<table class="q-table"><thead><tr>'+[t("tradeDate"),t("signalDate"),t("positions"),t("turnover"),t("cost")].map(x=>'<th>'+esc(x)+'</th>').join('')+'</tr></thead><tbody>'+trs.map(x=>'<tr><td>'+esc(x.date)+'</td><td>'+esc(x.signal_date)+'</td><td>'+esc((x.tickers||[]).join(", "))+'</td><td>'+pc(x.one_way_turnover)+'</td><td>'+fmt((x.cost_fraction||0)*10000,1)+' bps</td></tr>').join('')+'</tbody></table>':'<div class="q-body q-empty">'+esc(t("none"))+'</div>';
  document.getElementById("qRefresh")?.addEventListener("click",()=>fetchQuant(true));
+ document.getElementById("qScenario")?.addEventListener("change",e=>{selectedScenario=e.target.value;renderShell();});
+
  document.getElementById("qFilter")?.addEventListener("click",()=>{showOnly=!showOnly;renderShell()});
  document.getElementById("qChartNav")?.addEventListener("click",()=>{chartMode="nav";drawChart()});
  document.getElementById("qChartDD")?.addEventListener("click",()=>{chartMode="dd";drawChart()});
@@ -118,7 +142,7 @@ function renderShell(){
 function drawChart(){
  const c=document.getElementById("qChart");
  if(!c)return;
- const back=data?.backtest||{},records=back.curve||[];
+ const back=data?.backtest_scenarios?.[selectedScenario]||data?.backtest||{},records=back.curve||[];
  if(records.length<10){c.innerHTML='<div class="q-empty">'+esc(t("none"))+'</div>';return;}
  const width=960,height=290,p={l:63,r:25,t:25,b:37},W=width-p.l-p.r,H=height-p.t-p.b;
  const datasets=chartMode==="dd"?[{key:"strategy_nav",label:"Strategy drawdown",color:"#64e3cf"}]:
