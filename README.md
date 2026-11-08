@@ -2,6 +2,20 @@
 
 中文研究版可视化看板，研究 Magnificent Seven（AAPL/MSFT/GOOGL/AMZN/NVDA/META/TSLA）上游上市供应商。**研究原型，不构成投资建议；部分数据不完整时不会制造“正式 Alpha”或收益预测概率。**
 
+## Interactive neural-style supply graph / 交互供应链图谱
+
+研究看板的 **Supply Network** 页面新增无第三方图形依赖的 Canvas 图谱（源码 `graph-viz.js`），包含 40 家供应商 + 7 家 M7 客户：
+
+- 默认分层布局，切换 **Orbit** 为星云布局；鼠标悬停聚焦相连节点，点击节点在右侧展开1至3跳证据路径、分数与原始出处
+- 拖动节点和画布、鼠标滚轮缩放、Fit 恢复视图、按公司代码或公司名称搜索
+- 动态高亮有向流动粒子、路径金色高亮；Flow 开关关闭动画，遵守系统 reduced-motion 设置
+- Show all 47 nodes 可以加入全部研究候选节点，默认仅显示已验证网络节点；候选关系缺失显示 Unknown，不作为零
+- 支持 English（默认）、中文、Français、Español、日本語，与原有因子、行情、政策数据同步
+
+**GNN-inspired visual presentation only:** 本项目用 GNN 风格的分层多跳图谱呈现已核验数据，没有声称训练了 Graph Neural Network，也没有通过图形推断未知供应合同。屏幕中的发光、粒子和颜色只是展示方式；边权是证据强度代理值，不是实际采购额百分比。原 SVG 仍保留作脚本异常时的降级展示。
+
+GitHub Actions 的 CI 增加真实 headless Chrome 浏览器测试，验证 47 个节点、关系边以及因子图 DOM 均生成；不再只依靠 JS 语法检查。
+
 ## v3.1: 40-stock and multi-hop supply graph
 
 40家公司固定研究池（12家核心 + 28家新增候选），参见 config/universe.json。候选公司不等于已确认的M7供应商。只有双方、原始证据链接和披露日期均明确的供应关系才可进入可计算网络。未知不等于零。
