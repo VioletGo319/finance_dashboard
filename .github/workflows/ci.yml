@@ -5,6 +5,7 @@ on:
     paths:
       - 'scripts/**'
       - 'index.html'
+      - 'i18n.js'
       - 'config/**'
       - 'tests/**'
       - '.github/workflows/**'
@@ -34,6 +35,7 @@ jobs:
               Path(f"/tmp/m7-inline-{i}.js").write_text(source,encoding="utf-8")
           PY
           for script in /tmp/m7-inline-*.js; do node --check "$script"; done
+          node --check i18n.js
       - name: Run offline calculation tests
         run: python -m unittest discover -s tests -v
       - name: Verify published files and data integrity
@@ -42,6 +44,13 @@ jobs:
           import json
           from pathlib import Path
           assert Path('index.html').is_file()
+          assert Path('i18n.js').is_file()
+          html=Path('index.html').read_text(encoding='utf-8')
+          translations=Path('i18n.js').read_text(encoding='utf-8')
+          assert 'id="m7Language"' in html
+          assert 'src="i18n.js"' in html
+          assert all(f"'{locale}'" in translations for locale in ('en','zh-CN','fr','es','ja'))
+          assert 'localStorage.setItem' in translations
           assert Path('site/index.html').is_file()
           latest=json.loads(Path('data/latest.json').read_text(encoding='utf-8'))
           assert len(latest.get('suppliers',[]))==40
