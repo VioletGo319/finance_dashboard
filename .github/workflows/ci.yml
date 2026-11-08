@@ -1,0 +1,37 @@
+name: M7 Pipeline CI
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check Python syntax
+        run: python -m compileall -q scripts tests
+      - name: Run offline calculation tests
+        run: python -m unittest discover -s tests -v
+      - name: Verify published files and data integrity
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          assert Path('index.html').is_file()
+          assert Path('site/index.html').is_file()
+          latest=json.loads(Path('data/latest.json').read_text(encoding='utf-8'))
+          assert len(latest.get('suppliers',[]))==12
+          assert all(x.get('ticker') for x in latest['suppliers'])
+          assert isinstance(latest.get('audit'),dict)
+          print('Verified 12-ticker research snapshot and static dashboard.')
+          PY
