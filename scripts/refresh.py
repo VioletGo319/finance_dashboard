@@ -158,6 +158,19 @@ def calculate(base, quotes):
         row["monitor_method"]="PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha"
         row["factor_sources"]=row.get("factor_sources",{})
         row["factor_methods"]=row.get("factor_methods",{})
+        related=[p for p in network.get("paths",[]) if p.get("supplier")==ticker]
+        edge_sources=sorted({url for p in related for url in p.get("sources",[]) if url.startswith("https://")})
+        if scores["tightness"] is not None:
+            row["factor_sources"]["tightness"]=edge_sources
+            row["factor_methods"]["tightness"]="Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)"
+        if scores["customer_momentum"] is not None:
+            client_links=[quotes.get(c,{}).get("url") for c in weighted.get(ticker,{}).get("by_customer",{})]
+            row["factor_sources"]["customer_momentum"]=sorted(set(edge_sources+[u for u in client_links if isinstance(u,str)]))
+            row["factor_methods"]["customer_momentum"]="Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)"
+        if scores["residual_momentum"] is not None:
+            row["factor_sources"]["residual_momentum"]=[url for url in (q.get("url"),quotes.get("XLK",{}).get("url")) if url]
+            row["factor_methods"]["residual_momentum"]="Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data"
+        row["factor_methods"]["policy"]="N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
         row["coverage"]=round(coverage,4)
         row["alpha"]=round(sum(WEIGHTS[k]*scores[k] for k in WEIGHTS),2) if complete else None
         row["provisional_alpha"]=round(provisional,2) if provisional is not None else None
