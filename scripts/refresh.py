@@ -169,6 +169,102 @@ def calculate(base, quotes):
     result["audit"]=audit
     return result
 
+
+# Public regulatory data is candidate-only unless a human validates the original.
+CLIENT_CIK={"AAPL":320193,"MSFT":789019,"GOOGL":1652044,"AMZN":1018724,"NVDA":1045810,"META":1326801,"TSLA":1318605}
+
+def fetch_sec_json(url):
+    contact=os.environ.get("SEC_USER_AGENT","")
+    if "@" not in contact:
+        raise ValueError("SEC_USER_AGENT must include researcher contact email")
+    req=Request(url,headers={"User-Agent":contact,"Accept":"application/json"})
+    with urlopen(req,timeout=20) as f:
+        if f.status!=200: raise ValueError(f"SEC HTTP {f.status}")
+        return json.load(f)
+
+def capex_growth(symbol):
+    cik=CLIENT_CIK[symbol]
+    url=f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010}.json"
+    obj=fetch_sec_json(url)
+    values=obj.get("facts",{}).get("us-gaap",{}).get("PaymentsToAcquirePropertyPlantAndEquipment",{}).get("units",{}).get("USD",[])
+    yearly={}
+    for v in sorted(values,key=lambda a:a.get("filed","")):
+        try:
+            if v["filed"]>AS_OF or v["form"] not in ("10-K","10-K/A") or v["val"]<=0:continue
+            days=(date.fromisoformat(v["end"])-date.fromisoformat(v["start"])).days
+            if 330<=days<=390:yearly.setdefault(v["end"],v)
+        except (ValueError,TypeError,KeyError):continue
+    items=sorted(yearly.values(),key=lambda a:a["end"])
+    if len(items)<2:return None
+    latest,prior=items[-1],items[-2]
+    if not 280<=(date.fromisoformat(latest["end"])-date.fromisoformat(prior["end"])).days<=450:return None
+    if (date.today()-date.fromisoformat(latest["filed"])).days>500:return None
+    return {"growth":latest["val"]/prior["val"]-1,"filed":latest["filed"],"url":url,"method":"Annual SEC PP&E purchase growth proxy; NOT analyst consensus surprise"}
+
+def collect_filing_candidates(symbol):
+    cik=CLIENT_CIK[symbol]
+    obj=fetch_sec_json(f"https://data.sec.gov/submissions/CIK{cik:010}.json")
+    rec=obj["filings"]["recent"]
+    rows=[]
+    for i,form in enumerate(rec.get("form",[])):
+        if form not in ("8-K","10-K","10-Q"):continue
+        filed=rec["filingDate"][i]
+        if filed>AS_OF or (date.today()-date.fromisoformat(filed)).days>30:continue
+        accession=rec["accessionNumber"][i].replace("-","")
+        doc=rec["primaryDocument"][i]
+        rows.append({"ticker":symbol,"date":filed,"title":f"{symbol} {form}","form":form,
+          "source":f"https://www.sec.gov/Archives/edgar/data/{cik}/{accession}/{doc}",
+          "status":"UNVERIFIED filing candidate; excluded from scores"})
+        if len(rows)>=8:break
+    return rows
+
+def collect_policy_candidates():
+    from urllib.parse import urlencode
+    seen=set();rows=[]
+    start=(date.today()-timedelta(days=14)).isoformat()
+    for term in ("semiconductor","export control","data center"):
+        params=urlencode({"conditions[term]":term,"conditions[publication_date][gte]":start,
+          "conditions[publication_date][lte]":AS_OF,"order":"newest","per_page":"12"})
+        try:
+            j=json.loads(fetch_text("https://www.federalregister.gov/api/v1/documents.json?"+params))
+            for d in j.get("results",[]):
+                num=d.get("document_number")
+                if not num or num in seen or d.get("publication_date","")>AS_OF:continue
+                seen.add(num)
+                rows.append({"date":d.get("publication_date"),"title":d.get("title"),
+                  "source":d.get("html_url") or f"https://www.federalregister.gov/d/{num}",
+                  "status":"UNREVIEWED policy candidate; excluded from factor scores"})
+        except Exception as exc:
+            print(f"Federal Register candidate lookup failed: {exc}",file=sys.stderr)
+    return sorted(rows,key=lambda a:a.get("date") or "",reverse=True)[:30]
+
+def enrich_regulatory_data(base):
+    # Missing analyst forecasts and policy impacts are not fabricated.
+    capex={}
+    filings=[]
+    if "@" in os.environ.get("SEC_USER_AGENT",""):
+        for client in CLIENTS:
+            try:
+                record=capex_growth(client)
+                if record is not None:capex[client]=record
+                filings.extend(collect_filing_candidates(client))
+            except Exception as exc:
+                print(f"SEC {client}: {str(exc)[:160]}",file=sys.stderr)
+    raw={}
+    for row in base["suppliers"]:
+        ticker=row["ticker"]
+        verified=[e for e in base.get("relationships",[]) if e.get("verified") is True
+          and e.get("date") and e["date"]<=AS_OF and e.get("supplier")==ticker
+          and e.get("customer") in capex]
+        vals=[capex[e["customer"]]["growth"] for e in verified]
+        raw[ticker]=statistics.mean(vals) if vals else None
+    for row in base["suppliers"]:
+        row.setdefault("factors",{})["demand"]=pct_rank(raw[row["ticker"]],list(raw.values()))
+    base["filing_candidates"]=filings[:45]
+    base["policy_candidates"]=collect_policy_candidates()
+    base["capex_sources"]={k:v["url"] for k,v in capex.items()}
+    base.setdefault("audit",{})["capex_annual_yoy_clients"]=list(capex)
+
 def main():
     src=ROOT/"data"/"latest.json"
     base=json.loads(src.read_text(encoding="utf-8"))
@@ -177,6 +273,7 @@ def main():
     for symbol in universe:
         quotes[symbol]=prices(symbol)
         print(f"{symbol}: {len(quotes[symbol]['bars'])} closes; {quotes[symbol].get('error') or 'ok'}",flush=True)
+    enrich_regulatory_data(base)
     result=calculate(base,quotes)
     src.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     snapshots=ROOT/"data"/"snapshots"
