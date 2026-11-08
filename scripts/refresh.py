@@ -1,0 +1,194 @@
+#!/usr/bin/env python3
+"""M7 Supplier Alpha public-data refresh (standard library, fail-closed).
+This is a partial research implementation: missing factors remain null.
+Do not interpret exploratory scores as investment probabilities.
+"""
+from __future__ import annotations
+import csv
+import io
+import json
+import os
+import statistics
+import sys
+from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
+from urllib.parse import quote
+from urllib.request import Request, urlopen
+
+ROOT = Path(__file__).resolve().parents[1]
+TICKERS = ("TSM", "AVGO", "ANET", "COHR", "LITE", "FN", "GLW", "CLS", "MU", "VRT", "APH", "STM")
+CLIENTS = ("AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA")
+WEIGHTS = {"acceleration": .30, "demand": .25, "tightness": .15, "customer_momentum": .15, "policy": .10, "residual_momentum": .05}
+UA = "M7 Supplier Alpha academic public data research (non-commercial)"
+AS_OF = date.today().isoformat()
+
+def fetch_text(url):
+    req = Request(url, headers={"User-Agent": UA, "Accept": "application/json,text/csv,*/*"})
+    with urlopen(req, timeout=16) as response:
+        if response.status != 200:
+            raise ValueError(f"HTTP {response.status}")
+        return response.read().decode("utf-8", "replace")
+
+def get_stooq(symbol):
+    start = (date.today() - timedelta(days=330)).strftime("%Y%m%d")
+    end = date.today().strftime("%Y%m%d")
+    url = f"https://stooq.com/q/d/l/?s={symbol.lower()}.us&i=d&d1={start}&d2={end}"
+    bars = []
+    for row in csv.DictReader(io.StringIO(fetch_text(url))):
+        try:
+            d, p = row["Date"], float(row["Close"])
+            if d <= AS_OF and p > 0: bars.append((d, p))
+        except (KeyError, TypeError, ValueError):
+            pass
+    return bars, url, "Stooq EOD"
+
+def get_yahoo(symbol):
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol)}?range=9mo&interval=1d"
+    j = json.loads(fetch_text(url))["chart"]["result"][0]
+    q = j["indicators"]["quote"][0]["close"]
+    bars = []
+    for stamp, p in zip(j.get("timestamp", []), q):
+        if p is None or p <= 0: continue
+        d = datetime.fromtimestamp(stamp, timezone.utc).date().isoformat()
+        if d <= AS_OF: bars.append((d, float(p)))
+    return bars, url, "Yahoo chart"
+
+def prices(symbol):
+    errors=[]
+    for retrieve in (get_stooq, get_yahoo):
+        try:
+            bars, url, provider = retrieve(symbol)
+            bars=sorted(dict(bars).items())
+            if len(bars) < 65: raise ValueError("fewer than 65 daily closes")
+            if (date.today()-date.fromisoformat(bars[-1][0])).days > 7: raise ValueError("stale close")
+            if bars[-1][1] <= 0 or bars[-2][1] <= 0: raise ValueError("bad price")
+            return {"bars": bars, "url": url, "provider": provider, "error": None}
+        except Exception as exc:
+            errors.append(f"{retrieve.__name__}: {str(exc)[:130]}")
+    return {"bars": [], "url": None, "provider": None, "error": "; ".join(errors)}
+
+def pct_rank(value, peers):
+    if value is None: return None
+    nums = sorted(x for x in peers if isinstance(x, (int, float)) and not isinstance(x, bool))
+    if len(nums) < 3: return None
+    return round(100 * (sum(x<value for x in nums) + .5*sum(x==value for x in nums) - .5)/(len(nums)-1), 2)
+
+def twenty_day_return(bars):
+    if len(bars) < 21: return None
+    return bars[-1][1]/bars[-21][1]-1 if bars[-21][1] else None
+
+def residual(bars, market):
+    a = dict(bars)
+    b = dict(market)
+    sessions = sorted(set(a) & set(b))[-61:]
+    if len(sessions) < 61: return None
+    xs=[b[sessions[i]]/b[sessions[i-1]]-1 for i in range(1,61)]
+    ys=[a[sessions[i]]/a[sessions[i-1]]-1 for i in range(1,61)]
+    xm,ym=statistics.mean(xs),statistics.mean(ys)
+    variance=sum((x-xm)**2 for x in xs)
+    if variance < 1e-14: return None
+    beta=sum((x-xm)*(y-ym) for x,y in zip(xs,ys))/variance
+    return a[sessions[-1]]/a[sessions[-21]]-1 - beta*(b[sessions[-1]]/b[sessions[-21]]-1)
+
+def calculate(base, quotes):
+    verified=[e for e in base.get("relationships",[]) if e.get("verified") is True and e.get("date") and e["date"] <= AS_OF and str(e.get("source","")).startswith("https://")]
+    out=[]
+    benchmark=quotes.get("XLK",{}).get("bars",[])
+    raw_customer={}
+    raw_residual={}
+    for ticker in TICKERS:
+        edges=[e for e in verified if e.get("supplier")==ticker and e.get("customer") in CLIENTS]
+        numerator=0.0
+        denominator=0.0
+        for e in edges:
+            customer=e["customer"]
+            v=twenty_day_return(quotes.get(customer,{}).get("bars",[]))
+            if v is None: continue
+            w=1.25 if isinstance(e.get("revenue_share"),(int,float)) else 1.0
+            numerator+=w*v
+            denominator+=w
+        raw_customer[ticker]=(numerator/denominator if denominator else None)
+        raw_residual[ticker]=residual(quotes.get(ticker,{}).get("bars",[]),benchmark)
+    for original in base.get("suppliers",[]):
+        ticker=original["ticker"]
+        row=dict(original)
+        q=quotes.get(ticker, {})
+        bars=q.get("bars", [])
+        row.update({"close":round(bars[-1][1],4) if bars else None,
+                    "previous_close":round(bars[-2][1],4) if len(bars)>1 else None,
+                    "price_date":bars[-1][0] if bars else None,
+                    "previous_price_date":bars[-2][0] if len(bars)>1 else None,
+                    "price_source":q.get("url"),
+                    "price_provider":q.get("provider"),
+                    "price_fresh":bool(bars)})
+        scores=dict(row.get("factors") or {})
+        scores["customer_momentum"]=pct_rank(raw_customer[ticker], list(raw_customer.values()))
+        scores["residual_momentum"]=pct_rank(raw_residual[ticker], list(raw_residual.values()))
+        # Keep only previously verified structural factors; no guessing missing policy/CapEx.
+        for key in WEIGHTS:
+            value=scores.get(key)
+            if not isinstance(value,(int,float)) or not 0<=value<=100: scores[key]=None
+        coverage=sum(WEIGHTS[key] for key,value in scores.items() if key in WEIGHTS and value is not None)
+        complete=coverage > 0.9999
+        provisional=(sum(WEIGHTS[k]*v for k,v in scores.items() if k in WEIGHTS and v is not None)/coverage
+                     if coverage>=.19 and sum(v is not None for v in scores.values())>=2 else None)
+        row["factors"]=scores
+        row["coverage"]=round(coverage,4)
+        row["alpha"]=round(sum(WEIGHTS[k]*scores[k] for k in WEIGHTS),2) if complete else None
+        row["provisional_alpha"]=round(provisional,2) if provisional is not None else None
+        prev=next((s for s in base["suppliers"] if s["ticker"]==ticker), {})
+        prior_value=prev.get("alpha")
+        prior_prov=prev.get("provisional_alpha")
+        row["previous_alpha"]=prior_value if complete and prev.get("model_version")==row.get("model_version") else None
+        row["previous_provisional_alpha"]=(prior_prov if prev.get("coverage")==row["coverage"]
+                                          and prev.get("model_version")==row.get("model_version") else None)
+        row["confidence"]="研究探索" if not complete else "六因子已覆盖"
+        row["explanation"]=(f"已核实客户关系；行情来自 {q.get('provider') or '不可用'}。"
+                            +("六因子数据不完整，仅提供带覆盖率的探索性评分。" if not complete else "六因子完整。"))
+        hist=list(row.get("history") or [])
+        current=row["alpha"] if complete else row["provisional_alpha"]
+        if current is not None and (not hist or hist[-1].get("date")!=AS_OF):
+            hist.append({"date":AS_OF,"alpha":current,"mode":"official" if complete else "provisional","coverage":row["coverage"]})
+        row["history"]=hist[-90:]
+        out.append(row)
+    result=dict(base)
+    result["suppliers"]=out
+    result["as_of"]=AS_OF
+    dates=[s["price_date"] for s in out if s.get("price_date")]
+    result["price_date"]=max(dates) if dates else None
+    result["previous_price_date"]=max((s["previous_price_date"] for s in out if s.get("previous_price_date")),default=None)
+    result["retrieved_at_utc"]=datetime.now(timezone.utc).isoformat()
+    result["mode"]="live_partial" if dates else "partial"
+    audit=dict(result.get("audit") or {})
+    audit["market_prices_present"]=len(dates)
+    audit["market_prices_total"]=len(TICKERS)
+    audit["official_alpha_count"]=sum(s["alpha"] is not None for s in out)
+    audit["provisional_count"]=sum(s["provisional_alpha"] is not None for s in out)
+    audit["market_qa_errors"]=[{"ticker":t,"message":quotes[t]["error"]} for t in TICKERS if quotes[t].get("error")]
+    audit["model_caveat"]="6-factor alpha is N/A until ALL validated factors available. Partial scores are exploratory."
+    result["audit"]=audit
+    return result
+
+def main():
+    src=ROOT/"data"/"latest.json"
+    base=json.loads(src.read_text(encoding="utf-8"))
+    universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK",)))
+    quotes={}
+    for symbol in universe:
+        quotes[symbol]=prices(symbol)
+        print(f"{symbol}: {len(quotes[symbol]['bars'])} closes; {quotes[symbol].get('error') or 'ok'}",flush=True)
+    result=calculate(base,quotes)
+    src.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    snapshots=ROOT/"data"/"snapshots"
+    snapshots.mkdir(parents=True,exist_ok=True)
+    (snapshots/(AS_OF+".json")).write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    site=ROOT/"site"
+    (site/"data").mkdir(parents=True,exist_ok=True)
+    (site/"index.html").write_bytes((ROOT/"index.html").read_bytes())
+    (site/"data"/"latest.json").write_bytes(src.read_bytes())
+    print("Price coverage:",result["audit"]["market_prices_present"],"/",len(TICKERS))
+    print("Official scores:",result["audit"]["official_alpha_count"])
+    return 0
+
+if __name__=="__main__":
+    sys.exit(main())
