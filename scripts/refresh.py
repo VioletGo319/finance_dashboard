@@ -18,8 +18,10 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 try:
     from scripts.network import graph_snapshot
+    from scripts.enrichment import annual_capex_fallback, disclosed_share_change, monitoring_scores, dataset_health
 except ModuleNotFoundError:
     from network import graph_snapshot
+    from enrichment import annual_capex_fallback, disclosed_share_change, monitoring_scores, dataset_health
 TICKERS = tuple(row["ticker"] for row in graph_snapshot()[0]["suppliers"])
 CLIENTS = ("AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA")
 WEIGHTS = {"acceleration": .30, "demand": .25, "tightness": .15, "customer_momentum": .15, "policy": .10, "residual_momentum": .05}
@@ -113,6 +115,7 @@ def calculate(base, quotes):
             denominator+=w
         raw_customer[ticker]=(numerator/denominator if denominator else None)
         raw_residual[ticker]=residual(quotes.get(ticker,{}).get("bars",[]),benchmark)
+    monitor=monitoring_scores(quotes,TICKERS,pct_rank,raw_residual)
     for original in base.get("suppliers",[]):
         ticker=original["ticker"]
         row=dict(original)
@@ -127,6 +130,7 @@ def calculate(base, quotes):
                     "price_fresh":bool(bars)})
         scores={key:None for key in WEIGHTS}
         scores["demand"]=row.get("factors",{}).get("demand")
+        scores["acceleration"]=row.get("factors",{}).get("acceleration")
         scores["tightness"]=pct_rank(weighted.get(ticker,{}).get("reach") if weighted.get(ticker,{}).get("verified_in_graph") else None,
                      [v["reach"] for v in weighted.values() if v.get("verified_in_graph")])
         scores["customer_momentum"]=pct_rank(raw_customer[ticker], list(raw_customer.values()))
@@ -145,15 +149,19 @@ def calculate(base, quotes):
         row["paths"]=weighted.get(ticker,{}).get("paths",0)
         row["third_hop_clients"]=weighted.get(ticker,{}).get("third_hop_clients",0)
         row["factors"]=scores
+        row["monitor_score"]=monitor.get(ticker)
+        row["monitor_method"]="PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha"
+        row["factor_sources"]=row.get("factor_sources",{})
+        row["factor_methods"]=row.get("factor_methods",{})
         row["coverage"]=round(coverage,4)
         row["alpha"]=round(sum(WEIGHTS[k]*scores[k] for k in WEIGHTS),2) if complete else None
         row["provisional_alpha"]=round(provisional,2) if provisional is not None else None
-        prev=next((s for s in base["suppliers"] if s["ticker"]==ticker), {})
+        prev=base.get("_prior_suppliers",{}).get(ticker,{})
         prior_value=prev.get("alpha")
         prior_prov=prev.get("provisional_alpha")
-        row["previous_alpha"]=prior_value if complete and prev.get("model_version")==row.get("model_version") else None
-        row["previous_provisional_alpha"]=(prior_prov if prev.get("coverage")==row["coverage"]
-                                          and prev.get("model_version")==row.get("model_version") else None)
+        comparable=prev.get("model_version")==base.get("model_version") and prev.get("coverage")==row["coverage"] and prev.get("price_date")!=row.get("price_date")
+        row["previous_alpha"]=prior_value if complete and comparable else None
+        row["previous_provisional_alpha"]=prior_prov if not complete and comparable else None
         row["confidence"]="研究探索" if not complete else "六因子已覆盖"
         row["model_version"]=base.get("model_version","v3.1-40-multihop")
         row["explanation"]=(f"已核实客户关系；行情来自 {q.get('provider') or '不可用'}。"
@@ -161,10 +169,12 @@ def calculate(base, quotes):
         hist=list(row.get("history") or [])
         current=row["alpha"] if complete else row["provisional_alpha"]
         if current is not None and (not hist or hist[-1].get("date")!=AS_OF):
-            hist.append({"date":AS_OF,"alpha":current,"mode":"official" if complete else "provisional","coverage":row["coverage"]})
+            hist.append({"date":AS_OF,"alpha":current,"mode":"official" if complete else "provisional",
+                         "model_version":base.get("model_version"),"coverage":row["coverage"]})
         row["history"]=hist[-90:]
         out.append(row)
     result=dict(base)
+    result.pop("_prior_suppliers",None)
     result["suppliers"]=out
     result["as_of"]=AS_OF
     dates=[s["price_date"] for s in out if s.get("price_date")]
@@ -180,7 +190,9 @@ def calculate(base, quotes):
     audit["market_qa_errors"]=[{"ticker":t,"message":quotes[t]["error"]} for t in TICKERS if quotes[t].get("error")]
     audit["verified_graph_paths"]=len(network.get("paths",[]))
     audit["verified_graph_edges"]=len(network.get("verified_edges",[]))
-    audit["model_caveat"]="6-factor alpha is N/A until ALL validated factors available. Partial scores are exploratory."
+    audit["data_health"]=dataset_health(out,WEIGHTS)
+    audit["seed_capex_clients"]=list(base.get("capex_sources",{}))
+    audit["model_caveat"]="Strict six-factor Alpha N/A unless all six inputs verified. Research factors may use explicitly labeled audited CapEx YoY / customer-share change proxies; market monitor is PRICE ONLY."
     result["audit"]=audit
     return result
 
@@ -254,29 +266,51 @@ def collect_policy_candidates():
     return sorted(rows,key=lambda a:a.get("date") or "",reverse=True)[:30]
 
 def enrich_regulatory_data(base):
-    # Missing analyst forecasts and policy impacts are not fabricated.
-    capex={}
+    """Fetch SEC when configured; otherwise use validated, date-scoped annual figures."""
+    capex=annual_capex_fallback(AS_OF)
     filings=[]
     if "@" in os.environ.get("SEC_USER_AGENT",""):
         for client in CLIENTS:
             try:
                 record=capex_growth(client)
-                if record is not None:capex[client]=record
+                if record is not None:
+                    # Live SEC filing supersedes manual annual benchmark only when newer.
+                    prior=capex.get(client)
+                    if prior is None or record["filed"]>=prior["filed"]:
+                        capex[client]={**record,"source":record["url"],"quality":"sec_companyfacts",
+                                       "method":"annual_capex_yoy_proxy"}
                 filings.extend(collect_filing_candidates(client))
             except Exception as exc:
                 print(f"SEC {client}: {str(exc)[:160]}",file=sys.stderr)
-    raw={}
+    exposure=base.get("network",{}).get("exposures",{})
+    raw_demand={}
     for row in base["suppliers"]:
         ticker=row["ticker"]
-        weights=base.get("network",{}).get("exposures",{}).get(ticker,{}).get("by_customer",{})
-        points=[(capex[c]["growth"],w) for c,w in weights.items() if c in capex and w>0]
-        raw[ticker]=sum(g*w for g,w in points)/sum(w for g,w in points) if points else None
+        weights=exposure.get(ticker,{}).get("by_customer",{})
+        points=[(capex[c]["growth"],w,c) for c,w in weights.items() if c in capex and w>0]
+        raw_demand[ticker]=sum(g*w for g,w,_ in points)/sum(w for _,w,_ in points) if points else None
+        row.setdefault("factor_sources",{})
+        row.setdefault("factor_methods",{})
+        if points:
+            row["factor_sources"]["demand"]=[capex[c]["source"] for _,_,c in points]
+            row["factor_methods"]["demand"]="Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
+    shares=disclosed_share_change(base.get("network",{}).get("verified_edges",[]),AS_OF)
+    raw_share={t:sum(r["change_pp"] for r in recs)/len(recs) for t,recs in shares.items()}
     for row in base["suppliers"]:
-        row.setdefault("factors",{})["demand"]=pct_rank(raw[row["ticker"]],list(raw.values()))
+        t=row["ticker"]
+        row.setdefault("factors",{})
+        row["factors"]["demand"]=pct_rank(raw_demand[t],[v for v in raw_demand.values() if v is not None])
+        row["factors"]["acceleration"]=pct_rank(raw_share.get(t),list(raw_share.values()))
+        if t in shares:
+            row["factor_sources"]["acceleration"]=[r["source"] for r in shares[t]]
+            row["factor_methods"]["acceleration"]="Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
     base["filing_candidates"]=filings[:45]
     base["policy_candidates"]=collect_policy_candidates()
-    base["capex_sources"]={k:v["url"] for k,v in capex.items()}
-    base.setdefault("audit",{})["capex_annual_yoy_clients"]=list(capex)
+    base["capex_sources"]={k:v["source"] for k,v in capex.items()}
+    base["capex_records"]=capex
+    base["customer_share_changes"]=[rec for recs in shares.values() for rec in recs]
+    base.setdefault("audit",{})["capex_annual_yoy_clients"]=sorted(capex)
+    base["audit"]["customer_share_change_suppliers"]=sorted(shares)
 
 def load_infrastructure_attributes(as_of=AS_OF):
     """Load sourced sector capabilities, never inferred customer relationships.
@@ -319,13 +353,14 @@ def main():
     base=json.loads(src.read_text(encoding="utf-8"))
     universe,network=graph_snapshot(AS_OF)
     existing={r["ticker"]:r for r in base.get("suppliers",[])}
+    base["_prior_suppliers"]=existing
     refreshed=[]
     for spec in universe["suppliers"]:
         old=existing.get(spec["ticker"],{})
         row={"ticker":spec["ticker"],"name":spec["name"],
              "sector":spec["sector"],"cohort":spec["cohort"],
              "model_version":"v3.1-40-multihop",
-             "history":[h for h in old.get("history",[]) if h.get("mode")=="v3-official"],
+             "history":[h for h in old.get("history",[]) if h.get("model_version")==base.get("model_version") and h.get("mode") in ("official","provisional")],
              "factors":{key:None for key in WEIGHTS}}
         refreshed.append(row)
     base["suppliers"]=refreshed
