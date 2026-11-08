@@ -168,7 +168,7 @@ def calculate(base, quotes):
         row["previous_alpha"]=prior_value if complete and comparable else None
         row["previous_provisional_alpha"]=prior_prov if not complete and comparable else None
         row["confidence"]="研究探索" if not complete else "六因子已覆盖"
-        row["model_version"]=base.get("model_version","v3.1-40-multihop")
+        row["model_version"]=base.get("model_version","v3.2-40-multihop-proxy")
         row["explanation"]=(f"已核实客户关系；行情来自 {q.get('provider') or '不可用'}。"
                             +("六因子数据不完整，仅提供带覆盖率的探索性评分。" if not complete else "六因子完整。"))
         hist=list(row.get("history") or [])
@@ -364,14 +364,14 @@ def main():
         old=existing.get(spec["ticker"],{})
         row={"ticker":spec["ticker"],"name":spec["name"],
              "sector":spec["sector"],"cohort":spec["cohort"],
-             "model_version":"v3.1-40-multihop",
+             "model_version":"v3.2-40-multihop-proxy",
              "history":[h for h in old.get("history",[]) if h.get("model_version")==base.get("model_version") and h.get("mode") in ("official","provisional")],
              "factors":{key:None for key in WEIGHTS}}
         refreshed.append(row)
     base["suppliers"]=refreshed
     base["universe"]=universe
     base["network"]=network
-    base["model_version"]="v3.1-40-multihop"
+    base["model_version"]="v3.2-40-multihop-proxy"
     base["infrastructure"] = load_infrastructure_attributes()
     universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK",)))
     quotes={}
