@@ -8,6 +8,9 @@ on:
       - 'i18n.js'
       - 'i18n-content.js'
       - 'graph-viz.js'
+      - 'quant-lab.js'
+      - 'quant-lab.css'
+      - 'data/quant/latest.json'
       - 'data/latest.json'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -43,6 +46,9 @@ jobs:
           assert Path('i18n-content.js').is_file()
           assert 'src="i18n-content.js' in page
           assert Path('graph-viz.js').is_file()
+          assert Path('quant-lab.js').is_file()
+          assert Path('quant-lab.css').is_file()
+          assert 'id="quantLab"' in page
           assert 'src="graph-viz.js' in page
           assert 'id="graphCanvas"' in page
           assert '</html>' in page.lower()
@@ -55,7 +61,11 @@ jobs:
           cp i18n.js _site/i18n.js
           cp i18n-content.js _site/i18n-content.js
           cp graph-viz.js _site/graph-viz.js
+          cp quant-lab.js _site/quant-lab.js
+          cp quant-lab.css _site/quant-lab.css
           cp data/latest.json _site/data/latest.json
+          mkdir -p _site/data/quant
+          if [ -f data/quant/latest.json ]; then cp data/quant/latest.json _site/data/quant/latest.json; fi
           touch _site/.nojekyll
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
