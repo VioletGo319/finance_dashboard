@@ -51,6 +51,28 @@ jobs:
           print("Prices available:",d["audit"].get("market_prices_present"))
           print("Full six-factor scores:",d["audit"].get("official_alpha_count"))
           PY
+      - name: Print compact audited QQQ horizon results
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("data/quant/latest.json")
+          if not p.exists():
+              print("NO_QUANT_FILE")
+          else:
+              q=json.loads(p.read_text())
+              print("QUANT_AS_OF",q.get("as_of"),"BENCHMARK",q.get("benchmark_primary"))
+              for y in ("1Y","3Y","5Y"):
+                  k=f"{y} · Top 8 · 10 bps"
+                  b=q.get("backtest_scenarios",{}).get(k,{})
+                  print("HORIZON_RESULT",json.dumps({
+                    "horizon":y,"status":b.get("status"),"start":b.get("start_date"),
+                    "end":b.get("end_date"),"requested_start":b.get("requested_start"),
+                    "reason":b.get("reason"),"metrics":b.get("metrics"),
+                    "qqq":b.get("benchmarks",{}).get("QQQ"),
+                    "xlk":b.get("benchmarks",{}).get("XLK"),
+                    "trades":len(b.get("trades") or [])},ensure_ascii=False))
+          PY
       - name: Persist daily data for branch-based GitHub Pages
         run: |
           git config user.name 'github-actions[bot]'
