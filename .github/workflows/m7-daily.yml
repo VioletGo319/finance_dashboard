@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/m7-daily.yml'
-    # SEC_USER_AGENT validation refresh
+    # Trigger QQQ 1Y/3Y/5Y historical refresh after backtest migration
   workflow_dispatch:
   schedule:
     # After regular US market close: 17:30 EST / 18:30 EDT. v3.1 active 40-stock refresh.
