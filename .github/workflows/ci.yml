@@ -6,6 +6,7 @@ on:
       - 'scripts/**'
       - 'index.html'
       - 'i18n.js'
+      - 'i18n-content.js'
       - 'graph-viz.js'
       - 'config/**'
       - 'tests/**'
@@ -37,6 +38,7 @@ jobs:
           PY
           for script in /tmp/m7-inline-*.js; do node --check "$script"; done
           node --check i18n.js
+          node --check i18n-content.js
           node --check graph-viz.js
       - name: Headless browser smoke check of interactive graph
         run: |
@@ -89,6 +91,8 @@ jobs:
           assert Path('index.html').is_file()
           html=Path('index.html').read_text(encoding='utf-8')
           assert Path('i18n.js').is_file()
+          assert Path('i18n-content.js').is_file()
+          assert 'src="i18n-content.js"' in html
           assert Path('graph-viz.js').is_file()
           assert 'src="graph-viz.js"' in html
           assert 'id="graphCanvas"' in html
