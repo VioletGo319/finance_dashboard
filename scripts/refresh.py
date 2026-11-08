@@ -231,7 +231,7 @@ def capex_growth(symbol):
     latest,prior=items[-1],items[-2]
     if not 280<=(date.fromisoformat(latest["end"])-date.fromisoformat(prior["end"])).days<=450:return None
     if (LOCAL_NOW.date()-date.fromisoformat(latest["filed"])).days>500:return None
-    return {"growth":latest["val"]/prior["val"]-1,"filed":latest["filed"],"url":url,"method":"Annual SEC PP&E purchase growth proxy; NOT analyst consensus surprise"}
+    return {"growth":latest["val"]/prior["val"]-1,"filed":latest["filed"],"url":url,"fy_latest":latest["end"],"fy_prior":prior["end"],"method":"Annual SEC PP&E purchase growth proxy; NOT analyst consensus surprise"}
 
 def collect_filing_candidates(symbol):
     cik=CLIENT_CIK[symbol]
@@ -281,7 +281,7 @@ def enrich_regulatory_data(base):
                 if record is not None:
                     # Live SEC filing supersedes manual annual benchmark only when newer.
                     prior=capex.get(client)
-                    if prior is None or record["filed"]>=prior["filed"]:
+                    if prior is None or record["fy_latest"]>=prior.get("fy_latest","0000-00-00"):
                         capex[client]={**record,"source":record["url"],"quality":"sec_companyfacts",
                                        "method":"annual_capex_yoy_proxy"}
                 filings.extend(collect_filing_candidates(client))
