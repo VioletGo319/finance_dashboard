@@ -227,7 +227,7 @@ function renderInfrastructure(){
  const select=$('#infraTicker'),previous=select.value;
  select.innerHTML='<option value="all">全部 12 家供应商</option>'+TICKERS.map(t=>`<option value="${esc(t)}">${esc(t)} · ${esc(NAMES[t]||t)}</option>`).join('');
  select.value=TICKERS.includes(previous)?previous:'all';
- $('#infraFilters [data-dim]').forEach(x=>x.classList.toggle('active',x.dataset.dim===infrastructureFilter));
+ $$('#infraFilters [data-dim]').forEach(x=>x.classList.toggle('active',x.dataset.dim===infrastructureFilter));
  const chosen=select.value, verifiedOnly=$('#infraOnlyVerified').checked;
  let rows=exposures.filter(x=>(infrastructureFilter==='all'||x.dimension===infrastructureFilter)&&(chosen==='all'||chosen===x.ticker));
  if(!verifiedOnly){
@@ -240,7 +240,7 @@ function renderInfrastructure(){
  rows.sort((a,b)=>TICKERS.indexOf(a.ticker)-TICKERS.indexOf(b.ticker) || dims.findIndex(d=>d.id===a.dimension)-dims.findIndex(d=>d.id===b.dimension));
  $('#infraRows').innerHTML=rows.length?rows.map((x,i)=>`<tr data-infra="${i}" style="cursor:pointer"><td><strong>${esc(x.ticker)}</strong><div class="muted tiny">${esc(NAMES[x.ticker]||'')}</div></td><td>${esc(labels[x.dimension]||x.dimension)}</td><td>${esc(x.role)}<div class="muted tiny">${esc(x.product)}</div></td><td><span class="infra-state ${x.status==='unknown'?'infra-unknown':''}">${x.status==='unknown'?'尚未核验':'已核验产品能力'}</span></td><td>${safeUrl(x.source)?link(x.source,'官方资料 ↗'):'N/A'}</td></tr>`).join(''):'<tr><td colspan="5">当前筛选条件下没有已核验的产品关联。未核验不能解释为零。</td></tr>';
  $('#infraDetail').textContent=`当前展示 ${rows.length} 条记录；资料口径截至 ${cfg.verified_as_of||db.as_of||'未知'}。单条产品证据不是 M7 直接供应合同。`;
- $('#infraRows tr[data-infra]').forEach(tr=>tr.addEventListener('click',()=>{
+ $$('#infraRows tr[data-infra]').forEach(tr=>tr.addEventListener('click',()=>{
   const x=rows[Number(tr.dataset.infra)];
   const desc=esc(x.comment||'当前没有可靠证据证明此项与七巨头存在直接采购关系。');
   $('#infraDetail').innerHTML=`<strong>${esc(x.ticker)} · ${esc(labels[x.dimension]||x.dimension)}</strong><div>${esc(x.role)} — ${esc(x.product)}</div><div class="infra-hint">分类状态：${x.status==='verified_product'?'已有官方产品资料':'未知'} · 分类核验日期：${esc(x.verified_on||'N/A')} · 客户合同：${x.customer_verified===true?'独立核验':'未核实'}。</div><p>${desc}</p>${safeUrl(x.source)?link(x.source,'查看原始产品资料 ↗'):'暂无可靠来源；不参与该维度已核验统计。'}`;
@@ -263,7 +263,7 @@ function renderPaths(){
  const filtered=paths.filter(p=>(supplier.value==='all'||p.supplier===supplier.value) && ($('#pathHops').value==='all'||String(p.hops)===$('#pathHops').value) && (client.value==='all'||p.customer===client.value));
  filtered.sort((a,b)=>b.weight-a.weight||a.supplier.localeCompare(b.supplier));
  $('#pathRows').innerHTML=filtered.length?filtered.map((p,i)=>`<tr style="cursor:pointer" data-path-index="${i}"><td><strong>${esc(p.supplier)}</strong></td><td>${esc(p.path.join(' → '))}</td><td>${esc(p.customer)}</td><td>${p.hops}</td><td>${(+p.weight).toFixed(3)}</td><td><span class="infra-state">原始来源 × ${p.sources?.length||0}</span></td></tr>`).join(''):'<tr><td colspan="6">此筛选下没有已核实路径。缺失关联为 Unknown。</td></tr>';
- $('#pathRows [data-path-index]').forEach(tr=>tr.addEventListener('click',()=>{
+ $$('#pathRows [data-path-index]').forEach(tr=>tr.addEventListener('click',()=>{
   const p=filtered[+tr.dataset.pathIndex];
   $('#pathSelected').innerHTML=`<strong>${esc(p.path.join(' → '))}</strong><p>证据路径乘积：${(+p.weight).toFixed(4)}。每段边使用证据分类权重，且每额外一跳再乘0.70折扣；不是实际供货比例。</p>${(p.sources||[]).map((u,i)=>`<div>${esc(p.dates?.[i]||'N/A')}：${link(u,'原始证据 '+(i+1)+' ↗')}</div>`).join('')}`;
  }));
