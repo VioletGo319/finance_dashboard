@@ -40,6 +40,17 @@ python -m http.server 8000 --directory site
 
 CAPEX 仅使用已披露的两个相邻完整财政年度的现金购置固定资产数据的同比变动，**不等于市场一致预期 surprise**。最新8-K/10-K/10-Q和 Federal Register 关键词命中只进入 `filing_candidates` / `policy_candidates`，必须人工审核后才能进入可交易因子。网页内历史重大政策仅作为背景及原文证据，不代表自动政策评分。
 
+
+## Energy / Power / Storage 三维属性（v2.1）
+
+新增加的**能源（发电与一次能源技术）、电力（输配电、UPS、功率电子）、储能（BESS、电池和备份储能）**为独立研究属性，不改变原六因子 Alpha 权重。这里的 Storage 指能量储存，而不是 MU 的 HBM/DRAM/SSD 数据存储。
+
+- 数据库配置：`config/infrastructure_dimensions.json`，包括三个维度定义与已核验的产品层证据、官方链接、核验日期和角色。
+- 自动数据快照：`scripts/refresh.py` 会将这些证据复制到每日 `data/latest.json` 的 `infrastructure` 字段，并根据日期排除未来信息。
+- 网页新增「能源 · 电力 · 储能」页，按维度/公司筛选，显示官方证据和未核验状态。不存在公开资料不代表没有业务，该格记为未知，**不是零分**。
+- 第一批可核验的产品能力包括 STM 太阳能逆变器器件、功率管理和商业储能器件，VRT 关键供配电与 BESS，以及 APH 电力互连产品。以上均不代表确认这些产品已向任一七巨头供货；营收、容量、订单金额也未推断。详情与原文见配置文件及网页。
+- 该功能仅用于供应链研究，若之后要做 Energy/Power/Storage Alpha，需要先建立上市供应商披露数据、地域/需求冲击与可交易样本外回测，再决定新模型版本。
+
 ## Scoring / 打分
 
 | Factor | Weight | Research implementation |
