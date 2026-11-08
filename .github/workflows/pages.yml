@@ -6,6 +6,7 @@ on:
     paths:
       - 'index.html'
       - 'i18n.js'
+      - 'graph-viz.js'
       - 'data/latest.json'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -38,6 +39,9 @@ jobs:
           assert 'id="m7Language"' in page
           assert 'src="i18n.js"' in page
           assert Path('i18n.js').is_file()
+          assert Path('graph-viz.js').is_file()
+          assert 'src="graph-viz.js"' in page
+          assert 'id="graphCanvas"' in page
           assert '</html>' in page.lower()
           snapshot=json.loads(Path('data/latest.json').read_text(encoding='utf-8'))
           assert len(snapshot.get('suppliers', []))==40
@@ -46,6 +50,7 @@ jobs:
           mkdir -p _site/data
           cp index.html _site/index.html
           cp i18n.js _site/i18n.js
+          cp graph-viz.js _site/graph-viz.js
           cp data/latest.json _site/data/latest.json
           touch _site/.nojekyll
       - name: Configure GitHub Pages
