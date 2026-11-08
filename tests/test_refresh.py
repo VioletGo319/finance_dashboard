@@ -11,7 +11,7 @@ class TestResearchPipeline(unittest.TestCase):
         cls.base=json.loads((Path(__file__).resolve().parents[1]/"data"/"latest.json").read_text())
 
     def test_fixed_universe(self):
-        self.assertEqual(len(TICKERS),12)
+        self.assertEqual(len(TICKERS),40)
         self.assertEqual(set(x["ticker"] for x in self.base["suppliers"]),set(TICKERS))
         self.assertAlmostEqual(sum(WEIGHTS.values()),1.)
 
