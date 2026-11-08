@@ -236,7 +236,7 @@ def simulate_daily_close(quotes,tickers,initial_date=None,top_n=8,trade_bps=10):
         monthly[m]=row
     previous=[1.,1.,1.];monthly_returns=[]
     for m,row in sorted(monthly.items()):
-        current=[row["strategy_nav"],row["spy_nav"],row["xlk_nav"]]
+        current=[row["strategy_nav"],row["qqq_nav"],row["xlk_nav"]]
         monthly_returns.append({"month":m,"strategy":round(current[0]/previous[0]-1,5),
           "qqq":round(current[1]/previous[1]-1,5),"xlk":round(current[2]/previous[2]-1,5)})
         previous=current
