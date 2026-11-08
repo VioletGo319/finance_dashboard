@@ -1,33 +1,36 @@
 {
-  "as_of": "2026-11-08",
+  "as_of": "2026-11-07",
   "price_date": "2026-11-06",
   "previous_price_date": "2026-11-05",
   "mode": "partial",
-  "model_version": "v3.1-40-multihop",
-  "retrieved_at_utc": "2026-11-08T01:58:30.701821+00:00",
+  "model_version": "v3.2-40-multihop-proxy",
+  "retrieved_at_utc": "2026-11-08T02:52:13.704546+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
       "name": "Taiwan Semiconductor",
       "sector": "先进代工",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 45.6,
+          "date": "2026-11-07",
+          "alpha": 39.11,
           "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": null,
-        "tightness": 53.33,
-        "customer_momentum": 30.0,
+        "tightness": 47.73,
+        "customer_momentum": 20.45,
         "policy": null,
         "residual_momentum": 69.23
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 375.44,
       "previous_close": 353.1,
       "price_date": "2026-11-06",
@@ -40,9 +43,11 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
+      "monitor_score": 68.21,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 45.6,
+      "provisional_alpha": 39.11,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -53,22 +58,32 @@
       "name": "Broadcom",
       "sector": "ASIC/网络",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 81.65,
+          "date": "2026-11-07",
+          "alpha": 57.08,
           "mode": "provisional",
-          "coverage": 0.35
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
         "acceleration": null,
-        "demand": null,
-        "tightness": 83.33,
-        "customer_momentum": 86.67,
+        "demand": 33.33,
+        "tightness": 84.09,
+        "customer_momentum": 68.18,
         "policy": null,
         "residual_momentum": 61.54
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+          "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
       },
       "close": 293.69,
       "previous_close": 291.53,
@@ -82,9 +97,11 @@
       "indirect_clients": 0,
       "paths": 2,
       "third_hop_clients": 0,
-      "coverage": 0.35,
+      "monitor_score": 57.44,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 81.65,
+      "provisional_alpha": 57.08,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -95,22 +112,37 @@
       "name": "Arista Networks",
       "sector": "AI网络",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 86.33,
+          "date": "2026-11-07",
+          "alpha": 64.36,
           "mode": "provisional",
-          "coverage": 0.35
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
-        "acceleration": null,
-        "demand": null,
-        "tightness": 83.33,
-        "customer_momentum": 93.33,
+        "acceleration": 37.5,
+        "demand": 75.0,
+        "tightness": 84.09,
+        "customer_momentum": 77.27,
         "policy": null,
         "residual_momentum": 74.36
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.microsoft.com/investor/reports/ar26/index.html",
+          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ],
+        "acceleration": [
+          "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm",
+          "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
       },
       "close": 170.8,
       "previous_close": 159.16,
@@ -124,9 +156,11 @@
       "indirect_clients": 0,
       "paths": 2,
       "third_hop_clients": 0,
-      "coverage": 0.35,
+      "monitor_score": 82.56,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 86.33,
+      "provisional_alpha": 64.36,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -137,23 +171,26 @@
       "name": "Coherent",
       "sector": "光通信",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 44.87,
+          "date": "2026-11-07",
+          "alpha": 38.38,
           "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": null,
-        "tightness": 53.33,
-        "customer_momentum": 30.0,
+        "tightness": 47.73,
+        "customer_momentum": 20.45,
         "policy": null,
         "residual_momentum": 64.1
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 192.81,
       "previous_close": 169.76,
       "price_date": "2026-11-06",
@@ -166,9 +203,11 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
+      "monitor_score": 63.08,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 44.87,
+      "provisional_alpha": 38.38,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -179,23 +218,26 @@
       "name": "Lumentum",
       "sector": "光通信",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 37.18,
+          "date": "2026-11-07",
+          "alpha": 30.69,
           "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": null,
-        "tightness": 53.33,
-        "customer_momentum": 30.0,
+        "tightness": 47.73,
+        "customer_momentum": 20.45,
         "policy": null,
         "residual_momentum": 10.26
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 538.59,
       "previous_close": 509.7,
       "price_date": "2026-11-06",
@@ -208,9 +250,11 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
+      "monitor_score": 6.16,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 37.18,
+      "provisional_alpha": 30.69,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -221,22 +265,35 @@
       "name": "Fabrinet",
       "sector": "光学制造",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 79.52,
+          "date": "2026-11-07",
+          "alpha": 39.9,
           "mode": "provisional",
-          "coverage": 0.35
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
-        "acceleration": null,
-        "demand": null,
-        "tightness": 83.33,
-        "customer_momentum": 80.0,
+        "acceleration": 0.0,
+        "demand": 41.67,
+        "tightness": 84.09,
+        "customer_momentum": 63.64,
         "policy": null,
         "residual_momentum": 66.67
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
+        ],
+        "acceleration": [
+          "https://investor.fabrinet.com/node/13676/xbrl-viewer"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
       },
       "close": 327.13,
       "previous_close": 292.97,
@@ -250,9 +307,11 @@
       "indirect_clients": 0,
       "paths": 2,
       "third_hop_clients": 0,
-      "coverage": 0.35,
+      "monitor_score": 75.9,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 79.52,
+      "provisional_alpha": 39.9,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -263,22 +322,31 @@
       "name": "Corning",
       "sector": "光纤/玻璃",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 55.09,
+          "date": "2026-11-07",
+          "alpha": 65.93,
           "mode": "provisional",
-          "coverage": 0.35
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
         "acceleration": null,
-        "demand": null,
-        "tightness": 53.33,
-        "customer_momentum": 66.67,
+        "demand": 95.83,
+        "tightness": 47.73,
+        "customer_momentum": 47.73,
         "policy": null,
         "residual_momentum": 25.64
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
       },
       "close": 106.13,
       "previous_close": 103.43,
@@ -292,9 +360,11 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
-      "coverage": 0.35,
+      "monitor_score": 29.74,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 55.09,
+      "provisional_alpha": 65.93,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -305,22 +375,33 @@
       "name": "Celestica",
       "sector": "服务器/制造",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 74.65,
+          "date": "2026-11-07",
+          "alpha": 63.16,
           "mode": "provisional",
-          "coverage": 0.35
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
         "acceleration": null,
-        "demand": null,
+        "demand": 58.33,
         "tightness": 100.0,
-        "customer_momentum": 73.33,
+        "customer_momentum": 54.55,
         "policy": null,
         "residual_momentum": 2.56
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+          "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
       },
       "close": 206.68,
       "previous_close": 205.64,
@@ -334,9 +415,11 @@
       "indirect_clients": 0,
       "paths": 3,
       "third_hop_clients": 0,
-      "coverage": 0.35,
+      "monitor_score": 5.64,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 74.65,
+      "provisional_alpha": 63.16,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -347,23 +430,26 @@
       "name": "Micron",
       "sector": "HBM/内存",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 40.84,
+          "date": "2026-11-07",
+          "alpha": 34.35,
           "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": null,
-        "tightness": 53.33,
-        "customer_momentum": 30.0,
+        "tightness": 47.73,
+        "customer_momentum": 20.45,
         "policy": null,
         "residual_momentum": 35.9
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 690.0,
       "previous_close": 656.39,
       "price_date": "2026-11-06",
@@ -376,9 +462,11 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
+      "monitor_score": 26.67,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 40.84,
+      "provisional_alpha": 34.35,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -389,7 +477,7 @@
       "name": "Vertiv",
       "sector": "供配电/制冷",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -399,6 +487,8 @@
         "policy": null,
         "residual_momentum": 71.79
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 182.86,
       "previous_close": 176.73,
       "price_date": "2026-11-06",
@@ -411,6 +501,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 49.23,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -424,7 +516,7 @@
       "name": "Amphenol",
       "sector": "电力/高速互连",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -434,6 +526,8 @@
         "policy": null,
         "residual_momentum": 76.92
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 74.59,
       "previous_close": 71.64,
       "price_date": "2026-11-06",
@@ -446,6 +540,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 75.9,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -459,22 +555,36 @@
       "name": "STMicroelectronics",
       "sector": "功率半导体",
       "cohort": "core",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 90.29,
+          "date": "2026-11-07",
+          "alpha": 66.3,
           "mode": "provisional",
-          "coverage": 0.35
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
-        "acceleration": null,
-        "demand": null,
-        "tightness": 83.33,
-        "customer_momentum": 100.0,
+        "acceleration": 100.0,
+        "demand": 0.0,
+        "tightness": 84.09,
+        "customer_momentum": 86.36,
         "policy": null,
         "residual_momentum": 82.05
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+          "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
+        ],
+        "acceleration": [
+          "https://www.sec.gov/Archives/edgar/data/932787/000093278726000009/stm-20251231.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
       },
       "close": 41.72,
       "previous_close": 39.95,
@@ -488,9 +598,11 @@
       "indirect_clients": 0,
       "paths": 2,
       "third_hop_clients": 0,
-      "coverage": 0.35,
+      "monitor_score": 68.72,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 90.29,
+      "provisional_alpha": 66.3,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -501,15 +613,32 @@
       "name": "Advanced Micro Devices",
       "sector": "AI GPU/CPU",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
-      "history": [],
+      "model_version": "v3.2-40-multihop-proxy",
+      "history": [
+        {
+          "date": "2026-11-07",
+          "alpha": 79.07,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        }
+      ],
       "factors": {
         "acceleration": null,
-        "demand": null,
-        "tightness": null,
-        "customer_momentum": null,
+        "demand": 75.0,
+        "tightness": 84.09,
+        "customer_momentum": 77.27,
         "policy": null,
         "residual_momentum": 89.74
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.microsoft.com/investor/reports/ar26/index.html",
+          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
       },
       "close": 449.04,
       "previous_close": 404.4,
@@ -518,14 +647,16 @@
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=9mo&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
-      "network_reach": null,
-      "direct_clients": 0,
+      "network_reach": 1.6,
+      "direct_clients": 2,
       "indirect_clients": 0,
-      "paths": 0,
+      "paths": 2,
       "third_hop_clients": 0,
-      "coverage": 0.05,
+      "monitor_score": 72.3,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 79.07,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -536,15 +667,32 @@
       "name": "Marvell Technology",
       "sector": "数据中心ASIC/互连",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
-      "history": [],
+      "model_version": "v3.2-40-multihop-proxy",
+      "history": [
+        {
+          "date": "2026-11-07",
+          "alpha": 56.63,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        }
+      ],
       "factors": {
         "acceleration": null,
-        "demand": null,
-        "tightness": null,
-        "customer_momentum": null,
+        "demand": 50.0,
+        "tightness": 84.09,
+        "customer_momentum": 59.09,
         "policy": null,
         "residual_momentum": 0.0
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+          "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
       },
       "close": 141.2,
       "previous_close": 133.55,
@@ -553,14 +701,16 @@
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?range=9mo&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
-      "network_reach": null,
-      "direct_clients": 0,
+      "network_reach": 1.6,
+      "direct_clients": 2,
       "indirect_clients": 0,
-      "paths": 0,
+      "paths": 2,
       "third_hop_clients": 0,
-      "coverage": 0.05,
+      "monitor_score": 1.02,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 56.63,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -571,15 +721,35 @@
       "name": "Cirrus Logic",
       "sector": "手机模拟芯片",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
-      "history": [],
+      "model_version": "v3.2-40-multihop-proxy",
+      "history": [
+        {
+          "date": "2026-11-07",
+          "alpha": 58.62,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        }
+      ],
       "factors": {
-        "acceleration": null,
-        "demand": null,
-        "tightness": null,
-        "customer_momentum": null,
+        "acceleration": 75.0,
+        "demand": 16.67,
+        "tightness": 47.73,
+        "customer_momentum": 95.45,
         "policy": null,
         "residual_momentum": 92.31
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+        ],
+        "acceleration": [
+          "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
       },
       "close": 113.58,
       "previous_close": 110.23,
@@ -588,14 +758,16 @@
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CRUS?range=9mo&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
-      "network_reach": null,
-      "direct_clients": 0,
+      "network_reach": 0.8,
+      "direct_clients": 1,
       "indirect_clients": 0,
-      "paths": 0,
+      "paths": 1,
       "third_hop_clients": 0,
-      "coverage": 0.05,
+      "monitor_score": 95.39,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 58.62,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -606,15 +778,31 @@
       "name": "Qualcomm",
       "sector": "移动/连接芯片",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
-      "history": [],
+      "model_version": "v3.2-40-multihop-proxy",
+      "history": [
+        {
+          "date": "2026-11-07",
+          "alpha": 50.86,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        }
+      ],
       "factors": {
         "acceleration": null,
-        "demand": null,
-        "tightness": null,
-        "customer_momentum": null,
+        "demand": 16.67,
+        "tightness": 47.73,
+        "customer_momentum": 95.45,
         "policy": null,
         "residual_momentum": 97.44
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
       },
       "close": 165.41,
       "previous_close": 156.75,
@@ -623,14 +811,16 @@
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/QCOM?range=9mo&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
-      "network_reach": null,
-      "direct_clients": 0,
+      "network_reach": 0.8,
+      "direct_clients": 1,
       "indirect_clients": 0,
-      "paths": 0,
+      "paths": 1,
       "third_hop_clients": 0,
-      "coverage": 0.05,
+      "monitor_score": 95.39,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 50.86,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -641,15 +831,35 @@
       "name": "Skyworks Solutions",
       "sector": "RF射频器件",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
-      "history": [],
+      "model_version": "v3.2-40-multihop-proxy",
+      "history": [
+        {
+          "date": "2026-11-07",
+          "alpha": 46.26,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        }
+      ],
       "factors": {
-        "acceleration": null,
-        "demand": null,
-        "tightness": null,
-        "customer_momentum": null,
+        "acceleration": 37.5,
+        "demand": 16.67,
+        "tightness": 47.73,
+        "customer_momentum": 95.45,
         "policy": null,
         "residual_momentum": 94.87
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+        ],
+        "acceleration": [
+          "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
       },
       "close": 82.19,
       "previous_close": 81.21,
@@ -658,14 +868,16 @@
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/SWKS?range=9mo&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
-      "network_reach": null,
-      "direct_clients": 0,
+      "network_reach": 0.8,
+      "direct_clients": 1,
       "indirect_clients": 0,
-      "paths": 0,
+      "paths": 1,
       "third_hop_clients": 0,
-      "coverage": 0.05,
+      "monitor_score": 85.64,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 46.26,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -676,23 +888,26 @@
       "name": "Ultra Clean Holdings",
       "sector": "半导体设备子系统与超净清洗",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 33.37,
+          "date": "2026-11-07",
+          "alpha": 24.73,
           "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": null,
-        "tightness": 33.33,
-        "customer_momentum": 30.0,
+        "tightness": 22.73,
+        "customer_momentum": 20.45,
         "policy": null,
         "residual_momentum": 43.59
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 41.13,
       "previous_close": 37.2,
       "price_date": "2026-11-06",
@@ -705,9 +920,11 @@
       "indirect_clients": 1,
       "paths": 2,
       "third_hop_clients": 1,
+      "monitor_score": 34.36,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 33.37,
+      "provisional_alpha": 24.73,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -718,7 +935,7 @@
       "name": "onsemi",
       "sector": "功率半导体",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -728,6 +945,8 @@
         "policy": null,
         "residual_momentum": 79.49
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 63.31,
       "previous_close": 63.01,
       "price_date": "2026-11-06",
@@ -740,6 +959,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 65.13,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -753,7 +974,7 @@
       "name": "NXP Semiconductors",
       "sector": "汽车/功率芯片",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -763,6 +984,8 @@
         "policy": null,
         "residual_momentum": 100.0
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 248.29,
       "previous_close": 244.43,
       "price_date": "2026-11-06",
@@ -775,6 +998,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 92.82,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -788,7 +1013,7 @@
       "name": "Monolithic Power Systems",
       "sector": "功率管理IC",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -798,6 +1023,8 @@
         "policy": null,
         "residual_momentum": 87.18
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 1190.4399,
       "previous_close": 1131.4301,
       "price_date": "2026-11-06",
@@ -810,6 +1037,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 86.16,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -823,7 +1052,7 @@
       "name": "Microchip Technology",
       "sector": "嵌入式/功率芯片",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -833,6 +1062,8 @@
         "policy": null,
         "residual_momentum": 33.33
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 58.35,
       "previous_close": 64.85,
       "price_date": "2026-11-06",
@@ -845,6 +1076,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 22.05,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -858,23 +1091,26 @@
       "name": "Applied Materials",
       "sector": "晶圆制造设备",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 20.4,
+          "date": "2026-11-07",
+          "alpha": 14.49,
           "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": null,
-        "tightness": 13.33,
-        "customer_momentum": 30.0,
+        "tightness": 9.09,
+        "customer_momentum": 20.45,
         "policy": null,
         "residual_momentum": 12.82
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 332.72,
       "previous_close": 319.25,
       "price_date": "2026-11-06",
@@ -887,9 +1123,11 @@
       "indirect_clients": 1,
       "paths": 1,
       "third_hop_clients": 0,
+      "monitor_score": 20.0,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 20.4,
+      "provisional_alpha": 14.49,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -900,23 +1138,26 @@
       "name": "Lam Research",
       "sector": "半导体刻蚀设备",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 20.77,
+          "date": "2026-11-07",
+          "alpha": 14.86,
           "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": null,
-        "tightness": 13.33,
-        "customer_momentum": 30.0,
+        "tightness": 9.09,
+        "customer_momentum": 20.45,
         "policy": null,
         "residual_momentum": 15.38
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 200.44,
       "previous_close": 185.2,
       "price_date": "2026-11-06",
@@ -929,9 +1170,11 @@
       "indirect_clients": 1,
       "paths": 1,
       "third_hop_clients": 0,
+      "monitor_score": 19.48,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 20.77,
+      "provisional_alpha": 14.86,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -942,23 +1185,26 @@
       "name": "KLA Corporation",
       "sector": "晶圆检测/计量",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 22.6,
+          "date": "2026-11-07",
+          "alpha": 16.69,
           "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": null,
-        "tightness": 13.33,
-        "customer_momentum": 30.0,
+        "tightness": 9.09,
+        "customer_momentum": 20.45,
         "policy": null,
         "residual_momentum": 28.21
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 138.49,
       "previous_close": 129.8,
       "price_date": "2026-11-06",
@@ -971,9 +1217,11 @@
       "indirect_clients": 1,
       "paths": 1,
       "third_hop_clients": 0,
+      "monitor_score": 33.34,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 22.6,
+      "provisional_alpha": 16.69,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -984,23 +1232,26 @@
       "name": "ASML Holding",
       "sector": "EUV光刻设备",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 25.16,
+          "date": "2026-11-07",
+          "alpha": 19.25,
           "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": null,
-        "tightness": 13.33,
-        "customer_momentum": 30.0,
+        "tightness": 9.09,
+        "customer_momentum": 20.45,
         "policy": null,
         "residual_momentum": 46.15
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 1424.75,
       "previous_close": 1356.65,
       "price_date": "2026-11-06",
@@ -1013,9 +1264,11 @@
       "indirect_clients": 1,
       "paths": 1,
       "third_hop_clients": 0,
+      "monitor_score": 51.28,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 25.16,
+      "provisional_alpha": 19.25,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -1026,23 +1279,26 @@
       "name": "Onto Innovation",
       "sector": "晶圆计量/检测",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [
         {
-          "date": "2026-11-08",
-          "alpha": 22.97,
+          "date": "2026-11-07",
+          "alpha": 17.06,
           "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": null,
-        "tightness": 13.33,
-        "customer_momentum": 30.0,
+        "tightness": 9.09,
+        "customer_momentum": 20.45,
         "policy": null,
         "residual_momentum": 30.77
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 173.28,
       "previous_close": 155.99,
       "price_date": "2026-11-06",
@@ -1055,9 +1311,11 @@
       "indirect_clients": 1,
       "paths": 1,
       "third_hop_clients": 0,
+      "monitor_score": 31.79,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 22.97,
+      "provisional_alpha": 17.06,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -1068,7 +1326,7 @@
       "name": "Axcelis Technologies",
       "sector": "离子注入设备",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1078,6 +1336,8 @@
         "policy": null,
         "residual_momentum": 41.03
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 99.24,
       "previous_close": 90.0,
       "price_date": "2026-11-06",
@@ -1090,6 +1350,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 59.49,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1103,7 +1365,7 @@
       "name": "Entegris",
       "sector": "半导体材料/洁净",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1113,6 +1375,8 @@
         "policy": null,
         "residual_momentum": 84.62
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 127.98,
       "previous_close": 124.75,
       "price_date": "2026-11-06",
@@ -1125,6 +1389,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 60.0,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1138,7 +1404,7 @@
       "name": "MKS Instruments",
       "sector": "半导体工艺组件",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1148,6 +1414,8 @@
         "policy": null,
         "residual_momentum": 56.41
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 192.27,
       "previous_close": 176.82,
       "price_date": "2026-11-06",
@@ -1160,6 +1428,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 64.61,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1173,7 +1443,7 @@
       "name": "FormFactor",
       "sector": "芯片测试探针",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1183,6 +1453,8 @@
         "policy": null,
         "residual_momentum": 48.72
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 81.12,
       "previous_close": 71.76,
       "price_date": "2026-11-06",
@@ -1195,6 +1467,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 56.92,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1208,7 +1482,7 @@
       "name": "Dell Technologies",
       "sector": "AI服务器",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1218,6 +1492,8 @@
         "policy": null,
         "residual_momentum": 7.69
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 328.53,
       "previous_close": 316.91,
       "price_date": "2026-11-06",
@@ -1230,6 +1506,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 7.69,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1243,7 +1521,7 @@
       "name": "Hewlett Packard Enterprise",
       "sector": "AI服务器/网络",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1253,6 +1531,8 @@
         "policy": null,
         "residual_momentum": 5.13
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 44.77,
       "previous_close": 44.16,
       "price_date": "2026-11-06",
@@ -1265,6 +1545,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 10.26,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1278,7 +1560,7 @@
       "name": "Super Micro Computer",
       "sector": "AI服务器/液冷",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1288,6 +1570,8 @@
         "policy": null,
         "residual_momentum": 51.28
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 28.76,
       "previous_close": 27.08,
       "price_date": "2026-11-06",
@@ -1300,6 +1584,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 46.15,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1313,7 +1599,7 @@
       "name": "Eaton",
       "sector": "电网/配电",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1323,6 +1609,8 @@
         "policy": null,
         "residual_momentum": 58.97
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 341.72,
       "previous_close": 327.02,
       "price_date": "2026-11-06",
@@ -1335,6 +1623,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 61.02,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1348,7 +1638,7 @@
       "name": "Hubbell",
       "sector": "电网输配电",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1358,6 +1648,8 @@
         "policy": null,
         "residual_momentum": 53.85
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 429.45,
       "previous_close": 418.79,
       "price_date": "2026-11-06",
@@ -1370,6 +1662,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 71.29,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1383,7 +1677,7 @@
       "name": "Powell Industries",
       "sector": "电气设备",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1393,6 +1687,8 @@
         "policy": null,
         "residual_momentum": 38.46
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 133.12,
       "previous_close": 125.06,
       "price_date": "2026-11-06",
@@ -1405,6 +1701,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 34.36,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1418,7 +1716,7 @@
       "name": "GE Vernova",
       "sector": "发电/电网",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
+      "model_version": "v3.2-40-multihop-proxy",
       "history": [],
       "factors": {
         "acceleration": null,
@@ -1428,6 +1726,8 @@
         "policy": null,
         "residual_momentum": 23.08
       },
+      "factor_sources": {},
+      "factor_methods": {},
       "close": 774.11,
       "previous_close": 770.51,
       "price_date": "2026-11-06",
@@ -1440,6 +1740,8 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
+      "monitor_score": 36.41,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
       "provisional_alpha": null,
@@ -1453,15 +1755,32 @@
       "name": "Constellation Energy",
       "sector": "发电/能源",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
-      "history": [],
+      "model_version": "v3.2-40-multihop-proxy",
+      "history": [
+        {
+          "date": "2026-11-07",
+          "alpha": 69.32,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        }
+      ],
       "factors": {
         "acceleration": null,
-        "demand": null,
-        "tightness": null,
-        "customer_momentum": null,
+        "demand": 75.0,
+        "tightness": 68.18,
+        "customer_momentum": 77.27,
         "policy": null,
         "residual_momentum": 20.51
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.microsoft.com/investor/reports/ar26/index.html",
+          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
       },
       "close": 249.95,
       "previous_close": 239.65,
@@ -1470,14 +1789,16 @@
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CEG?range=9mo&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
-      "network_reach": null,
-      "direct_clients": 0,
+      "network_reach": 1.4,
+      "direct_clients": 2,
       "indirect_clients": 0,
-      "paths": 0,
+      "paths": 2,
       "third_hop_clients": 0,
-      "coverage": 0.05,
+      "monitor_score": 44.1,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 69.32,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -1488,15 +1809,31 @@
       "name": "Vistra",
       "sector": "发电/储能",
       "cohort": "expansion_candidate",
-      "model_version": "v3.1-40-multihop",
-      "history": [],
+      "model_version": "v3.2-40-multihop-proxy",
+      "history": [
+        {
+          "date": "2026-11-07",
+          "alpha": 60.17,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        }
+      ],
       "factors": {
         "acceleration": null,
-        "demand": null,
-        "tightness": null,
-        "customer_momentum": null,
+        "demand": 95.83,
+        "tightness": 27.27,
+        "customer_momentum": 47.73,
         "policy": null,
         "residual_momentum": 17.95
+      },
+      "factor_sources": {
+        "demand": [
+          "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ]
+      },
+      "factor_methods": {
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
       },
       "close": 124.8,
       "previous_close": 112.89,
@@ -1505,14 +1842,16 @@
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VST?range=9mo&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
-      "network_reach": null,
-      "direct_clients": 0,
+      "network_reach": 0.7,
+      "direct_clients": 1,
       "indirect_clients": 0,
-      "paths": 0,
+      "paths": 1,
       "third_hop_clients": 0,
-      "coverage": 0.05,
+      "monitor_score": 32.31,
+      "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
+      "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 60.17,
       "previous_alpha": null,
       "previous_provisional_alpha": null,
       "confidence": "研究探索",
@@ -2002,17 +2341,60 @@
     "market_prices_present": 40,
     "market_prices_total": 40,
     "official_alpha_count": 0,
-    "provisional_count": 16,
+    "provisional_count": 23,
     "verified_edges": 16,
     "unverified_edges_excluded": 1,
-    "capex_annual_yoy_clients": [],
-    "model_caveat": "6-factor alpha is N/A until ALL validated factors available. Partial scores are exploratory.",
+    "capex_annual_yoy_clients": [
+      "AAPL",
+      "AMZN",
+      "GOOGL",
+      "META",
+      "MSFT",
+      "TSLA"
+    ],
+    "model_caveat": "Strict six-factor Alpha N/A unless all six inputs verified. Research factors may use explicitly labeled audited CapEx YoY / customer-share change proxies; market monitor is PRICE ONLY.",
     "market_qa_errors": [],
-    "verified_graph_edges": 23,
-    "verified_graph_paths": 23,
-    "expanded_candidates": 28
+    "verified_graph_edges": 33,
+    "verified_graph_paths": 33,
+    "expanded_candidates": 28,
+    "customer_share_change_suppliers": [
+      "ANET",
+      "CRUS",
+      "FN",
+      "STM",
+      "SWKS"
+    ],
+    "data_health": {
+      "factors_present": {
+        "acceleration": 5,
+        "demand": 13,
+        "tightness": 23,
+        "customer_momentum": 23,
+        "policy": 0,
+        "residual_momentum": 40
+      },
+      "monitor_present": 40,
+      "provisional_present": 23,
+      "official_present": 0,
+      "price_present": 40
+    },
+    "seed_capex_clients": [
+      "MSFT",
+      "GOOGL",
+      "META",
+      "AMZN",
+      "TSLA",
+      "AAPL"
+    ]
   },
-  "capex_sources": {},
+  "capex_sources": {
+    "MSFT": "https://www.microsoft.com/investor/reports/ar26/index.html",
+    "GOOGL": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+    "META": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+    "AMZN": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+    "TSLA": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+    "AAPL": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+  },
   "infrastructure": {
     "schema_version": "1.0",
     "verified_as_of": "2026-11-07",
@@ -2140,9 +2522,9 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "energy": 1,
       "storage": 2,
-      "power": 3
+      "power": 3,
+      "energy": 1
     },
     "unverified_is_unknown": true
   },
@@ -2448,8 +2830,8 @@
     ]
   },
   "network": {
-    "graph_version": "3.1-path-up-to-3hop",
-    "as_of": "2026-11-08",
+    "graph_version": "3.2-dated-multisector-graph",
+    "as_of": "2026-11-07",
     "verified_edges": [
       {
         "supplier": "FN",
@@ -2829,6 +3211,164 @@
         "economic_weight": null,
         "weight_type": "evidence_proxy",
         "proxy_weight": 0.8
+      },
+      {
+        "supplier": "AMD",
+        "customer": "META",
+        "date": "2026-02-24",
+        "kind": "Definitive multi-year GPU infrastructure agreement",
+        "description": "Meta 6GW multi-generation AMD Instinct strategic deployment agreement, volumes are upper scope not realized revenue",
+        "source": "https://newsroom.amd.com/news/amd-and-meta-announce-expanded-strategic-partnersh/",
+        "edge_type": "customer_supplier_disclosed",
+        "verified": true,
+        "relationship_layer": "tier1",
+        "economic_weight": null,
+        "weight_type": "evidence_proxy",
+        "purchase_amount": null,
+        "proxy_weight": 0.8
+      },
+      {
+        "supplier": "AMD",
+        "customer": "MSFT",
+        "date": "2026-07-20",
+        "kind": "Azure AMD AI CPU GPU platform deployment agreement",
+        "description": "Microsoft Azure partnership AMD Helios, EPYC and Pensando announced; not a disclosed purchase amount",
+        "source": "https://newsroom.amd.com/news/microsoft-azure-ai-infrastructure/?es_id=e0d1c56c4c",
+        "edge_type": "customer_supplier_disclosed",
+        "verified": true,
+        "relationship_layer": "tier1",
+        "economic_weight": null,
+        "weight_type": "evidence_proxy",
+        "purchase_amount": null,
+        "proxy_weight": 0.8
+      },
+      {
+        "supplier": "MRVL",
+        "customer": "AMZN",
+        "date": "2024-12-02",
+        "kind": "Five-year AWS semiconductor supply collaboration",
+        "description": "AWS supplier relationship expanded for custom AI silicon, optical DSP, Ethernet and data center connectivity",
+        "source": "https://investor.marvell.com/news-events/press-releases/detail/121/marvell-expands-strategic-collaboration-with-aws-to-enable-accelerated-infrastructure-for-ai-in-the-cloud",
+        "edge_type": "customer_supplier_disclosed",
+        "verified": true,
+        "relationship_layer": "tier1",
+        "economic_weight": null,
+        "weight_type": "evidence_proxy",
+        "purchase_amount": null,
+        "proxy_weight": 0.8
+      },
+      {
+        "supplier": "MRVL",
+        "customer": "GOOGL",
+        "date": "2026-08-19",
+        "kind": "Google custom semiconductor commercial agreement",
+        "description": "Commercial agreement signed July 29 2026 and disclosed in an 8-K on August 19; source date is public disclosure date",
+        "source": "https://investor.marvell.com/sec-filings/all-sec-filings/content/0001193125-26-356217/d412696d8k.htm",
+        "edge_type": "customer_supplier_disclosed",
+        "verified": true,
+        "relationship_layer": "tier1",
+        "economic_weight": null,
+        "weight_type": "evidence_proxy",
+        "purchase_amount": null,
+        "proxy_weight": 0.8
+      },
+      {
+        "supplier": "QCOM",
+        "customer": "AAPL",
+        "date": "2023-09-11",
+        "kind": "Apple Snapdragon 5G Modem-RF supply agreement",
+        "description": "Qualcomm agreement supports 2024-2026 iPhone launches; patent license renewal is a separate relationship, not chip sales",
+        "source": "https://www.qualcomm.com/news/releases/2023/09/qualcomm-announces-agreement-with-apple-for-chip-supply",
+        "edge_type": "customer_supplier_disclosed",
+        "verified": true,
+        "relationship_layer": "tier1",
+        "economic_weight": null,
+        "weight_type": "evidence_proxy",
+        "purchase_amount": null,
+        "proxy_weight": 0.8
+      },
+      {
+        "supplier": "CRUS",
+        "customer": "AAPL",
+        "date": "2026-05-21",
+        "kind": "Named 10-K end-customer revenue concentration",
+        "description": "Apple accounted for approximately 91% of Cirrus fiscal 2026 sales, versus 89% FY2025; includes contract manufacturing channels",
+        "source": "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm",
+        "edge_type": "customer_supplier_disclosed",
+        "revenue_share": 91,
+        "prior_revenue_share": 89,
+        "fiscal_year": 2026,
+        "prior_fiscal_year": 2025,
+        "verified": true,
+        "relationship_layer": "tier1",
+        "economic_weight": null,
+        "weight_type": "evidence_proxy",
+        "purchase_amount": null,
+        "proxy_weight": 0.8
+      },
+      {
+        "supplier": "SWKS",
+        "customer": "AAPL",
+        "date": "2025-11-07",
+        "kind": "Named 10-K end-customer revenue concentration",
+        "description": "Apple accounted for 67% of Skyworks fiscal 2025 net revenue versus 69% FY2024; sales via distributors and contract manufacturers",
+        "source": "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm",
+        "edge_type": "customer_supplier_disclosed",
+        "revenue_share": 67,
+        "prior_revenue_share": 69,
+        "fiscal_year": 2025,
+        "prior_fiscal_year": 2024,
+        "verified": true,
+        "relationship_layer": "tier1",
+        "economic_weight": null,
+        "weight_type": "evidence_proxy",
+        "purchase_amount": null,
+        "proxy_weight": 0.8
+      },
+      {
+        "supplier": "CEG",
+        "customer": "MSFT",
+        "date": "2024-09-20",
+        "kind": "20-year nuclear power purchase agreement (PPA)",
+        "description": "Constellation 20-year Microsoft PPA for Crane Clean Energy Center, 835 MW project, subject to approvals; agreement is not a realized power delivery amount",
+        "source": "https://investors.constellationenergy.com/news-releases/news-release-details/constellation-launch-crane-clean-energy-center-restoring-jobs",
+        "edge_type": "power_purchase_agreement",
+        "verified": true,
+        "relationship_layer": "tier1",
+        "economic_weight": null,
+        "weight_type": "evidence_proxy",
+        "purchase_amount": null,
+        "proxy_weight": 0.7
+      },
+      {
+        "supplier": "CEG",
+        "customer": "META",
+        "date": "2025-06-03",
+        "kind": "20-year nuclear power purchase agreement (PPA)",
+        "description": "Meta 20-year nuclear energy agreement for the Clinton Clean Energy Center",
+        "source": "https://about.fb.com/news/2025/06/meta-constellation-partner-clean-energy-project/",
+        "edge_type": "power_purchase_agreement",
+        "verified": true,
+        "relationship_layer": "tier1",
+        "economic_weight": null,
+        "weight_type": "evidence_proxy",
+        "purchase_amount": null,
+        "proxy_weight": 0.7
+      },
+      {
+        "supplier": "VST",
+        "customer": "META",
+        "date": "2026-01-09",
+        "kind": "20-year nuclear power procurement agreements",
+        "description": "Meta agreements to purchase energy from Vistra plants Perry and Davis-Besse plus support power uprates; announced not realized purchases",
+        "source": "https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/",
+        "edge_type": "power_purchase_agreement",
+        "verified": true,
+        "relationship_layer": "tier1",
+        "economic_weight": null,
+        "weight_type": "evidence_proxy",
+        "purchase_amount": null,
+        "proxy_weight": 0.7
       }
     ],
     "paths": [
@@ -2856,6 +3396,50 @@
         ],
         "edge_weights": [
           0.65,
+          0.8
+        ],
+        "weight_kind": "evidence_proxy"
+      },
+      {
+        "supplier": "AMD",
+        "customer": "META",
+        "via": null,
+        "via_nodes": [],
+        "hops": 1,
+        "path": [
+          "AMD",
+          "META"
+        ],
+        "weight": 0.8,
+        "sources": [
+          "https://newsroom.amd.com/news/amd-and-meta-announce-expanded-strategic-partnersh/"
+        ],
+        "dates": [
+          "2026-02-24"
+        ],
+        "edge_weights": [
+          0.8
+        ],
+        "weight_kind": "evidence_proxy"
+      },
+      {
+        "supplier": "AMD",
+        "customer": "MSFT",
+        "via": null,
+        "via_nodes": [],
+        "hops": 1,
+        "path": [
+          "AMD",
+          "MSFT"
+        ],
+        "weight": 0.8,
+        "sources": [
+          "https://newsroom.amd.com/news/microsoft-azure-ai-infrastructure/?es_id=e0d1c56c4c"
+        ],
+        "dates": [
+          "2026-07-20"
+        ],
+        "edge_weights": [
           0.8
         ],
         "weight_kind": "evidence_proxy"
@@ -2977,6 +3561,50 @@
         "weight_kind": "evidence_proxy"
       },
       {
+        "supplier": "CEG",
+        "customer": "META",
+        "via": null,
+        "via_nodes": [],
+        "hops": 1,
+        "path": [
+          "CEG",
+          "META"
+        ],
+        "weight": 0.7,
+        "sources": [
+          "https://about.fb.com/news/2025/06/meta-constellation-partner-clean-energy-project/"
+        ],
+        "dates": [
+          "2025-06-03"
+        ],
+        "edge_weights": [
+          0.7
+        ],
+        "weight_kind": "evidence_proxy"
+      },
+      {
+        "supplier": "CEG",
+        "customer": "MSFT",
+        "via": null,
+        "via_nodes": [],
+        "hops": 1,
+        "path": [
+          "CEG",
+          "MSFT"
+        ],
+        "weight": 0.7,
+        "sources": [
+          "https://investors.constellationenergy.com/news-releases/news-release-details/constellation-launch-crane-clean-energy-center-restoring-jobs"
+        ],
+        "dates": [
+          "2024-09-20"
+        ],
+        "edge_weights": [
+          0.7
+        ],
+        "weight_kind": "evidence_proxy"
+      },
+      {
         "supplier": "CLS",
         "customer": "AMZN",
         "via": null,
@@ -3058,6 +3686,28 @@
         ],
         "dates": [
           "2026-03-02"
+        ],
+        "edge_weights": [
+          0.8
+        ],
+        "weight_kind": "evidence_proxy"
+      },
+      {
+        "supplier": "CRUS",
+        "customer": "AAPL",
+        "via": null,
+        "via_nodes": [],
+        "hops": 1,
+        "path": [
+          "CRUS",
+          "AAPL"
+        ],
+        "weight": 0.8,
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm"
+        ],
+        "dates": [
+          "2026-05-21"
         ],
         "edge_weights": [
           0.8
@@ -3209,6 +3859,50 @@
         "weight_kind": "evidence_proxy"
       },
       {
+        "supplier": "MRVL",
+        "customer": "AMZN",
+        "via": null,
+        "via_nodes": [],
+        "hops": 1,
+        "path": [
+          "MRVL",
+          "AMZN"
+        ],
+        "weight": 0.8,
+        "sources": [
+          "https://investor.marvell.com/news-events/press-releases/detail/121/marvell-expands-strategic-collaboration-with-aws-to-enable-accelerated-infrastructure-for-ai-in-the-cloud"
+        ],
+        "dates": [
+          "2024-12-02"
+        ],
+        "edge_weights": [
+          0.8
+        ],
+        "weight_kind": "evidence_proxy"
+      },
+      {
+        "supplier": "MRVL",
+        "customer": "GOOGL",
+        "via": null,
+        "via_nodes": [],
+        "hops": 1,
+        "path": [
+          "MRVL",
+          "GOOGL"
+        ],
+        "weight": 0.8,
+        "sources": [
+          "https://investor.marvell.com/sec-filings/all-sec-filings/content/0001193125-26-356217/d412696d8k.htm"
+        ],
+        "dates": [
+          "2026-08-19"
+        ],
+        "edge_weights": [
+          0.8
+        ],
+        "weight_kind": "evidence_proxy"
+      },
+      {
         "supplier": "MU",
         "customer": "NVDA",
         "via": null,
@@ -3259,6 +3953,28 @@
         "weight_kind": "evidence_proxy"
       },
       {
+        "supplier": "QCOM",
+        "customer": "AAPL",
+        "via": null,
+        "via_nodes": [],
+        "hops": 1,
+        "path": [
+          "QCOM",
+          "AAPL"
+        ],
+        "weight": 0.8,
+        "sources": [
+          "https://www.qualcomm.com/news/releases/2023/09/qualcomm-announces-agreement-with-apple-for-chip-supply"
+        ],
+        "dates": [
+          "2023-09-11"
+        ],
+        "edge_weights": [
+          0.8
+        ],
+        "weight_kind": "evidence_proxy"
+      },
+      {
         "supplier": "STM",
         "customer": "AAPL",
         "via": null,
@@ -3296,6 +4012,28 @@
         ],
         "dates": [
           "2026-02-26"
+        ],
+        "edge_weights": [
+          0.8
+        ],
+        "weight_kind": "evidence_proxy"
+      },
+      {
+        "supplier": "SWKS",
+        "customer": "AAPL",
+        "via": null,
+        "via_nodes": [],
+        "hops": 1,
+        "path": [
+          "SWKS",
+          "AAPL"
+        ],
+        "weight": 0.8,
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm"
+        ],
+        "dates": [
+          "2025-11-07"
         ],
         "edge_weights": [
           0.8
@@ -3389,6 +4127,28 @@
           0.8
         ],
         "weight_kind": "evidence_proxy"
+      },
+      {
+        "supplier": "VST",
+        "customer": "META",
+        "via": null,
+        "via_nodes": [],
+        "hops": 1,
+        "path": [
+          "VST",
+          "META"
+        ],
+        "weight": 0.7,
+        "sources": [
+          "https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/"
+        ],
+        "dates": [
+          "2026-01-09"
+        ],
+        "edge_weights": [
+          0.7
+        ],
+        "weight_kind": "evidence_proxy"
       }
     ],
     "exposures": {
@@ -3415,14 +4175,17 @@
         "no_path_is_unknown": false
       },
       "AMD": {
-        "by_customer": {},
-        "reach": 0,
-        "direct_customers": 0,
+        "by_customer": {
+          "MSFT": 0.8,
+          "META": 0.8
+        },
+        "reach": 1.6,
+        "direct_customers": 2,
         "indirect_customers": 0,
         "third_hop_clients": 0,
-        "paths": 0,
-        "verified_in_graph": false,
-        "no_path_is_unknown": true
+        "paths": 2,
+        "verified_in_graph": true,
+        "no_path_is_unknown": false
       },
       "ANET": {
         "by_customer": {
@@ -3473,14 +4236,17 @@
         "no_path_is_unknown": false
       },
       "CEG": {
-        "by_customer": {},
-        "reach": 0,
-        "direct_customers": 0,
+        "by_customer": {
+          "MSFT": 0.7,
+          "META": 0.7
+        },
+        "reach": 1.4,
+        "direct_customers": 2,
         "indirect_customers": 0,
         "third_hop_clients": 0,
-        "paths": 0,
-        "verified_in_graph": false,
-        "no_path_is_unknown": true
+        "paths": 2,
+        "verified_in_graph": true,
+        "no_path_is_unknown": false
       },
       "CLS": {
         "by_customer": {
@@ -3509,14 +4275,16 @@
         "no_path_is_unknown": false
       },
       "CRUS": {
-        "by_customer": {},
-        "reach": 0,
-        "direct_customers": 0,
+        "by_customer": {
+          "AAPL": 0.8
+        },
+        "reach": 0.8,
+        "direct_customers": 1,
         "indirect_customers": 0,
         "third_hop_clients": 0,
-        "paths": 0,
-        "verified_in_graph": false,
-        "no_path_is_unknown": true
+        "paths": 1,
+        "verified_in_graph": true,
+        "no_path_is_unknown": false
       },
       "DELL": {
         "by_customer": {},
@@ -3680,14 +4448,17 @@
         "no_path_is_unknown": true
       },
       "MRVL": {
-        "by_customer": {},
-        "reach": 0,
-        "direct_customers": 0,
+        "by_customer": {
+          "GOOGL": 0.8,
+          "AMZN": 0.8
+        },
+        "reach": 1.6,
+        "direct_customers": 2,
         "indirect_customers": 0,
         "third_hop_clients": 0,
-        "paths": 0,
-        "verified_in_graph": false,
-        "no_path_is_unknown": true
+        "paths": 2,
+        "verified_in_graph": true,
+        "no_path_is_unknown": false
       },
       "MU": {
         "by_customer": {
@@ -3744,14 +4515,16 @@
         "no_path_is_unknown": true
       },
       "QCOM": {
-        "by_customer": {},
-        "reach": 0,
-        "direct_customers": 0,
+        "by_customer": {
+          "AAPL": 0.8
+        },
+        "reach": 0.8,
+        "direct_customers": 1,
         "indirect_customers": 0,
         "third_hop_clients": 0,
-        "paths": 0,
-        "verified_in_graph": false,
-        "no_path_is_unknown": true
+        "paths": 1,
+        "verified_in_graph": true,
+        "no_path_is_unknown": false
       },
       "SMCI": {
         "by_customer": {},
@@ -3777,14 +4550,16 @@
         "no_path_is_unknown": false
       },
       "SWKS": {
-        "by_customer": {},
-        "reach": 0,
-        "direct_customers": 0,
+        "by_customer": {
+          "AAPL": 0.8
+        },
+        "reach": 0.8,
+        "direct_customers": 1,
         "indirect_customers": 0,
         "third_hop_clients": 0,
-        "paths": 0,
-        "verified_in_graph": false,
-        "no_path_is_unknown": true
+        "paths": 1,
+        "verified_in_graph": true,
+        "no_path_is_unknown": false
       },
       "TSM": {
         "by_customer": {
@@ -3821,17 +4596,149 @@
         "no_path_is_unknown": true
       },
       "VST": {
-        "by_customer": {},
-        "reach": 0,
-        "direct_customers": 0,
+        "by_customer": {
+          "META": 0.7
+        },
+        "reach": 0.7,
+        "direct_customers": 1,
         "indirect_customers": 0,
         "third_hop_clients": 0,
-        "paths": 0,
-        "verified_in_graph": false,
-        "no_path_is_unknown": true
+        "paths": 1,
+        "verified_in_graph": true,
+        "no_path_is_unknown": false
       }
     },
     "method": "Directed 1–3 hop evidence proxy path product; per extra hop × 0.70; capped sum per M7 client.",
     "caveat": "These numbers are not dollar shares, statistical correlations or forecast probabilities. No verified path is Unknown, not zero."
-  }
+  },
+  "capex_records": {
+    "MSFT": {
+      "growth": 0.7962231413920775,
+      "filed": "2026-11-07",
+      "source": "https://www.microsoft.com/investor/reports/ar26/index.html",
+      "url": "https://www.microsoft.com/investor/reports/ar26/index.html",
+      "fy_latest": "2026-06-30",
+      "fy_prior": "2025-06-30",
+      "metric": "Additions to property and equipment",
+      "method": "annual_capex_yoy_proxy",
+      "quality": "audited_annual_primary_source_fallback"
+    },
+    "GOOGL": {
+      "growth": 0.740952380952381,
+      "filed": "2026-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+      "fy_latest": "2025-12-31",
+      "fy_prior": "2024-12-31",
+      "metric": "Capital expenditures as described in annual 10-K",
+      "method": "annual_capex_yoy_proxy",
+      "quality": "audited_annual_primary_source_fallback"
+    },
+    "META": {
+      "growth": 0.8705980244792786,
+      "filed": "2026-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+      "fy_latest": "2025-12-31",
+      "fy_prior": "2024-12-31",
+      "metric": "Purchases of property and equipment",
+      "method": "annual_capex_yoy_proxy",
+      "quality": "audited_annual_primary_source_fallback"
+    },
+    "AMZN": {
+      "growth": 0.6523732261969146,
+      "filed": "2026-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+      "fy_latest": "2025-12-31",
+      "fy_prior": "2024-12-31",
+      "metric": "Purchases of property and equipment net of proceeds from sales and incentives (NOT gross cash CapEx)",
+      "method": "annual_capex_yoy_proxy",
+      "quality": "audited_annual_primary_source_fallback"
+    },
+    "TSLA": {
+      "growth": -0.24819255863163459,
+      "filed": "2026-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+      "fy_latest": "2025-12-31",
+      "fy_prior": "2024-12-31",
+      "metric": "Purchases of property and equipment excluding finance leases net of sales",
+      "method": "annual_capex_yoy_proxy",
+      "quality": "audited_annual_primary_source_fallback"
+    },
+    "AAPL": {
+      "growth": 0.34592992484386587,
+      "filed": "2026-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "fy_latest": "2025-09-27",
+      "fy_prior": "2024-09-28",
+      "metric": "Payments to acquire property plant equipment",
+      "method": "annual_capex_yoy_proxy",
+      "quality": "audited_annual_primary_source_fallback"
+    }
+  },
+  "customer_share_changes": [
+    {
+      "change_pp": -11.3,
+      "supplier": "FN",
+      "customer": "NVDA",
+      "current_revenue_pct": 16.3,
+      "prior_revenue_pct": 27.6,
+      "date": "2026-08-18",
+      "source": "https://investor.fabrinet.com/node/13676/xbrl-viewer",
+      "method": "disclosed_customer_revenue_share_change_pp"
+    },
+    {
+      "change_pp": 2,
+      "supplier": "ANET",
+      "customer": "MSFT",
+      "current_revenue_pct": 20,
+      "prior_revenue_pct": 18,
+      "date": "2025-02-19",
+      "source": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm",
+      "method": "disclosed_customer_revenue_share_change_pp"
+    },
+    {
+      "change_pp": -6,
+      "supplier": "ANET",
+      "customer": "META",
+      "current_revenue_pct": 15,
+      "prior_revenue_pct": 21,
+      "date": "2025-02-19",
+      "source": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm",
+      "method": "disclosed_customer_revenue_share_change_pp"
+    },
+    {
+      "change_pp": 3.2,
+      "supplier": "STM",
+      "customer": "AAPL",
+      "current_revenue_pct": 17.7,
+      "prior_revenue_pct": 14.5,
+      "date": "2026-02-26",
+      "source": "https://www.sec.gov/Archives/edgar/data/932787/000093278726000009/stm-20251231.htm",
+      "method": "disclosed_customer_revenue_share_change_pp"
+    },
+    {
+      "change_pp": 2,
+      "supplier": "CRUS",
+      "customer": "AAPL",
+      "current_revenue_pct": 91,
+      "prior_revenue_pct": 89,
+      "date": "2026-05-21",
+      "source": "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm",
+      "method": "disclosed_customer_revenue_share_change_pp"
+    },
+    {
+      "change_pp": -2,
+      "supplier": "SWKS",
+      "customer": "AAPL",
+      "current_revenue_pct": 67,
+      "prior_revenue_pct": 69,
+      "date": "2025-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm",
+      "method": "disclosed_customer_revenue_share_change_pp"
+    }
+  ]
 }
