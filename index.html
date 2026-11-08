@@ -153,7 +153,7 @@ $('#jsonFile').addEventListener('change',async e=>{const file=e.target.files[0];
 render();
 // Hosted dashboard refreshes in place when new daily snapshots are published.
 // Local file:// usage is intentionally offline and fails safely.
-setInterval(async()=>{
+async function refreshSnapshot(){
  if(db.mode==='fixture')return;
  try{
   const response=await fetch('data/latest.json?cachebust='+Date.now(),{cache:'no-store'});
@@ -163,6 +163,8 @@ setInterval(async()=>{
   validate(fresh);
   db=fresh;render();notify('研究数据已自动更新至 '+fresh.as_of);
  }catch(_error){ /* unavailable offline; never generate replacement values */ }
-},10*60*1000);
+}
+setInterval(refreshSnapshot,10*60*1000);
+refreshSnapshot();
 </script>
 </body></html>
