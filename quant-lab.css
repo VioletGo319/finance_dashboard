@@ -1,0 +1,53 @@
+/* Quant Research Lab – professional, responsive research dashboard */
+#quant .q-root{--q-ink:#e8f3ff;--q-muted:#90a7c0;--q-border:#2a425d;--q-blue:#73aeff;--q-teal:#66e0c8;--q-orange:#ffbc77;display:grid;gap:16px}
+#quant .q-hero{padding:23px 23px 20px;background:linear-gradient(125deg,#152a48,#102d3e 63%,#102238);border:1px solid #365b7b;border-radius:16px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+#quant .q-eyebrow{font-size:11px;letter-spacing:2px;color:#79d5da;font-weight:700}
+#quant .q-hero h2{margin:7px 0 7px;font-size:26px;color:#f1f8ff;line-height:1.17}
+#quant .q-muted{color:var(--q-muted);font-size:12px;line-height:1.6}
+#quant .q-status{border:1px solid #446481;background:#162941;border-radius:9px;padding:8px 12px;font-size:11px;color:#c2dff5;display:flex;gap:6px;align-items:center}
+#quant .q-panel{background:linear-gradient(145deg,#14223a,#101b30);border:1px solid #273d5b;border-radius:15px;min-width:0;overflow:hidden}
+#quant .q-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:17px 19px;border-bottom:1px solid #273c55;flex-wrap:wrap}
+#quant .q-head h3{margin:0;color:#e7f5ff;font-size:16px}
+#quant .q-head p{font-size:11px;color:#97abc5;margin:5px 0 0;max-width:770px}
+#quant .q-body{padding:18px 20px}
+#quant .q-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+#quant .q-kpi{padding:18px;background:#12233a;border:1px solid #304861;border-radius:12px;min-width:0}
+#quant .q-kpi .name{color:#98b2cb;font-size:11px;margin-bottom:9px}
+#quant .q-kpi .value{color:#d8f9ef;font-size:25px;letter-spacing:-.7px;font-weight:750;white-space:nowrap}
+#quant .q-kpi .sub{color:#7393b3;font-size:10px;margin-top:5px}
+#quant .q-two{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(290px,1fr);gap:14px}
+#quant .q-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#quant .q-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#quant .q-action{border:1px solid #3c5675;background:#1a314a;padding:8px 12px;color:#e0f4ff;border-radius:8px;font-size:12px}
+#quant .q-action[aria-pressed=true]{color:#96ffee;border-color:#47bcb0;background:#1a3b45}
+#quant .q-chart{height:315px;position:relative;padding:10px}
+#quant .q-chart svg{width:100%;height:100%;display:block;overflow:visible}
+#quant .q-chart-tip{position:absolute;pointer-events:none;background:#102e42ef;border:1px solid #6aa8c4;border-radius:8px;padding:9px 11px;font-size:11px;color:#e9f8ff;min-width:155px;z-index:5;box-shadow:0 12px 20px #030816b5}
+#quant .q-chart-tip[hidden]{display:none}
+#quant .q-legend{display:flex;flex-wrap:wrap;gap:12px;padding:4px 18px 16px;font-size:11px;color:#b2c8dd}
+#quant .q-legend i{display:inline-block;width:9px;height:9px;margin-right:6px;border-radius:2px}
+#quant .q-scroll{overflow-x:auto}
+#quant .q-table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:12px}
+#quant .q-table th{text-align:left;color:#99b1ca;background:#1b2b43;font-size:11px;padding:11px 13px;font-weight:600;position:sticky;top:0}
+#quant .q-table td{padding:11px 13px;border-bottom:1px solid #233851;color:#d6e7f8}
+#quant .q-table tbody tr:hover{background:#1a3049}
+#quant .q-table .q-number{font-variant-numeric:tabular-nums;text-align:right}
+#quant .q-tag{display:inline-block;font-size:10px;padding:3px 7px;border:1px solid #385676;border-radius:6px;color:#a7cadc;background:#192f49}
+#quant .q-tag.warm{border-color:#695c48;color:#fbd3a1;background:#362b22}
+#quant .q-tag.ok{border-color:#32786d;color:#8ee8d4;background:#123b38}
+#quant .q-empty{padding:18px;background:#182b42;border:1px dashed #4a6080;border-radius:10px;color:#aec1d5;font-size:12px;line-height:1.7}
+#quant .q-alert{border:1px solid #715735;background:#3b31234d;padding:14px 18px;border-radius:10px;color:#f3d5aa;font-size:12px;line-height:1.7}
+#quant .q-insight{padding:15px 16px;border-left:3px solid #68dacc;background:#10293e;color:#caddec;font-size:12px;line-height:1.7}
+#quant .q-matrix{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+#quant .q-month{border:1px solid #324961;background:#1a2b40;padding:12px 9px;border-radius:7px;font-size:11px}
+#quant .q-month strong{display:block;color:#e5f7fd;margin-top:7px;font-size:14px}
+#quant .q-formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;white-space:normal;color:#a2e9e5;font-size:11px;padding:13px;background:#0e2234;border-radius:8px;line-height:1.85}
+#quant .q-group{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+#quant .q-metric{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #263951;padding:10px 0;font-size:12px}
+#quant .q-metric span:first-child{color:#98b0cc}#quant .q-metric span:last-child{color:#e4f2ff;font-weight:680;font-variant-numeric:tabular-nums}
+#quant .q-note{color:#9eb4c9;font-size:11px;line-height:1.75}
+#quant .q-pills{display:flex;flex-wrap:wrap;gap:7px}
+#quant .q-pills span{background:#172e45;border:1px solid #355671;padding:6px 9px;border-radius:7px;color:#bed7eb;font-size:11px}
+#quant .q-positive{color:#87ecd0!important}#quant .q-negative{color:#fc9fac!important}
+@media(max-width:1100px){#quant .q-two{grid-template-columns:1fr}#quant .q-kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){#quant .q-hero{padding:17px}#quant .q-hero h2{font-size:21px}#quant .q-kpis{gap:8px}#quant .q-kpi{padding:13px}#quant .q-kpi .value{font-size:21px}#quant .q-body{padding:12px}#quant .q-chart{height:250px}#quant .q-matrix{grid-template-columns:repeat(3,1fr)}#quant .q-three{grid-template-columns:1fr}}
