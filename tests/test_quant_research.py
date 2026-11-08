@@ -47,14 +47,14 @@ class QuantPipelineTests(unittest.TestCase):
    d+=timedelta(days=1)
   ticks=["TSM","AVGO","AMD","ANET","MRVL"]
   series={}
-  for i,t in enumerate(ticks+["SPY","XLK"]):
+  for i,t in enumerate(ticks+["QQQ","XLK"]):
    series[t]={"bars":[(day,100*(1+(.0003+(i%5)*.0002))**j*(1+.003*math.sin(j*.3+i))) for j,day in enumerate(days)]}
   clean=simulate_daily_close(series,ticks,top_n=3,trade_bps=0)
   costly=simulate_daily_close(series,ticks,top_n=3,trade_bps=10)
   self.assertEqual(clean["status"],"COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC")
   self.assertLessEqual(costly["metrics"]["ending_nav"],clean["metrics"]["ending_nav"])
   self.assertTrue(all(x["date"]>x["signal_date"] for x in clean["trades"]))
-  self.assertEqual(clean["benchmarks"]["SPY"]["days"],clean["metrics"]["days"])
+  self.assertEqual(clean["benchmarks"]["QQQ"]["days"],clean["metrics"]["days"])
   self.assertGreater(len(clean["curve"]),20)
  def test_gap_failure_and_no_fabrication(self):
   self.assertEqual(simulate_daily_close({},["TSM"])["status"],"INSUFFICIENT_BENCHMARK_HISTORY")
