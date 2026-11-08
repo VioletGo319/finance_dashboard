@@ -55,7 +55,9 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/latest.json data/snapshots/ data/quant/latest.json data/quant/snapshots/ data/quant/fundamentals_cache.json site/data/latest.json site/data/quant/latest.json
+          git add -A -- data/latest.json data/snapshots/ site/data/latest.json
+          if [ -d data/quant ]; then git add -A -- data/quant; fi
+          if [ -d site/data/quant ]; then git add -A -- site/data/quant; fi
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh M7 supply-chain research"
             # Concurrent documentation/Pages commits may advance main during SEC fetch.
