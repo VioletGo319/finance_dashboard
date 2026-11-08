@@ -388,7 +388,7 @@ def main():
     base["network"]=network
     base["model_version"]="v3.2-40-multihop-proxy"
     base["infrastructure"] = load_infrastructure_attributes()
-    universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK",)))
+    universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK","SPY")))
     quotes={}
     for symbol in universe:
         quotes[symbol]=prices(symbol)
