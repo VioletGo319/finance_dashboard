@@ -81,6 +81,8 @@ jobs:
           print("Graph browser smoke:",m.group(1) if m else "not executed")
           assert m and m.group(1)=="PASS", "Graph or factor module did not render in Chromium"
           PY
+      - name: Audit all five languages in a real browser
+        run: python tests/check_i18n_browser.py
       - name: Run offline calculation tests
         run: python -m unittest discover -s tests -v
       - name: Verify published files and data integrity
