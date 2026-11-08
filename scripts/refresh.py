@@ -10,7 +10,8 @@ import json
 import os
 import statistics
 import sys
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone, time
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from urllib.parse import quote
 from urllib.request import Request, urlopen
@@ -26,7 +27,11 @@ TICKERS = tuple(row["ticker"] for row in graph_snapshot()[0]["suppliers"])
 CLIENTS = ("AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA")
 WEIGHTS = {"acceleration": .30, "demand": .25, "tightness": .15, "customer_momentum": .15, "policy": .10, "residual_momentum": .05}
 UA = "M7 Supplier Alpha academic public data research (non-commercial)"
-AS_OF = date.today().isoformat()
+LOCAL_NOW=datetime.now(ZoneInfo("America/New_York"))
+AS_OF=LOCAL_NOW.date().isoformat()
+# Ignore incomplete current-session bars before official close.
+MARKET_CUTOFF=(LOCAL_NOW.date() if LOCAL_NOW.weekday()<5 and LOCAL_NOW.time()>=time(16,15)
+               else LOCAL_NOW.date()-timedelta(days=1)).isoformat()
 
 def fetch_text(url):
     req = Request(url, headers={"User-Agent": UA, "Accept": "application/json,text/csv,*/*"})
@@ -43,7 +48,7 @@ def get_stooq(symbol):
     for row in csv.DictReader(io.StringIO(fetch_text(url))):
         try:
             d, p = row["Date"], float(row["Close"])
-            if d <= AS_OF and p > 0: bars.append((d, p))
+            if d <= MARKET_CUTOFF and p > 0: bars.append((d, p))
         except (KeyError, TypeError, ValueError):
             pass
     return bars, url, "Stooq EOD"
@@ -56,7 +61,7 @@ def get_yahoo(symbol):
     for stamp, p in zip(j.get("timestamp", []), q):
         if p is None or p <= 0: continue
         d = datetime.fromtimestamp(stamp, timezone.utc).date().isoformat()
-        if d <= AS_OF: bars.append((d, float(p)))
+        if d <= MARKET_CUTOFF: bars.append((d, float(p)))
     return bars, url, "Yahoo chart"
 
 def prices(symbol):
@@ -66,7 +71,7 @@ def prices(symbol):
             bars, url, provider = retrieve(symbol)
             bars=sorted(dict(bars).items())
             if len(bars) < 65: raise ValueError("fewer than 65 daily closes")
-            if (date.today()-date.fromisoformat(bars[-1][0])).days > 7: raise ValueError("stale close")
+            if (LOCAL_NOW.date()-date.fromisoformat(bars[-1][0])).days > 7: raise ValueError("stale close")
             if bars[-1][1] <= 0 or bars[-2][1] <= 0: raise ValueError("bad price")
             return {"bars": bars, "url": url, "provider": provider, "error": None}
         except Exception as exc:
@@ -225,7 +230,7 @@ def capex_growth(symbol):
     if len(items)<2:return None
     latest,prior=items[-1],items[-2]
     if not 280<=(date.fromisoformat(latest["end"])-date.fromisoformat(prior["end"])).days<=450:return None
-    if (date.today()-date.fromisoformat(latest["filed"])).days>500:return None
+    if (LOCAL_NOW.date()-date.fromisoformat(latest["filed"])).days>500:return None
     return {"growth":latest["val"]/prior["val"]-1,"filed":latest["filed"],"url":url,"method":"Annual SEC PP&E purchase growth proxy; NOT analyst consensus surprise"}
 
 def collect_filing_candidates(symbol):
@@ -236,7 +241,7 @@ def collect_filing_candidates(symbol):
     for i,form in enumerate(rec.get("form",[])):
         if form not in ("8-K","10-K","10-Q"):continue
         filed=rec["filingDate"][i]
-        if filed>AS_OF or (date.today()-date.fromisoformat(filed)).days>30:continue
+        if filed>AS_OF or (LOCAL_NOW.date()-date.fromisoformat(filed)).days>30:continue
         accession=rec["accessionNumber"][i].replace("-","")
         doc=rec["primaryDocument"][i]
         rows.append({"ticker":symbol,"date":filed,"title":f"{symbol} {form}","form":form,
@@ -248,7 +253,7 @@ def collect_filing_candidates(symbol):
 def collect_policy_candidates():
     from urllib.parse import urlencode
     seen=set();rows=[]
-    start=(date.today()-timedelta(days=14)).isoformat()
+    start=(LOCAL_NOW.date()-timedelta(days=14)).isoformat()
     for term in ("semiconductor","export control","data center"):
         params=urlencode({"conditions[term]":term,"conditions[publication_date][gte]":start,
           "conditions[publication_date][lte]":AS_OF,"order":"newest","per_page":"12"})
