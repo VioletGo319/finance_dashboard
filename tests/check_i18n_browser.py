@@ -49,6 +49,29 @@ js=r"""
       details:document.getElementById('factorEvidence')?.textContent?.slice(0,500)};
    const el=document.createElement('pre');el.id='i18nAudit';el.setAttribute('data-i18n',encodeURIComponent(JSON.stringify(report)));document.body.append(el);
  },1100);
+ if(locale==='en'){
+   setTimeout(()=>{
+      const sel=document.getElementById('m7Language');
+      const expectations=[['fr','Analyse des facteurs','NŒUDS'],['es','Análisis de factores','NODOS'],
+                          ['ja','因子分析','ノード'],['zh-CN','因子研究','节点'],['en','Factor Research','NODES']];
+      const results=[];
+      function next(i){
+        if(i>=expectations.length){
+          document.documentElement.dataset.m7LanguageSwitch=results.every(Boolean)?'PASS':'FAIL';
+          return;
+        }
+        const [lang,nav,nodes]=expectations[i];
+        sel.value=lang;sel.dispatchEvent(new Event('change',{bubbles:true}));
+        setTimeout(()=>{
+          results.push(window.M7_I18N?.language===lang &&
+             document.querySelector('[data-tab="factors"]')?.textContent?.trim()===nav &&
+             document.getElementById('gNodesLabel')?.textContent?.trim()===nodes);
+          next(i+1);
+        },120);
+      }
+      next(0);
+   },1360);
+ }
 })();
 """
 source=source.replace("</body>","<script>"+js+"</script></body>")
@@ -76,4 +99,9 @@ for locale in ["en","zh-CN","fr","es","ja"]:
     assert report["graphNodesLabel"]==expected_nodes[locale],(locale,report["graphNodesLabel"])
     assert report["factors"]>800,(locale,report["factors"])
     assert report["count"]==0,(locale,report["issues"][:20])
+    if locale=="en":
+        marker=re.search(r'data-m7-language-switch="([^"]+)"',dom)
+        print("Language switching:",marker.group(1) if marker else "not tested")
+        assert marker and marker.group(1)=="PASS", "Interactive language switching failed"
+
 
