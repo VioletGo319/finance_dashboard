@@ -20,9 +20,11 @@ ROOT = Path(__file__).resolve().parents[1]
 try:
     from scripts.network import graph_snapshot
     from scripts.enrichment import annual_capex_fallback, disclosed_share_change, monitoring_scores, dataset_health
+    from scripts.quant_pipeline import build_quant
 except ModuleNotFoundError:
     from network import graph_snapshot
     from enrichment import annual_capex_fallback, disclosed_share_change, monitoring_scores, dataset_health
+    from quant_pipeline import build_quant
 TICKERS = tuple(row["ticker"] for row in graph_snapshot()[0]["suppliers"])
 CLIENTS = ("AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA")
 WEIGHTS = {"acceleration": .30, "demand": .25, "tightness": .15, "customer_momentum": .15, "policy": .10, "residual_momentum": .05}
@@ -393,6 +395,19 @@ def main():
         print(f"{symbol}: {len(quotes[symbol]['bars'])} closes; {quotes[symbol].get('error') or 'ok'}",flush=True)
     enrich_regulatory_data(base)
     result=calculate(base,quotes)
+    # Quant research export is separate: if fundamentals/benchmark data fail,
+    # the original 40-stock supplier dashboard still remains available.
+    try:
+        quant=build_quant(result,quotes,AS_OF)
+        result.setdefault("audit",{})["quant_status"]=quant["backtest"]["status"]
+        result["audit"]["quant_eligible_count"]=quant["screener"]["eligible_count"]
+        print("Quant research:",quant["backtest"]["status"],
+              "SEC revenue",quant["fundamentals_coverage"]["fiscal_revenue"],
+              "screened",quant["screener"]["eligible_count"],flush=True)
+    except Exception as exc:
+        result.setdefault("audit",{})["quant_status"]="NOT_GENERATED"
+        result["audit"]["quant_error"]=str(exc)[:200]
+        print("Quant export unavailable:",str(exc)[:200],file=sys.stderr)
     src.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     snapshots=ROOT/"data"/"snapshots"
     snapshots.mkdir(parents=True,exist_ok=True)
