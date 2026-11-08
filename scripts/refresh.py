@@ -43,7 +43,7 @@ def fetch_text(url):
         return response.read().decode("utf-8", "replace")
 
 def get_stooq(symbol):
-    start = (date.today() - timedelta(days=330)).strftime("%Y%m%d")
+    start = (date.today() - timedelta(days=2200)).strftime("%Y%m%d")
     end = date.today().strftime("%Y%m%d")
     url = f"https://stooq.com/q/d/l/?s={symbol.lower()}.us&i=d&d1={start}&d2={end}"
     bars = []
@@ -56,7 +56,7 @@ def get_stooq(symbol):
     return bars, url, "Stooq EOD"
 
 def get_yahoo(symbol):
-    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol)}?range=9mo&interval=1d"
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol)}?range=6y&interval=1d"
     j = json.loads(fetch_text(url))["chart"]["result"][0]
     q = j["indicators"]["quote"][0]["close"]
     bars = []
@@ -388,7 +388,7 @@ def main():
     base["network"]=network
     base["model_version"]="v3.2-40-multihop-proxy"
     base["infrastructure"] = load_infrastructure_attributes()
-    universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK","SPY")))
+    universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK","SPY","QQQ")))
     quotes={}
     for symbol in universe:
         quotes[symbol]=prices(symbol)
