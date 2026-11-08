@@ -86,6 +86,8 @@ jobs:
           PY
       - name: Audit all five languages in a real browser
         run: python tests/check_i18n_browser.py
+      - name: Validate real Quant Lab rankings, graph, benchmarks and scenario selectors in Chrome
+        run: python tests/check_quant_browser.py
       - name: Run offline calculation tests
         run: python -m unittest discover -s tests -v
       - name: Verify published files and data integrity
