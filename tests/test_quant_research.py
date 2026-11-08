@@ -8,18 +8,18 @@ from scripts.quant_fundamentals import extract_fundamentals
 from scripts.quant_strategy import simulate_daily_close,investment_score,_metrics
 
 def mock_facts():
+  annual=[
+    {"start":"2024-01-01","end":"2024-12-31","filed":"2025-02-14","form":"10-K","val":100},
+    {"start":"2025-01-01","end":"2025-12-31","filed":"2026-02-10","form":"10-K","val":130},
+    {"start":"2025-01-01","end":"2025-12-31","filed":"2026-12-01","form":"10-K/A","val":200},
+  ]
+  shares=[
+    {"end":"2025-12-31","filed":"2026-02-10","form":"10-K","val":100000000},
+    {"end":"2026-09-30","filed":"2026-10-20","form":"10-Q","val":110000000},
+  ]
   return {"facts":{
-    "us-gaap":{
-      "RevenueFromContractWithCustomerExcludingAssessedTax":{"units":{"USD":[
-        {"start":"2024-01-01","end":"2024-12-31","filed":"2025-02-14","form":"10-K","val":100},
-        {"start":"2025-01-01","end":"2025-12-31","filed":"2026-02-10","form":"10-K","val":130},
-        {"start":"2025-01-01","end":"2025-12-31","filed":"2026-12-01","form":"10-K/A","val":200},
-      ]}},
-    },
-    "dei":{"EntityCommonStockSharesOutstanding":{"units":{"shares":[
-      {"end":"2025-12-31","filed":"2026-02-10","form":"10-K","val":100000000},
-      {"end":"2026-09-30","filed":"2026-10-20","form":"10-Q","val":110000000},
-    ]}},
+    "us-gaap":{"RevenueFromContractWithCustomerExcludingAssessedTax":{"units":{"USD":annual}}},
+    "dei":{"EntityCommonStockSharesOutstanding":{"units":{"shares":shares}}}
   }}
 
 class QuantPipelineTests(unittest.TestCase):
