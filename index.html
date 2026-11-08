@@ -33,6 +33,65 @@
 #m7Language{background:#111d30;border:0;color:var(--ink);font:inherit;font-size:13px;padding:8px 6px;border-radius:7px;max-width:122px;cursor:pointer}
 #m7Language:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 @media(max-width:700px){.language-label{display:none}.language-switch{padding:2px}#m7Language{max-width:92px;font-size:12px}}
+
+/* Interactive neural supply graph — Canvas GPU-friendly presentation. */
+.g-explorer{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(135deg,#101d34,#0b162a);border:1px solid #294868;border-radius:18px;margin:8px 0 18px;box-shadow:inset 0 0 65px #0c234d55,0 25px 55px #0004}
+.g-explorer:before{content:"";pointer-events:none;position:absolute;inset:-40%;background:radial-gradient(circle at 45% 48%,#254b8a28,transparent 40%);z-index:-1}
+.g-toolbar{position:relative;z-index:3;display:flex;gap:16px;justify-content:space-between;align-items:center;padding:18px 18px;background:#0d192bef;border-bottom:1px solid #29415c;flex-wrap:wrap}
+.g-titlebox{display:flex;flex-direction:column;gap:3px;min-width:0}
+.g-kicker{font-size:10px;letter-spacing:2px;color:#7394b7;font-weight:750}
+.g-live-dot{display:inline-block;height:5px;width:5px;border-radius:50%;background:#46e6d0;box-shadow:0 0 11px #46e6d0;margin:0 7px;vertical-align:middle}
+#gHeader{font-size:20px;font-weight:800;letter-spacing:.2px;background:linear-gradient(95deg,#e0f1ff,#75e9da);-webkit-background-clip:text;background-clip:text;color:transparent}
+#gSub{font-size:11px;color:#8aa2c0}
+.g-controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.g-search{width:194px;background:#152840;color:#e4f3ff;border:1px solid #34516d;border-radius:8px;padding:9px 11px;font-size:12px;outline:none}
+.g-search:focus{border-color:#51d7d5;box-shadow:0 0 0 2px #51d7d52a}
+.g-btn{background:#1b2e47;color:#cde5fc;border:1px solid #375473;border-radius:8px;padding:8px 11px;font-size:12px;font-weight:650;white-space:nowrap}
+.g-btn:hover,.g-zoom button:hover{border-color:#5decd8;color:#a9fff2;background:#203e55}
+.g-stage{display:grid;grid-template-columns:minmax(0,1fr) 278px;min-height:610px}
+.g-viewport{position:relative;min-width:0;min-height:610px;overflow:hidden;background:#061022}
+.g-viewport canvas{width:100%;height:610px;display:block;cursor:grab;touch-action:none;outline:none}
+.g-viewport canvas:focus-visible{outline:2px solid #60e8d9;outline-offset:-3px}
+.g-tooltip{position:absolute;z-index:5;pointer-events:none;min-width:120px;max-width:220px;background:#172b48ee;border:1px solid #5998b4;box-shadow:0 10px 25px #000a;border-radius:8px;padding:9px 12px;color:white}
+.g-tooltip[hidden]{display:none}
+.g-tooltip strong,.g-tooltip small{display:block}.g-tooltip small{font-size:11px;color:#a3bfd8;margin-top:4px}
+.g-floating{position:absolute;left:16px;top:16px;display:flex;gap:8px;pointer-events:none}
+.g-stat{background:#13223cd9;border:1px solid #2e4b6d;backdrop-filter:blur(12px);border-radius:8px;padding:7px 11px;display:flex;flex-direction:column;min-width:65px}
+.g-stat strong{color:#e4f7ff;font-size:18px;font-weight:800;line-height:1.2}
+.g-stat small{font-size:8px;color:#93b0cd;letter-spacing:1.2px}
+.g-zoom{position:absolute;right:14px;bottom:18px;display:grid;gap:5px}.g-zoom button{height:32px;width:32px;font-size:17px;color:#d4e8f7;background:#172943d9;border:1px solid #385575;border-radius:7px}
+.g-side{background:linear-gradient(#111e32,#0b172a);border-left:1px solid #2e455e;min-width:0;display:flex;flex-direction:column}
+.g-sidehead{display:flex;align-items:center;justify-content:space-between;gap:5px;padding:16px 14px;border-bottom:1px solid #233950;color:#99c2da;font-size:11px}
+.g-side-pulse{color:#6cdec9;font-size:9px;letter-spacing:.8px}
+.g-insight{padding:15px;flex:1;min-height:290px;max-height:490px;overflow:auto}
+.g-placeholder{margin:50px 0 20px;text-align:center;color:#a7bdd6}.g-placeholder strong{display:block;color:#ddf4ff;font-size:14px}
+.g-placeholder p{font-size:12px;line-height:1.6}.g-orb{display:block;margin:auto auto 20px;font-size:52px;color:#52dfd2;text-shadow:0 0 22px #52dfd2}
+.g-insight-header{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.g-insight-header h3{margin:3px 0;color:#f5fdff;font-size:29px}
+.g-insight-name{font-size:11px;color:#9fb5cb}
+.g-icon-badge{font-size:11px;padding:8px 10px;color:#91f7eb;border:1px solid #327a77;border-radius:9px;background:#15433f}
+.g-scoreline{display:flex;justify-content:space-between;gap:10px;padding:13px 0;margin:15px 0;border-block:1px solid #2a4159;font-size:12px;color:#9cb9d1}.g-scoreline strong{font-size:19px;color:#79eddd}
+.g-section-title{font-size:11px;font-weight:700;color:#85aaca;text-transform:uppercase;letter-spacing:.7px;margin:17px 0 9px}
+.g-path-list{display:grid;gap:6px;max-height:220px;overflow:auto}
+.g-path-entry{display:flex;justify-content:space-between;gap:8px;align-items:center;background:#182941;color:#d8ecff;text-align:left;border:1px solid #2c4661;border-radius:7px;font-size:11px;padding:9px 8px;cursor:pointer}
+.g-path-entry span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.g-path-entry b{font-variant-numeric:tabular-nums;color:#7fe9de}
+.g-path-entry.active,.g-path-entry:hover{border-color:#64decf;background:#1c4250}
+.g-proof{margin-top:13px;padding:12px;border-radius:9px;background:#162b43;border:1px solid #38637b;font-size:12px;line-height:1.6}
+.g-proof small{display:block;font-size:11px;color:#a5bad0;margin:8px 0}
+.g-proof a{display:block;overflow-wrap:anywhere;font-size:11px;margin-top:8px;color:#7bdcff}
+.g-empty-info{font-size:12px;color:#91a6bd;line-height:1.7}
+.g-options{display:flex;gap:15px;flex-wrap:wrap;padding:14px;border-top:1px solid #273c53}
+.g-check{display:flex;gap:6px;align-items:center;font-size:11px;color:#b0c9dc;cursor:pointer}.g-check input{accent-color:#60e3d1}
+.g-disclaimer{font-size:10px;color:#7998b1;padding:0 14px 12px;line-height:1.5}
+.g-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 16px;background:#102039;border-top:1px solid #284364;font-size:11px;color:#9eb9d1}
+.g-foot>span:last-child{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.g-key{display:inline-block;height:8px;width:8px;border-radius:50%;box-shadow:0 0 6px currentColor}
+.g-explorer:not(.g-ready){display:none}
+@media(max-width:1100px){.g-stage{grid-template-columns:minmax(0,1fr) 235px}.g-controls{gap:5px}.g-search{width:165px}}
+@media(max-width:780px){.g-toolbar{padding:12px}.g-controls{width:100%}.g-search{flex:1;min-width:120px}.g-stage{grid-template-columns:1fr}.g-viewport{min-height:450px}.g-viewport canvas{height:450px}.g-side{border-left:0;border-top:1px solid #2e455e}.g-insight{min-height:130px;max-height:320px}.g-floating{left:10px;top:10px}.g-stat{padding:6px;min-width:52px}.g-titlebox strong{font-size:17px}.g-foot{padding:11px}}
+@media(prefers-reduced-motion:reduce){.g-live-dot{box-shadow:none}.g-explorer *{scroll-behavior:auto!important}}
+
 </style>
 </head>
 <body>
@@ -76,7 +135,36 @@
     </div>
   </div>
   <div class="panel" style="margin-top:17px"><div class="head"><div><div class="heading">40家公司 · 网络可达性</div><div class="subtitle">按已核验路径的累积代理强度排序，非业务收入规模排名</div></div></div><div class="tablewrap"><table class="table"><thead><tr><th>股票</th><th>行业环节</th><th>直接客户</th><th>二级客户</th><th>可核验路径数</th><th>关联代理指数</th></tr></thead><tbody id="pathCoverageRows"></tbody></table></div></div>
-</section><section id="network" class="view"><div class="panel"><div class="head"><div><div class="heading">七巨头 × 上游供应商二部图</div><div class="subtitle">左：M7客户；右：供应商。连线代表披露的客户 / 供应关系，非采购金额比例。</div></div><div class="filterrow"><select id="networkFilter" class="pick"><option value="all">全部供应商</option></select><label class="toggle"><input type="checkbox" id="verifiedOnly" checked>只看有来源关系</label></div></div><div class="bodypad"><svg id="networkSvg" class="networkSvg" viewBox="0 0 980 1490" aria-label="七巨头供应链网络图"></svg><div class="legend"><span><i class="sq" style="background:#7fa6fa"></i>七巨头</span><span><i class="sq" style="background:#54ddcb"></i>供应商</span><span><i class="sq" style="background:#88c9e1"></i>已公开披露</span><span><i class="sq" style="background:#53637a"></i>待验证，不参与有效关系统计</span></div><p class="networkhint">提示：点击关系边查看来源；选择供应商高亮相连客户。尚未披露金额的边不推断供货份额；多重关系强度不能简单使用边数替代。</p></div></div><div class="grid half" style="margin-top:17px"><div class="panel"><div class="head"><div><div class="heading">关系证据明细</div><div class="subtitle">披露时点、收入份额、合同金额和证据来源严格分列</div></div></div><div class="bodypad" id="relationshipEvidence"></div></div><div class="panel"><div class="head"><div><div class="heading">网络模型约束</div><div class="subtitle">避免关系图推断中常见的数据污染</div></div></div><div class="bodypad"><div class="insightlist"><div class="insight"><div class="lt">时间约束</div><strong>只有公开日期 ≤ 信号构建日期，关系才可以进入对应历史截面。</strong></div><div class="insight"><div class="lt">数值约束</div><strong>16.3% 客户收入 ≠ 采购金额；最高 60 亿美元 ≠ 实际实现收入。</strong></div><div class="insight"><div class="lt">层级约束</div><strong>直接合同、代工、二级供应、生态暴露要分层建模，不计作同类边。</strong></div><div class="insight"><div class="lt">缺失机制</div><strong>未披露关系应为 Unknown，不应直接填 0。</strong></div></div></div></div></div></section>
+</section><section id="network" class="view"><div class="panel"><div class="head"><div><div class="heading">七巨头 × 上游供应商二部图</div><div class="subtitle">左：M7客户；右：供应商。连线代表披露的客户 / 供应关系，非采购金额比例。</div></div><div class="filterrow"><select id="networkFilter" class="pick"><option value="all">全部供应商</option></select><label class="toggle"><input type="checkbox" id="verifiedOnly" checked>只看有来源关系</label></div></div><div class="bodypad"><div class="g-explorer" id="graphExplorer">
+  <div class="g-toolbar">
+    <div class="g-titlebox"><div class="g-kicker">GRAPH INTELLIGENCE <span class="g-live-dot"></span> EVIDENCE-GROUNDED</div><strong id="gHeader">NEURAL SUPPLY GRAPH</strong><small id="gSub">Verified supplier → customer links · evidence-weighted only</small></div>
+    <div class="g-controls">
+      <input id="gSearch" class="g-search" type="search" placeholder="Search ticker or company…" aria-label="Search graph nodes">
+      <button type="button" class="g-btn" id="gFit" title="Fit graph">Fit</button>
+      <button type="button" class="g-btn" id="gLayout" title="Switch graph layout">Orbit</button>
+      <button type="button" class="g-btn" id="gClear" title="Clear focus">Clear focus</button>
+    </div>
+  </div>
+  <div class="g-stage">
+    <div class="g-viewport" id="gViewport"><canvas id="graphCanvas" role="img" aria-label="Interactive supplier graph with nodes and documented directed supply links" tabindex="0"></canvas>
+      <div id="gTooltip" class="g-tooltip" hidden></div>
+      <div class="g-floating">
+        <div class="g-stat"><strong id="gNodeTotal">47</strong><small>NODES</small></div>
+        <div class="g-stat"><strong id="gEdgeTotal">—</strong><small>EDGES</small></div>
+        <div class="g-stat"><strong id="gPathTotal">—</strong><small>PATHS</small></div>
+      </div>
+      <div class="g-zoom"><button type="button" id="gPlus" aria-label="Zoom in">+</button><button type="button" id="gMinus" aria-label="Zoom out">−</button></div>
+    </div>
+    <aside class="g-side"><div class="g-sidehead"><span id="gModel">v3</span><span class="g-side-pulse">● LIVE GRAPH</span></div><div id="gInsight" class="g-insight" aria-live="polite"><div class="g-placeholder">Select a node to trace its supply paths.</div></div>
+      <div class="g-options">
+        <label class="g-check"><input id="gAll" type="checkbox"><span id="gAllLabel">Show all 47 nodes</span></label>
+        <label class="g-check"><input id="gFlow" type="checkbox" checked><span id="gFlowLabel">Flow</span></label>
+      </div>
+      <p id="gNote" class="g-disclaimer">Evidence proxy weights are not correlations, procurement percentages or return probabilities.</p>
+    </aside>
+  </div>
+  <div class="g-foot"><span id="gHint">Drag nodes · scroll to zoom · click to trace paths</span><span><i class="g-key" style="background:#86aaff"></i> M7 <i class="g-key" style="background:#48ead2"></i> Tier 1 <i class="g-key" style="background:#ae94ff"></i> Tier 2 <i class="g-key" style="background:#ffbf74"></i> Tier 3</span></div>
+</div><svg id="networkSvg" class="networkSvg" viewBox="0 0 980 1490" aria-label="七巨头供应链网络图"></svg><div class="legend"><span><i class="sq" style="background:#7fa6fa"></i>七巨头</span><span><i class="sq" style="background:#54ddcb"></i>供应商</span><span><i class="sq" style="background:#88c9e1"></i>已公开披露</span><span><i class="sq" style="background:#53637a"></i>待验证，不参与有效关系统计</span></div><p class="networkhint">提示：点击关系边查看来源；选择供应商高亮相连客户。尚未披露金额的边不推断供货份额；多重关系强度不能简单使用边数替代。</p></div></div><div class="grid half" style="margin-top:17px"><div class="panel"><div class="head"><div><div class="heading">关系证据明细</div><div class="subtitle">披露时点、收入份额、合同金额和证据来源严格分列</div></div></div><div class="bodypad" id="relationshipEvidence"></div></div><div class="panel"><div class="head"><div><div class="heading">网络模型约束</div><div class="subtitle">避免关系图推断中常见的数据污染</div></div></div><div class="bodypad"><div class="insightlist"><div class="insight"><div class="lt">时间约束</div><strong>只有公开日期 ≤ 信号构建日期，关系才可以进入对应历史截面。</strong></div><div class="insight"><div class="lt">数值约束</div><strong>16.3% 客户收入 ≠ 采购金额；最高 60 亿美元 ≠ 实际实现收入。</strong></div><div class="insight"><div class="lt">层级约束</div><strong>直接合同、代工、二级供应、生态暴露要分层建模，不计作同类边。</strong></div><div class="insight"><div class="lt">缺失机制</div><strong>未披露关系应为 Unknown，不应直接填 0。</strong></div></div></div></div></div></section>
 <section id="events" class="view"><div class="grid two"><div class="panel"><div class="head"><div><div class="heading">合作与合同事件库</div><div class="subtitle">原始公告｜日期｜涉及股票｜潜在因子作用</div></div><select id="eventType" class="pick"><option value="all">全部事件</option><option value="contract">合同与供应</option><option value="investment">战略投资</option><option value="filing">财报披露</option></select></div><div class="bodypad" id="allEvents"></div></div><div class="panel"><div class="head"><div><div class="heading">政策观察台</div><div class="subtitle">发布日期、法律生效日及影响范围分开记录</div></div></div><div class="bodypad" id="allPolicies"></div></div></div></section>
 
 <section id="infrastructure" class="view">
@@ -272,8 +360,8 @@ function renderPaths(){
  $('#pathCoverageRows').innerHTML=coverage.map(x=>`<tr><td><strong>${esc(x.ticker)}</strong></td><td>${esc(x.sector)}</td><td>${x.direct_customers||0}</td><td>${x.indirect_customers||0}</td><td>${x.paths||0}</td><td>${x.verified_in_graph?Number(x.reach).toFixed(3):'<span class="muted">Unknown</span>'}</td></tr>`).join('');
 }
 
-function render(){renderPaths();renderInfrastructure();modeSetup();fillSelectors();renderKPIs();renderRanking();renderDetail();renderTrend();renderEventPreview();renderFactorHeatmap();renderContrib();renderWeights();renderNetwork();renderRelations();renderEvents();renderAudit();}
-function goto(t){if(!['overview','factors','network','paths','events','infrastructure','audit'].includes(t))return;activeTab=t;$$('.view').forEach(v=>v.classList.toggle('active',v.id===t));$$('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));window.scrollTo({top:200,behavior:'smooth'})}
+function render(){renderPaths();renderInfrastructure();modeSetup();fillSelectors();renderKPIs();renderRanking();renderDetail();renderTrend();renderEventPreview();renderFactorHeatmap();renderContrib();renderWeights();renderNetwork();renderRelations();renderEvents();renderAudit();if(window.M7GraphViz)window.M7GraphViz.setData(db);}
+function goto(t){if(!['overview','factors','network','paths','events','infrastructure','audit'].includes(t))return;activeTab=t;$$('.view').forEach(v=>v.classList.toggle('active',v.id===t));$$('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));window.scrollTo({top:200,behavior:'smooth'});if(t==='network'&&window.M7GraphViz)requestAnimationFrame(()=>window.M7GraphViz.resize(false))}
 function downloadObject(obj,name){const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});const a=document.createElement('a');const url=URL.createObjectURL(blob);a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000)}
 function template(){return {as_of:'2026-11-06',price_date:'2026-11-06',previous_price_date:'2026-11-05',mode:'imported',model_version:'v1-fixed-30-25-15-15-10-5',suppliers:TICKERS.map(t=>({ticker:t,name:NAMES[t],alpha:null,previous_alpha:null,close:null,previous_close:null,coverage:null,confidence:null,factors:{acceleration:null,demand:null,tightness:null,customer_momentum:null,policy:null,residual_momentum:null},explanation:'等待可核验的每日说明',history:[]})),relationships:structuredClone(relationships),events:structuredClone(events),policies:structuredClone(policies)}}
 function validate(obj){if(!obj||typeof obj!=='object'||!Array.isArray(obj.suppliers))throw Error('缺少 suppliers 数组');const keys=new Set();for(const x of obj.suppliers){if(!x||!TICKERS.includes(x.ticker))throw Error('包含非研究池股票');if(keys.has(x.ticker))throw Error('股票代码重复: '+x.ticker);keys.add(x.ticker);for(const k of ['alpha','previous_alpha','close','previous_close','coverage']){if(x[k]!==undefined&&x[k]!==null&&!Number.isFinite(Number(x[k])))throw Error(x.ticker+' 的 '+k+' 不是数字')}if(x.alpha!=null&&(+x.alpha<0||+x.alpha>100))throw Error('Alpha 必须在0–100之间');if(x.coverage!=null&&(+x.coverage<0||+x.coverage>1))throw Error('覆盖率需在0–1之间');if(x.factors){for(const [k] of FACTORS){if(x.factors[k]!=null&&(!Number.isFinite(+x.factors[k])||+x.factors[k]<0||+x.factors[k]>100))throw Error('因子必须在0–100之间')}}}return true}
@@ -306,4 +394,5 @@ setInterval(refreshSnapshot,10*60*1000);
 refreshSnapshot();
 </script>
 <script src="i18n.js"></script>
+<script src="graph-viz.js"></script>
 </body></html>
