@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "reviewed_on": "2026-11-07",
+  "caveat": "Annual cash CapEx year-on-year changes are public fundamental proxy, NOT consensus estimate surprises, and cross-firm cash-flow definitions/fiscal periods differ.",
+  "units": "USD millions",
+  "companies": [
+    {
+      "ticker": "MSFT",
+      "fy_latest": "2026-06-30",
+      "fy_prior": "2025-06-30",
+      "capex_latest": 115948,
+      "capex_prior": 64551,
+      "metric": "Additions to property and equipment",
+      "as_of": "2026-11-07",
+      "source": "https://www.microsoft.com/investor/reports/ar26/index.html"
+    },
+    {
+      "ticker": "GOOGL",
+      "fy_latest": "2025-12-31",
+      "fy_prior": "2024-12-31",
+      "capex_latest": 91400,
+      "capex_prior": 52500,
+      "metric": "Capital expenditures as described in annual 10-K",
+      "as_of": "2026-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm"
+    },
+    {
+      "ticker": "META",
+      "fy_latest": "2025-12-31",
+      "fy_prior": "2024-12-31",
+      "capex_latest": 69691,
+      "capex_prior": 37256,
+      "metric": "Purchases of property and equipment",
+      "as_of": "2026-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+    },
+    {
+      "ticker": "AMZN",
+      "fy_latest": "2025-12-31",
+      "fy_prior": "2024-12-31",
+      "capex_latest": 128320,
+      "capex_prior": 77658,
+      "metric": "Purchases of property and equipment net of proceeds from sales and incentives (NOT gross cash CapEx)",
+      "as_of": "2026-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
+    },
+    {
+      "ticker": "TSLA",
+      "fy_latest": "2025-12-31",
+      "fy_prior": "2024-12-31",
+      "capex_latest": 8527,
+      "capex_prior": 11342,
+      "metric": "Purchases of property and equipment excluding finance leases net of sales",
+      "as_of": "2026-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
+    },
+    {
+      "ticker": "AAPL",
+      "fy_latest": "2025-09-27",
+      "fy_prior": "2024-09-28",
+      "capex_latest": 12715,
+      "capex_prior": 9447,
+      "metric": "Payments to acquire property plant equipment",
+      "as_of": "2026-11-07",
+      "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+    }
+  ],
+  "exclusion": [
+    "NVDA FY2026 CapEx annual comparable data not yet manually verified; optional SEC CompanyFacts can supply it with configured SEC_USER_AGENT."
+  ]
+}
