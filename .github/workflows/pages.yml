@@ -36,7 +36,7 @@ jobs:
           assert '<!doctype html>' in page.lower()
           assert '</html>' in page.lower()
           snapshot=json.loads(Path('data/latest.json').read_text(encoding='utf-8'))
-          assert len(snapshot.get('suppliers', []))==12
+          assert len(snapshot.get('suppliers', []))==40
           print('Dashboard ready; latest research snapshot date:',snapshot.get('as_of'))
           PY
           mkdir -p _site/data
