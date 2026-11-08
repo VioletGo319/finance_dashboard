@@ -46,6 +46,26 @@ def collect_fundamentals(tickers,as_of):
         audit["cached_records_used"]=len(facts)
     return facts,audit
 
+def prospectively_select(ranked,price_date,as_of):
+    """New research paper-trading target; no prior returns implied."""
+    from scripts.quant_strategy import SECTOR_BANDS
+    chosen=[];counts={}
+    for r in ranked:
+        if not r.get("rank_eligible"):continue
+        t=r["ticker"]
+        sector=next((k for k,v in SECTOR_BANDS.items() if t in v),"other")
+        if counts.get(sector,0)>=3:continue
+        chosen.append(t);counts[sector]=counts.get(sector,0)+1
+        if len(chosen)==8:break
+    return {"status":"SIGNAL_ONLY_EXECUTION_NOT_YET_OBSERVED" if chosen else "INSUFFICIENT_ELIGIBLE_RANKS",
+      "signal_as_of":as_of,"signal_last_completed_price_date":price_date,
+      "first_eligible_execution":"next completed US session close after signal snapshot; not a filled order",
+      "rebalancing":"monthly by current SEC+Alpha screening (full historical backtest not available)",
+      "one_way_assumed_fee_bps":10,
+      "selected":chosen,"target_weights":{t:round(1/len(chosen),6) for t in chosen} if chosen else {},
+      "observed_forward_returns":None,
+      "audit":"This is a forward research watch basket; do not interpret as historical performance or real trades."}
+
 def build_quant(result,quotes,as_of,write=True):
     tickers=[r["ticker"] for r in result.get("suppliers",[])]
     facts,audit=collect_fundamentals(tickers,as_of)
@@ -59,6 +79,11 @@ def build_quant(result,quotes,as_of,write=True):
         meta[t]=s
     ranked=investment_score(tickers,facts,meta)
     backtest=simulate_daily_close(quotes,tickers,top_n=8,trade_bps=10)
+    scenarios={}
+    for n,cost in ((5,10),(8,5),(8,10),(8,20),(10,10)):
+        key=f"Top {n} · {cost} bps"
+        scenarios[key]=simulate_daily_close(quotes,tickers,top_n=n,trade_bps=cost)
+
     if backtest.get("status")=="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
         portfolio_status="HISTORICAL_PRICE_ONLY_RESEARCH_DIAGNOSTIC"
     else:portfolio_status="NOT_COMPUTABLE"
@@ -77,6 +102,8 @@ def build_quant(result,quotes,as_of,write=True):
           "warning":"Not a return forecast. Price×SEC shares is indicative, stale-share/ADR/split checks are required before live investing. Revenue data from 10-K/20-F as filed.",
         },
         "backtest":{"status":portfolio_status,**backtest},
+        "backtest_scenarios":scenarios,
+        "prospective_screen_portfolio":prospectively_select(ranked,result.get("price_date"),as_of),
         "separation_rule":"Current 2026 supply Alpha/revenue metrics are NEVER fed into historical price-only backtest. To backtest the full ranking, accumulate or reconstruct as-filed metrics and point-in-time graph edges.",
         "not_included":["survivorship-bias-free historical membership","corporate-action/dividend independently validated prices","historical fundamentals published after each rebalance","historical six-factor Alpha","slippage/market impact measured from executions"],
     }
