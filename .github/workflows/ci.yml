@@ -44,8 +44,8 @@ jobs:
           assert Path('index.html').is_file()
           assert Path('site/index.html').is_file()
           latest=json.loads(Path('data/latest.json').read_text(encoding='utf-8'))
-          assert len(latest.get('suppliers',[]))==12
+          assert len(latest.get('suppliers',[]))==40
           assert all(x.get('ticker') for x in latest['suppliers'])
           assert isinstance(latest.get('audit'),dict)
-          print('Verified 12-ticker research snapshot and static dashboard.')
+          print('Verified 40-ticker research snapshot and static dashboard.')
           PY
