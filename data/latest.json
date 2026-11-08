@@ -4,7 +4,7 @@
   "previous_price_date": "2026-11-05",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-08T23:34:47.251080+00:00",
+  "retrieved_at_utc": "2026-11-08T23:56:38.639002+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -41,12 +41,12 @@
           "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
         ],
         "customer_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -59,7 +59,7 @@
       "previous_close": 353.1,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.8,
@@ -117,14 +117,14 @@
           "https://www.sec.gov/Archives/edgar/data/1730168/000119312526144028/d87999d8k.htm"
         ],
         "customer_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=6y&interval=1d",
           "https://www.apple.com/newsroom/2026/07/apple-to-increase-spend-with-broadcom-to-produce-billions-more-us-chips/",
           "https://www.sec.gov/Archives/edgar/data/1730168/000119312526144028/d87999d8k.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -138,7 +138,7 @@
       "previous_close": 291.53,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 1.6,
@@ -199,13 +199,13 @@
           "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm"
         ],
         "customer_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/ANET?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/ANET?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -220,7 +220,7 @@
       "previous_close": 159.16,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ANET?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ANET?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 1.6,
@@ -274,11 +274,11 @@
         ],
         "customer_momentum": [
           "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Coherent-Announce-Strategic-Partnership-to-Develop-Optics-Technology-to-Scale-Next-Generation-Data-Center-Architecture/default.aspx",
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/COHR?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/COHR?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -291,7 +291,7 @@
       "previous_close": 169.76,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/COHR?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/COHR?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.8,
@@ -345,11 +345,11 @@
         ],
         "customer_momentum": [
           "https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx",
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/LITE?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/LITE?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -362,7 +362,7 @@
       "previous_close": 509.7,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/LITE?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/LITE?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.8,
@@ -422,12 +422,12 @@
         ],
         "customer_momentum": [
           "https://investor.fabrinet.com/node/13676/xbrl-viewer",
-          "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/FN?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/FN?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -442,7 +442,7 @@
       "previous_close": 292.97,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/FN?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/FN?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 1.6,
@@ -499,11 +499,11 @@
         ],
         "customer_momentum": [
           "https://about.fb.com/news/2026/01/meta-6-billion-agreement-corning-support-us-manufacturing/",
-          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=6y&interval=1d"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/GLW?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/GLW?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -517,7 +517,7 @@
       "previous_close": 103.43,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/GLW?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/GLW?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.8,
@@ -575,14 +575,14 @@
           "https://www.sec.gov/Archives/edgar/data/1030894/000103089426000011/cls-20251231.htm"
         ],
         "customer_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/1030894/000103089426000011/cls-20251231.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/CLS?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/CLS?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -596,7 +596,7 @@
       "previous_close": 205.64,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CLS?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CLS?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 2.4,
@@ -649,12 +649,12 @@
           "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
         ],
         "customer_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -667,7 +667,7 @@
       "previous_close": 656.39,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.8,
@@ -702,8 +702,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/VRT?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/VRT?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -714,7 +714,7 @@
       "previous_close": 176.73,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VRT?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VRT?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -749,8 +749,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/APH?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/APH?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -761,7 +761,7 @@
       "previous_close": 71.64,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/APH?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/APH?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -821,13 +821,13 @@
           "https://www.sec.gov/Archives/edgar/data/932787/000093278726000009/stm-20251231.htm"
         ],
         "customer_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/932787/000093278726000009/stm-20251231.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/STM?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/STM?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -842,7 +842,7 @@
       "previous_close": 39.95,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/STM?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/STM?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 1.6,
@@ -902,12 +902,12 @@
         "customer_momentum": [
           "https://newsroom.amd.com/news/amd-and-meta-announce-expanded-strategic-partnersh/",
           "https://newsroom.amd.com/news/microsoft-azure-ai-infrastructure/?es_id=e0d1c56c4c",
-          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=6y&interval=1d"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -921,7 +921,7 @@
       "previous_close": 404.4,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 1.6,
@@ -981,12 +981,12 @@
         "customer_momentum": [
           "https://investor.marvell.com/news-events/press-releases/detail/121/marvell-expands-strategic-collaboration-with-aws-to-enable-accelerated-infrastructure-for-ai-in-the-cloud",
           "https://investor.marvell.com/sec-filings/all-sec-filings/content/0001193125-26-356217/d412696d8k.htm",
-          "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=6y&interval=1d"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1000,7 +1000,7 @@
       "previous_close": 133.55,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 1.6,
@@ -1059,12 +1059,12 @@
           "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm"
         ],
         "customer_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/CRUS?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/CRUS?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1079,7 +1079,7 @@
       "previous_close": 110.23,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CRUS?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CRUS?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.8,
@@ -1135,12 +1135,12 @@
           "https://www.qualcomm.com/news/releases/2023/09/qualcomm-announces-agreement-with-apple-for-chip-supply"
         ],
         "customer_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=6y&interval=1d",
           "https://www.qualcomm.com/news/releases/2023/09/qualcomm-announces-agreement-with-apple-for-chip-supply"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/QCOM?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/QCOM?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1154,7 +1154,7 @@
       "previous_close": 156.75,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/QCOM?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/QCOM?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.8,
@@ -1213,12 +1213,12 @@
           "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm"
         ],
         "customer_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/SWKS?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/SWKS?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1233,7 +1233,7 @@
       "previous_close": 81.21,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/SWKS?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/SWKS?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.8,
@@ -1289,13 +1289,13 @@
         ],
         "customer_momentum": [
           "https://pr.tsmc.com/schinese/news/3274",
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
           "https://www.sec.gov/Archives/edgar/data/1275014/000162828026010744/uctt-20251226.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/UCTT?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/UCTT?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1308,7 +1308,7 @@
       "previous_close": 37.2,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/UCTT?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/UCTT?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.40768,
@@ -1343,8 +1343,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/ON?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/ON?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1355,7 +1355,7 @@
       "previous_close": 63.01,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ON?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ON?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -1390,8 +1390,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/NXPI?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/NXPI?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1402,7 +1402,7 @@
       "previous_close": 244.43,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/NXPI?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/NXPI?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -1437,8 +1437,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/MPWR?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/MPWR?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1449,7 +1449,7 @@
       "previous_close": 1131.4301,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MPWR?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MPWR?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -1484,8 +1484,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/MCHP?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/MCHP?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1496,7 +1496,7 @@
       "previous_close": 64.85,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MCHP?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MCHP?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -1551,12 +1551,12 @@
         ],
         "customer_momentum": [
           "https://pr.tsmc.com/schinese/news/3274",
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1569,7 +1569,7 @@
       "previous_close": 319.25,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.364,
@@ -1624,12 +1624,12 @@
         ],
         "customer_momentum": [
           "https://pr.tsmc.com/schinese/news/3274",
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1642,7 +1642,7 @@
       "previous_close": 185.2,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.364,
@@ -1697,12 +1697,12 @@
         ],
         "customer_momentum": [
           "https://pr.tsmc.com/schinese/news/3274",
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/KLAC?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/KLAC?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1715,7 +1715,7 @@
       "previous_close": 129.8,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/KLAC?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/KLAC?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.364,
@@ -1770,12 +1770,12 @@
         ],
         "customer_momentum": [
           "https://pr.tsmc.com/schinese/news/3274",
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1788,7 +1788,7 @@
       "previous_close": 1356.65,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.364,
@@ -1843,12 +1843,12 @@
         ],
         "customer_momentum": [
           "https://pr.tsmc.com/schinese/news/3274",
-          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6y&interval=1d",
           "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/ONTO?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/ONTO?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1861,7 +1861,7 @@
       "previous_close": 155.99,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ONTO?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ONTO?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.364,
@@ -1896,8 +1896,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/ACLS?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/ACLS?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1908,7 +1908,7 @@
       "previous_close": 90.0,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ACLS?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ACLS?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -1943,8 +1943,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/ENTG?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/ENTG?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -1955,7 +1955,7 @@
       "previous_close": 124.75,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ENTG?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ENTG?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -1990,8 +1990,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/MKSI?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/MKSI?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2002,7 +2002,7 @@
       "previous_close": 176.82,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MKSI?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MKSI?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -2037,8 +2037,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/FORM?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/FORM?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2049,7 +2049,7 @@
       "previous_close": 71.76,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/FORM?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/FORM?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -2084,8 +2084,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/DELL?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/DELL?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2096,7 +2096,7 @@
       "previous_close": 316.91,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/DELL?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/DELL?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -2131,8 +2131,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/HPE?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/HPE?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2143,7 +2143,7 @@
       "previous_close": 44.16,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/HPE?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/HPE?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -2178,8 +2178,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/SMCI?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/SMCI?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2190,7 +2190,7 @@
       "previous_close": 27.08,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/SMCI?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/SMCI?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -2225,8 +2225,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/ETN?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/ETN?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2237,7 +2237,7 @@
       "previous_close": 327.02,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ETN?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ETN?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -2272,8 +2272,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/HUBB?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/HUBB?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2284,7 +2284,7 @@
       "previous_close": 418.79,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/HUBB?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/HUBB?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -2319,8 +2319,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/POWL?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/POWL?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2331,7 +2331,7 @@
       "previous_close": 125.06,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/POWL?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/POWL?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -2366,8 +2366,8 @@
       },
       "factor_sources": {
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/GEV?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/GEV?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2378,7 +2378,7 @@
       "previous_close": 770.51,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/GEV?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/GEV?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": null,
@@ -2438,12 +2438,12 @@
         "customer_momentum": [
           "https://about.fb.com/news/2025/06/meta-constellation-partner-clean-energy-project/",
           "https://investors.constellationenergy.com/news-releases/news-release-details/constellation-launch-crane-clean-energy-center-restoring-jobs",
-          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=6y&interval=1d"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/CEG?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/CEG?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2457,7 +2457,7 @@
       "previous_close": 239.65,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CEG?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CEG?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 1.4,
@@ -2514,11 +2514,11 @@
         ],
         "customer_momentum": [
           "https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/",
-          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=6y&interval=1d"
         ],
         "residual_momentum": [
-          "https://query1.finance.yahoo.com/v8/finance/chart/VST?range=9mo&interval=1d",
-          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+          "https://query1.finance.yahoo.com/v8/finance/chart/VST?range=6y&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=6y&interval=1d"
         ]
       },
       "factor_methods": {
@@ -2532,7 +2532,7 @@
       "previous_close": 112.89,
       "price_date": "2026-11-06",
       "previous_price_date": "2026-11-05",
-      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VST?range=9mo&interval=1d",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VST?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
       "network_reach": 0.7,
@@ -3362,8 +3362,8 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "energy": 1,
       "storage": 2,
+      "energy": 1,
       "power": 3
     },
     "unverified_is_unknown": true
