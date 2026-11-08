@@ -6,6 +6,7 @@ on:
       - 'scripts/**'
       - 'index.html'
       - 'i18n.js'
+      - 'graph-viz.js'
       - 'config/**'
       - 'tests/**'
       - '.github/workflows/**'
@@ -36,6 +37,7 @@ jobs:
           PY
           for script in /tmp/m7-inline-*.js; do node --check "$script"; done
           node --check i18n.js
+          node --check graph-viz.js
       - name: Run offline calculation tests
         run: python -m unittest discover -s tests -v
       - name: Verify published files and data integrity
@@ -45,6 +47,12 @@ jobs:
           from pathlib import Path
           assert Path('index.html').is_file()
           assert Path('i18n.js').is_file()
+          assert Path('graph-viz.js').is_file()
+          assert 'src="graph-viz.js"' in html
+          assert 'id="graphCanvas"' in html
+          viz=Path('graph-viz.js').read_text(encoding='utf-8')
+          assert 'setData(window.M7_LIVE_DATA' in viz
+          assert all(x in viz for x in ('pointerdown','pointermove','wheel','gSearch','gLayout','gFlow'))
           html=Path('index.html').read_text(encoding='utf-8')
           translations=Path('i18n.js').read_text(encoding='utf-8')
           assert 'id="m7Language"' in html
