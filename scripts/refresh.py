@@ -158,7 +158,7 @@ def calculate(base, quotes):
     result["price_date"]=max(dates) if dates else None
     result["previous_price_date"]=max((s["previous_price_date"] for s in out if s.get("previous_price_date")),default=None)
     result["retrieved_at_utc"]=datetime.now(timezone.utc).isoformat()
-    result["mode"]="live_partial" if dates else "partial"
+    result["mode"]="partial"
     audit=dict(result.get("audit") or {})
     audit["market_prices_present"]=len(dates)
     audit["market_prices_total"]=len(TICKERS)
@@ -281,7 +281,6 @@ def main():
     (snapshots/(AS_OF+".json")).write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     site=ROOT/"site"
     (site/"data").mkdir(parents=True,exist_ok=True)
-    (site/"index.html").write_bytes((ROOT/"index.html").read_bytes())
     (site/"data"/"latest.json").write_bytes(src.read_bytes())
     print("Price coverage:",result["audit"]["market_prices_present"],"/",len(TICKERS))
     print("Official scores:",result["audit"]["official_alpha_count"])
