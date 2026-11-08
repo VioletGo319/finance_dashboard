@@ -55,7 +55,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/latest.json data/snapshots/
+          git add data/latest.json data/snapshots/ data/quant/latest.json data/quant/snapshots/ data/quant/fundamentals_cache.json
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh M7 supply-chain research"
             git push origin HEAD:main
