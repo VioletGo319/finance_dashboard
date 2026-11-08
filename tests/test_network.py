@@ -32,6 +32,16 @@ class TestGraph(unittest.TestCase):
         _,g2=graph_snapshot("2026-11-07")
         self.assertGreaterEqual(len([p for p in g2["paths"] if p["via"]=="TSM"]),5)
 
+    def test_three_hop_evidence_product(self):
+        _,g=graph_snapshot("2026-11-07")
+        paths=[p for p in g["paths"] if p["supplier"]=="UCTT" and p["customer"]=="NVDA" and p["hops"]==3]
+        self.assertEqual(len(paths),2)
+        self.assertEqual({p["via"] for p in paths},{"AMAT","LRCX"})
+        self.assertEqual({tuple(p["path"]) for p in paths},{("UCTT","AMAT","TSM","NVDA"),("UCTT","LRCX","TSM","NVDA")})
+        for path in paths:
+            self.assertAlmostEqual(path["weight"],.8*.65*.8*.7**2)
+            self.assertEqual(len(path["sources"]),3)
+
     def test_no_fabricated_paths_from_candidate(self):
         _,g=graph_snapshot("2026-11-07")
         self.assertEqual(g["exposures"]["VST"]["paths"],0)
