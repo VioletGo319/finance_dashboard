@@ -4,7 +4,7 @@
   "previous_price_date": "2026-11-05",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-08T02:52:13.704546+00:00",
+  "retrieved_at_utc": "2026-11-08T02:54:31.010605+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -29,8 +29,25 @@
         "policy": null,
         "residual_momentum": 69.23
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "tightness": [
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "customer_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 375.44,
       "previous_close": 353.1,
       "price_date": "2026-11-06",
@@ -80,10 +97,28 @@
         "demand": [
           "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
           "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm"
+        ],
+        "tightness": [
+          "https://www.apple.com/newsroom/2026/07/apple-to-increase-spend-with-broadcom-to-produce-billions-more-us-chips/",
+          "https://www.sec.gov/Archives/edgar/data/1730168/000119312526144028/d87999d8k.htm"
+        ],
+        "customer_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=9mo&interval=1d",
+          "https://www.apple.com/newsroom/2026/07/apple-to-increase-spend-with-broadcom-to-produce-billions-more-us-chips/",
+          "https://www.sec.gov/Archives/edgar/data/1730168/000119312526144028/d87999d8k.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
-        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 293.69,
       "previous_close": 291.53,
@@ -138,11 +173,27 @@
         "acceleration": [
           "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm",
           "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm"
+        ],
+        "tightness": [
+          "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm"
+        ],
+        "customer_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/anet-20241231.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/ANET?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
         "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
-        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
+        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 170.8,
       "previous_close": 159.16,
@@ -189,8 +240,25 @@
         "policy": null,
         "residual_momentum": 64.1
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "tightness": [
+          "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Coherent-Announce-Strategic-Partnership-to-Develop-Optics-Technology-to-Scale-Next-Generation-Data-Center-Architecture/default.aspx"
+        ],
+        "customer_momentum": [
+          "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Coherent-Announce-Strategic-Partnership-to-Develop-Optics-Technology-to-Scale-Next-Generation-Data-Center-Architecture/default.aspx",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/COHR?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 192.81,
       "previous_close": 169.76,
       "price_date": "2026-11-06",
@@ -236,8 +304,25 @@
         "policy": null,
         "residual_momentum": 10.26
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "tightness": [
+          "https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx"
+        ],
+        "customer_momentum": [
+          "https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/LITE?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 538.59,
       "previous_close": 509.7,
       "price_date": "2026-11-06",
@@ -289,11 +374,27 @@
         ],
         "acceleration": [
           "https://investor.fabrinet.com/node/13676/xbrl-viewer"
+        ],
+        "tightness": [
+          "https://investor.fabrinet.com/node/13676/xbrl-viewer"
+        ],
+        "customer_momentum": [
+          "https://investor.fabrinet.com/node/13676/xbrl-viewer",
+          "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/FN?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
         "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
-        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
+        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 327.13,
       "previous_close": 292.97,
@@ -343,10 +444,25 @@
       "factor_sources": {
         "demand": [
           "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ],
+        "tightness": [
+          "https://about.fb.com/news/2026/01/meta-6-billion-agreement-corning-support-us-manufacturing/"
+        ],
+        "customer_momentum": [
+          "https://about.fb.com/news/2026/01/meta-6-billion-agreement-corning-support-us-manufacturing/",
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/GLW?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
-        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 106.13,
       "previous_close": 103.43,
@@ -398,10 +514,27 @@
           "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
           "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
           "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ],
+        "tightness": [
+          "https://www.sec.gov/Archives/edgar/data/1030894/000103089426000011/cls-20251231.htm"
+        ],
+        "customer_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/1030894/000103089426000011/cls-20251231.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/CLS?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
-        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 206.68,
       "previous_close": 205.64,
@@ -448,8 +581,25 @@
         "policy": null,
         "residual_momentum": 35.9
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "tightness": [
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "customer_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 690.0,
       "previous_close": 656.39,
       "price_date": "2026-11-06",
@@ -487,8 +637,16 @@
         "policy": null,
         "residual_momentum": 71.79
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/VRT?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 182.86,
       "previous_close": 176.73,
       "price_date": "2026-11-06",
@@ -526,8 +684,16 @@
         "policy": null,
         "residual_momentum": 76.92
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/APH?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 74.59,
       "previous_close": 71.64,
       "price_date": "2026-11-06",
@@ -580,11 +746,27 @@
         ],
         "acceleration": [
           "https://www.sec.gov/Archives/edgar/data/932787/000093278726000009/stm-20251231.htm"
+        ],
+        "tightness": [
+          "https://www.sec.gov/Archives/edgar/data/932787/000093278726000009/stm-20251231.htm"
+        ],
+        "customer_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/932787/000093278726000009/stm-20251231.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/STM?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
         "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
-        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
+        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 41.72,
       "previous_close": 39.95,
@@ -635,10 +817,28 @@
         "demand": [
           "https://www.microsoft.com/investor/reports/ar26/index.html",
           "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ],
+        "tightness": [
+          "https://newsroom.amd.com/news/amd-and-meta-announce-expanded-strategic-partnersh/",
+          "https://newsroom.amd.com/news/microsoft-azure-ai-infrastructure/?es_id=e0d1c56c4c"
+        ],
+        "customer_momentum": [
+          "https://newsroom.amd.com/news/amd-and-meta-announce-expanded-strategic-partnersh/",
+          "https://newsroom.amd.com/news/microsoft-azure-ai-infrastructure/?es_id=e0d1c56c4c",
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=9mo&interval=1d"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
-        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 449.04,
       "previous_close": 404.4,
@@ -689,10 +889,28 @@
         "demand": [
           "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
           "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
+        ],
+        "tightness": [
+          "https://investor.marvell.com/news-events/press-releases/detail/121/marvell-expands-strategic-collaboration-with-aws-to-enable-accelerated-infrastructure-for-ai-in-the-cloud",
+          "https://investor.marvell.com/sec-filings/all-sec-filings/content/0001193125-26-356217/d412696d8k.htm"
+        ],
+        "customer_momentum": [
+          "https://investor.marvell.com/news-events/press-releases/detail/121/marvell-expands-strategic-collaboration-with-aws-to-enable-accelerated-infrastructure-for-ai-in-the-cloud",
+          "https://investor.marvell.com/sec-filings/all-sec-filings/content/0001193125-26-356217/d412696d8k.htm",
+          "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=9mo&interval=1d"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
-        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 141.2,
       "previous_close": 133.55,
@@ -745,11 +963,26 @@
         ],
         "acceleration": [
           "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm"
+        ],
+        "tightness": [
+          "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm"
+        ],
+        "customer_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/CRUS?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
         "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
-        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
+        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 113.58,
       "previous_close": 110.23,
@@ -799,10 +1032,25 @@
       "factor_sources": {
         "demand": [
           "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+        ],
+        "tightness": [
+          "https://www.qualcomm.com/news/releases/2023/09/qualcomm-announces-agreement-with-apple-for-chip-supply"
+        ],
+        "customer_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=9mo&interval=1d",
+          "https://www.qualcomm.com/news/releases/2023/09/qualcomm-announces-agreement-with-apple-for-chip-supply"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/QCOM?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
-        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 165.41,
       "previous_close": 156.75,
@@ -855,11 +1103,26 @@
         ],
         "acceleration": [
           "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm"
+        ],
+        "tightness": [
+          "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm"
+        ],
+        "customer_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/SWKS?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
         "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
-        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration"
+        "acceleration": "Reported change in customer-revenue concentration (percentage points) proxy; NOT actual order acceleration",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 82.19,
       "previous_close": 81.21,
@@ -906,8 +1169,29 @@
         "policy": null,
         "residual_momentum": 43.59
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "tightness": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+          "https://www.sec.gov/Archives/edgar/data/1275014/000162828026010744/uctt-20251226.htm"
+        ],
+        "customer_momentum": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+          "https://www.sec.gov/Archives/edgar/data/1275014/000162828026010744/uctt-20251226.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/UCTT?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 41.13,
       "previous_close": 37.2,
       "price_date": "2026-11-06",
@@ -945,8 +1229,16 @@
         "policy": null,
         "residual_momentum": 79.49
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/ON?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 63.31,
       "previous_close": 63.01,
       "price_date": "2026-11-06",
@@ -984,8 +1276,16 @@
         "policy": null,
         "residual_momentum": 100.0
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/NXPI?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 248.29,
       "previous_close": 244.43,
       "price_date": "2026-11-06",
@@ -1023,8 +1323,16 @@
         "policy": null,
         "residual_momentum": 87.18
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/MPWR?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 1190.4399,
       "previous_close": 1131.4301,
       "price_date": "2026-11-06",
@@ -1062,8 +1370,16 @@
         "policy": null,
         "residual_momentum": 33.33
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/MCHP?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 58.35,
       "previous_close": 64.85,
       "price_date": "2026-11-06",
@@ -1109,8 +1425,27 @@
         "policy": null,
         "residual_momentum": 12.82
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "tightness": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "customer_momentum": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 332.72,
       "previous_close": 319.25,
       "price_date": "2026-11-06",
@@ -1156,8 +1491,27 @@
         "policy": null,
         "residual_momentum": 15.38
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "tightness": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "customer_momentum": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 200.44,
       "previous_close": 185.2,
       "price_date": "2026-11-06",
@@ -1203,8 +1557,27 @@
         "policy": null,
         "residual_momentum": 28.21
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "tightness": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "customer_momentum": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/KLAC?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 138.49,
       "previous_close": 129.8,
       "price_date": "2026-11-06",
@@ -1250,8 +1623,27 @@
         "policy": null,
         "residual_momentum": 46.15
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "tightness": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "customer_momentum": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 1424.75,
       "previous_close": 1356.65,
       "price_date": "2026-11-06",
@@ -1297,8 +1689,27 @@
         "policy": null,
         "residual_momentum": 30.77
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "tightness": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "customer_momentum": [
+          "https://pr.tsmc.com/schinese/news/3274",
+          "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=9mo&interval=1d",
+          "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/ONTO?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 173.28,
       "previous_close": 155.99,
       "price_date": "2026-11-06",
@@ -1336,8 +1747,16 @@
         "policy": null,
         "residual_momentum": 41.03
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/ACLS?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 99.24,
       "previous_close": 90.0,
       "price_date": "2026-11-06",
@@ -1375,8 +1794,16 @@
         "policy": null,
         "residual_momentum": 84.62
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/ENTG?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 127.98,
       "previous_close": 124.75,
       "price_date": "2026-11-06",
@@ -1414,8 +1841,16 @@
         "policy": null,
         "residual_momentum": 56.41
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/MKSI?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 192.27,
       "previous_close": 176.82,
       "price_date": "2026-11-06",
@@ -1453,8 +1888,16 @@
         "policy": null,
         "residual_momentum": 48.72
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/FORM?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 81.12,
       "previous_close": 71.76,
       "price_date": "2026-11-06",
@@ -1492,8 +1935,16 @@
         "policy": null,
         "residual_momentum": 7.69
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/DELL?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 328.53,
       "previous_close": 316.91,
       "price_date": "2026-11-06",
@@ -1531,8 +1982,16 @@
         "policy": null,
         "residual_momentum": 5.13
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/HPE?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 44.77,
       "previous_close": 44.16,
       "price_date": "2026-11-06",
@@ -1570,8 +2029,16 @@
         "policy": null,
         "residual_momentum": 51.28
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/SMCI?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 28.76,
       "previous_close": 27.08,
       "price_date": "2026-11-06",
@@ -1609,8 +2076,16 @@
         "policy": null,
         "residual_momentum": 58.97
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/ETN?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 341.72,
       "previous_close": 327.02,
       "price_date": "2026-11-06",
@@ -1648,8 +2123,16 @@
         "policy": null,
         "residual_momentum": 53.85
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/HUBB?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 429.45,
       "previous_close": 418.79,
       "price_date": "2026-11-06",
@@ -1687,8 +2170,16 @@
         "policy": null,
         "residual_momentum": 38.46
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/POWL?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 133.12,
       "previous_close": 125.06,
       "price_date": "2026-11-06",
@@ -1726,8 +2217,16 @@
         "policy": null,
         "residual_momentum": 23.08
       },
-      "factor_sources": {},
-      "factor_methods": {},
+      "factor_sources": {
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/GEV?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
+        ]
+      },
+      "factor_methods": {
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
+      },
       "close": 774.11,
       "previous_close": 770.51,
       "price_date": "2026-11-06",
@@ -1777,10 +2276,28 @@
         "demand": [
           "https://www.microsoft.com/investor/reports/ar26/index.html",
           "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ],
+        "tightness": [
+          "https://about.fb.com/news/2025/06/meta-constellation-partner-clean-energy-project/",
+          "https://investors.constellationenergy.com/news-releases/news-release-details/constellation-launch-crane-clean-energy-center-restoring-jobs"
+        ],
+        "customer_momentum": [
+          "https://about.fb.com/news/2025/06/meta-constellation-partner-clean-energy-project/",
+          "https://investors.constellationenergy.com/news-releases/news-release-details/constellation-launch-crane-clean-energy-center-restoring-jobs",
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=9mo&interval=1d"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/CEG?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
-        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 249.95,
       "previous_close": 239.65,
@@ -1830,10 +2347,25 @@
       "factor_sources": {
         "demand": [
           "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        ],
+        "tightness": [
+          "https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/"
+        ],
+        "customer_momentum": [
+          "https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/",
+          "https://query1.finance.yahoo.com/v8/finance/chart/META?range=9mo&interval=1d"
+        ],
+        "residual_momentum": [
+          "https://query1.finance.yahoo.com/v8/finance/chart/VST?range=9mo&interval=1d",
+          "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=9mo&interval=1d"
         ]
       },
       "factor_methods": {
-        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary"
+        "demand": "Audited annual client CapEx YoY, multi-hop-weighted; proxy, NOT analyst-consensus surprise; fiscal years/definitions vary",
+        "tightness": "Rank of dated verified M7 graph reach, 1-3 hops, illustrative evidence weights (not revenue share)",
+        "customer_momentum": "Peer rank of verified-link-weighted 20-session M7 stock returns (not corporate purchase growth)",
+        "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
+        "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
       "close": 124.8,
       "previous_close": 112.89,
@@ -2522,8 +3054,8 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "storage": 2,
       "power": 3,
+      "storage": 2,
       "energy": 1
     },
     "unverified_is_unknown": true
