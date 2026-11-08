@@ -46,6 +46,7 @@ jobs:
           import json
           from pathlib import Path
           assert Path('index.html').is_file()
+          html=Path('index.html').read_text(encoding='utf-8')
           assert Path('i18n.js').is_file()
           assert Path('graph-viz.js').is_file()
           assert 'src="graph-viz.js"' in html
