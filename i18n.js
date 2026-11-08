@@ -43,6 +43,42 @@
    [/^研究数据已自动更新至 (.*)$/,a=>['Research data updated: '+a,'Données actualisées : '+a,'Datos actualizados: '+a,'データ更新：'+a]],
    [/^数据更新时间 (.*?)；模型 (.*?)。$/, (a,b)=>['Data updated: '+a+'; model: '+b+'.','Mise à jour : '+a+' ; modèle : '+b+'.','Actualizado: '+a+'; modelo: '+b+'.','更新：'+a+'、モデル：'+b+'。']]
  ];
+
+ // Dynamic language rules: variable numbers/dates never altered by translation.
+ patterns.push(
+  [/^六因子缺失：正式 Alpha = N\/A。探索性分数 ([0-9.]+)† \/100。可用权重 ([0-9]+)%；缺失因子没有被当作零。$/, (score,pct)=>[
+    'All six factors are not available: official Alpha = N/A. Exploratory score '+score+'†/100, '+pct+'% factor weight covered; missing values were not set to zero.',
+    'Six facteurs incomplets : Alpha officiel = N/A. Score exploratoire '+score+'†/100, couverture '+pct+' % ; les données manquantes ne valent pas zéro.',
+    'Faltan factores: Alfa oficial = N/A. Estimación '+score+'†/100, cobertura '+pct+' %; los datos ausentes no se imputan como cero.',
+    '6因子が不完全：正式アルファ=N/A。参考スコア '+score+'†/100、因子網羅率 '+pct+'%。欠損値をゼロにしていません。'
+  ]],
+  [/^六因子缺失：正式 Alpha = N\/A。。可用权重 ([0-9]+)%；缺失因子没有被当作零。$/, pct=>[
+    'Official six-factor Alpha unavailable; '+pct+'% factor weight covered; missing inputs are not zero.',
+    'Alpha officiel indisponible ; couverture '+pct+' % ; données manquantes non nulles.',
+    'Alfa oficial no disponible; cobertura '+pct+' %; datos faltantes no equivalen a cero.',
+    '正式6因子アルファは算出不可。網羅率'+pct+'%。欠損はゼロではありません。'
+  ]],
+  [/^证据路径乘积：([0-9.]+)。每段边使用证据分类权重，且每额外一跳再乘0.70折扣；不是实际供货比例。$/, w=>[
+    'Evidence path product: '+w+'. Each additional hop is discounted by 0.70; these are qualitative evidence weights, not actual procurement shares.',
+    'Produit des poids documentés : '+w+'. Chaque saut supplémentaire est pondéré par 0,70 ; ce ne sont pas des parts d’achat.',
+    'Producto de pesos documentados: '+w+'. Descuento de 0,70 por salto adicional; no representa porcentajes reales de compra.',
+    '根拠経路積：'+w+'。追加ホップごとに0.70を乗算。実際の調達比率ではありません。'
+  ]],
+  [/^分类状态：(.*?) · 分类核验日期：(.*?) · 客户合同：(.*?)。$/, (status,date,contract)=>[
+    'Classification: '+(lookup.get(status)?.en||status)+' · Reviewed: '+date+' · Customer contract: '+(lookup.get(contract)?.en||contract),
+    'Classification : '+(lookup.get(status)?.fr||status)+' · Vérifié : '+date+' · Contrat client : '+(lookup.get(contract)?.fr||contract),
+    'Clasificación: '+(lookup.get(status)?.es||status)+' · Verificado: '+date+' · Contrato: '+(lookup.get(contract)?.es||contract),
+    '分類：'+(lookup.get(status)?.ja||status)+' · 確認日：'+date+' · 顧客契約：'+(lookup.get(contract)?.ja||contract)
+  ]],
+  [/^原始来源 × ([0-9]+)$/, n=>['Primary sources × '+n,'Sources primaires × '+n,'Fuentes primarias × '+n,'一次資料 × '+n]],
+  [/^原始证据 ([0-9]+) ↗$/, n=>['Original evidence '+n+' ↗','Preuve originale '+n+' ↗','Evidencia original '+n+' ↗','原資料 '+n+' ↗']],
+  [/^，不同因子覆盖组合不得直接比较；收盘价仅展示提供商可核验的最近交易日数据。政策和关系边由人工核验，未知不是零。数据更新时间 (.*?)；模型 (.*?)。$/, (updated,model)=>[
+    ' Scores with different factor coverage are not directly comparable. Prices are sourced from completed trading sessions. Policy and supply-chain links require evidence; unknown is not zero. Updated '+updated+' · Model '+model+'.',
+    ' Les scores avec couvertures différentes ne sont pas directement comparables. Les cours proviennent de séances clôturées. Liens et politiques exigent des preuves ; inconnu n’est pas zéro. Mise à jour '+updated+' · Modèle '+model+'.',
+    ' No compare puntuaciones con distinta cobertura. Los cierres proceden de sesiones concluidas. Políticas y vínculos requieren pruebas; desconocido no es cero. Actualizado '+updated+' · Modelo '+model+'.',
+    ' 因子網羅率の異なるスコアは直接比較できません。確定終値を使用し、政策と関係の証拠が必要です。不明はゼロではありません。更新：'+updated+'・モデル：'+model+'。'
+  ]]
+ );
  function renderValue(source) {
    const start = source.match(/^\s*/)[0];
    const end = source.match(/\s*$/)[0];
