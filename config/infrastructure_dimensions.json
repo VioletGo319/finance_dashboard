@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "verified_as_of": "2026-11-07",
+  "scope": "Evidence-backed product/sector exposures; does NOT establish sales to any Magnificent Seven customer.",
+  "dimensions": [
+    {
+      "id": "energy",
+      "label": "能源",
+      "english": "Energy",
+      "definition": "一次能源、发电与可再生能源侧技术；区分发电/供能方与设备及半导体支持方",
+      "research_metrics": [
+        "新增/签约发电容量 MW",
+        "PPA 期限及价格",
+        "能源结构",
+        "项目生效日期"
+      ],
+      "color": "#e7b762"
+    },
+    {
+      "id": "power",
+      "label": "电力",
+      "english": "Electric Power",
+      "definition": "电网接入、输配电、变压、UPS、电力转换及机房供配电基础设施",
+      "research_metrics": [
+        "交付/新增电力容量 MW",
+        "机房功率密度 kW/架",
+        "配电设备订单",
+        "并网排队时间"
+      ],
+      "color": "#6caaff"
+    },
+    {
+      "id": "storage",
+      "label": "储能",
+      "english": "Energy Storage",
+      "definition": "BESS、电池系统、备用电源及储能功率电子；不等于 HBM/DRAM 或数据中心磁盘存储",
+      "research_metrics": [
+        "储能容量 MWh",
+        "PCS 功率 MW",
+        "储能时长 h",
+        "订单与实际出货"
+      ],
+      "color": "#65d5ba"
+    }
+  ],
+  "exposures": [
+    {
+      "ticker": "STM",
+      "dimension": "energy",
+      "role": "发电侧技术支持",
+      "product": "太阳能逆变器所用 SiC MOSFET、功率器件与驱动",
+      "status": "verified_product",
+      "customer_verified": false,
+      "source": "https://www.st.com/en/applications/energy-generation-and-distribution/solar-inverters-string-and-central.html",
+      "verified_on": "2026-11-07",
+      "source_published_date": null,
+      "comment": "证明产品应用，不表示向七巨头出售能源或拥有发电容量。"
+    },
+    {
+      "ticker": "STM",
+      "dimension": "power",
+      "role": "功率半导体",
+      "product": "电力转换/管理 IC、AC-DC、DC-DC 和驱动",
+      "status": "verified_product",
+      "customer_verified": false,
+      "source": "https://www.st.com/en/power-management.html",
+      "verified_on": "2026-11-07",
+      "source_published_date": null,
+      "comment": "属于电力电子器件能力，不等于已交付数据中心电力项目。"
+    },
+    {
+      "ticker": "STM",
+      "dimension": "storage",
+      "role": "储能组件技术",
+      "product": "商用电池储能的 SiC、MOSFET、驱动和控制技术",
+      "status": "verified_product",
+      "customer_verified": false,
+      "source": "https://www.st.com/en/applications/energy-generation-and-distribution/battery-storage-systems-for-commercial.html",
+      "verified_on": "2026-11-07",
+      "source_published_date": null,
+      "comment": "是储能系统的器件供应能力，非完整电池储能系统生产或客户合同。"
+    },
+    {
+      "ticker": "VRT",
+      "dimension": "power",
+      "role": "关键供配电设备",
+      "product": "数据中心 UPS、配电和电力管理",
+      "status": "verified_product",
+      "customer_verified": false,
+      "source": "https://www.vertiv.com/en-us/products/critical-power/power/",
+      "verified_on": "2026-11-07",
+      "source_published_date": null,
+      "comment": "数据中心关键电力设备，客户合同需单独核验。"
+    },
+    {
+      "ticker": "VRT",
+      "dimension": "storage",
+      "role": "BESS 系统方案",
+      "product": "Vertiv EnergyCore Grid 电池储能系统",
+      "status": "verified_product",
+      "customer_verified": false,
+      "source": "https://www.vertiv.com/en-us/products-catalog/critical-power/battery-energy-storage-system-bess/",
+      "verified_on": "2026-11-07",
+      "source_published_date": null,
+      "comment": "官方列有 BESS 产品；不能据此推断出货量或 M7 客户收入份额。"
+    },
+    {
+      "ticker": "APH",
+      "dimension": "power",
+      "role": "高功率互连",
+      "product": "高功率连接器、母排和配电互连件",
+      "status": "verified_product",
+      "customer_verified": false,
+      "source": "https://www.amphenol.com/products/connectors-power",
+      "verified_on": "2026-11-07",
+      "source_published_date": null,
+      "comment": "产品能力证据，并非已证实的七巨头单项电力合同。"
+    }
+  ],
+  "handling": {
+    "missing": "unknown_not_zero",
+    "scoring": "not_in_six_factor_alpha",
+    "direct_m7_contract": "requires_separate_dated_filing_or_agreement",
+    "revenue_share": "unknown",
+    "quantities": "unknown_without_primary_source"
+  }
+}
