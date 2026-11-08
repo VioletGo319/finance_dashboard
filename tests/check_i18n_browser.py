@@ -60,5 +60,5 @@ for locale in ["en","zh-CN","fr","es","ja"]:
     report=json.loads(html.unescape(unquote(match.group(1))))
     print(locale,"selected="+str(report["selected"]),"untranslated="+str(report["count"]),
           "factors="+str(report["factors"]))
-    for issue in report["issues"][:25]:
+    for issue in report["issues"][:100] if locale=="en" else report["issues"][:8]:
         print("  ",issue[:160])
