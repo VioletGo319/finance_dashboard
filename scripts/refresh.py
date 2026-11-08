@@ -126,6 +126,7 @@ def calculate(base, quotes):
                     "price_provider":q.get("provider"),
                     "price_fresh":bool(bars)})
         scores={key:None for key in WEIGHTS}
+        scores["demand"]=row.get("factors",{}).get("demand")
         scores["tightness"]=pct_rank(weighted.get(ticker,{}).get("reach") if weighted.get(ticker,{}).get("verified_in_graph") else None,
                      [v["reach"] for v in weighted.values() if v.get("verified_in_graph")])
         scores["customer_momentum"]=pct_rank(raw_customer[ticker], list(raw_customer.values()))
@@ -266,11 +267,9 @@ def enrich_regulatory_data(base):
     raw={}
     for row in base["suppliers"]:
         ticker=row["ticker"]
-        verified=[e for e in base.get("relationships",[]) if e.get("verified") is True
-          and e.get("date") and e["date"]<=AS_OF and e.get("supplier")==ticker
-          and e.get("customer") in capex]
-        vals=[capex[e["customer"]]["growth"] for e in verified]
-        raw[ticker]=statistics.mean(vals) if vals else None
+        weights=base.get("network",{}).get("exposures",{}).get(ticker,{}).get("by_customer",{})
+        points=[(capex[c]["growth"],w) for c,w in weights.items() if c in capex and w>0]
+        raw[ticker]=sum(g*w for g,w in points)/sum(w for g,w in points) if points else None
     for row in base["suppliers"]:
         row.setdefault("factors",{})["demand"]=pct_rank(raw[row["ticker"]],list(raw.values()))
     base["filing_candidates"]=filings[:45]
