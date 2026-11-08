@@ -3,7 +3,7 @@ name: M7 Supplier Alpha Daily Research
 on:
   workflow_dispatch:
   schedule:
-    # 23:20 UTC is after the US closing bell all year.
+    # 22:30 UTC is after US market close (17:30 EST / 18:30 EDT).
     # GitHub Actions scheduled starts can be delayed.
     - cron: '30 22 * * *'
 
