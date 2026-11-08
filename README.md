@@ -2,6 +2,14 @@
 
 中文研究版可视化看板，研究 Magnificent Seven（AAPL/MSFT/GOOGL/AMZN/NVDA/META/TSLA）上游上市供应商。**研究原型，不构成投资建议；部分数据不完整时不会制造“正式 Alpha”或收益预测概率。**
 
+## Complete five-language user interface (v3.3)
+
+The dashboard now supports **English (default), 简体中文, Français, Español, 日本語** across the overview, factor research, supply-network graph, energy/power/storage taxonomy, policy and event disclosures, factor-level evidence methods, audit panels, buttons, and dynamic warnings. Language is set from the top-right selector, can be opened with `?lang=fr` and saved to browser storage; switching also updates the URL to keep refreshes consistent.
+
+Translations come from the reviewed local dictionaries `i18n.js` and `i18n-content.js`. Source dates, securities codes, numbers, edge weights and evidence URLs remain unchanged; legal citations are linked to their authoritative original language rather than fabricated local editions. `graph-viz.js` also localizes the Canvas layer labels and HUD.
+
+CI now opens the actual page in headless Chromium for all five locales and fails if unlocalized simplified Chinese remains in English/French/Spanish/Japanese UI or if navigation/graph labels are wrong. It also simulates switching between all languages via the selector and checks the factor and network components. Assets have versioned script URLs to prevent older cached translation bundles from being reused.
+
 ## Interactive neural-style supply graph / 交互供应链图谱
 
 研究看板的 **Supply Network** 页面新增无第三方图形依赖的 Canvas 图谱（源码 `graph-viz.js`），包含 40 家供应商 + 7 家 M7 客户：
