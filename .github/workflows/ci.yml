@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/**'
+      - 'index.html'
+      - 'config/**'
       - 'tests/**'
       - '.github/workflows/**'
   workflow_dispatch:
@@ -20,6 +22,18 @@ jobs:
           python-version: '3.12'
       - name: Check Python syntax
         run: python -m compileall -q scripts tests
+      - name: Validate inline dashboard JavaScript
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html=Path("index.html").read_text(encoding="utf-8")
+          scripts=re.findall(r"<script(?:\\s[^>]*)?>(.*?)</script>",html,re.S|re.I)
+          assert len(scripts)>=2, "Missing dashboard scripts"
+          for i,source in enumerate(scripts):
+              Path(f"/tmp/m7-inline-{i}.js").write_text(source,encoding="utf-8")
+          PY
+          for script in /tmp/m7-inline-*.js; do node --check "$script"; done
       - name: Run offline calculation tests
         run: python -m unittest discover -s tests -v
       - name: Verify published files and data integrity
