@@ -143,6 +143,7 @@ def calculate(base, quotes):
         row["direct_clients"]=weighted.get(ticker,{}).get("direct_customers",0)
         row["indirect_clients"]=weighted.get(ticker,{}).get("indirect_customers",0)
         row["paths"]=weighted.get(ticker,{}).get("paths",0)
+        row["third_hop_clients"]=weighted.get(ticker,{}).get("third_hop_clients",0)
         row["factors"]=scores
         row["coverage"]=round(coverage,4)
         row["alpha"]=round(sum(WEIGHTS[k]*scores[k] for k in WEIGHTS),2) if complete else None
@@ -154,7 +155,7 @@ def calculate(base, quotes):
         row["previous_provisional_alpha"]=(prior_prov if prev.get("coverage")==row["coverage"]
                                           and prev.get("model_version")==row.get("model_version") else None)
         row["confidence"]="研究探索" if not complete else "六因子已覆盖"
-        row["model_version"]=base.get("model_version","v3.0-40-twohop")
+        row["model_version"]=base.get("model_version","v3.1-40-multihop")
         row["explanation"]=(f"已核实客户关系；行情来自 {q.get('provider') or '不可用'}。"
                             +("六因子数据不完整，仅提供带覆盖率的探索性评分。" if not complete else "六因子完整。"))
         hist=list(row.get("history") or [])
@@ -323,14 +324,14 @@ def main():
         old=existing.get(spec["ticker"],{})
         row={"ticker":spec["ticker"],"name":spec["name"],
              "sector":spec["sector"],"cohort":spec["cohort"],
-             "model_version":"v3.0-40-twohop",
+             "model_version":"v3.1-40-multihop",
              "history":[h for h in old.get("history",[]) if h.get("mode")=="v3-official"],
              "factors":{key:None for key in WEIGHTS}}
         refreshed.append(row)
     base["suppliers"]=refreshed
     base["universe"]=universe
     base["network"]=network
-    base["model_version"]="v3.0-40-twohop"
+    base["model_version"]="v3.1-40-multihop"
     base["infrastructure"] = load_infrastructure_attributes()
     universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK",)))
     quotes={}
