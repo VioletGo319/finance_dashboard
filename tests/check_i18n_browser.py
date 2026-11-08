@@ -36,14 +36,17 @@ js=r"""
      const text=(node.nodeValue||'').replace(/\s+/g,' ').trim();
      if(!text)continue;
      const unrevised=locale==='ja'
-       ? /[电储证据资关动变报买预码单项链费统总维经临区较该]/u.test(text)
+       ? /[电储证据资关动变报买预码单项链费统总维经临较该]/u.test(text)
        : (locale!=='zh-CN' && /[\u3400-\u9fff]/u.test(text));
      if(unrevised) issues.push(text);
    }
    const report={locale,selected:window.M7_I18N?.language,issues:[...new Set(issues)].slice(0,100),
       count:[...new Set(issues)].length,
       sector:document.querySelector('#pathCoverageRows')?.textContent?.slice(0,100),
-      factors:document.querySelector('#factorHeatmap')?.textContent?.length||0};
+      factors:document.querySelector('#factorHeatmap')?.textContent?.length||0,
+      factorNav:document.querySelector('[data-tab="factors"]')?.textContent?.trim(),
+      graphNodesLabel:document.getElementById('gNodesLabel')?.textContent?.trim(),
+      details:document.getElementById('factorEvidence')?.textContent?.slice(0,500)};
    const el=document.createElement('pre');el.id='i18nAudit';el.setAttribute('data-i18n',encodeURIComponent(JSON.stringify(report)));document.body.append(el);
  },1100);
 })();
@@ -63,5 +66,14 @@ for locale in ["en","zh-CN","fr","es","ja"]:
     report=json.loads(html.unescape(unquote(match.group(1))))
     print(locale,"selected="+str(report["selected"]),"untranslated="+str(report["count"]),
           "factors="+str(report["factors"]))
-    for issue in report["issues"][:70] if locale in ("en","ja") else report["issues"][:8]:
+    for issue in report["issues"][:16]:
         print("  ",issue[:160])
+    expected_nav={"en":"Factor Research","zh-CN":"因子研究","fr":"Analyse des facteurs",
+                  "es":"Análisis de factores","ja":"因子分析"}
+    expected_nodes={"en":"NODES","zh-CN":"节点","fr":"NŒUDS","es":"NODOS","ja":"ノード"}
+    assert report["selected"]==locale,(locale,report)
+    assert report["factorNav"]==expected_nav[locale],(locale,report["factorNav"])
+    assert report["graphNodesLabel"]==expected_nodes[locale],(locale,report["graphNodesLabel"])
+    assert report["factors"]>800,(locale,report["factors"])
+    assert report["count"]==0,(locale,report["issues"][:20])
+
