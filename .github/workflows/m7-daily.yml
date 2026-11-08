@@ -9,6 +9,8 @@ on:
   schedule:
     # After regular US market close: 17:30 EST / 18:30 EDT. v3.1 active 40-stock refresh.
     - cron: '30 22 * * *'
+    # Morning refresh: prior completed close + any newly available filings.
+    - cron: '30 13 * * *'
 
 permissions:
   contents: write
