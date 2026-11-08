@@ -1,5 +1,5 @@
 {
-  "version": "3.1-path-up-to-3hop",
+  "version": "3.2-dated-multisector-graph",
   "effective_date": "2026-11-07",
   "directed_edges": "supplier -> customer",
   "units": "proxy dimensionless evidence linkage, NOT purchase shares, correlations, or revenue percentages",
@@ -19,6 +19,10 @@
     "unverified": {
       "proxy_weight": null,
       "description": "Unverified edge excluded from path computation"
+    },
+    "power_purchase_agreement": {
+      "proxy_weight": 0.7,
+      "description": "Verified dated electricity/nuclear power purchase agreement; categorically different from chip component purchases"
     }
   },
   "edges": [
@@ -390,6 +394,155 @@
       "edge_type": "customer_supplier_disclosed",
       "economic_weight": null,
       "weight_type": "evidence_proxy"
+    },
+    {
+      "supplier": "AMD",
+      "customer": "META",
+      "date": "2026-02-24",
+      "kind": "Definitive multi-year GPU infrastructure agreement",
+      "description": "Meta 6GW multi-generation AMD Instinct strategic deployment agreement, volumes are upper scope not realized revenue",
+      "source": "https://newsroom.amd.com/news/amd-and-meta-announce-expanded-strategic-partnersh/",
+      "edge_type": "customer_supplier_disclosed",
+      "verified": true,
+      "relationship_layer": "tier1",
+      "economic_weight": null,
+      "weight_type": "evidence_proxy",
+      "purchase_amount": null
+    },
+    {
+      "supplier": "AMD",
+      "customer": "MSFT",
+      "date": "2026-07-20",
+      "kind": "Azure AMD AI CPU GPU platform deployment agreement",
+      "description": "Microsoft Azure partnership AMD Helios, EPYC and Pensando announced; not a disclosed purchase amount",
+      "source": "https://newsroom.amd.com/news/microsoft-azure-ai-infrastructure/?es_id=e0d1c56c4c",
+      "edge_type": "customer_supplier_disclosed",
+      "verified": true,
+      "relationship_layer": "tier1",
+      "economic_weight": null,
+      "weight_type": "evidence_proxy",
+      "purchase_amount": null
+    },
+    {
+      "supplier": "MRVL",
+      "customer": "AMZN",
+      "date": "2024-12-02",
+      "kind": "Five-year AWS semiconductor supply collaboration",
+      "description": "AWS supplier relationship expanded for custom AI silicon, optical DSP, Ethernet and data center connectivity",
+      "source": "https://investor.marvell.com/news-events/press-releases/detail/121/marvell-expands-strategic-collaboration-with-aws-to-enable-accelerated-infrastructure-for-ai-in-the-cloud",
+      "edge_type": "customer_supplier_disclosed",
+      "verified": true,
+      "relationship_layer": "tier1",
+      "economic_weight": null,
+      "weight_type": "evidence_proxy",
+      "purchase_amount": null
+    },
+    {
+      "supplier": "MRVL",
+      "customer": "GOOGL",
+      "date": "2026-08-19",
+      "kind": "Google custom semiconductor commercial agreement",
+      "description": "Commercial agreement signed July 29 2026 and disclosed in an 8-K on August 19; source date is public disclosure date",
+      "source": "https://investor.marvell.com/sec-filings/all-sec-filings/content/0001193125-26-356217/d412696d8k.htm",
+      "edge_type": "customer_supplier_disclosed",
+      "verified": true,
+      "relationship_layer": "tier1",
+      "economic_weight": null,
+      "weight_type": "evidence_proxy",
+      "purchase_amount": null
+    },
+    {
+      "supplier": "QCOM",
+      "customer": "AAPL",
+      "date": "2023-09-11",
+      "kind": "Apple Snapdragon 5G Modem-RF supply agreement",
+      "description": "Qualcomm agreement supports 2024-2026 iPhone launches; patent license renewal is a separate relationship, not chip sales",
+      "source": "https://www.qualcomm.com/news/releases/2023/09/qualcomm-announces-agreement-with-apple-for-chip-supply",
+      "edge_type": "customer_supplier_disclosed",
+      "verified": true,
+      "relationship_layer": "tier1",
+      "economic_weight": null,
+      "weight_type": "evidence_proxy",
+      "purchase_amount": null
+    },
+    {
+      "supplier": "CRUS",
+      "customer": "AAPL",
+      "date": "2026-05-21",
+      "kind": "Named 10-K end-customer revenue concentration",
+      "description": "Apple accounted for approximately 91% of Cirrus fiscal 2026 sales, versus 89% FY2025; includes contract manufacturing channels",
+      "source": "https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm",
+      "edge_type": "customer_supplier_disclosed",
+      "revenue_share": 91,
+      "prior_revenue_share": 89,
+      "fiscal_year": 2026,
+      "prior_fiscal_year": 2025,
+      "verified": true,
+      "relationship_layer": "tier1",
+      "economic_weight": null,
+      "weight_type": "evidence_proxy",
+      "purchase_amount": null
+    },
+    {
+      "supplier": "SWKS",
+      "customer": "AAPL",
+      "date": "2025-11-07",
+      "kind": "Named 10-K end-customer revenue concentration",
+      "description": "Apple accounted for 67% of Skyworks fiscal 2025 net revenue versus 69% FY2024; sales via distributors and contract manufacturers",
+      "source": "https://www.sec.gov/Archives/edgar/data/4127/000000412725000085/swks-20251003.htm",
+      "edge_type": "customer_supplier_disclosed",
+      "revenue_share": 67,
+      "prior_revenue_share": 69,
+      "fiscal_year": 2025,
+      "prior_fiscal_year": 2024,
+      "verified": true,
+      "relationship_layer": "tier1",
+      "economic_weight": null,
+      "weight_type": "evidence_proxy",
+      "purchase_amount": null
+    },
+    {
+      "supplier": "CEG",
+      "customer": "MSFT",
+      "date": "2024-09-20",
+      "kind": "20-year nuclear power purchase agreement (PPA)",
+      "description": "Constellation 20-year Microsoft PPA for Crane Clean Energy Center, 835 MW project, subject to approvals; agreement is not a realized power delivery amount",
+      "source": "https://investors.constellationenergy.com/news-releases/news-release-details/constellation-launch-crane-clean-energy-center-restoring-jobs",
+      "edge_type": "power_purchase_agreement",
+      "verified": true,
+      "relationship_layer": "tier1",
+      "economic_weight": null,
+      "weight_type": "evidence_proxy",
+      "purchase_amount": null
+    },
+    {
+      "supplier": "CEG",
+      "customer": "META",
+      "date": "2025-06-03",
+      "kind": "20-year nuclear power purchase agreement (PPA)",
+      "description": "Meta 20-year nuclear energy agreement for the Clinton Clean Energy Center",
+      "source": "https://about.fb.com/news/2025/06/meta-constellation-partner-clean-energy-project/",
+      "edge_type": "power_purchase_agreement",
+      "verified": true,
+      "relationship_layer": "tier1",
+      "economic_weight": null,
+      "weight_type": "evidence_proxy",
+      "purchase_amount": null
+    },
+    {
+      "supplier": "VST",
+      "customer": "META",
+      "date": "2026-01-09",
+      "kind": "20-year nuclear power procurement agreements",
+      "description": "Meta agreements to purchase energy from Vistra plants Perry and Davis-Besse plus support power uprates; announced not realized purchases",
+      "source": "https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/",
+      "edge_type": "power_purchase_agreement",
+      "verified": true,
+      "relationship_layer": "tier1",
+      "economic_weight": null,
+      "weight_type": "evidence_proxy",
+      "purchase_amount": null
     }
-  ]
+  ],
+  "note": "Multi-sector graph includes chip contracts and electricity PPAs; edge-type stratified proxy weights are illustrative, not purchase shares or comparable dollar amounts."
 }
