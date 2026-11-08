@@ -211,6 +211,12 @@ def simulate_daily_close(quotes,tickers,initial_date=None,top_n=8,trade_bps=10):
         sector_returns.append(maps["XLK"][dates[i+1]]/maps["XLK"][day]-1)
         dates_ret.append(dates[i+1]);costs.append(tc)
         weights_history.append(holdings.copy())
+        # Positions drift between monthly rebalances. Holding fixed equal
+        # weights each day without trading would silently imply cost-free
+        # daily rebalancing and overstate investability.
+        if gross > -0.999999999:
+            holdings={t:w*(maps[t][dates[i+1]]/maps[t][day])/(1+gross)
+                      for t,w in holdings.items()}
     if len(returns)<20:return {"status":"INSUFFICIENT_BACKTEST_HORIZON"}
     active=[s-b for s,b in zip(returns,benchmark_returns)]
     bm=_metrics(benchmark_returns,[],0);tech=_metrics(sector_returns,[],0);res=_metrics(returns,turnover,sum(costs)*10000)
