@@ -20,6 +20,14 @@ const I={
  es:{title:"GRAFO NEURONAL DE PROVEEDORES",sub:"Relaciones proveedor → cliente verificadas",find:"Buscar símbolo o empresa…",fit:"Ajustar",layers:"Capas",orbit:"Órbita",all:"47 nodos",motion:"Flujo",hint:"Arrastrar · ampliar · seleccionar rutas",select:"Seleccione un nodo para explorar sus relaciones.",unverified:"Sin ruta verificada; exposición desconocida.",direct:"Directo",indirect:"Indirecto",paths:"rutas verificadas",source:"Fuente primaria",score:"Índice de evidencia",links:"relaciones verificadas",only:"Red verificada",noLinks:"No hay relaciones verificadas.",m7:"Cliente M7",company:"Proveedor",flow:"Ruta dirigida",noScores:"No es correlación financiera ni porcentaje de compras.",tier:"Nivel",clear:"Limpiar"},
  ja:{title:"ニューラル供給ネットワーク",sub:"確認済みの供給者 → 顧客関係・根拠に基づく重み",find:"銘柄・企業を検索…",fit:"全体表示",layers:"階層",orbit:"軌道",all:"全47ノード",motion:"流動表示",hint:"ドラッグ・ズーム・クリックで経路追跡",select:"ノードを選択してサプライチェーン経路を確認。",unverified:"検証済み経路なし。経済的な関係は不明。",direct:"直接",indirect:"間接",paths:"確認済み経路",source:"一次資料",score:"根拠代理指数",links:"確認済み関係",only:"確認済みネットワーク",noLinks:"確認済み関係がありません。",m7:"M7顧客",company:"サプライヤー",flow:"有向供給経路",noScores:"財務的な相関係数・購買割合ではありません。",tier:"階層",clear:"選択解除"}
 };
+const GRAPH_LABELS={
+ en:{unsourced:"UNVERIFIED",tier3:"TIER 3",tier2:"TIER 2",direct:"DIRECT",m7:"MAGNIFICENT 7",hud:"M7 / GRAPH INTELLIGENCE · VERIFIED EVIDENCE",layers:"LAYERS",orbit:"ORBIT",nodes:"NODES",edges:"EDGES",paths:"PATHS",live:"INTERACTIVE GRAPH"},
+ "zh-CN":{unsourced:"未核验",tier3:"三级供应商",tier2:"二级供应商",direct:"一级直接",m7:"科技七巨头",hud:"M7 / 供应链图谱 · 已核验依据",layers:"分层",orbit:"星系",nodes:"节点",edges:"关系边",paths:"路径",live:"交互图谱"},
+ fr:{unsourced:"NON VÉRIFIÉ",tier3:"NIVEAU 3",tier2:"NIVEAU 2",direct:"DIRECT",m7:"MAGNIFICENT SEVEN",hud:"M7 / GRAPHE · PREUVES VÉRIFIÉES",layers:"NIVEAUX",orbit:"ORBITE",nodes:"NŒUDS",edges:"ARÊTES",paths:"CHEMINS",live:"GRAPHE INTERACTIF"},
+ es:{unsourced:"NO VERIFICADO",tier3:"NIVEL 3",tier2:"NIVEL 2",direct:"DIRECTO",m7:"SIETE MAGNÍFICAS",hud:"M7 / GRAFO · EVIDENCIA VERIFICADA",layers:"CAPAS",orbit:"ÓRBITA",nodes:"NODOS",edges:"ARISTAS",paths:"RUTAS",live:"GRAFO INTERACTIVO"},
+ ja:{unsourced:"未検証",tier3:"第3階層",tier2:"第2階層",direct:"直接供給",m7:"M7企業",hud:"M7 / 供給網グラフ · 検証済み根拠",layers:"階層",orbit:"軌道",nodes:"ノード",edges:"関係辺",paths:"経路",live:"インタラクティブ図"}
+};
+const gl=k=>GRAPH_LABELS[lang()]?.[k]||GRAPH_LABELS.en[k]||k;
 let state={nodes:[],edges:[],paths:[],data:null,selected:null,hover:null,selectedPath:null,showAll:false,motion:!matchMedia("(prefers-reduced-motion: reduce)").matches,mode:"layers",scale:1,panX:0,panY:0,drag:null,frame:0,lastSignature:"",width:1,height:1,dpr:1,initialized:false};
 const world={w:1470,h:870};
 let lang=()=>window.M7_I18N&&I[window.M7_I18N.language]?window.M7_I18N.language:"en";
@@ -33,6 +41,8 @@ function updateLanguage(){
  setText("gHeader",t("title"));setText("gSub",t("sub"));setText("gFit",t("fit"));
  setText("gLayout",state.mode==="layers"?t("orbit"):t("layers"));setText("gClear",t("clear"));
  setText("gHint",t("hint"));setText("gNote",t("noScores"));
+ setText("gNodesLabel",gl("nodes"));setText("gEdgesLabel",gl("edges"));setText("gPathsLabel",gl("paths"));setText("gLiveLabel",gl("live"));
+ paint(performance.now());
  const q=$("gSearch");if(q)q.placeholder=t("find");
  const v=$("gAllLabel");if(v)v.textContent=t("all");
  const f=$("gFlowLabel");if(f)f.textContent=t("motion");
@@ -55,6 +65,7 @@ function setData(data){
  const nodes=[...suppliers,...customers].map(n=>({...n,tier:n.type==="m7"?0:(tier.get(n.id)||4),x:0,y:0,tx:0,ty:0,r:n.type==="m7"?19:12,dragged:false}));
  state.nodes=nodes;
  layout(true);
+ setText("gNodesLabel",gl("nodes"));setText("gEdgesLabel",gl("edges"));setText("gPathsLabel",gl("paths"));setText("gLiveLabel",gl("live"));
  setText("gNodeTotal",String(nodes.length));setText("gEdgeTotal",String(state.edges.length));
  setText("gPathTotal",String(paths.length));setText("gModel",data.network?.graph_version||"v3");
  state.selected=nodes.some(n=>n.id===previous)?previous:null;
@@ -167,7 +178,7 @@ function paint(now){
  }
  ctx.save();ctx.translate(state.panX,state.panY);ctx.scale(state.scale,state.scale);
  if(state.mode==="layers"){
-  const guides=[[122,"UNVERIFIED"],[380,"TIER 3"],[650,"TIER 2"],[925,"DIRECT"],[1240,"MAGNIFICENT 7"]];
+  const guides=[[122,gl("unsourced")],[380,gl("tier3")],[650,gl("tier2")],[925,gl("direct")],[1240,gl("m7")]];
   for(const [x,label] of guides){
    ctx.strokeStyle="rgba(110,175,226,.12)";ctx.setLineDash([5,13]);
    ctx.beginPath();ctx.moveTo(x,8);ctx.lineTo(x,world.h-8);ctx.stroke();ctx.setLineDash([]);
@@ -223,8 +234,8 @@ function paint(now){
  ctx.restore();
  // Viewport HUD.
  ctx.font="11px system-ui";ctx.fillStyle="rgba(158,194,229,.58)";
- ctx.textAlign="left";ctx.fillText("M7 / GRAPH INTELLIGENCE  •  VERIFIED EVIDENCE",18,H-17);
- ctx.textAlign="right";ctx.fillText(Math.round(state.scale*100)+"%  /  "+state.mode.toUpperCase(),W-18,H-17);
+ ctx.textAlign="left";ctx.fillText(gl("hud"),18,H-17);
+ ctx.textAlign="right";ctx.fillText(Math.round(state.scale*100)+"%  /  "+gl(state.mode),W-18,H-17);
 }
 function renderInfo(){
  const panel=$("gInsight");if(!panel)return;
