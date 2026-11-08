@@ -1,36 +1,36 @@
 {
-  "as_of": "2026-11-07",
-  "price_date": null,
-  "previous_price_date": null,
-  "mode": "partial",
+  "as_of": "2026-11-08",
+  "price_date": "2026-11-06",
+  "previous_price_date": "2026-11-05",
+  "mode": "live_partial",
   "model_version": "v2.0-pit-partial-coverage",
-  "retrieved_at_utc": "2026-11-08T00:48:48.901949+00:00",
+  "retrieved_at_utc": "2026-11-08T01:10:18.067953+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
       "name": "Taiwan Semiconductor",
       "alpha": null,
       "previous_alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 21.0,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0.15,
+      "close": 375.44,
+      "previous_close": 353.1,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.35,
       "confidence": "研究探索",
       "evidence_count": 1,
       "factors": {
         "acceleration": null,
         "demand": null,
         "tightness": 11.11,
-        "customer_momentum": null,
+        "customer_momentum": 16.67,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 63.64
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -43,34 +43,41 @@
       "known_clients": [
         "NVDA"
       ],
-      "explanation": "已披露七巨头客户：NVDA（公开证据记录，非完整采购额）；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
-      "history": []
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
+      "history": [
+        {
+          "date": "2026-11-08",
+          "alpha": 21.0,
+          "mode": "provisional",
+          "coverage": 0.35
+        }
+      ]
     },
     {
       "ticker": "AVGO",
       "name": "Broadcom",
       "alpha": null,
       "previous_alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 67.1,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0.15,
+      "close": 293.69,
+      "previous_close": 291.53,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.35,
       "confidence": "研究探索",
       "evidence_count": 2,
       "factors": {
         "acceleration": null,
         "demand": null,
         "tightness": 66.67,
-        "customer_momentum": null,
+        "customer_momentum": 77.78,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 36.36
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -84,34 +91,41 @@
         "AAPL",
         "GOOGL"
       ],
-      "explanation": "已披露七巨头客户：AAPL, GOOGL（公开证据记录，非完整采购额）；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
-      "history": []
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
+      "history": [
+        {
+          "date": "2026-11-08",
+          "alpha": 67.1,
+          "mode": "provisional",
+          "coverage": 0.35
+        }
+      ]
     },
     {
       "ticker": "ANET",
       "name": "Arista Networks",
       "alpha": null,
       "previous_alpha": null,
-      "provisional_alpha": 61.11,
+      "provisional_alpha": 69.11,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0.45,
+      "close": 170.8,
+      "previous_close": 159.16,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ANET?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.65,
       "confidence": "研究探索",
       "evidence_count": 2,
       "factors": {
         "acceleration": 50,
         "demand": null,
         "tightness": 83.33,
-        "customer_momentum": null,
+        "customer_momentum": 88.89,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 81.82
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -125,13 +139,19 @@
         "META",
         "MSFT"
       ],
-      "explanation": "已披露七巨头客户：META, MSFT（公开证据记录，非完整采购额）；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
       "history": [
         {
           "date": "2026-11-07",
           "alpha": 61.11,
           "mode": "provisional",
           "coverage": 0.45
+        },
+        {
+          "date": "2026-11-08",
+          "alpha": 69.11,
+          "mode": "provisional",
+          "coverage": 0.65
         }
       ]
     },
@@ -140,26 +160,26 @@
       "name": "Coherent",
       "alpha": null,
       "previous_alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 30.3,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0.15,
+      "close": 192.81,
+      "previous_close": 169.76,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/COHR?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.35,
       "confidence": "研究探索",
       "evidence_count": 1,
       "factors": {
         "acceleration": null,
         "demand": null,
         "tightness": 38.89,
-        "customer_momentum": null,
+        "customer_momentum": 16.67,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 45.45
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -172,34 +192,41 @@
       "known_clients": [
         "NVDA"
       ],
-      "explanation": "已披露七巨头客户：NVDA（公开证据记录，非完整采购额）；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
-      "history": []
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
+      "history": [
+        {
+          "date": "2026-11-08",
+          "alpha": 30.3,
+          "mode": "provisional",
+          "coverage": 0.35
+        }
+      ]
     },
     {
       "ticker": "LITE",
       "name": "Lumentum",
       "alpha": null,
       "previous_alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 25.11,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0.15,
+      "close": 538.59,
+      "previous_close": 509.7,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/LITE?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.35,
       "confidence": "研究探索",
       "evidence_count": 1,
       "factors": {
         "acceleration": null,
         "demand": null,
         "tightness": 38.89,
-        "customer_momentum": null,
+        "customer_momentum": 16.67,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 9.09
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -212,34 +239,41 @@
       "known_clients": [
         "NVDA"
       ],
-      "explanation": "已披露七巨头客户：NVDA（公开证据记录，非完整采购额）；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
-      "history": []
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
+      "history": [
+        {
+          "date": "2026-11-08",
+          "alpha": 25.11,
+          "mode": "provisional",
+          "coverage": 0.35
+        }
+      ]
     },
     {
       "ticker": "FN",
       "name": "Fabrinet",
       "alpha": null,
       "previous_alpha": null,
-      "provisional_alpha": 27.78,
+      "provisional_alpha": 38.81,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0.45,
+      "close": 327.13,
+      "previous_close": 292.97,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/FN?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.65,
       "confidence": "研究探索",
       "evidence_count": 2,
       "factors": {
         "acceleration": 0,
         "demand": null,
         "tightness": 83.33,
-        "customer_momentum": null,
+        "customer_momentum": 66.67,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 54.55
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -253,13 +287,19 @@
         "AMZN",
         "NVDA"
       ],
-      "explanation": "已披露七巨头客户：AMZN, NVDA（公开证据记录，非完整采购额）；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
       "history": [
         {
           "date": "2026-11-07",
           "alpha": 27.78,
           "mode": "provisional",
           "coverage": 0.45
+        },
+        {
+          "date": "2026-11-08",
+          "alpha": 38.81,
+          "mode": "provisional",
+          "coverage": 0.65
         }
       ]
     },
@@ -268,26 +308,26 @@
       "name": "Corning",
       "alpha": null,
       "previous_alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 26.4,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0.15,
+      "close": 106.13,
+      "previous_close": 103.43,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/GLW?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.35,
       "confidence": "研究探索",
       "evidence_count": 1,
       "factors": {
         "acceleration": null,
         "demand": null,
         "tightness": 11.11,
-        "customer_momentum": null,
+        "customer_momentum": 44.44,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 18.18
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -300,34 +340,41 @@
       "known_clients": [
         "META"
       ],
-      "explanation": "已披露七巨头客户：META（公开证据记录，非完整采购额）；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
-      "history": []
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
+      "history": [
+        {
+          "date": "2026-11-08",
+          "alpha": 26.4,
+          "mode": "provisional",
+          "coverage": 0.35
+        }
+      ]
     },
     {
       "ticker": "CLS",
       "name": "Celestica",
       "alpha": null,
       "previous_alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 66.67,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0.15,
+      "close": 206.68,
+      "previous_close": 205.64,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CLS?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.35,
       "confidence": "研究探索",
       "evidence_count": 3,
       "factors": {
         "acceleration": null,
         "demand": null,
         "tightness": 100,
-        "customer_momentum": null,
+        "customer_momentum": 55.56,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 0.0
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -342,34 +389,41 @@
         "GOOGL",
         "META"
       ],
-      "explanation": "已披露七巨头客户：AMZN, GOOGL, META（公开证据记录，非完整采购额）；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
-      "history": []
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
+      "history": [
+        {
+          "date": "2026-11-08",
+          "alpha": 66.67,
+          "mode": "provisional",
+          "coverage": 0.35
+        }
+      ]
     },
     {
       "ticker": "MU",
       "name": "Micron",
       "alpha": null,
       "previous_alpha": null,
-      "provisional_alpha": null,
+      "provisional_alpha": 15.8,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0.15,
+      "close": 690.0,
+      "previous_close": 656.39,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.35,
       "confidence": "研究探索",
       "evidence_count": 1,
       "factors": {
         "acceleration": null,
         "demand": null,
         "tightness": 11.11,
-        "customer_momentum": null,
+        "customer_momentum": 16.67,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 27.27
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -382,8 +436,15 @@
       "known_clients": [
         "NVDA"
       ],
-      "explanation": "已披露七巨头客户：NVDA（公开证据记录，非完整采购额）；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
-      "history": []
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
+      "history": [
+        {
+          "date": "2026-11-08",
+          "alpha": 15.8,
+          "mode": "provisional",
+          "coverage": 0.35
+        }
+      ]
     },
     {
       "ticker": "VRT",
@@ -393,14 +454,14 @@
       "provisional_alpha": null,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0,
+      "close": 182.86,
+      "previous_close": 176.73,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VRT?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.05,
       "confidence": "研究探索",
       "evidence_count": 0,
       "factors": {
@@ -409,7 +470,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 72.73
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -420,7 +481,7 @@
         "residual_momentum": "supplier 20-day return minus beta times XLK 20-day return (beta from 60 matched sessions), peer percentile"
       },
       "known_clients": [],
-      "explanation": "当前种子证据库没有可计分的已验证客户关系；这不代表不存在供应关系；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
       "history": []
     },
     {
@@ -431,14 +492,14 @@
       "provisional_alpha": null,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0,
+      "close": 74.59,
+      "previous_close": 71.64,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/APH?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.05,
       "confidence": "研究探索",
       "evidence_count": 0,
       "factors": {
@@ -447,7 +508,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 90.91
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -458,7 +519,7 @@
         "residual_momentum": "supplier 20-day return minus beta times XLK 20-day return (beta from 60 matched sessions), peer percentile"
       },
       "known_clients": [],
-      "explanation": "当前种子证据库没有可计分的已验证客户关系；这不代表不存在供应关系；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
       "history": []
     },
     {
@@ -466,26 +527,26 @@
       "name": "STMicroelectronics",
       "alpha": null,
       "previous_alpha": null,
-      "provisional_alpha": 85.19,
+      "provisional_alpha": 89.74,
       "previous_provisional_alpha": null,
       "model_version": "v2.0-pit-partial-coverage",
-      "close": null,
-      "previous_close": null,
-      "price_date": null,
-      "previous_price_date": null,
-      "price_source": null,
-      "price_provider": null,
-      "price_fresh": false,
-      "coverage": 0.45,
+      "close": 41.72,
+      "previous_close": 39.95,
+      "price_date": "2026-11-06",
+      "previous_price_date": "2026-11-05",
+      "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/STM?range=9mo&interval=1d",
+      "price_provider": "Yahoo chart",
+      "price_fresh": true,
+      "coverage": 0.65,
       "confidence": "研究探索",
       "evidence_count": 2,
       "factors": {
         "acceleration": 100,
         "demand": null,
         "tightness": 55.56,
-        "customer_momentum": null,
+        "customer_momentum": 100.0,
         "policy": null,
-        "residual_momentum": null
+        "residual_momentum": 100.0
       },
       "factor_methods": {
         "acceleration": "verified reported client revenue-share delta (pp), peer percentile; if unavailable N/A",
@@ -499,13 +560,19 @@
         "AAPL",
         "TSLA"
       ],
-      "explanation": "已披露七巨头客户：AAPL, TSLA（公开证据记录，非完整采购额）；行情未获取，禁止计算价格动量；六因子数据尚不完整，正式 Alpha 暂不发布；仅供研究的可得因子综合分单独标注。",
+      "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。",
       "history": [
         {
           "date": "2026-11-07",
           "alpha": 85.19,
           "mode": "provisional",
           "coverage": 0.45
+        },
+        {
+          "date": "2026-11-08",
+          "alpha": 89.74,
+          "mode": "provisional",
+          "coverage": 0.65
         }
       ]
     }
@@ -809,14 +876,14 @@
   "filing_candidates": [],
   "policy_candidates": [],
   "audit": {
-    "market_prices_present": 0,
+    "market_prices_present": 12,
     "market_prices_total": 12,
     "official_alpha_count": 0,
-    "provisional_count": 3,
+    "provisional_count": 10,
     "verified_edges": 16,
     "unverified_edges_excluded": 1,
     "capex_annual_yoy_clients": [],
-    "model_caveat": "Strict score requires all six factors. Exploratory score renormalizes observed factors; NOT comparable across different factor-availability patterns.",
+    "model_caveat": "6-factor alpha is N/A until ALL validated factors available. Partial scores are exploratory.",
     "market_qa_errors": []
   },
   "capex_sources": {}
