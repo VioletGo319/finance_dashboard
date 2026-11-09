@@ -85,6 +85,7 @@ es:{vixTrigger:"Activador contrarian VIX",vixClose:"Último cierre VIX",vixTarge
 ja:{vixTrigger:"VIX逆張りポジション・トリガー",vixClose:"直近VIX終値",vixTarget:"次回の目標株式比率",vixBands:"保有比率の段階",vixCompare:"同期間のVIX戦略と通常戦略",vixNoData:"VIX履歴不足のため結果なし",vixCaution:"VIX上昇時の買い増しは下落リスクも高めます。前日終値で判断、現金利回り0%、サンプル外未検証。",vixHold:"現金",vixSignal:"シグナル / 株式比率",vixBase:"従来戦略",vixMode:"選択した戦略",vixVReturn:"VIX累積収益",vixVDrawdown:"VIX最大下落",vixBReturn:"通常累積収益",vixBDrawdown:"通常最大下落"}
 };
 for(const [lang,labels] of Object.entries(vixLabels))Object.assign(locales[lang],labels);
+for(const [lang,label] of Object.entries({en:"VIX / stock exposure","zh-CN":"VIX / 股票仓位",fr:"VIX / exposition",es:"VIX / exposición",ja:"VIX / 株式比率"}))locales[lang].vixSignal=label;
 
 let selectedScenario="1Y · VIX Trigger · Top 8 · 10 bps";
 let data=null,showOnly=false,chartMode="nav",seriesActive={strategy:true,spy:true,xlk:true};
