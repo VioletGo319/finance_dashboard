@@ -8,7 +8,7 @@ try:
     from scripts.quant_strategy import investment_score, simulate_daily_close, volatility_daily, vix_target_exposure
 except ModuleNotFoundError:
     from quant_fundamentals import gather_fundamentals
-    from quant_strategy import investment_score, simulate_daily_close, volatility_daily
+    from quant_strategy import investment_score, simulate_daily_close, volatility_daily, vix_target_exposure
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/"data"/"quant"
