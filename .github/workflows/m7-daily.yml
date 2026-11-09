@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/m7-daily.yml'
-    # Refresh 40-stock investability softmax paper allocation and compare QQQ
+    # Calculate new causal weighted 40-name 1Y/3Y/5Y Sharpe and paper forward performance
   workflow_dispatch:
   schedule:
     # After regular US market close: 17:30 EST / 18:30 EDT. v3.1 active 40-stock refresh.
@@ -79,7 +79,7 @@ jobs:
           import json
           from pathlib import Path
           q=json.loads(Path("data/quant/latest.json").read_text())
-          if q.get("schema_version")!="1.3":raise SystemExit("Autonomous 40-stock schema 1.3 absent; stale quant export")
+          if q.get("schema_version")!="1.4":raise SystemExit("Autonomous weighted 40-stock schema 1.4 absent; stale quant export")
           p=q.get("vix_trigger_policy") or {}
           if p.get("latest_vix_close") is None:raise SystemExit("VIX source was unavailable; cannot publish VIX trigger")
           print("VIX_POLICY",json.dumps(p,ensure_ascii=False))
@@ -123,6 +123,39 @@ jobs:
                   raise SystemExit(f"{label} baseline 40 failure: {baseline}")
               if vix.get("status")!="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
                   raise SystemExit(f"{label} VIX 40 failure: {vix}")
+          PY
+      - name: Print new score-weighted 40-stock Sharpe against QQQ
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          q=json.loads(Path("data/quant/latest.json").read_text())
+          d=q.get("forty_stock_weighted_price_diagnostics") or {}
+          previous=q.get("forty_stock_historical_diagnostics") or {}
+          for horizon in ("1Y","3Y","5Y"):
+              vix=d.get(f"{horizon} · 40 price-score weighted · VIX",{})
+              plain=d.get(f"{horizon} · 40 price-score weighted",{})
+              eqvix=previous.get(f"{horizon} · 40 equal weight · VIX",{})
+              results={"window":horizon,
+                  "weighted_vix_status":vix.get("status"),
+                  "weighted_status":plain.get("status"),
+                  "weighted_vix":vix.get("metrics"),
+                  "weighted_no_vix":plain.get("metrics"),
+                  "equal_vix":eqvix.get("metrics"),
+                  "QQQ":vix.get("benchmarks",{}).get("QQQ"),
+                  "XLK":vix.get("benchmarks",{}).get("XLK"),
+                  "start_date":vix.get("start_date"),"end_date":vix.get("end_date"),
+                  "min_names":vix.get("minimum_active_names"),
+                  "mean_exposure":vix.get("mean_stock_exposure"),
+                  "transactions":vix.get("trade_events"),
+                  "method":vix.get("assumptions",{})}
+              print("WEIGHTED_SHARPE_RESULT",json.dumps(results,ensure_ascii=False))
+              if (plain.get("status")!="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC" or
+                  vix.get("status")!="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC"):
+                  raise SystemExit(f"Incomplete historical weighted period: {horizon}, {plain.get('status')}, {vix.get('status')}")
+              assert plain.get("start_date")==vix.get("start_date")
+              assert plain.get("end_date")==vix.get("end_date")
+              assert vix.get("assumptions",{}).get("historical_fundamental_scores_used") is False
           PY
       - name: Verify autonomous paper-only ledger and risk gates
         run: |
@@ -179,6 +212,11 @@ jobs:
           assert a["pending"] is None or a["pending"]["signal_day"]<=a["last_price_day"]
           assert a["pending"] is None or sum(a["pending"]["weights"].values())<=1.0000001
           assert Path("site/data/quant/paper_state.json").is_file()
+          performance=a.get("forward_performance") or {}
+          assert performance.get("source")=="paper ledger future completed closes only"
+          if performance.get("observed_sessions",0)<31:
+              assert performance.get("sharpe_rf0") is None, "Cannot fabricate forward paper Sharpe"
+          print("FORWARD_PAPER_SHARPE",json.dumps(performance,ensure_ascii=False))
           print("PAPER_ACCOUNT",json.dumps({
             "status":a["status"],"date":a["last_price_day"],"equity":a["equity"],
             "cash":a["cash"],"trade_count":a["trade_count"],
