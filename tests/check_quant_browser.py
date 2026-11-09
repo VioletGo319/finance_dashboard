@@ -36,7 +36,8 @@ audit="""<script>
   document.documentElement.dataset.overviewSelection=overviewMatches?'PASS':'FAIL';
   document.querySelector('[data-tab="audit"]')?.click();
   const auditContent=document.querySelector('#auditRows')?.textContent||'';
-  const auditSeparated=auditContent.includes('完整六因子正式评分')&&auditContent.includes('探索性六因子评分');
+  const auditSeparated=(auditContent.includes('完整六因子正式评分')&&auditContent.includes('探索性六因子评分'))
+    ||(auditContent.includes('Official complete six-factor Alpha')&&auditContent.includes('Exploratory six-factor score'));
   document.documentElement.dataset.auditSeparated=auditSeparated?'PASS':'FAIL';
   document.querySelector('[data-tab="quant"]')?.click();
   setTimeout(()=>{
@@ -74,6 +75,10 @@ audit="""<script>
     document.documentElement.dataset.quantDynamicScenario=dynamicScenario?'PASS':'FAIL';
     document.documentElement.dataset.quantFiscalVsWindow=fiscalSeparated?'PASS':'FAIL';
     document.documentElement.dataset.quantMetricUpdated=metricUpdated?'PASS':'FAIL';
+    document.documentElement.dataset.quantDetail='overview:'+overviewMatches+',audit:'+auditSeparated
+       +',dynamic:'+dynamicScenario+',fiscal:'+fiscalSeparated+',metrics:'+metricUpdated
+       +',rows:'+rows+'/'+expectedHigh+',all:'+allRows+',graph:'+Boolean(graph)
+       +',bench:'+bench.includes('QQQ')+',scenarios:'+scenarios+',paper:'+paper.length;
     const success=data?.screener?.eligible_count>0 && data?.backtest?.curve?.length>20 &&
        rows===expectedHigh && expectedHigh>0 && allRows===40 && defaultGroupIsHigh && !!graph && bench.includes('QQQ') && scenarios>=4 &&
        paper.length>0 && overviewMatches && auditSeparated && dynamicScenario && fiscalSeparated && metricUpdated;
@@ -101,6 +106,9 @@ match=re.search(r'data-quant-smoke="([^"]+)"',r.stdout)
 status=match.group(1) if match else None
 print("Quant smoke:",status)
 if status!="PASS":
+    for key in ("data-quant-detail","data-overview-selection","data-audit-separated","data-quant-dynamic-scenario","data-quant-fiscal-vs-window","data-quant-metric-updated"):
+        m=re.search(re.escape(key)+r'="([^"]*)"',r.stdout)
+        print(key+":",m.group(1) if m else "N/A")
     print("Missing data/DOM; browser stderr:",r.stderr[-900:])
     raise SystemExit(1)
 print("Quant research UI checked 5Y Top 5 scenario description, SEC fiscal period separation, current metrics, selected ranking, and distinct Alpha audit counts.")
