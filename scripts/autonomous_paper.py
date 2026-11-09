@@ -53,7 +53,7 @@ def target_weights(ranked,quotes,vix_close,price_day):
     proposed={s:exposure/len(choices) for s in choices}
     group_totals={}
     for s,w in proposed.items():group_totals[sector(s)]=group_totals.get(sector(s),0)+w
-    weights={s:round(min(w,MAX_NAME_WEIGHT,w*min(1.0,MAX_SECTOR_WEIGHT/group_totals[sector(s)])),8)
+    weights={s:math.floor(min(w,MAX_NAME_WEIGHT,w*min(1.0,MAX_SECTOR_WEIGHT/group_totals[sector(s)]))*1e8)/1e8
              for s,w in proposed.items()}
     return weights,"READY"
 
