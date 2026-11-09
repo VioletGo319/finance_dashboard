@@ -23,6 +23,15 @@ def mock_facts():
   }}
 
 class QuantPipelineTests(unittest.TestCase):
+ def test_sec_fiscal_period_distinct_from_filing_date_and_backtest(self):
+  rows=investment_score(["STM"],{"STM":{
+      "revenue_fy_usd":18000000000,"revenue_fy_end":"2025-12-31",
+      "revenue_filed":"2026-02-26","shares_outstanding":1000000000,
+      "shares_filed":"2026-02-26","source":"https://www.sec.gov/example"}},
+      {"STM":{"close":42.,"coverage":.9,"monitor_score":70.,"realized_vol_60d":.3}})
+  self.assertEqual(rows[0]["revenue_fy_end"],"2025-12-31")
+  self.assertEqual(rows[0]["revenue_filed"],"2026-02-26")
+  self.assertNotEqual(rows[0]["revenue_fy_end"],rows[0]["revenue_filed"])
  def test_no_future_fundamental(self):
   f=extract_fundamentals(mock_facts(),"2025-12-31","TEST",123)
   self.assertEqual(f["revenue_fy_usd"],100)
