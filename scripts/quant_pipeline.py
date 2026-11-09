@@ -210,6 +210,22 @@ def build_quant(result,quotes,as_of,write=True):
         },
         "backtest":{"status":portfolio_status,**backtest},
         "backtest_scenarios":scenarios,
+        "backtest_validation_gates":{
+          "classification":"EXPLORATORY_PRICE_ONLY_RESEARCH_NOT_VALIDATED_ALPHA",
+          "historical_universe":{
+             "status":"PENDING",
+             "reason":"Uses the current 40-stock pool retrospectively; listing age checks are not delisting/constituent reconstruction"},
+          "corporate_actions":{
+             "status":"PENDING",
+             "reason":"Provider closes and split/dividend total-return adjustments not independently reconciled per security"},
+          "walk_forward":{
+             "status":"PENDING",
+             "reason":"No documented time-disjoint development and locked test blocks with parameter selection frozen"},
+          "passed_count":0,
+          "required_count":3,
+          "validated_performance_claim_allowed":False,
+          "next_stage":"Historical point-in-time constituents, adjusted and total-return prices with corporate action audit, then walk-forward locked validation"
+        },
         "benchmark_primary":"QQQ",
         "comparison_horizons":["1Y","3Y","5Y"],
         "vix_trigger_policy":vix_policy,
