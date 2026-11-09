@@ -338,6 +338,21 @@ function renderUniverseQuality(universe,weights){
       +'<td class="q-number">'+(typeof w==="number"&&equal>0?fmt(w/equal,2)+"×":"N/A")+'</td></tr>';
   }).join('')+'</tbody></table></div>';
 }
+const paperAuditEvents={
+en:{ORDER_PROPOSED:"Order proposed (paper)",PAPER_FILLED:"Simulated fill",NO_ORDER:"Order blocked by risk gate",UNFILLED_ORDER_REWEIGHTED_BY_INVESTABILITY:"Pending order reweighted by investability",UNFILLED_ORDER_UPGRADED_TO_40:"Pending allocation expanded to 40 names",FILL_REJECTED_MISSING_PRICE:"Simulated fill rejected: missing price",NO_SIGNAL_VIX_UNAVAILABLE:"No VIX signal; trading paused"},
+"zh-CN":{ORDER_PROPOSED:"已生成模拟订单计划",PAPER_FILLED:"已完成模拟成交",NO_ORDER:"风控阻止下单",UNFILLED_ORDER_REWEIGHTED_BY_INVESTABILITY:"待执行订单按投资性重新加权",UNFILLED_ORDER_UPGRADED_TO_40:"待执行组合升级为40股",FILL_REJECTED_MISSING_PRICE:"缺少真实收盘价，模拟成交被拒绝",NO_SIGNAL_VIX_UNAVAILABLE:"缺失 VIX 信号，交易暂停"},
+fr:{ORDER_PROPOSED:"Ordre simulé proposé",PAPER_FILLED:"Exécution simulée",NO_ORDER:"Ordre bloqué par le risque",UNFILLED_ORDER_REWEIGHTED_BY_INVESTABILITY:"Ordre en attente repondéré",UNFILLED_ORDER_UPGRADED_TO_40:"Allocation élargie à 40 titres",FILL_REJECTED_MISSING_PRICE:"Prix manquant, exécution rejetée",NO_SIGNAL_VIX_UNAVAILABLE:"Signal VIX absent, pause"},
+es:{ORDER_PROPOSED:"Orden simulada propuesta",PAPER_FILLED:"Ejecución simulada",NO_ORDER:"Orden bloqueada por riesgo",UNFILLED_ORDER_REWEIGHTED_BY_INVESTABILITY:"Orden pendiente reponderada",UNFILLED_ORDER_UPGRADED_TO_40:"Asignación ampliada a 40",FILL_REJECTED_MISSING_PRICE:"Precio ausente, ejecución rechazada",NO_SIGNAL_VIX_UNAVAILABLE:"Sin señal VIX, pausa"},
+ja:{ORDER_PROPOSED:"仮想注文計画を生成",PAPER_FILLED:"仮想約定",NO_ORDER:"リスク管理により注文停止",UNFILLED_ORDER_REWEIGHTED_BY_INVESTABILITY:"未約定注文を投資性で再加重",UNFILLED_ORDER_UPGRADED_TO_40:"40銘柄に拡張",FILL_REJECTED_MISSING_PRICE:"価格欠損で仮想約定を拒否",NO_SIGNAL_VIX_UNAVAILABLE:"VIX信号欠損・停止"}
+};
+const riskText={
+en:"Caps on invested stock budget: single name 10%, sector 45% · simulated cost 10 bps/side",
+"zh-CN":"股票投资仓位内：单股上限 10%，单行业上限 45% · 模拟交易成本单边 10 基点",
+fr:"Plafonds sur budget actions : titre 10 %, secteur 45 % · coût fictif 10 pb par côté",
+es:"Límites del presupuesto invertido: acción 10 %, sector 45 % · 10 pb por lado",
+ja:"株式枠の上限：1銘柄10％、セクター45％ · 仮想取引コスト片道10bp"
+};
+function paperEventLabel(code){return paperAuditEvents[L()]?.[code]||paperAuditEvents.en[code]||String(code).replaceAll("_"," ");}
 function autoMoney(v){return typeof v==="number"&&Number.isFinite(v)?"$"+v.toLocaleString(L(),{minimumFractionDigits:2,maximumFractionDigits:2}):"N/A";}
 function renderAutonomous(){
  const el=document.getElementById("qAutonomous");if(!el)return;
@@ -362,8 +377,8 @@ function renderAutonomous(){
   +'<div class="q-status q-auto-state">'+esc(a.status?.startsWith("HALTED_")?t("audit_paperHalted"):paperStatusMap[a.status]||a.status)+' · '+esc(pending.signal_day||a.last_price_day||"N/A")+'</div>'
   +'<div class="q-two">'+mini(t("autonomous_pending"),cells(weights,pc))+mini(t("autonomous_positions"),cells(positions,autoMoney))+'</div>'
   +renderUniverseQuality(data?.autonomous_universe,pending.weights||{})
-  +'<h4>'+esc(t("autonomous_audit"))+'</h4><div class="q-auto-log">'+log.map(e=>'<div><span>'+esc(e.date)+'</span><strong>'+esc(e.event)+'</strong></div>').join('')+'</div>'
-  +'<div class="q-note">Max per name '+pc(a.risk_limits?.max_name_weight)+' · Max sector '+pc(a.risk_limits?.max_sector_weight)+' · 10 bps/side</div>';
+  +'<h4>'+esc(t("autonomous_audit"))+'</h4><div class="q-auto-log">'+log.map(e=>'<div><span>'+esc(e.date)+'</span><strong>'+esc(paperEventLabel(e.event))+'</strong></div>').join('')+'</div>'
+  +'<div class="q-note">'+esc(riskText[L()]||riskText.en)+'</div>';
 }
 async function fetchPaper(force=false){
  try{
