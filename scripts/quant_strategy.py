@@ -80,7 +80,7 @@ def investment_score(stocks,facts,meta,provisional=None):
         }
         candidates[sym]={"raw":vals,"cap":cap,"ps":ps,
           "source":point.get("source"),"revenue":rev,"revenue_growth":annual_growth(point),
-          "revenue_filed":point.get("revenue_filed"),"shares_filed":point.get("shares_filed"),
+          "revenue_filed":point.get("revenue_filed"),"revenue_fy_end":point.get("revenue_fy_end"),"shares_filed":point.get("shares_filed"),
           "adr_caution":point.get("foreign_adr_caution",False),
           "price_source":row.get("price_source"),
           "price_date":row.get("price_date")}
@@ -107,7 +107,7 @@ def investment_score(stocks,facts,meta,provisional=None):
            "price_to_sales_proxy":round(v["ps"],3) if v["ps"] else None,
            "revenue_fy_usd":v["revenue"],
            "revenue_growth_yoy":v["revenue_growth"],
-           "revenue_filed":v["revenue_filed"],"shares_filed":v["shares_filed"],
+           "revenue_filed":v["revenue_filed"],"revenue_fy_end":v["revenue_fy_end"],"shares_filed":v["shares_filed"],
            "price_date":v["price_date"],"price_source":v["price_source"],
            "fundamental_source":v["source"],"adr_caution":v["adr_caution"],
            "status":"SCREENING_SCORE_ONLY_NOT_BACKTESTED" if eligible else "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS"})
@@ -281,14 +281,15 @@ def simulate_daily_close(quotes,tickers,initial_date=None,top_n=8,trade_bps=10,v
           "xlk":round(current[2]/previous[2]-1,5)})
         previous=current
     result={"status":"COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
-        "strategy_id":"M7-MOMENTUM-VIX-CONTRARIAN-v1" if vix_trigger else "M7-MOMENTUM-8-MONTHLY-v1",
+        "strategy_id":f"M7-MOMENTUM-TOP{top_n}-MONTHLY-{'VIX-' if vix_trigger else ''}v2",
+        "top_n":top_n,"vix_trigger_enabled":vix_trigger,
         "start_date":dates_ret[0],"end_date":dates_ret[-1],
         "universe":len(tickers),"min_history":65,
         "signal":"Momentum stock ranking; previous-session VIX sets cash exposure" if vix_trigger else
            "30% 5-session momentum + 40% 20-session XLK-excess + 20% 60-session momentum + 10% inverse realized volatility percentile; no fundamentals or current Alpha",
         "rebalance":"monthly stock selection; VIX exposure updates on band changes at next close" if vix_trigger else
            "monthly, next-trading-day close fill after prior-close signal",
-        "risk":"equal weight top 8, max 3 names per sector, no leverage, cash return 0",
+        "risk":f"equal weight top {top_n}, max 3 names per sector, no leverage, cash return 0",
         "one_way_bps":trade_bps,"metrics":res,"benchmarks":{"QQQ":bm,"XLK":tech},
         "information_ratio":round(alpha,3) if alpha is not None else None,
         "curve":curve,"monthly":monthly_returns,"trades":trades,
