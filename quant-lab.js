@@ -77,7 +77,16 @@ function factorDetail(row){
   +'<div class="q-note">'+esc(t("sourceWarning"))+'</div>';
 }
 
-let selectedScenario="1Y · Top 8 · 10 bps";
+const vixLabels={
+en:{vixTrigger:"VIX contrarian exposure trigger",vixClose:"Latest VIX close",vixTarget:"Next target stock weight",vixBands:"Exposure bands",vixCompare:"Matched window: VIX trigger vs baseline",vixNoData:"VIX data unavailable: no fabricated VIX backtest",vixCaution:"High VIX adds equity risk during stress and can increase drawdown. Previous close only; cash earns 0%; not validated out of sample.",vixHold:"Hold cash",vixSignal:"Signal / exposure",vixBase:"Original strategy",vixMode:"Selected portfolio",vixVReturn:"VIX total return",vixVDrawdown:"VIX max drawdown",vixBReturn:"Base total return",vixBDrawdown:"Base max drawdown"},
+"zh-CN":{vixTrigger:"VIX 逆向仓位触发器",vixClose:"最近 VIX 收盘值",vixTarget:"下一交易日目标股票仓位",vixBands:"仓位分档",vixCompare:"相同窗口：VIX 版本 vs 原策略",vixNoData:"VIX 历史数据不足，不能虚构回测结果",vixCaution:"VIX 高位加仓也可能在下跌继续时放大回撤；仅用前一交易日收盘信号，现金利息按 0% 计算，尚未做样本外验证。",vixHold:"现金仓位",vixSignal:"信号 / 股票仓位",vixBase:"原始策略",vixMode:"所选组合",vixVReturn:"VIX 策略累计收益",vixVDrawdown:"VIX 策略最大回撤",vixBReturn:"原策略累计收益",vixBDrawdown:"原策略最大回撤"},
+fr:{vixTrigger:"Déclencheur contrariant VIX",vixClose:"Dernière clôture VIX",vixTarget:"Prochaine exposition actions cible",vixBands:"Paliers d'exposition",vixCompare:"Même fenêtre : VIX vs base",vixNoData:"Historique VIX insuffisant",vixCaution:"Augmenter l'exposition lorsque le VIX monte peut accroître les pertes. Signal clôture précédente, liquidités à 0 %, hors échantillon non validé.",vixHold:"Liquidités",vixSignal:"Signal / exposition",vixBase:"Stratégie de base",vixMode:"Portefeuille choisi",vixVReturn:"Performance VIX",vixVDrawdown:"Repli VIX",vixBReturn:"Performance de base",vixBDrawdown:"Repli de base"},
+es:{vixTrigger:"Activador contrarian VIX",vixClose:"Último cierre VIX",vixTarget:"Próxima exposición objetivo",vixBands:"Tramos de exposición",vixCompare:"Mismo período: VIX vs base",vixNoData:"Sin historial VIX suficiente",vixCaution:"Comprar más con VIX alto puede aumentar las pérdidas. Señal al cierre anterior, efectivo al 0 %, sin validación fuera de muestra.",vixHold:"Efectivo",vixSignal:"Señal / exposición",vixBase:"Estrategia base",vixMode:"Cartera seleccionada",vixVReturn:"Retorno VIX",vixVDrawdown:"Caída VIX",vixBReturn:"Retorno base",vixBDrawdown:"Caída base"},
+ja:{vixTrigger:"VIX逆張りポジション・トリガー",vixClose:"直近VIX終値",vixTarget:"次回の目標株式比率",vixBands:"保有比率の段階",vixCompare:"同期間のVIX戦略と通常戦略",vixNoData:"VIX履歴不足のため結果なし",vixCaution:"VIX上昇時の買い増しは下落リスクも高めます。前日終値で判断、現金利回り0%、サンプル外未検証。",vixHold:"現金",vixSignal:"シグナル / 株式比率",vixBase:"従来戦略",vixMode:"選択した戦略",vixVReturn:"VIX累積収益",vixVDrawdown:"VIX最大下落",vixBReturn:"通常累積収益",vixBDrawdown:"通常最大下落"}
+};
+for(const [lang,labels] of Object.entries(vixLabels))Object.assign(locales[lang],labels);
+
+let selectedScenario="1Y · VIX Trigger · Top 8 · 10 bps";
 let data=null,showOnly=false,chartMode="nav",seriesActive={strategy:true,spy:true,xlk:true};
 function L(){return (window.M7_I18N&&window.M7_I18N.language)||"en";}
 function t(k){return (locales[L()]||locales.en)[k]||locales.en[k]||k;}
@@ -88,19 +97,25 @@ function compact(v){if(v===null||v===undefined||!Number.isFinite(v))return "N/A"
 function link(url,label){return typeof url==="string"&&url.startsWith("https://")?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(label||"SEC ↗")+'</a>':"N/A";}
 function metric(name,value,sub){return '<div class="q-kpi"><div class="name">'+esc(name)+'</div><div class="value">'+esc(value)+'</div><div class="sub">'+esc(sub||"")+'</div></div>';}
 function renderShell(){
- const q=data||{},sc=q.screener||{},back=q.backtest_scenarios?.[selectedScenario]||q.backtest||{};
+ const q=data||{},sc=q.screener||{},available=q.backtest_scenarios||{};
+ if(!available[selectedScenario])selectedScenario="1Y · Top 8 · 10 bps";
+ const back=available[selectedScenario]||q.backtest||{};
+ const horizon=selectedScenario.split(" · ")[0],isVix=selectedScenario.includes("VIX Trigger");
+ const baseBack=available[horizon+" · Top 8 · 10 bps"]||{},vixBack=available[horizon+" · VIX Trigger · Top 8 · 10 bps"]||{};
+ const vixp=q.vix_trigger_policy||{};
  const m=back.metrics||{},bm=back.benchmarks?.QQQ||{},secs=q.fundamentals_coverage||{};
  const validity=back.status==="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC";
  host.innerHTML='<div class="q-root">'
   +'<div class="q-hero"><div><div class="q-eyebrow">'+esc(t("lab"))+'</div><h2>'+esc(t("title"))+'</h2><div class="q-muted">'+esc(t("subtitle"))+'</div><div class="q-pills" style="margin-top:12px"><span>'+esc(t("screenOnly"))+'</span><span>'+esc(t("backtestOnly"))+'</span><span>'+esc(q.as_of||"N/A")+'</span></div></div><div class="q-actions"><button id="qRefresh" class="q-action">'+esc(t("refresh"))+'</button><div class="q-status">'+esc(t("statusLine"))+': '+esc(q.fundamental_audit?.status||"N/A")+'</div></div></div>'
   +'<div class="q-alert">'+esc(t("notTested"))+' · '+esc(t("caveat"))+'</div>'
+   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("vixTrigger"))+'</h3><p>'+esc(t("vixCaution"))+'</p></div></div><div class="q-body"><div class="q-kpis">'+metric(t("vixClose"),fmt(vixp.latest_vix_close),esc(vixp.latest_vix_date||"N/A")+' · '+esc(vixp.source_provider||""))+metric(t("vixTarget"),pc(vixp.next_target_stock_exposure),t("vixHold")+": "+pc(typeof vixp.next_target_stock_exposure==="number"?1-vixp.next_target_stock_exposure:null))+'</div><div class="q-pills">'+(vixp.bands||[]).map(b=>'<span>VIX '+esc(b.vix)+' → '+pc(b.exposure)+'</span>').join('')+'</div><p class="q-note">'+esc(vixp.execution||"")+' · '+link(vixp.source,"VIX source")+'</p><div id="qVixCompare"></div></div></div>'
   +'<div class="q-kpis">'+metric(t("return"),pc(m.total_return),"Strategy")
   +metric(t("cagr"),pc(m.cagr_annualized),t("trailing")+": "+esc(back.start_date||"N/A")+" → "+esc(back.end_date||"N/A"))
   +metric(t("sharpe"),fmt(m.sharpe_rf0),t("priceOnly"))
   +metric(t("drawdown"),pc(m.max_drawdown),t("validation"))+'</div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("benchmark"))+'</h3><p>'+esc(t("strategy"))+'</p></div><div class="q-actions"><button id="qChartNav" aria-pressed="true" class="q-action">'+esc(t("equity"))+'</button><button id="qChartDD" aria-pressed="false" class="q-action">'+esc(t("draw"))+'</button></div></div>'
   +'<div class="q-body q-group"><label class="q-note" for="qScenario">'+esc(t("scenario"))+'</label><select id="qScenario" class="pick">'+Object.keys(q.backtest_scenarios||{}).map(k=>'<option value="'+esc(k)+'" '+(k===selectedScenario?'selected':'')+'>'+esc(k)+'</option>').join('')+'</select><span class="q-note">'+esc(t("rankWarning"))+'</span></div>'
-  +'<div class="q-chart" id="qChart"><div class="q-empty">'+esc(t("loading"))+'</div></div><div class="q-legend"><span><i style="background:#64e3cf"></i>Strategy</span><span><i style="background:#82b2ff"></i>QQQ</span><span><i style="background:#ebb67d"></i>XLK</span></div></div>'
+  +'<div class="q-chart" id="qChart"><div class="q-empty">'+esc(t("loading"))+'</div></div><div class="q-legend"><span><i style="background:#64e3cf"></i>'+esc(t("vixMode"))+'</span><span><i style="background:#c8a2ff"></i>'+esc(t("vixBase"))+'</span><span><i style="background:#82b2ff"></i>QQQ</span><span><i style="background:#ebb67d"></i>XLK</span></div></div>'
   +'<div class="q-two"><div class="q-panel"><div class="q-head"><div><h3>'+esc(t("perf"))+'</h3><p>'+esc(t("backtest"))+'</p></div></div><div class="q-body" id="qMetrics"></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("screen"))+'</h3><p>'+esc(t("screenNote"))+'</p></div></div><div class="q-body" id="qCoverage"></div></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("rank"))+'</h3><p>'+esc(t("rankNote"))+'</p></div><div class="q-actions"><button type="button" id="qFilter" class="q-action" aria-pressed="'+showOnly+'">'+esc(t(showOnly?"showAll":"hideUnranked"))+'</button></div></div><div class="q-scroll"><table class="q-table"><thead><tr>'
@@ -114,6 +129,10 @@ function renderShell(){
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("method"))+'</h3></div></div><div class="q-body"><div class="q-formula">Investability = 0.30×Supply Alpha† + 0.20×Market Monitor + 0.20×Revenue Growth + 0.15×Inverse P/S + 0.05×Size + 0.10×Inverse Volatility<br>Eligibility: ≥ 75% weighted data coverage + ≥ 1 fundamental component</div><p class="q-note">'+esc(t("sourceWarning"))+'</p><p class="q-note">'+esc(t("sourceData"))+'</p><p class="q-note">'+esc(t("risk"))+': '+esc((back.limitations||[]).join(" | "))+'</p></div></div>'
   +'</div>';
  const row=(k,v)=>'<div class="q-metric"><span>'+esc(t(k))+'</span><span>'+esc(v)+'</span></div>';
+ document.getElementById("qVixCompare").innerHTML='<div class="q-note">'+esc(t("vixCompare"))+' ('+esc(horizon)+')</div>'+
+  [row("vixVReturn",pc(vixBack.metrics?.total_return)),row("vixBReturn",pc(baseBack.metrics?.total_return)),
+   row("vixVDrawdown",pc(vixBack.metrics?.max_drawdown)),row("vixBDrawdown",pc(baseBack.metrics?.max_drawdown))].join("")+
+  (vixBack.status!=="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC"?'<div class="q-alert">'+esc(t("vixNoData"))+' · '+esc(vixBack.status||"")+'</div>':"");
  document.getElementById("qMetrics").innerHTML=[
   row("total",pc(m.total_return)+" | QQQ "+pc(bm.total_return)),
   row("cagr",pc(m.cagr_annualized)+" | QQQ "+pc(bm.cagr_annualized)),
@@ -166,7 +185,7 @@ function renderShell(){
  const rr=months.map(x=>'<div class="q-month" title="'+esc(x.month)+' QQQ '+pc(x.qqq)+' XLK '+pc(x.xlk)+'" style="background:'+(x.strategy>=0?"#173f3b":"#492b37")+'"><span>'+esc(x.month)+'</span><strong class="'+(x.strategy>=0?"q-positive":"q-negative")+'">'+pc(x.strategy)+'</strong><small class="q-muted">QQQ '+pc(x.qqq)+'</small></div>').join("");
  document.getElementById("qMonthly").innerHTML=rr?'<div class="q-matrix">'+rr+'</div>':'<div class="q-empty">'+esc(t("none"))+'</div>';
  const trs=(back.trades||[]).slice(-18).reverse();
- document.getElementById("qTrades").innerHTML=trs.length?'<table class="q-table"><thead><tr>'+[t("tradeDate"),t("signalDate"),t("positions"),t("turnover"),t("cost")].map(x=>'<th>'+esc(x)+'</th>').join('')+'</tr></thead><tbody>'+trs.map(x=>'<tr><td>'+esc(x.date)+'</td><td>'+esc(x.signal_date)+'</td><td>'+esc((x.tickers||[]).join(", "))+'</td><td>'+pc(x.one_way_turnover)+'</td><td>'+fmt((x.cost_fraction||0)*10000,1)+' bps</td></tr>').join('')+'</tbody></table>':'<div class="q-body q-empty">'+esc(t("none"))+'</div>';
+ document.getElementById("qTrades").innerHTML=trs.length?'<table class="q-table"><thead><tr>'+[t("tradeDate"),t("signalDate"),t("positions"),t("vixSignal"),t("turnover"),t("cost")].map(x=>'<th>'+esc(x)+'</th>').join('')+'</tr></thead><tbody>'+trs.map(x=>'<tr><td>'+esc(x.date)+'</td><td>'+esc(x.signal_date)+'</td><td>'+esc((x.tickers||[]).join(", "))+'</td><td>'+fmt(x.vix_close)+' / '+pc(x.target_stock_exposure)+'</td><td>'+pc(x.one_way_turnover)+'</td><td>'+fmt((x.cost_fraction||0)*10000,1)+' bps</td></tr>').join('')+'</tbody></table>':'<div class="q-body q-empty">'+esc(t("none"))+'</div>';
  document.getElementById("qRefresh")?.addEventListener("click",()=>fetchQuant(true));
  document.getElementById("qScenario")?.addEventListener("change",e=>{selectedScenario=e.target.value;renderShell();});
 
@@ -178,11 +197,17 @@ function renderShell(){
 function drawChart(){
  const c=document.getElementById("qChart");
  if(!c)return;
- const back=data?.backtest_scenarios?.[selectedScenario]||data?.backtest||{},records=back.curve||[];
+ const back=data?.backtest_scenarios?.[selectedScenario]||data?.backtest||{};
+ const horizon=selectedScenario.split(" · ")[0];
+ const base=data?.backtest_scenarios?.[horizon+" · Top 8 · 10 bps"]||{};
+ const baseByDate=Object.fromEntries((base.curve||[]).map(r=>[r.date,r.strategy_nav]));
+ const records=(back.curve||[]).map(r=>({...r,baseline_nav:baseByDate[r.date]}));
  if(records.length<10){c.innerHTML='<div class="q-empty">'+esc(t("none"))+'</div>';return;}
  const width=960,height=290,p={l:63,r:25,t:25,b:37},W=width-p.l-p.r,H=height-p.t-p.b;
  const datasets=chartMode==="dd"?[{key:"strategy_nav",label:"Strategy drawdown",color:"#64e3cf"}]:
-  [{key:"strategy_nav",label:"Strategy",color:"#64e3cf"},{key:"qqq_nav",label:"QQQ",color:"#82b2ff"},{key:"xlk_nav",label:"XLK",color:"#ebb67d"}];
+  [{key:"strategy_nav",label:"Strategy",color:"#64e3cf"},
+  ...(selectedScenario.includes("VIX Trigger")&&base.curve?.length?[{key:"baseline_nav",label:"Baseline",color:"#c8a2ff"}]:[]),
+  {key:"qqq_nav",label:"QQQ",color:"#82b2ff"},{key:"xlk_nav",label:"XLK",color:"#ebb67d"}];
  const dd=records.map(r=>r.strategy_nav);
  let running=1;const ddval=dd.map(v=>(running=Math.max(running,v),v/running-1));
  const array=chartMode==="dd"?ddval:records.flatMap(x=>datasets.map(ds=>x[ds.key]));
@@ -201,7 +226,7 @@ function drawChart(){
   const rect=element.getBoundingClientRect(),fraction=(e.clientX-rect.left)/Math.max(rect.width,1);
   const i=Math.max(0,Math.min(records.length-1,Math.round((fraction*width-p.l)/W*(records.length-1))));
   const r=records[i],value=chartMode==="dd"?pc(ddval[i]):fmt(r.strategy_nav,3);
-  tip.innerHTML='<strong>'+esc(r.date)+'</strong><br>Strategy: '+esc(value)+(chartMode==="nav"?'<br>QQQ '+fmt(r.qqq_nav,3)+' · XLK '+fmt(r.xlk_nav,3):'');
+  tip.innerHTML='<strong>'+esc(r.date)+'</strong><br>Strategy: '+esc(value)+(chartMode==="nav"?'<br>QQQ '+fmt(r.qqq_nav,3)+' · XLK '+fmt(r.xlk_nav,3)+(Number.isFinite(r.baseline_nav)?'<br>Baseline '+fmt(r.baseline_nav,3):'')+(Number.isFinite(r.stock_exposure)?'<br>Equity '+pc(r.stock_exposure)+' · VIX '+fmt(r.vix_signal_close):''):'');
   tip.hidden=false;tip.style.left=Math.max(0,Math.min(c.clientWidth-155,(e.clientX-c.getBoundingClientRect().left+8)))+'px';tip.style.top='16px';
  };
  area?.addEventListener("pointermove",show);area?.addEventListener("pointerleave",()=>{tip.hidden=true});
