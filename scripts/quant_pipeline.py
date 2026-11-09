@@ -93,6 +93,7 @@ def build_quant(result,quotes,as_of,write=True):
     source_alpha_by_ticker={
        row["ticker"]:{
           "alpha":row.get("alpha"),"provisional_alpha":row.get("provisional_alpha"),
+          "close":row.get("close"),"previous_close":row.get("previous_close"),
           "coverage":row.get("coverage"),"monitor_score":row.get("monitor_score"),
           "price_date":row.get("price_date"),"as_of":result.get("as_of")}
        for row in result.get("suppliers",[])}
