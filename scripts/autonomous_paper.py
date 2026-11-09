@@ -15,6 +15,14 @@ MAX_NAME_WEIGHT=0.15
 MAX_SECTOR_WEIGHT=0.40
 MAX_STOCK_EXPOSURE=1.0
 MAX_PRICE_STALENESS_DAYS=5
+ALLOCATION_VERSION="INVESTABILITY_SOFTMAX_V2"
+# At least 12% of the VIX stock budget is spread evenly across all 40 names.
+# The remaining 88% is allocated by confidence-adjusted investability score.
+WEIGHT_FLOOR_FRACTION=0.12
+SCORE_SOFTMAX_TEMPERATURE=1.75
+SCORE_STD_FLOOR=7.5
+SCORE_Z_CLIP=2.5
+
 
 try:
     from scripts.quant_strategy import SECTOR_BANDS, vix_target_exposure
@@ -33,6 +41,75 @@ def valid_close(row,signal_day):
     if not isinstance(price,(float,int)) or not math.isfinite(price) or price<=0 or lag<0 or lag>MAX_PRICE_STALENESS_DAYS:
         return None
     return float(price)
+
+def investability_weights(candidates,exposure):
+    """Bounded softmax of evidence-adjusted scores + a positive 40-name floor.
+
+    Full investment is redistributed after single-name (15% of NAV) and
+    sector (40% of NAV) caps. No ad hoc security price interpolation.
+    The 40-stock score is from CURRENT observed+estimated research only; do
+    not treat these weights as historical point-in-time allocations.
+    """
+    if not (0<exposure<=MAX_STOCK_EXPOSURE):return None
+    n=len(candidates)
+    if n!=40:return None
+    scores=[]
+    names=[]
+    for row in candidates:
+        score=row.get("research_score")
+        ticker=row.get("ticker")
+        if (not isinstance(score,(int,float)) or isinstance(score,bool)
+             or not math.isfinite(score) or not 0<=score<=100 or not ticker):
+            return None
+        names.append(ticker);scores.append(float(score))
+    if len(set(names))!=n:return None
+    avg=sum(scores)/n
+    sd=math.sqrt(sum((v-avg)**2 for v in scores)/n)
+    denom=max(SCORE_STD_FLOOR,sd)
+    strength={
+       t:math.exp(SCORE_SOFTMAX_TEMPERATURE*
+          max(-SCORE_Z_CLIP,min(SCORE_Z_CLIP,(score-avg)/denom)))
+       for t,score in zip(names,scores)}
+    # The only invariant cash is 1-exposure; there is no hidden equal-weight
+    # 70% allocation as in the previous version.
+    weights={t:exposure*WEIGHT_FLOOR_FRACTION/n for t in names}
+    group={t:sector(t) for t in names}
+    remaining=exposure-sum(weights.values())
+    # Constrained proportional water filling. Whenever an individual or
+    # sector reaches its limit, its allocation is frozen and the remainder
+    # flows to other available stocks in score-proportional shares.
+    for _ in range(4*n):
+        if remaining<1e-10:break
+        sector_totals={g:sum(weights[t] for t in names if group[t]==g)
+                       for g in set(group.values())}
+        active=[t for t in names if
+                weights[t]<MAX_NAME_WEIGHT-1e-9 and
+                sector_totals[group[t]]<MAX_SECTOR_WEIGHT-1e-9]
+        if not active:return None
+        z=sum(strength[t] for t in active)
+        suggested={t:remaining*strength[t]/z for t in active}
+        by_group={}
+        for t,d in suggested.items():by_group[group[t]]=by_group.get(group[t],0.)+d
+        scales=[1.]
+        for t,d in suggested.items():
+            if d>0:scales.append(max(0.,MAX_NAME_WEIGHT-weights[t])/d)
+        for g,d in by_group.items():
+            if d>0:scales.append(max(0.,MAX_SECTOR_WEIGHT-sector_totals[g])/d)
+        scale=min(scales)
+        if scale<=1e-11:return None
+        for t,d in suggested.items():
+            weights[t]+=scale*d
+        remaining-=scale*sum(suggested.values())
+    if remaining>1e-6:return None
+    # Rounding down preserves hard sector and single-stock caps.
+    rounded={t:math.floor(max(0.,w)*1e8+1e-9)/1e8 for t,w in weights.items()}
+    if (any(w<=0 or w>MAX_NAME_WEIGHT+1e-9 for w in rounded.values())
+        or sum(rounded.values())>exposure+1e-8):
+        return None
+    for group_name in set(group.values()):
+        if sum(rounded[t] for t in names if group[t]==group_name)>MAX_SECTOR_WEIGHT+1e-8:
+            return None
+    return rounded
 
 def target_weights(ranked,quotes,vix_close,price_day,require_full=False):
     """All 40 participate when the verified 40-name candidate file is provided.
@@ -62,23 +139,19 @@ def target_weights(ranked,quotes,vix_close,price_day,require_full=False):
     if require_full and unpriced:return None,"UNPRICED_STOCKS:"+",".join(sorted(unpriced))
     if len(choices)<(40 if require_full else 5):
         return None,"INSUFFICIENT_TRADEABLE_STOCKS"
-    # Broad positive allocation to every eligible stock. Estimated research
-    # scores only supply a modest positive tilt and cannot force exclusion.
+    if require_full:
+        # 40 observed+imputed candidate scores already incorporate an
+        # evidence-coverage shrinkage. A bounded softmax magnifies genuine
+        # score differences; it never uses an estimated stock price.
+        weights=investability_weights(choices,exposure)
+        if weights is None:return None,"INFEASIBLE_SECTOR_OR_NAME_CAPS"
+        if len(weights)!=40 or any(x<=0 for x in weights.values()):
+            return None,"ZERO_TARGET_WEIGHT"
+        return weights,"READY_ALL_40"
+    # Legacy eight-name paper allocation, retained for backwards compatibility.
     n=len(choices)
-    strengths=[max(0.1,min(2.0,1+(float(r.get("research_score",50))-50)/100))
-               for r in choices]
-    total_strength=sum(strengths)
-    proposed={r["ticker"]:exposure*(.70/n+.30*strengths[i]/total_strength)
-              for i,r in enumerate(choices)}
-    sector_totals={}
-    for ticker,w in proposed.items():
-        sector_totals[sector(ticker)]=sector_totals.get(sector(ticker),0)+w
-    weights={ticker:math.floor(min(w,MAX_NAME_WEIGHT,
-                       w*min(1,MAX_SECTOR_WEIGHT/sector_totals[sector(ticker)]))*1e8)/1e8
-             for ticker,w in proposed.items()}
-    if require_full and any(x<=0 for x in weights.values()):
-        return None,"ZERO_TARGET_WEIGHT"
-    return weights,"READY_ALL_40" if require_full else "READY"
+    weights={r["ticker"]:math.floor(exposure/n*1e8)/1e8 for r in choices}
+    return weights,"READY"
 
 def new_state():
     return {"schema_version":"1.0","mode":"PAPER_ONLY","live_enabled":False,
