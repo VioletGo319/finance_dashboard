@@ -34,28 +34,51 @@ def valid_close(row,signal_day):
         return None
     return float(price)
 
-def target_weights(ranked,quotes,vix_close,price_day):
-    """Point-in-time screen ONLY; never use current values for historical PnL."""
+def target_weights(ranked,quotes,vix_close,price_day,require_full=False):
+    """All 40 participate when the verified 40-name candidate file is provided.
+
+    Never make up prices. Any missing/aged actual close blocks a 40-name
+    portfolio instead of pretending an estimated price could fill an order.
+    """
     exposure=vix_target_exposure(vix_close)
     if exposure is None:return None,"VIX_UNAVAILABLE"
     if exposure==0:return {},"CASH_BY_VIX"
-    choices=[];counts={}
+    if require_full and (len(ranked)!=40 or len({r.get("ticker") for r in ranked})!=40):
+        return None,"INCOMPLETE_40_STOCK_UNIVERSE"
+    choices=[];unpriced=[]
     for row in ranked:
-        if not row.get("rank_eligible"):continue
         symbol=row.get("ticker")
-        if not symbol or valid_close(quotes.get(symbol,{}),price_day) is None:continue
-        group=sector(symbol)
-        if counts.get(group,0)>=3:continue
-        choices.append(symbol);counts[group]=counts.get(group,0)+1
-        if len(choices)>=8:break
-    if len(choices)<5:return None,"INSUFFICIENT_RANKED_LIQUID_NAMES"
-    # Respect each name <=15%, sector <=40%. Unallocated budget remains cash.
-    proposed={s:exposure/len(choices) for s in choices}
-    group_totals={}
-    for s,w in proposed.items():group_totals[sector(s)]=group_totals.get(sector(s),0)+w
-    weights={s:math.floor(min(w,MAX_NAME_WEIGHT,w*min(1.0,MAX_SECTOR_WEIGHT/group_totals[sector(s)]))*1e8)/1e8
-             for s,w in proposed.items()}
-    return weights,"READY"
+        if not symbol:continue
+        if require_full:
+            if not isinstance(row.get("research_score"),(float,int)):
+                return None,"MISSING_RESEARCH_SCORE"
+        elif not row.get("rank_eligible"):
+            continue
+        if valid_close(quotes.get(symbol,{}),price_day) is None:
+            unpriced.append(symbol)
+            continue
+        choices.append(row)
+        if not require_full and len(choices)>=8:break
+    if require_full and unpriced:return None,"UNPRICED_STOCKS:"+",".join(sorted(unpriced))
+    if len(choices)<(40 if require_full else 5):
+        return None,"INSUFFICIENT_TRADEABLE_STOCKS"
+    # Broad positive allocation to every eligible stock. Estimated research
+    # scores only supply a modest positive tilt and cannot force exclusion.
+    n=len(choices)
+    strengths=[max(0.1,min(2.0,1+(float(r.get("research_score",50))-50)/100))
+               for r in choices]
+    total_strength=sum(strengths)
+    proposed={r["ticker"]:exposure*(.70/n+.30*strengths[i]/total_strength)
+              for i,r in enumerate(choices)}
+    sector_totals={}
+    for ticker,w in proposed.items():
+        sector_totals[sector(ticker)]=sector_totals.get(sector(ticker),0)+w
+    weights={ticker:math.floor(min(w,MAX_NAME_WEIGHT,
+                       w*min(1,MAX_SECTOR_WEIGHT/sector_totals[sector(ticker)]))*1e8)/1e8
+             for ticker,w in proposed.items()}
+    if require_full and any(x<=0 for x in weights.values()):
+        return None,"ZERO_TARGET_WEIGHT"
+    return weights,"READY_ALL_40" if require_full else "READY"
 
 def new_state():
     return {"schema_version":"1.0","mode":"PAPER_ONLY","live_enabled":False,
@@ -143,7 +166,24 @@ def update_paper_state(previous,quant,quotes,price_day):
         state["status"]="HALTED_DATE_REGRESSION"
         return state
     if state.get("last_price_day")==price_day:
-        return state  # replay-safe on repeated nightly refresh
+        # Upgrade an unfilled legacy 8-name proposal in place, never re-fill it.
+        universe=quant.get("autonomous_universe") or {}
+        candidates=universe.get("candidates") or []
+        old=state.get("pending")
+        if (len(candidates)==40 and old and old.get("signal_day")==price_day
+            and not state.get("shares") and len(old.get("weights",{}))<40):
+            new,reason=target_weights(candidates,quotes,
+                 quant.get("vix_trigger_policy",{}).get("latest_vix_close"),
+                 price_day,require_full=True)
+            if new is not None and len(new)==40:
+                old["weights"]=new
+                old["estimated_notional"]=round(state["equity"]*sum(new.values()),4)
+                old["status"]="AWAITING_NEXT_COMPLETED_CLOSE"
+                state["candidate_universe_count"]=40
+                state["allocation_method"]="40_STOCK_BROAD_DIVERSIFIED"
+                _log(state,price_day,"UNFILLED_ORDER_UPGRADED_TO_40",
+                     actual_fill_count=0,estimated_factor_scores=True)
+        return state  # no same-day execution; only the unfilled plan can migrate
     vix=quant.get("vix_trigger_policy",{})
     vix_date=vix.get("latest_vix_date")
     vix_close=vix.get("latest_vix_close")
@@ -157,7 +197,13 @@ def update_paper_state(previous,quant,quotes,price_day):
     if nav is None:
         state["status"]="HALTED_MISSING_POSITION_PRICE"
         return state
-    weights,reason=target_weights(quant.get("screener",{}).get("ranked",[]),quotes,vix_close,price_day)
+    candidate_rows=(quant.get("autonomous_universe") or {}).get("candidates")
+    full_universe=bool(candidate_rows)
+    weights,reason=target_weights(candidate_rows if full_universe else
+          quant.get("screener",{}).get("ranked",[]),
+          quotes,vix_close,price_day,require_full=full_universe)
+    state["candidate_universe_count"]=len(candidate_rows) if full_universe else None
+    state["allocation_method"]="40_STOCK_BROAD_DIVERSIFIED" if full_universe else "LEGACY_8_STOCK"
     if weights is None:
         state["status"]="HALTED_"+reason
         _log(state,price_day,"NO_ORDER",reason=reason)
@@ -172,6 +218,8 @@ def update_paper_state(previous,quant,quotes,price_day):
         state["pending"]={"signal_day":price_day,"weights":weights,
                           "target_stock_exposure":exposure,"vix":vix_close,
                           "estimated_notional":round(nav*sum(weights.values()),4),
+                          "candidate_count":state["candidate_universe_count"],
+                          "estimated_factor_scores":full_universe,
                           "status":"AWAITING_NEXT_COMPLETED_CLOSE"}
         state["last_allocation_month"]=price_day[:7]
         state["last_target_exposure"]=exposure
@@ -188,7 +236,8 @@ def update_paper_state(previous,quant,quotes,price_day):
       "max_sector_weight":MAX_SECTOR_WEIGHT,"max_gross_stock_exposure":MAX_STOCK_EXPOSURE,
       "maximum_price_staleness_days":MAX_PRICE_STALENESS_DAYS,
       "transaction_cost_bps_per_side":ONE_WAY_COST_BPS,
-      "cash_interest":0,"margin":False,"short_selling":False}
+      "cash_interest":0,"margin":False,"short_selling":False,
+      "execution_price_imputation":False,"candidate_pool_target":40}
     state["paper_only_notice"]="Simulated at observed completed market closes, not broker fills. No live order API, no real funds or account connected."
     return state
 
