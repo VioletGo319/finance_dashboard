@@ -153,5 +153,15 @@
     "remainder": "Redistribute capped excess to eligible stocks in score-proportional weights",
     "execution_prices": "Observed closes only; no estimated executions",
     "historical_validation": "Not backtested with historical investability scores"
+  },
+  "forward_performance": {
+    "status": "INSUFFICIENT_OBSERVED_PAPER_SESSIONS",
+    "observed_sessions": 1,
+    "minimum_return_sessions": 30,
+    "sharpe_rf0": null,
+    "max_drawdown": null,
+    "observed_total_return": null,
+    "cagr_annualized": null,
+    "source": "paper ledger future completed closes only"
   }
 }
