@@ -72,7 +72,8 @@ function factorDetail(row){
  d.innerHTML='<div class="q-insight"><strong>'+esc(row.ticker)+' · '+(row.investability_score==null?"N/A":fmt(row.investability_score)+'/100')+'</strong>'
   +'<div class="q-muted">'+esc(row.rank_eligible?t("audit_statusCurrent"):t("audit_statusInsufficient"))+' · '+pc(row.factor_coverage,0)+'</div></div>'
   +'<div style="margin-top:8px">'+columns+'</div>'
-  +'<div class="q-metric"><span>'+esc(t("period"))+'</span><span>'+esc(row.revenue_filed||"N/A")+'</span></div>'
+  +'<div class="q-metric"><span>'+esc(t("scenario_fyEnd"))+'</span><span>'+esc(row.revenue_fy_end||"N/A")+'</span></div>'
+  +'<div class="q-metric"><span>'+esc(t("scenario_filed"))+'</span><span>'+esc(row.revenue_filed||"N/A")+'</span></div>'
   +'<div class="q-metric"><span>'+esc(t("source"))+'</span><span>'+link(row.fundamental_source,"SEC ↗")+'</span></div>'
   +'<div class="q-note">'+esc(t("sourceWarning"))+'</div>';
 }
@@ -118,6 +119,14 @@ function backtestValidationView(q){
   +names.map(k=>'<div class="q-validation-row"><span>'+esc(t("validation_"+k))+'</span><span>'+esc(t("validation_status"))+'</span></div>').join('')
   +'<p class="q-note">'+esc(t("validation_warning"))+'</p></section>';
 }
+const scenarioUi={"en":{"backWindow":"Backtest window","fyEnd":"FY ended","filed":"SEC filing date","revenueCovered":"SEC annual revenue available","factorCoverage":"Supplier evidence factor coverage (weighted mean)","completeFactor":"Complete six-factor Alpha","provisionalFactor":"Exploratory six-factor scores","priceData":"Observed latest stock closes","coverageWarning":"Market or financial-field coverage is not supply-chain evidence completeness.","selectionNote":"Selected stock","monthly":"Monthly top {n}","weight":"equal weight","vixOn":"VIX exposure trigger on","vixOff":"VIX trigger off","sector":"max 3 per sector","bps":"bps per side","lag":"following-session close execution","dataStatus":"Data status","riskNote":"Research diagnostic only: historical pool, split/dividend reconciliation and walk-forward checks remain unverified."},"zh-CN":{"backWindow":"回测时间区间","fyEnd":"财年结束日期","filed":"SEC 财报申报日期","revenueCovered":"SEC 年度营收字段覆盖","factorCoverage":"供应链证据因子平均覆盖率","completeFactor":"完整六因子正式评分","provisionalFactor":"探索性六因子评分 †","priceData":"真实最新股票收盘价覆盖","coverageWarning":"行情或财务字段覆盖率不等于供应链证据完整度；探索性评分也不代表六因子全部核实。","selectionNote":"当前选中股票","monthly":"每月排名前 {n} 只","weight":"等权配置","vixOn":"启用 VIX 仓位调整","vixOff":"未启用 VIX 仓位调整","sector":"单板块最多 3 只","bps":"单边交易基点","lag":"次交易日收盘价模拟执行","dataStatus":"数据状态","riskNote":"仅供研究诊断：历史股票池、拆股分红及复权核对、滚动样本外验证仍未完成。"},"fr":{"backWindow":"Période du backtest","fyEnd":"Exercice clos le","filed":"Dépôt SEC","revenueCovered":"Revenu annuel SEC disponible","factorCoverage":"Couverture des preuves de chaîne (moyenne)","completeFactor":"Alpha six facteurs complet","provisionalFactor":"Scores exploratoires","priceData":"Clôtures observées","coverageWarning":"La couverture des prix ou données financières ne démontre pas la complétude des preuves.","selectionNote":"Titre sélectionné","monthly":"Top {n} mensuel","weight":"pondération égale","vixOn":"VIX activé","vixOff":"VIX désactivé","sector":"max. 3 par secteur","bps":"pb par sens","lag":"exécution simulée à la clôture suivante","dataStatus":"Statut","riskNote":"Diagnostic exploratoire : univers historique, splits/dividendes et walk-forward non vérifiés."},"es":{"backWindow":"Período del backtest","fyEnd":"Cierre del ejercicio","filed":"Presentación SEC","revenueCovered":"Ingresos anuales SEC","factorCoverage":"Cobertura media de pruebas de cadena","completeFactor":"Alfa completo de seis factores","provisionalFactor":"Puntuaciones exploratorias","priceData":"Cierres observados","coverageWarning":"La cobertura de precios o datos financieros no equivale a evidencia completa de la cadena.","selectionNote":"Acción seleccionada","monthly":"Top {n} mensual","weight":"igual ponderación","vixOn":"VIX activo","vixOff":"VIX desactivado","sector":"máx. 3 por sector","bps":"pb por lado","lag":"ejecución simulada al cierre siguiente","dataStatus":"Estado","riskNote":"Diagnóstico exploratorio: universo histórico, ajustes y walk-forward pendientes."},"ja":{"backWindow":"バックテスト期間","fyEnd":"対象会計年度末","filed":"SEC提出日","revenueCovered":"SEC年次売上データ","factorCoverage":"サプライチェーン証拠の平均カバー率","completeFactor":"正式6因子スコア","provisionalFactor":"暫定6因子スコア","priceData":"実際の終値データ","coverageWarning":"価格や財務データのカバー率は供給関係の証拠網羅率ではありません。","selectionNote":"選択銘柄","monthly":"月次上位{n}銘柄","weight":"均等配分","vixOn":"VIX有効","vixOff":"VIX無効","sector":"業種上限3銘柄","bps":"片道bp","lag":"翌取引日終値で仮想約定","dataStatus":"データ状態","riskNote":"研究診断のみ。過去の構成銘柄、配当・分割調整、ウォークフォワードは未検証です。"}};
+for(const [lang,vals] of Object.entries(scenarioUi))Object.assign(locales[lang],Object.fromEntries(Object.entries(vals).map(([k,v])=>["scenario_"+k,v])));
+function scenarioDescription(back,key){
+ const n=Number.isInteger(back?.top_n)?back.top_n:Number(/Top (\d+)/.exec(key)?.[1]||8);
+ const active=Boolean(back?.vix_trigger_enabled??key.includes("VIX Trigger"));
+ return [t("scenario_monthly").replace("{n}",n),t("scenario_weight"),t("scenario_sector"),
+         String(back?.one_way_bps??10)+" "+t("scenario_bps"),active?t("scenario_vixOn"):t("scenario_vixOff"),t("scenario_lag")].join(" · ");
+}
 function renderShell(){
  const q=data||{},sc=q.screener||{},available=q.backtest_scenarios||{};
  if(!available[selectedScenario])selectedScenario="1Y · Top 8 · 10 bps";
@@ -127,6 +136,16 @@ function renderShell(){
  const vixp=q.vix_trigger_policy||{};
  const m=back.metrics||{},bm=back.benchmarks?.QQQ||{},secs=q.fundamentals_coverage||{};
  const validity=back.status==="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC";
+ const visibleQuantRows=(sc.ranked||[]).filter(x=>(!showOnly||x.rank_eligible) && (
+   quantCoverageFilter==="all"||(quantCoverageFilter==="high"&&x.factor_coverage>=.75)||
+   (quantCoverageFilter==="mid"&&x.factor_coverage>=.5&&x.factor_coverage<.75)||
+   (quantCoverageFilter==="low"&&x.factor_coverage<.5)));
+ if(!visibleQuantRows.some(x=>x.ticker===selectedQuantTicker))
+   selectedQuantTicker=visibleQuantRows.find(x=>x.rank_eligible)?.ticker||visibleQuantRows[0]?.ticker||null;
+ function selectedFYEnd(){
+   return (sc.ranked||[]).find(x=>x.ticker===selectedQuantTicker)?.revenue_fy_end||null;
+ }
+ 
  const main=window.M7_LIVE_DATA||{};
  const sameSupplierVersion=Boolean(q.source_snapshot?.fingerprint &&
     main.quant_source_fingerprint===q.source_snapshot.fingerprint &&
@@ -155,7 +174,7 @@ function renderShell(){
   +metric(t("cagr"),pc(m.cagr_annualized),t("trailing")+": "+esc(back.start_date||"N/A")+" → "+esc(back.end_date||"N/A"))
   +metric(t("sharpe"),fmt(m.sharpe_rf0),t("priceOnly"))
   +metric(t("drawdown"),pc(m.max_drawdown),t("validation"))+'</div>'
-  +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("benchmark"))+'</h3><p>'+esc(t("strategy"))+'</p></div><div class="q-actions"><button id="qChartNav" aria-pressed="true" class="q-action">'+esc(t("equity"))+'</button><button id="qChartDD" aria-pressed="false" class="q-action">'+esc(t("draw"))+'</button></div></div>'
+  +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("benchmark"))+'</h3><p id="qStrategyDescription">'+esc(scenarioDescription(back,selectedScenario))+'</p></div><div class="q-actions"><button id="qChartNav" aria-pressed="true" class="q-action">'+esc(t("equity"))+'</button><button id="qChartDD" aria-pressed="false" class="q-action">'+esc(t("draw"))+'</button></div></div>'
   +'<div class="q-body q-group"><label class="q-note" for="qScenario">'+esc(t("scenario"))+'</label><select id="qScenario" class="pick">'+Object.keys(q.backtest_scenarios||{}).map(k=>'<option value="'+esc(k)+'" '+(k===selectedScenario?'selected':'')+'>'+esc(k)+'</option>').join('')+'</select><span class="q-note">'+esc(t("rankWarning"))+'</span></div>'
   +'<div class="q-chart" id="qChart"><div class="q-empty">'+esc(t("loading"))+'</div></div><div class="q-legend"><span><i style="background:#64e3cf"></i>'+esc(t("vixMode"))+'</span><span><i style="background:#c8a2ff"></i>'+esc(t("vixBase"))+'</span><span><i style="background:#82b2ff"></i>QQQ</span><span><i style="background:#ebb67d"></i>XLK</span></div></div>'
   +'<div class="q-two"><div class="q-panel"><div class="q-head"><div><h3>'+esc(t("perf"))+'</h3><p>'+esc(t("backtest"))+'</p></div></div><div class="q-body" id="qMetrics"></div></div>'
@@ -168,7 +187,7 @@ function renderShell(){
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("sensitivity"))+'</h3></div></div><div class="q-body" id="qScenarioMatrix"></div></div></div>'
   +'<div class="q-two"><div class="q-panel"><div class="q-head"><div><h3>'+esc(t("month"))+'</h3></div></div><div class="q-body" id="qMonthly"></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("trades"))+'</h3></div></div><div class="q-scroll" id="qTrades"></div></div></div>'
-  +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("method"))+'</h3></div></div><div class="q-body"><div class="q-formula">Investability = 0.30×Supply Alpha† + 0.20×Market Monitor + 0.20×Revenue Growth + 0.15×Inverse P/S + 0.05×Size + 0.10×Inverse Volatility<br>Eligibility: ≥ 75% weighted data coverage + ≥ 1 fundamental component</div><p class="q-note">'+esc(t("sourceWarning"))+'</p><p class="q-note">'+esc(t("sourceData"))+'</p><p class="q-note">'+esc(t("risk"))+': '+esc((back.limitations||[]).join(" | "))+'</p>'+backtestValidationView(q)+'</div></div>'
+  +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("method"))+'</h3></div></div><div class="q-body"><div class="q-formula">Investability = 0.30×Supply Alpha† + 0.20×Market Monitor + 0.20×Revenue Growth + 0.15×Inverse P/S + 0.05×Size + 0.10×Inverse Volatility<br>Eligibility: ≥ 75% weighted data coverage + ≥ 1 fundamental component</div><p class="q-note">'+esc(t("sourceWarning"))+'</p><p class="q-note">'+esc(t("sourceData"))+'</p><p class="q-note">'+esc(t("risk"))+': '+esc(L()==="en"?(back.limitations||[]).join(" | "):t("scenario_riskNote"))+'</p>'+backtestValidationView(q)+'</div></div>'
   +'</div>';
  renderAutonomous();
  const row=(k,v)=>'<div class="q-metric"><span>'+esc(t(k))+'</span><span>'+esc(v)+'</span></div>';
@@ -207,21 +226,27 @@ function renderShell(){
   row("tradeCost",fmt(m.total_transaction_cost_bps,1)+" bps"),row("positive",pc(m.positive_day_rate)),row("days",String(m.days||"N/A")),
  ].join("");
  document.getElementById("qCoverage").innerHTML=[
-  row("coverage",(secs.fiscal_revenue??0)+"/40"),
+  row("scenario_priceData",String(Object.values(mainSupplierByTicker).filter(x=>x?.close!=null).length)+"/40"),
+  row("scenario_revenueCovered",(secs.fiscal_revenue??0)+"/40"),
+  row("scenario_factorCoverage",pc(Object.values(mainSupplierByTicker).reduce((v,x)=>v+(typeof x?.coverage==="number"?x.coverage:0),0)/Math.max(1,Object.keys(mainSupplierByTicker).length))),
+  row("scenario_completeFactor",String(Object.values(mainSupplierByTicker).filter(x=>x?.alpha!=null).length)+"/40"),
+  row("scenario_provisionalFactor",String(Object.values(mainSupplierByTicker).filter(x=>x?.provisional_alpha!=null).length)+"/40"),
   row("eligible",(sc.eligible_count??0)+"/40"),
-  row("period",(back.start_date||"N/A")+" → "+(back.end_date||"N/A")),
+  row("scenario_backWindow",(back.start_date||"N/A")+" → "+(back.end_date||"N/A")),
+  row("period",'<span id="qFiscalPeriod">'+esc(selectedQuantTicker||"N/A")+' · '+esc(selectedFYEnd()||"N/A")+'</span>'),
   row("priceOnly",localStatus(back.status)),
- ].join("")+'<div style="margin-top:13px" class="q-insight">'+esc(t("preview"))+'<br>'+esc(t("sourceWarning"))+'</div>';
+ ].join("")+'<div style="margin-top:13px" class="q-insight">'+esc(t("scenario_coverageWarning"))+'</div>';
  const rank=(sc.ranked||[]).filter(x=>(!showOnly||x.rank_eligible) && (
   quantCoverageFilter==="all"||
   (quantCoverageFilter==="high"&&x.factor_coverage>=.75)||
   (quantCoverageFilter==="mid"&&x.factor_coverage>=.5&&x.factor_coverage<.75)||
   (quantCoverageFilter==="low"&&x.factor_coverage<.5)));
+ if(!rank.some(x=>x.ticker===selectedQuantTicker))selectedQuantTicker=rank.find(x=>x.rank_eligible)?.ticker||rank[0]?.ticker||null;
  const byTicker=mainSupplierByTicker;
  document.getElementById("qRanking").innerHTML=rank.map(x=>{
   const ticker=x.ticker;
   const row=sameSupplierVersion?(byTicker[ticker]||{}):{};
-  return '<tr data-q-ticker="'+esc(ticker)+'" title="'+esc(localStatus(x.status))+'" tabindex="0" role="button" style="cursor:pointer"><td><strong>'+esc(ticker)+'</strong></td>'
+  return '<tr data-q-ticker="'+esc(ticker)+'" class="'+(ticker===selectedQuantTicker?'q-selected':'')+'" aria-selected="'+(ticker===selectedQuantTicker)+'" title="'+esc(localStatus(x.status))+'" tabindex="0" role="button" style="cursor:pointer"><td><strong>'+esc(ticker)+'</strong></td>'
    +'<td>'+(x.rank?'<span class="q-tag ok">'+esc(x.rank)+" · "+fmt(x.investability_score)+'</span>':'<span class="q-tag warm">'+esc(t("unranked"))+'</span>')+'</td>'
    +'<td>'+pc(x.factor_coverage,0)+'</td>'
    +'<td class="q-number">'+fmt(row.close??null)+'</td>'
@@ -238,13 +263,19 @@ function renderShell(){
  document.getElementById("qScenarioMatrix").innerHTML=Object.keys(scenarios).length
   ?Object.entries(scenarios).map(([k,v])=>'<div class="q-metric"><span>'+esc(k)+'</span><span>'+esc(t("impact"))+': '+pc(v.metrics?.total_return)+' · Sharpe '+fmt(v.metrics?.sharpe_rf0)+'</span></div>').join('')
   :'<div class="q-empty">'+esc(t("none"))+'</div>';
- if(!selectedQuantTicker)selectedQuantTicker=rank.find(x=>x.rank_eligible)?.ticker||rank[0]?.ticker||null;
- const shown=(sc.ranked||[]).find(x=>x.ticker===selectedQuantTicker)||rank[0];
+ const shown=rank.find(x=>x.ticker===selectedQuantTicker)||rank[0];
  factorDetail(shown);
  document.querySelectorAll("#qRanking [data-q-ticker]").forEach(tr=>tr.addEventListener("click",e=>{
    if(e.target.closest("a"))return;
    selectedQuantTicker=tr.dataset.qTicker;
    factorDetail((sc.ranked||[]).find(x=>x.ticker===selectedQuantTicker));
+   document.querySelectorAll("#qRanking [data-q-ticker]").forEach(el=>{
+     const selected=el.dataset.qTicker===selectedQuantTicker;
+     el.classList.toggle("q-selected",selected);
+     el.setAttribute("aria-selected",String(selected));
+   });
+   const fy=document.getElementById("qFiscalPeriod");
+   if(fy)fy.textContent=selectedQuantTicker+" · "+(selectedFYEnd()||"N/A");
  }));
  document.querySelectorAll("#qRanking [data-q-ticker]").forEach(tr=>tr.addEventListener("keydown",e=>{
    if(e.key==="Enter"||e.key===" "){e.preventDefault();tr.click();}
