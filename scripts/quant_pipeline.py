@@ -183,7 +183,7 @@ def build_quant(result,quotes,as_of,write=True):
     if backtest.get("status")=="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
         portfolio_status="HISTORICAL_PRICE_ONLY_RESEARCH_DIAGNOSTIC"
     else:portfolio_status="NOT_COMPUTABLE"
-    payload={"schema_version":"1.5","as_of":as_of,
+    payload={"schema_version":"1.6","as_of":as_of,
         "generated_at_utc":datetime.now(timezone.utc).isoformat(),
         "universe":tickers,"fundamental_audit":audit,
         "source_snapshot":{
