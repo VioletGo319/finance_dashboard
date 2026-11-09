@@ -45,7 +45,7 @@ def valid_close(row,signal_day):
     return float(price)
 
 def investability_weights(candidates,exposure):
-    """Bounded softmax of evidence-adjusted scores + a positive 40-name floor.
+    """Bounded softmax of evidence-adjusted scores + positive eligible-name floor.
 
     Full investment is redistributed after single-name (15% of NAV) and
     sector (40% of NAV) caps. No ad hoc security price interpolation.
@@ -54,7 +54,7 @@ def investability_weights(candidates,exposure):
     """
     if not (0<exposure<=MAX_STOCK_EXPOSURE):return None
     n=len(candidates)
-    if n!=40:return None
+    if n<10 or n>40:return None  # Late-listed securities enter only after valid history
     scores=[]
     names=[]
     for row in candidates:
