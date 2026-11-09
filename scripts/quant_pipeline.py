@@ -2,7 +2,7 @@
 from __future__ import annotations
 from datetime import date,datetime,timedelta,timezone
 from pathlib import Path
-import json,os
+import json,os,hashlib
 try:
     from scripts.quant_fundamentals import gather_fundamentals
     from scripts.forty_backtest import simulate_forty_price_only
@@ -18,6 +18,16 @@ except ModuleNotFoundError:
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/"data"/"quant"
+
+def supplier_snapshot_fingerprint(result):
+    """Stable cross-page check of the same sourced supplier snapshot."""
+    rows=[(r.get("ticker"),r.get("alpha"),r.get("provisional_alpha"),
+           r.get("coverage"),r.get("monitor_score"),r.get("price_date"))
+          for r in sorted(result.get("suppliers",[]),key=lambda r:r.get("ticker",""))]
+    payload={"as_of":result.get("as_of"),"price_date":result.get("price_date"),
+             "model_version":result.get("model_version"),"rows":rows}
+    raw=json.dumps(payload,sort_keys=True,separators=(",",":"),ensure_ascii=False)
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 def load_cached(cutoff):
     file=BASE/"fundamentals_cache.json"
@@ -66,10 +76,11 @@ def prospectively_select(ranked,price_date,as_of):
         if counts.get(sector,0)>=3:continue
         chosen.append(t);counts[sector]=counts.get(sector,0)+1
         if len(chosen)==8:break
-    return {"status":"SIGNAL_ONLY_EXECUTION_NOT_YET_OBSERVED" if chosen else "INSUFFICIENT_ELIGIBLE_RANKS",
+    return {"status":"ARCHIVED_8_NAME_NON_EXECUTABLE",
+      "strategy_id":"LEGACY_8_NAME_SCREEN_ARCHIVED","display_in_active_portfolio":False,
       "signal_as_of":as_of,"signal_last_completed_price_date":price_date,
       "first_eligible_execution":"next completed US session close after signal snapshot; not a filled order",
-      "rebalancing":"monthly by current SEC+Alpha screening (full historical backtest not available)",
+      "rebalancing":"ARCHIVED reference only; never executable",
       "one_way_assumed_fee_bps":10,
       "selected":chosen,"target_weights":{t:round(1/len(chosen),6) for t in chosen} if chosen else {},
       "observed_forward_returns":None,
@@ -77,6 +88,14 @@ def prospectively_select(ranked,price_date,as_of):
 
 def build_quant(result,quotes,as_of,write=True):
     tickers=[r["ticker"] for r in result.get("suppliers",[])]
+    fingerprint=supplier_snapshot_fingerprint(result)
+    result["quant_source_fingerprint"]=fingerprint
+    source_alpha_by_ticker={
+       row["ticker"]:{
+          "alpha":row.get("alpha"),"provisional_alpha":row.get("provisional_alpha"),
+          "coverage":row.get("coverage"),"monitor_score":row.get("monitor_score"),
+          "price_date":row.get("price_date"),"as_of":result.get("as_of")}
+       for row in result.get("suppliers",[])}
     facts,audit=collect_fundamentals(tickers,as_of)
     meta={}
     for row in result.get("suppliers",[]):
@@ -163,9 +182,15 @@ def build_quant(result,quotes,as_of,write=True):
     if backtest.get("status")=="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
         portfolio_status="HISTORICAL_PRICE_ONLY_RESEARCH_DIAGNOSTIC"
     else:portfolio_status="NOT_COMPUTABLE"
-    payload={"schema_version":"1.4","as_of":as_of,
+    payload={"schema_version":"1.5","as_of":as_of,
         "generated_at_utc":datetime.now(timezone.utc).isoformat(),
         "universe":tickers,"fundamental_audit":audit,
+        "source_snapshot":{
+          "fingerprint":fingerprint,"as_of":result.get("as_of"),
+          "price_date":result.get("price_date"),
+          "model_version":result.get("model_version"),
+          "score_definition":"Official six-factor Alpha if complete; otherwise provisional six-factor score normalized by available weights. NOT Quant investability percentile."},
+        "source_alpha_by_ticker":source_alpha_by_ticker,
         "autonomous_universe":autonomous_universe,
         "forty_stock_historical_diagnostics":forty_price_diagnostics,
         "forty_stock_weighted_price_diagnostics":forty_score_weighted,
