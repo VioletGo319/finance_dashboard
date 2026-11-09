@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "mode": "PAPER_ONLY",
+  "live_enabled": false,
+  "status": "AWAITING_NEXT_CLOSE",
+  "starting_cash": 1000.0,
+  "cash": 1000.0,
+  "shares": {},
+  "pending": {
+    "signal_day": "2026-11-06",
+    "weights": {
+      "AMD": 0.09375,
+      "CEG": 0.09375,
+      "ANET": 0.09375,
+      "STM": 0.09375,
+      "CRUS": 0.09375,
+      "GLW": 0.09375,
+      "VST": 0.09375,
+      "CLS": 0.09375
+    },
+    "target_stock_exposure": 0.75,
+    "vix": 25.64,
+    "estimated_notional": 750.0,
+    "status": "AWAITING_NEXT_COMPLETED_CLOSE"
+  },
+  "last_price_day": "2026-11-06",
+  "last_allocation_month": "2026-11",
+  "last_target_exposure": 0.75,
+  "last_fill_day": null,
+  "trade_count": 0,
+  "total_fees": 0.0,
+  "equity": 1000.0,
+  "unrealized_pnl": 0.0,
+  "equity_history": [
+    {
+      "date": "2026-11-06",
+      "equity": 1000.0,
+      "cash": 1000.0
+    }
+  ],
+  "audit": [
+    {
+      "date": "2026-11-06",
+      "event": "ORDER_PROPOSED",
+      "target": {
+        "AMD": 0.09375,
+        "CEG": 0.09375,
+        "ANET": 0.09375,
+        "STM": 0.09375,
+        "CRUS": 0.09375,
+        "GLW": 0.09375,
+        "VST": 0.09375,
+        "CLS": 0.09375
+      },
+      "vix": 25.64,
+      "execution": "NEXT_COMPLETED_CLOSE_ONLY"
+    }
+  ],
+  "positions_value": {},
+  "cash_weight": 1.0,
+  "risk_limits": {
+    "max_name_weight": 0.15,
+    "max_sector_weight": 0.4,
+    "max_gross_stock_exposure": 1.0,
+    "maximum_price_staleness_days": 5,
+    "transaction_cost_bps_per_side": 10,
+    "cash_interest": 0,
+    "margin": false,
+    "short_selling": false
+  },
+  "paper_only_notice": "Simulated at observed completed market closes, not broker fills. No live order API, no real funds or account connected."
+}
