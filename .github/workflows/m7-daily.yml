@@ -79,7 +79,7 @@ jobs:
           import json
           from pathlib import Path
           q=json.loads(Path("data/quant/latest.json").read_text())
-          if q.get("schema_version")!="1.2":raise SystemExit("VIX schema 1.2 absent; stale quant export")
+          if q.get("schema_version")!="1.3":raise SystemExit("Autonomous 40-stock schema 1.3 absent; stale quant export")
           p=q.get("vix_trigger_policy") or {}
           if p.get("latest_vix_close") is None:raise SystemExit("VIX source was unavailable; cannot publish VIX trigger")
           print("VIX_POLICY",json.dumps(p,ensure_ascii=False))
