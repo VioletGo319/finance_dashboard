@@ -21,10 +21,12 @@ try:
     from scripts.network import graph_snapshot
     from scripts.enrichment import annual_capex_fallback, disclosed_share_change, monitoring_scores, dataset_health
     from scripts.quant_pipeline import build_quant
+    from scripts.autonomous_paper import persist_paper
 except ModuleNotFoundError:
     from network import graph_snapshot
     from enrichment import annual_capex_fallback, disclosed_share_change, monitoring_scores, dataset_health
     from quant_pipeline import build_quant
+    from autonomous_paper import persist_paper
 TICKERS = tuple(row["ticker"] for row in graph_snapshot()[0]["suppliers"])
 CLIENTS = ("AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA")
 WEIGHTS = {"acceleration": .30, "demand": .25, "tightness": .15, "customer_momentum": .15, "policy": .10, "residual_momentum": .05}
@@ -419,6 +421,13 @@ def main():
     # the original 40-stock supplier dashboard still remains available.
     try:
         quant=build_quant(result,quotes,AS_OF)
+        if quant.get("vix_trigger_policy",{}).get("latest_vix_close") is not None:
+            marks={row["ticker"]:row for row in result.get("suppliers",[])}
+            close_date=quant["vix_trigger_policy"].get("latest_vix_date")
+            paper=persist_paper(quant,marks,close_date,ROOT)
+            result.setdefault("audit",{})["autonomous_paper_status"]=paper.get("status")
+            print("Autonomous paper:",paper.get("status"),"NAV",paper.get("equity"),
+                  "pending",bool(paper.get("pending")),flush=True)
         result.setdefault("audit",{})["quant_status"]=quant["backtest"]["status"]
         result["audit"]["quant_eligible_count"]=quant["screener"]["eligible_count"]
         print("Quant research:",quant["backtest"]["status"],
