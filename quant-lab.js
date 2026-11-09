@@ -87,8 +87,11 @@ ja:{vixTrigger:"VIX逆張りポジション・トリガー",vixClose:"直近VIX�
 for(const [lang,labels] of Object.entries(vixLabels))Object.assign(locales[lang],labels);
 for(const [lang,label] of Object.entries({en:"VIX / stock exposure","zh-CN":"VIX / 股票仓位",fr:"VIX / exposition",es:"VIX / exposición",ja:"VIX / 株式比率"}))locales[lang].vixSignal=label;
 
+const keysAutonomous=["title","subtitle","mode","equity","cash","pnl","fees","pending","positions","audit","empty","notice","phase1","phase2","phase3","phase4","phase5"];
+const autonomousLabels={"en":["Autonomous Trading · Paper Portfolio","Scheduled signal → risk checks → next-close simulated fill","PAPER ONLY · LIVE DISABLED","Account equity","Cash","Paper P/L","Simulated fees","Next-session target allocation","Paper positions","Decision / fill audit","No paper ledger yet. First run proposes orders; a later close can fill them.","This is simulated. No broker connected, no real funds, no live orders.","Market data","VIX & ranking","Risk gate","Paper fill","Audit"],"zh-CN":["自主交易 · 模拟账户","定时信号 → 风控检查 → 下一收盘模拟成交","仅模拟交易 · 实盘禁用","模拟净值","现金","模拟盈亏","模拟手续费","下一交易日目标仓位","模拟持仓","决策 / 成交日志","暂无模拟账本；首次运行生成计划，之后的交易日才能成交。","此模块不连接券商、不使用真实资金，也不会下实盘订单。","市场数据","VIX 与选股","风险检查","模拟成交","审计"],"fr":["Trading autonome · Simulation","Signal → risques → simulation au prochain cours","SIMULATION · RÉEL DÉSACTIVÉ","Capital simulé","Liquidités","Résultat","Frais","Allocation prévue","Positions","Journal d'audit","Aucun compte simulé pour le moment","Aucun courtier ni ordre réel.","Marché","VIX","Risques","Simulation","Audit"],"es":["Trading autónomo · Simulación","Señal → riesgo → simulación a cierre siguiente","SIMULACIÓN · REAL DESACTIVADO","Capital simulado","Efectivo","Beneficio","Comisiones","Asignación prevista","Posiciones","Registro de auditoría","Todavía no hay cartera simulada","Sin bróker ni órdenes reales.","Mercado","VIX","Riesgo","Simulación","Auditoría"],"ja":["自動売買 · 仮想口座","シグナル → リスク確認 → 翌終値で仮想約定","仮想売買のみ · 実売買不可","口座残高","現金","損益","手数料","次回の目標保有比率","仮想保有","監査記録","仮想口座データはまだありません","証券会社未接続、実際の注文なし。","市場","VIX","リスク","仮想約定","監査"]};
+for(const [lang,labels] of Object.entries(autonomousLabels))keysAutonomous.forEach((k,i)=>{locales[lang]['autonomous_'+k]=labels[i]});
 let selectedScenario="1Y · VIX Trigger · Top 8 · 10 bps";
-let data=null,showOnly=false,chartMode="nav",seriesActive={strategy:true,spy:true,xlk:true};
+let paperState=null,data=null,showOnly=false,chartMode="nav",seriesActive={strategy:true,spy:true,xlk:true};
 function L(){return (window.M7_I18N&&window.M7_I18N.language)||"en";}
 function t(k){return (locales[L()]||locales.en)[k]||locales.en[k]||k;}
 function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
@@ -109,6 +112,7 @@ function renderShell(){
  host.innerHTML='<div class="q-root">'
   +'<div class="q-hero"><div><div class="q-eyebrow">'+esc(t("lab"))+'</div><h2>'+esc(t("title"))+'</h2><div class="q-muted">'+esc(t("subtitle"))+'</div><div class="q-pills" style="margin-top:12px"><span>'+esc(t("screenOnly"))+'</span><span>'+esc(t("backtestOnly"))+'</span><span>'+esc(q.as_of||"N/A")+'</span></div></div><div class="q-actions"><button id="qRefresh" class="q-action">'+esc(t("refresh"))+'</button><div class="q-status">'+esc(t("statusLine"))+': '+esc(q.fundamental_audit?.status||"N/A")+'</div></div></div>'
   +'<div class="q-alert">'+esc(t("notTested"))+' · '+esc(t("caveat"))+'</div>'
+   +'<div class="q-panel q-autonomy"><div class="q-head"><div><h3>'+esc(t("autonomous_title"))+'</h3><p>'+esc(t("autonomous_subtitle"))+'</p></div><span class="q-tag ok">'+esc(t("autonomous_mode"))+'</span></div><div class="q-body"><div class="q-auto-flow">'+[1,2,3,4,5].map((i)=>'<span>'+i+' · '+esc(t("autonomous_phase"+i))+'</span>').join('')+'</div><div id="qAutonomous"></div><p class="q-note">'+esc(t("autonomous_notice"))+'</p></div></div>'
    +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("vixTrigger"))+'</h3><p>'+esc(t("vixCaution"))+'</p></div></div><div class="q-body"><div class="q-kpis">'+metric(t("vixClose"),fmt(vixp.latest_vix_close),esc(vixp.latest_vix_date||"N/A")+' · '+esc(vixp.source_provider||""))+metric(t("vixTarget"),pc(vixp.next_target_stock_exposure),t("vixHold")+": "+pc(typeof vixp.next_target_stock_exposure==="number"?1-vixp.next_target_stock_exposure:null))+'</div><div class="q-pills">'+(vixp.bands||[]).map(b=>'<span>VIX '+esc(b.vix)+' → '+pc(b.exposure)+'</span>').join('')+'</div><p class="q-note">'+esc(vixp.execution||"")+' · '+link(vixp.source,"VIX source")+'</p><div id="qVixCompare"></div></div></div>'
   +'<div class="q-kpis">'+metric(t("return"),pc(m.total_return),"Strategy")
   +metric(t("cagr"),pc(m.cagr_annualized),t("trailing")+": "+esc(back.start_date||"N/A")+" → "+esc(back.end_date||"N/A"))
@@ -129,6 +133,7 @@ function renderShell(){
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("trades"))+'</h3></div></div><div class="q-scroll" id="qTrades"></div></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("method"))+'</h3></div></div><div class="q-body"><div class="q-formula">Investability = 0.30×Supply Alpha† + 0.20×Market Monitor + 0.20×Revenue Growth + 0.15×Inverse P/S + 0.05×Size + 0.10×Inverse Volatility<br>Eligibility: ≥ 75% weighted data coverage + ≥ 1 fundamental component</div><p class="q-note">'+esc(t("sourceWarning"))+'</p><p class="q-note">'+esc(t("sourceData"))+'</p><p class="q-note">'+esc(t("risk"))+': '+esc((back.limitations||[]).join(" | "))+'</p></div></div>'
   +'</div>';
+ renderAutonomous();
  const row=(k,v)=>'<div class="q-metric"><span>'+esc(t(k))+'</span><span>'+esc(v)+'</span></div>';
  document.getElementById("qVixCompare").innerHTML='<div class="q-note">'+esc(t("vixCompare"))+' ('+esc(horizon)+')</div>'+
   [row("vixVReturn",pc(vixBack.metrics?.total_return)),row("vixBReturn",pc(baseBack.metrics?.total_return)),
@@ -233,6 +238,35 @@ function drawChart(){
  area?.addEventListener("pointermove",show);area?.addEventListener("pointerleave",()=>{tip.hidden=true});
  for(const key of ["qChartNav","qChartDD"]){const el=document.getElementById(key);if(el)el.setAttribute("aria-pressed",String((key==="qChartNav")===(chartMode==="nav")));}
 }
+
+function autoMoney(v){return typeof v==="number"&&Number.isFinite(v)?"$"+v.toLocaleString(L(),{minimumFractionDigits:2,maximumFractionDigits:2}):"N/A";}
+function renderAutonomous(){
+ const el=document.getElementById("qAutonomous");if(!el)return;
+ const a=paperState;if(!a){el.innerHTML='<div class="q-empty">'+esc(t("autonomous_empty"))+'</div>';return;}
+ const pending=a.pending||{},weights=pending.weights||{},positions=a.positions_value||{},log=(a.audit||[]).slice(-10).reverse();
+ const cells=(items,formatter)=>Object.entries(items).map(([k,v])=>'<tr><td>'+esc(k)+'</td><td>'+formatter(v)+'</td></tr>').join('');
+ const mini=(title,rows)=>'<div><h4>'+esc(title)+'</h4><div class="q-scroll"><table class="q-table"><tbody>'+ (rows||'<tr><td>—</td></tr>')+'</tbody></table></div></div>';
+ el.innerHTML='<div class="q-auto-kpis">'
+  +metric(t("autonomous_equity"),autoMoney(a.equity),esc(a.last_price_day||""))
+  +metric(t("autonomous_cash"),autoMoney(a.cash),t("autonomous_mode"))
+  +metric(t("autonomous_pnl"),autoMoney(a.unrealized_pnl),"vs $1,000")
+  +metric(t("autonomous_fees"),autoMoney(a.total_fees),esc(a.trade_count||0)+" simulated fills")+'</div>'
+  +'<div class="q-status q-auto-state">'+esc(a.status)+' · '+esc(pending.signal_day||a.last_price_day||"N/A")+'</div>'
+  +'<div class="q-two">'+mini(t("autonomous_pending"),cells(weights,pc))+mini(t("autonomous_positions"),cells(positions,autoMoney))+'</div>'
+  +'<h4>'+esc(t("autonomous_audit"))+'</h4><div class="q-auto-log">'+log.map(e=>'<div><span>'+esc(e.date)+'</span><strong>'+esc(e.event)+'</strong></div>').join('')+'</div>'
+  +'<div class="q-note">Max per name '+pc(a.risk_limits?.max_name_weight)+' · Max sector '+pc(a.risk_limits?.max_sector_weight)+' · 10 bps/side</div>';
+}
+async function fetchPaper(force=false){
+ try{
+  const res=await fetch("data/quant/paper_state.json?ts="+(force?Date.now():Math.floor(Date.now()/600000)),{cache:"no-store"});
+  if(!res.ok)throw Error("no ledger");
+  const value=await res.json();
+  if(value.mode!=="PAPER_ONLY"||value.live_enabled!==false)throw Error("invalid mode");
+  paperState=value;
+ }catch(_){paperState=null}
+ renderAutonomous();
+}
+
 async function fetchQuant(force=false){
  if(!data)host.innerHTML='<div class="q-empty">'+esc(t("fetch"))+'</div>';
  try{
@@ -240,7 +274,7 @@ async function fetchQuant(force=false){
   if(!response.ok)throw Error("quant API status "+response.status);
   const obj=await response.json();
   if(!obj.screener||!obj.backtest)throw Error("invalid quant research snapshot");
-  data=obj;renderShell();
+  data=obj;renderShell();fetchPaper(force);
  }catch(e){
   if(data)renderShell();
   else host.innerHTML='<div class="q-panel"><div class="q-body q-empty">'+esc(t("loading"))+' <a href="https://github.com/VioletGo319/finance_dashboard/actions" target="_blank">GitHub Actions ↗</a></div></div>';
