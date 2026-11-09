@@ -5,7 +5,7 @@ from pathlib import Path
 import json,os
 try:
     from scripts.quant_fundamentals import gather_fundamentals
-    from scripts.quant_strategy import investment_score, simulate_daily_close, volatility_daily
+    from scripts.quant_strategy import investment_score, simulate_daily_close, volatility_daily, vix_target_exposure
 except ModuleNotFoundError:
     from quant_fundamentals import gather_fundamentals
     from quant_strategy import investment_score, simulate_daily_close, volatility_daily
@@ -94,12 +94,52 @@ def build_quant(result,quotes,as_of,write=True):
             scenarios[key]=simulate_daily_close(quotes,tickers,initial_date=start,top_n=n,trade_bps=cost)
             scenarios[key]["requested_horizon"]=label
             scenarios[key]["requested_start"]=start
+    # Paired, same-window VIX contrarian exposure policy versus unfiltered strategy.
+    # Thresholds are fixed here, not fitted to the evaluated horizons.
+    for label,days in horizons.items():
+        start=(cutoff-timedelta(days=days)).isoformat()
+        key=f"{label} · VIX Trigger · Top 8 · 10 bps"
+        scenarios[key]=simulate_daily_close(quotes,tickers,initial_date=start,
+                                             top_n=8,trade_bps=10,vix_trigger=True)
+        scenarios[key]["requested_horizon"]=label
+        scenarios[key]["requested_start"]=start
+    vix_bars=quotes.get("VIX",{}).get("bars") or []
+    vix_date,vix_close=vix_bars[-1] if vix_bars else (None,None)
+    vix_policy={
+      "description":"Contrarian cash allocation. Higher VIX increases stock exposure.",
+      "bands":[{"vix":"<15","exposure":0.0},
+               {"vix":"15–<20","exposure":0.25},
+               {"vix":"20–<25","exposure":0.50},
+               {"vix":"25–<30","exposure":0.75},
+               {"vix":">=30","exposure":1.0}],
+      "latest_vix_close":vix_close,"latest_vix_date":vix_date,
+      "source":quotes.get("VIX",{}).get("url"),
+      "source_provider":quotes.get("VIX",{}).get("provider"),
+      "fetch_error":quotes.get("VIX",{}).get("error"),
+      "next_target_stock_exposure":vix_target_exposure(vix_close),
+      "execution":"VIX signal at completed close, stock exposure change at next session close",
+      "cash_interest_rate":0.0,
+      "no_leverage":True,
+      "out_of_sample_validation":False}
+    paired_comparison={}
+    for label in horizons:
+        baseline=scenarios[f"{label} · Top 8 · 10 bps"]
+        triggered=scenarios[f"{label} · VIX Trigger · Top 8 · 10 bps"]
+        paired_comparison[label]={
+          "baseline_status":baseline.get("status"),
+          "vix_status":triggered.get("status"),
+          "same_window":baseline.get("start_date")==triggered.get("start_date")
+                         and baseline.get("end_date")==triggered.get("end_date"),
+          "baseline_return":(baseline.get("metrics") or {}).get("total_return"),
+          "vix_return":(triggered.get("metrics") or {}).get("total_return"),
+          "baseline_max_drawdown":(baseline.get("metrics") or {}).get("max_drawdown"),
+          "vix_max_drawdown":(triggered.get("metrics") or {}).get("max_drawdown")}
     backtest=scenarios["1Y · Top 8 · 10 bps"]
 
     if backtest.get("status")=="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
         portfolio_status="HISTORICAL_PRICE_ONLY_RESEARCH_DIAGNOSTIC"
     else:portfolio_status="NOT_COMPUTABLE"
-    payload={"schema_version":"1.1","as_of":as_of,
+    payload={"schema_version":"1.2","as_of":as_of,
         "generated_at_utc":datetime.now(timezone.utc).isoformat(),
         "universe":tickers,"fundamental_audit":audit,
         "fundamentals_filing_cutoff":as_of,
@@ -117,9 +157,13 @@ def build_quant(result,quotes,as_of,write=True):
         "backtest_scenarios":scenarios,
         "benchmark_primary":"QQQ",
         "comparison_horizons":["1Y","3Y","5Y"],
+        "vix_trigger_policy":vix_policy,
+        "vix_vs_baseline":paired_comparison,
         "prospective_screen_portfolio":prospectively_select(ranked,result.get("price_date"),as_of),
         "separation_rule":"Current 2026 supply Alpha/revenue metrics are NEVER fed into historical price-only backtest. To backtest the full ranking, accumulate or reconstruct as-filed metrics and point-in-time graph edges.",
-        "not_included":["survivorship-bias-free historical membership","corporate-action/dividend independently validated prices","historical fundamentals published after each rebalance","historical six-factor Alpha","slippage/market impact measured from executions"],
+        "not_included":["survivorship-bias-free historical membership","corporate-action/dividend independently validated prices","historical fundamentals published after each rebalance","historical six-factor Alpha","slippage/market impact measured from executions",
+                        "out-of-sample validation of VIX thresholds",
+                        "interest income on cash holdings"],
     }
     if write:
         BASE.mkdir(parents=True,exist_ok=True)
