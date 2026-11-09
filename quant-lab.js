@@ -256,14 +256,40 @@ function drawChart(){
 }
 
 
+const autoWeightLabels={"en":["Top 10 share of NAV","Bottom 10 share of NAV","Top / bottom concentration","Total stock allocation","Score-weighted: 12% minimum diversification + 88% confidence-adjusted softmax (temperature 1.75), with 15% stock and 40% sector caps. Estimates remain provisional; no historical factor backfill.","vs. equal weight"],"zh-CN":["前 10 名总仓位","后 10 名总仓位","前后十名仓位倍数","股票总仓位","投资性评分加权：12% 底仓分散至全部 40 股，88% 依据置信度折减后的评分 Softmax 分配（温度 1.75）；单股上限 15%，行业上限 40%。估计评分并非真实财报，历史回测未倒填这些评分。","相对等权"],"fr":["Top 10 allocation","10 derniers","Concentration","Exposition totale","Allocation pondérée par score: 12% réparti uniformément + 88% softmax ajusté selon la qualité, plafonds 15% titre / 40% secteur. Pas de rétroprojection.","vs égal"],"es":["Peso top 10","Peso últimos 10","Concentración","Exposición total","Asignación ponderada por puntuación: 12% distribuido y 88% softmax por puntuación ajustada por confianza. Límites 15% por acción y 40% por sector.","vs equiponderación"],"ja":["上位10銘柄の配分","下位10銘柄の配分","配分比率","株式配分合計","投資スコア加重: 12%を40銘柄に均等、88%を信頼度調整後ソフトマックスに配分。1銘柄15%、セクター40%上限。","均等配分比"]};
+const autoWeightKeys=["top","bottom","spread","total","note","multiplier"];
+for(const [lang,labels] of Object.entries(autoWeightLabels))labels.forEach((value,i)=>{locales[lang]["auto_w_"+autoWeightKeys[i]]=value;});
 function renderUniverseQuality(universe,weights){
  if(!universe||!Array.isArray(universe.candidates))return "";
  const c=universe.candidates;
+ const ranked=c.slice().sort((a,b)=>(weights[b.ticker]??-1)-(weights[a.ticker]??-1));
+ const active=ranked.filter(r=>typeof weights[r.ticker]==="number");
+ const total=active.reduce((sum,r)=>sum+(weights[r.ticker]||0),0);
+ const equal=active.length?total/active.length:0;
+ const top10=ranked.slice(0,10).reduce((sum,r)=>sum+(weights[r.ticker]||0),0);
+ const bottom10=ranked.slice(-10).reduce((sum,r)=>sum+(weights[r.ticker]||0),0);
+ const maxW=Math.max(...Object.values(weights).filter(Number.isFinite),0.00001);
+ const summary=active.length===40&&total>0
+  ?'<div class="q-auto-weight-summary">'
+   +'<div><small>'+esc(t("auto_w_top"))+'</small><strong>'+pc(top10,2)+'</strong></div>'
+   +'<div><small>'+esc(t("auto_w_bottom"))+'</small><strong>'+pc(bottom10,2)+'</strong></div>'
+   +'<div><small>'+esc(t("auto_w_spread"))+'</small><strong>'+(bottom10>0?fmt(top10/bottom10,2)+"×":"N/A")+'</strong></div>'
+   +'<div><small>'+esc(t("auto_w_total"))+'</small><strong>'+pc(total,2)+'</strong></div>'
+   +'</div>':"";
  return '<h4>'+esc(t("auto_quality_universe"))+' ('+c.length+'/40)</h4>'
-  +'<p class="q-note">'+esc(t("auto_quality_warning"))+'</p>'
-  +'<div class="q-scroll"><table class="q-table"><thead><tr><th>Ticker</th><th>'+esc(t("auto_quality_score"))+'</th><th>'+esc(t("auto_quality_observed"))+'</th><th>'+esc(t("auto_quality_estimated"))+'</th><th>'+esc(t("autonomous_pending"))+'</th></tr></thead><tbody>'
-  +c.map(row=>'<tr><td>'+esc(row.ticker)+'</td><td>'+fmt(row.research_score)+'</td><td>'+pc(row.observed_factor_coverage)+'</td><td>'+pc(row.estimated_factor_weight)+'</td><td>'+pc(weights[row.ticker]??null,2)+'</td></tr>').join('')
-  +'</tbody></table></div>';
+  +'<p class="q-note">'+esc(t("auto_w_note"))+'</p>'+summary
+  +'<div class="q-scroll"><table class="q-table"><thead><tr>'
+  +['Ticker',t("auto_quality_score"),t("auto_quality_observed"),t("auto_quality_estimated"),t("autonomous_pending"),t("auto_w_multiplier")].map(k=>'<th>'+esc(k)+'</th>').join('')
+  +'</tr></thead><tbody>'
+  +ranked.map((r,i)=>{
+    const w=weights[r.ticker],pct=typeof w==="number"?w/maxW*100:0;
+    return '<tr><td><strong>'+esc(r.ticker)+'</strong> <small>#'+esc(r.candidate_rank||i+1)+'</small></td>'
+      +'<td class="q-number">'+fmt(r.research_score,2)+'</td>'
+      +'<td class="q-number">'+pc(r.observed_factor_coverage,0)+'</td>'
+      +'<td class="q-number">'+pc(r.estimated_factor_weight,0)+'</td>'
+      +'<td class="q-auto-weight-cell"><div><b>'+pc(w,2)+'</b><div class="q-auto-weight-track"><div style="width:'+pct.toFixed(2)+'%"></div></div></div></td>'
+      +'<td class="q-number">'+(typeof w==="number"&&equal>0?fmt(w/equal,2)+"×":"N/A")+'</td></tr>';
+  }).join('')+'</tbody></table></div>';
 }
 function autoMoney(v){return typeof v==="number"&&Number.isFinite(v)?"$"+v.toLocaleString(L(),{minimumFractionDigits:2,maximumFractionDigits:2}):"N/A";}
 function renderAutonomous(){
