@@ -37,8 +37,10 @@ class FullUniverseTest(unittest.TestCase):
         self.assertTrue(all(v>0 for v in weights.values()))
         self.assertLessEqual(sum(weights.values()),.75+1e-8)
         self.assertLessEqual(max(weights.values()),.15+1e-8)
+        self.assertLessEqual(max(weights.values()),.75*.10+1e-8)
         for band, names in SECTOR_BANDS.items():
             self.assertLessEqual(sum(weights.get(t,0) for t in names),.40+1e-8)
+            self.assertLessEqual(sum(weights.get(t,0) for t in names),.75*.45+1e-8)
     def test_scores_materially_differentiate_weights(self):
         prices,universe=fixture()
         candidates=universe["candidates"]
@@ -65,8 +67,10 @@ class FullUniverseTest(unittest.TestCase):
         self.assertLessEqual(sum(weights.values()),1.00000001)
         self.assertGreater(sum(weights.values()),.99999)
         self.assertTrue(all(v>0 and v<=.15+1e-9 for v in weights.values()))
+        self.assertTrue(all(v<=.10+1e-8 for v in weights.values()))
         for name,tickers in SECTOR_BANDS.items():
             self.assertLessEqual(sum(weights.get(t,0.) for t in tickers),.40+1e-9)
+            self.assertLessEqual(sum(weights.get(t,0.) for t in tickers),.45+1e-9)
     def test_same_day_unfilled_forty_reweights_without_new_fills(self):
         prices,universe=fixture()
         quant={"autonomous_universe":universe,"screener":{"ranked":[]},
