@@ -36,15 +36,25 @@ audit="""<script>
    try{
     const data=window.M7QuantLab?.data;
     const rows=document.querySelectorAll('#qRanking tr').length;
+    const expectedHigh=data?.screener?.ranked?.filter(x=>x.factor_coverage>=.75)?.length||0;
+    const coverage=document.querySelector('#qCoverageFilter');
+    const defaultGroupIsHigh=coverage?.value==='high';
+    if(coverage){
+      coverage.value='all';
+      coverage.dispatchEvent(new Event('change'));
+    }
+    const allRows=document.querySelectorAll('#qRanking tr').length;
     const graph=document.querySelector('#qChart svg path');
     const bench=document.querySelector('#qMetrics')?.textContent||'';
     const scenarios=document.querySelector('#qScenario')?.options?.length||0;
     const paper=document.querySelector('#qPaper')?.textContent||'';
     const success=data?.screener?.eligible_count>0 && data?.backtest?.curve?.length>20 &&
-       rows===40 && !!graph && bench.includes('QQQ') && scenarios>=4 &&
+       rows===expectedHigh && expectedHigh>0 && allRows===40 && defaultGroupIsHigh && !!graph && bench.includes('QQQ') && scenarios>=4 &&
        paper.length>0;
     document.documentElement.dataset.quantSmoke=success?'PASS':'FAIL';
     document.documentElement.dataset.quantRows=rows;
+    document.documentElement.dataset.quantAllRows=allRows;
+    document.documentElement.dataset.quantExpectedHigh=expectedHigh;
     document.documentElement.dataset.quantScenarios=scenarios;
     const sel=document.getElementById('qScenario');
     if(sel&&sel.options.length){
