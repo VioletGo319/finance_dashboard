@@ -97,6 +97,25 @@ jobs:
                 "exposure":b.get("vix_trigger"),
                 "vix_trade_count":len(b.get("trades") or [])},ensure_ascii=False))
           PY
+      - name: Verify autonomous paper-only ledger and risk gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path("data/quant/paper_state.json")
+          if not path.is_file():raise SystemExit("paper state was not generated")
+          a=json.loads(path.read_text())
+          assert a["mode"]=="PAPER_ONLY" and a["live_enabled"] is False
+          assert a["cash"]>=0 and a["equity"]>=0
+          assert a["risk_limits"]["max_name_weight"]<=.15
+          assert a["pending"] is None or a["pending"]["signal_day"]<=a["last_price_day"]
+          assert a["pending"] is None or sum(a["pending"]["weights"].values())<=1.0000001
+          assert Path("site/data/quant/paper_state.json").is_file()
+          print("PAPER_ACCOUNT",json.dumps({
+            "status":a["status"],"date":a["last_price_day"],"equity":a["equity"],
+            "cash":a["cash"],"trade_count":a["trade_count"],
+            "pending":a["pending"],"fees":a["total_fees"]},ensure_ascii=False))
+          PY
       - name: Persist daily data for branch-based GitHub Pages
         run: |
           git config user.name 'github-actions[bot]'
