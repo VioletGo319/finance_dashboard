@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/m7-daily.yml'
-    # Trigger first risk-gated autonomous paper-ledger daily snapshot
+    # Trigger audited 40-stock paper-universe refresh and migration
   workflow_dispatch:
   schedule:
     # After regular US market close: 17:30 EST / 18:30 EDT. v3.1 active 40-stock refresh.
@@ -106,6 +106,17 @@ jobs:
           if not path.is_file():raise SystemExit("paper state was not generated")
           a=json.loads(path.read_text())
           assert a["mode"]=="PAPER_ONLY" and a["live_enabled"] is False
+          q=json.loads(Path("data/quant/latest.json").read_text())
+          universe=q.get("autonomous_universe") or {}
+          assert universe.get("universe_count")==40
+          assert len(universe.get("candidates",[]))==40
+          if a.get("pending") and a["pending"].get("target_stock_exposure",0)>0:
+              assert len(a["pending"]["weights"])==40, "all 40 must participate in next paper allocation"
+          print("AUTONOMOUS_COVERAGE",json.dumps({
+              "universe_count":universe["universe_count"],
+              "observed_weight_mean":universe["observed_weight_mean"],
+              "target_count":len((a.get("pending") or {}).get("weights",{})),
+              "allocation_method":a.get("allocation_method")},ensure_ascii=False))
           assert a["cash"]>=0 and a["equity"]>=0
           assert a["risk_limits"]["max_name_weight"]<=.15
           assert a["pending"] is None or a["pending"]["signal_day"]<=a["last_price_day"]
