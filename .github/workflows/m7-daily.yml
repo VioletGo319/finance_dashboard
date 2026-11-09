@@ -73,6 +73,26 @@ jobs:
                     "xlk":b.get("benchmarks",{}).get("XLK"),
                     "trades":len(b.get("trades") or [])},ensure_ascii=False))
           PY
+      - name: Print paired VIX trigger versus QQQ backtests
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          q=json.loads(Path("data/quant/latest.json").read_text())
+          p=q.get("vix_trigger_policy") or {}
+          print("VIX_POLICY",json.dumps(p,ensure_ascii=False))
+          for y in ("1Y","3Y","5Y"):
+              k=f"{y} · VIX Trigger · Top 8 · 10 bps"
+              b=q.get("backtest_scenarios",{}).get(k,{})
+              base=q.get("backtest_scenarios",{}).get(f"{y} · Top 8 · 10 bps",{})
+              print("VIX_RESULT",json.dumps({
+                "horizon":y,"status":b.get("status"),"reason":b.get("reason"),
+                "start":b.get("start_date"),"end":b.get("end_date"),
+                "vix_metrics":b.get("metrics"),"base_metrics":base.get("metrics"),
+                "qqq_metrics":b.get("benchmarks",{}).get("QQQ"),
+                "exposure":b.get("vix_trigger"),
+                "vix_trade_count":len(b.get("trades") or [])},ensure_ascii=False))
+          PY
       - name: Persist daily data for branch-based GitHub Pages
         run: |
           git config user.name 'github-actions[bot]'
