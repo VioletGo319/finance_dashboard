@@ -90,6 +90,8 @@ for(const [lang,label] of Object.entries({en:"VIX / stock exposure","zh-CN":"VIX
 const keysAutonomous=["title","subtitle","mode","equity","cash","pnl","fees","pending","positions","audit","empty","notice","phase1","phase2","phase3","phase4","phase5"];
 const autonomousLabels={"en":["Autonomous Trading · Paper Portfolio","Scheduled signal → risk checks → next-close simulated fill","PAPER ONLY · LIVE DISABLED","Account equity","Cash","Paper P/L","Simulated fees","Next-session target allocation","Paper positions","Decision / fill audit","No paper ledger yet. First run proposes orders; a later close can fill them.","This is simulated. No broker connected, no real funds, no live orders.","Market data","VIX & ranking","Risk gate","Paper fill","Audit"],"zh-CN":["自主交易 · 模拟账户","定时信号 → 风控检查 → 下一收盘模拟成交","仅模拟交易 · 实盘禁用","模拟净值","现金","模拟盈亏","模拟手续费","下一交易日目标仓位","模拟持仓","决策 / 成交日志","暂无模拟账本；首次运行生成计划，之后的交易日才能成交。","此模块不连接券商、不使用真实资金，也不会下实盘订单。","市场数据","VIX 与选股","风险检查","模拟成交","审计"],"fr":["Trading autonome · Simulation","Signal → risques → simulation au prochain cours","SIMULATION · RÉEL DÉSACTIVÉ","Capital simulé","Liquidités","Résultat","Frais","Allocation prévue","Positions","Journal d'audit","Aucun compte simulé pour le moment","Aucun courtier ni ordre réel.","Marché","VIX","Risques","Simulation","Audit"],"es":["Trading autónomo · Simulación","Señal → riesgo → simulación a cierre siguiente","SIMULACIÓN · REAL DESACTIVADO","Capital simulado","Efectivo","Beneficio","Comisiones","Asignación prevista","Posiciones","Registro de auditoría","Todavía no hay cartera simulada","Sin bróker ni órdenes reales.","Mercado","VIX","Riesgo","Simulación","Auditoría"],"ja":["自動売買 · 仮想口座","シグナル → リスク確認 → 翌終値で仮想約定","仮想売買のみ · 実売買不可","口座残高","現金","損益","手数料","次回の目標保有比率","仮想保有","監査記録","仮想口座データはまだありません","証券会社未接続、実際の注文なし。","市場","VIX","リスク","仮想約定","監査"]};
 for(const [lang,labels] of Object.entries(autonomousLabels))keysAutonomous.forEach((k,i)=>{locales[lang]['autonomous_'+k]=labels[i]});
+const autoQualityTranslations={"en":["40-Stock Participation & Data Quality","Observed weighted factor coverage","Estimated factor weight","Provisional score","Factor estimation","All names are scored, but estimates are not verified SEC facts. Missing actual prices stop paper fills.","All 40 candidates"],"zh-CN":["40 股参与情况与数据质量","真实因子加权覆盖率","估计因子权重","暂定评分","缺失值估计","40 只股票均获得研究评分，但估计值不等于真实财报；缺失真实价格将停止模拟成交。","全部 40 个候选"],"fr":["Univers de 40 actions et qualité","Couverture observée","Facteurs estimés","Score provisoire","Estimation","Les prix manquants bloquent l'exécution simulée.","40 valeurs"],"es":["Universo de 40 acciones y calidad","Cobertura observada","Factores estimados","Puntuación provisional","Estimación","Los precios ausentes bloquean las operaciones simuladas.","40 valores"],"ja":["40銘柄とデータ品質","観測済み比率","推定比率","暫定スコア","推定","実際の価格が欠ける場合、仮想約定を停止します。","40銘柄"]};
+for(const [lang,values] of Object.entries(autoQualityTranslations))values.forEach((v,i)=>locales[lang]["auto_quality_"+["universe","observed","estimated","score","estimation","warning","all"][i]]=v);
 let selectedScenario="1Y · VIX Trigger · Top 8 · 10 bps";
 let paperState=null,data=null,showOnly=false,chartMode="nav",seriesActive={strategy:true,spy:true,xlk:true};
 function L(){return (window.M7_I18N&&window.M7_I18N.language)||"en";}
@@ -239,6 +241,16 @@ function drawChart(){
  for(const key of ["qChartNav","qChartDD"]){const el=document.getElementById(key);if(el)el.setAttribute("aria-pressed",String((key==="qChartNav")===(chartMode==="nav")));}
 }
 
+
+function renderUniverseQuality(universe,weights){
+ if(!universe||!Array.isArray(universe.candidates))return "";
+ const c=universe.candidates;
+ return '<h4>'+esc(t("auto_quality_universe"))+' ('+c.length+'/40)</h4>'
+  +'<p class="q-note">'+esc(t("auto_quality_warning"))+'</p>'
+  +'<div class="q-scroll"><table class="q-table"><thead><tr><th>Ticker</th><th>'+esc(t("auto_quality_score"))+'</th><th>'+esc(t("auto_quality_observed"))+'</th><th>'+esc(t("auto_quality_estimated"))+'</th><th>'+esc(t("autonomous_pending"))+'</th></tr></thead><tbody>'
+  +c.map(row=>'<tr><td>'+esc(row.ticker)+'</td><td>'+fmt(row.research_score)+'</td><td>'+pc(row.observed_factor_coverage)+'</td><td>'+pc(row.estimated_factor_weight)+'</td><td>'+pc(weights[row.ticker]??null,2)+'</td></tr>').join('')
+  +'</tbody></table></div>';
+}
 function autoMoney(v){return typeof v==="number"&&Number.isFinite(v)?"$"+v.toLocaleString(L(),{minimumFractionDigits:2,maximumFractionDigits:2}):"N/A";}
 function renderAutonomous(){
  const el=document.getElementById("qAutonomous");if(!el)return;
@@ -253,6 +265,7 @@ function renderAutonomous(){
   +metric(t("autonomous_fees"),autoMoney(a.total_fees),esc(a.trade_count||0)+" simulated fills")+'</div>'
   +'<div class="q-status q-auto-state">'+esc(a.status)+' · '+esc(pending.signal_day||a.last_price_day||"N/A")+'</div>'
   +'<div class="q-two">'+mini(t("autonomous_pending"),cells(weights,pc))+mini(t("autonomous_positions"),cells(positions,autoMoney))+'</div>'
+  +renderUniverseQuality(data?.autonomous_universe,pending.weights||{})
   +'<h4>'+esc(t("autonomous_audit"))+'</h4><div class="q-auto-log">'+log.map(e=>'<div><span>'+esc(e.date)+'</span><strong>'+esc(e.event)+'</strong></div>').join('')+'</div>'
   +'<div class="q-note">Max per name '+pc(a.risk_limits?.max_name_weight)+' · Max sector '+pc(a.risk_limits?.max_sector_weight)+' · 10 bps/side</div>';
 }
