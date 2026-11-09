@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/m7-daily.yml'
-    # Generate actual 40-stock VIX Sharpe comparisons with QQQ (1Y 3Y 5Y)
+    # Refresh 40-stock investability softmax paper allocation and compare QQQ
   workflow_dispatch:
   schedule:
     # After regular US market close: 17:30 EST / 18:30 EDT. v3.1 active 40-stock refresh.
@@ -139,6 +139,36 @@ jobs:
           assert len(universe.get("candidates",[]))==40
           if a.get("pending") and a["pending"].get("target_stock_exposure",0)>0:
               assert len(a["pending"]["weights"])==40, "all 40 must participate in next paper allocation"
+          pending=a.get("pending") or {}
+          if pending.get("weights") and pending.get("target_stock_exposure",0)>0:
+              assert pending.get("allocation_version")=="INVESTABILITY_SOFTMAX_V2", "new score allocation not applied"
+              weights=pending["weights"]
+              target=pending["target_stock_exposure"]
+              assert len(weights)==40 and all(weight>0 for weight in weights.values())
+              assert max(weights.values())<=target*.10+1e-8, "name exceeds invested budget cap"
+              assert sum(weights.values())<=target+1e-8
+              import importlib
+              from scripts.quant_strategy import SECTOR_BANDS
+              for group,names in SECTOR_BANDS.items():
+                  assert sum(weights.get(t,0) for t in names)<=target*.45+1e-8
+              sorted_w=sorted(weights.items(),key=lambda item:-item[1])
+              top10=sum(w for _,w in sorted_w[:10])
+              bottom10=sum(w for _,w in sorted_w[-10:])
+              print("INVESTABILITY_WEIGHTED_ALLOCATION",json.dumps({
+                  "version":pending["allocation_version"],
+                  "target_stock_exposure":target,
+                  "top10_nav_weight":round(top10,6),
+                  "bottom10_nav_weight":round(bottom10,6),
+                  "top_bottom_concentration":round(top10/bottom10,3) if bottom10 else None,
+                  "max_weight":max(weights.values()),
+                  "min_weight":min(weights.values()),
+                  "top10":sorted_w[:10],
+                  "bottom5":sorted_w[-5:],
+                  "factor_score_as_of":pending.get("score_as_of"),
+                  "all_40_present":len(weights)==40
+              },ensure_ascii=False))
+          else:
+              print("INVESTABILITY_WEIGHTED_ALLOCATION","No filled or pending trade plan requiring migration")
           print("AUTONOMOUS_COVERAGE",json.dumps({
               "universe_count":universe["universe_count"],
               "observed_weight_mean":universe["observed_weight_mean"],
