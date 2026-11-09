@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/m7-daily.yml'
-    # Trigger audited 40-stock paper-universe refresh and migration
+    # Generate actual 40-stock VIX Sharpe comparisons with QQQ (1Y 3Y 5Y)
   workflow_dispatch:
   schedule:
     # After regular US market close: 17:30 EST / 18:30 EDT. v3.1 active 40-stock refresh.
@@ -96,6 +96,33 @@ jobs:
                 "qqq_metrics":b.get("benchmarks",{}).get("QQQ"),
                 "exposure":b.get("vix_trigger"),
                 "vix_trade_count":len(b.get("trades") or [])},ensure_ascii=False))
+          PY
+      - name: Print audited 40-stock Sharpe comparisons
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          q=json.loads(Path("data/quant/latest.json").read_text())
+          f=q.get("forty_stock_historical_diagnostics") or {}
+          for label in ("1Y","3Y","5Y"):
+              name=f"{label} · 40 equal weight"
+              baseline=f.get(name,{})
+              vix=f.get(name+" · VIX",{})
+              result={"window":label,
+                  "baseline_status":baseline.get("status"),
+                  "vix_status":vix.get("status"),
+                  "baseline_metrics":baseline.get("metrics"),
+                  "vix_metrics":vix.get("metrics"),
+                  "qqq_metrics":vix.get("benchmarks",{}).get("QQQ"),
+                  "active_min":vix.get("minimum_active_names"),
+                  "active_end":vix.get("end_active_names"),
+                  "start":vix.get("start_date"),"end":vix.get("end_date"),
+                  "vix_average_exposure":vix.get("mean_stock_exposure")}
+              print("FORTY_SHARPE_RESULT",json.dumps(result,ensure_ascii=False))
+              if baseline.get("status")!="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
+                  raise SystemExit(f"{label} baseline 40 failure: {baseline}")
+              if vix.get("status")!="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
+                  raise SystemExit(f"{label} VIX 40 failure: {vix}")
           PY
       - name: Verify autonomous paper-only ledger and risk gates
         run: |
