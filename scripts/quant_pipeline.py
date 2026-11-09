@@ -5,9 +5,11 @@ from pathlib import Path
 import json,os
 try:
     from scripts.quant_fundamentals import gather_fundamentals
+    from scripts.autonomous_universe import create_autonomous_universe
     from scripts.quant_strategy import investment_score, simulate_daily_close, volatility_daily, vix_target_exposure
 except ModuleNotFoundError:
     from quant_fundamentals import gather_fundamentals
+    from autonomous_universe import create_autonomous_universe
     from quant_strategy import investment_score, simulate_daily_close, volatility_daily, vix_target_exposure
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -81,6 +83,7 @@ def build_quant(result,quotes,as_of,write=True):
         s["realized_vol_60d"]=vol*(252**.5) if vol is not None else None
         meta[t]=s
     ranked=investment_score(tickers,facts,meta)
+    autonomous_universe=create_autonomous_universe(ranked,tickers,as_of)
     # Use the most recent common completed benchmark session as the fixed end date.
     common_dates=sorted(set(dict(quotes.get("QQQ",{}).get("bars") or []))
                         & set(dict(quotes.get("XLK",{}).get("bars") or [])))
@@ -139,9 +142,10 @@ def build_quant(result,quotes,as_of,write=True):
     if backtest.get("status")=="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
         portfolio_status="HISTORICAL_PRICE_ONLY_RESEARCH_DIAGNOSTIC"
     else:portfolio_status="NOT_COMPUTABLE"
-    payload={"schema_version":"1.2","as_of":as_of,
+    payload={"schema_version":"1.3","as_of":as_of,
         "generated_at_utc":datetime.now(timezone.utc).isoformat(),
         "universe":tickers,"fundamental_audit":audit,
+        "autonomous_universe":autonomous_universe,
         "fundamentals_filing_cutoff":as_of,
         "fundamentals_coverage":{"fiscal_revenue":sum(x.get("revenue_fy_usd") is not None for x in facts.values()),
           "revenue_growth":sum(x.get("revenue_growth_yoy") is not None for x in facts.values()),
