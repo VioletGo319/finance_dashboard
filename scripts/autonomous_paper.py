@@ -252,6 +252,40 @@ def _execute_pending(state,quotes,price_day):
          fills=fills,fees=round(fees,6))
     state["status"]="PAPER_ACTIVE"
 
+def paper_performance(history):
+    """Observed forward paper daily Sharpe; never infer from a historical backtest.
+
+    A minimum of 30 observed close-to-close returns is required before
+    showing an annualized Sharpe. Until then the value is explicitly N/A.
+    """
+    clean=[h for h in history if isinstance(h.get("equity"),(float,int))
+           and h["equity"]>0 and isinstance(h.get("date"),str)]
+    # No duplicate observations from repeated runs on a closed market.
+    clean=sorted({h["date"]:h for h in clean}.values(),key=lambda h:h["date"])
+    if len(clean)<31:
+        return {"status":"INSUFFICIENT_OBSERVED_PAPER_SESSIONS",
+                "observed_sessions":len(clean),
+                "minimum_return_sessions":30,
+                "sharpe_rf0":None,"max_drawdown":None,
+                "observed_total_return":None,"cagr_annualized":None,
+                "source":"paper ledger future completed closes only"}
+    returns=[clean[i]["equity"]/clean[i-1]["equity"]-1
+             for i in range(1,len(clean))]
+    try:
+        from scripts.quant_strategy import _metrics
+    except ModuleNotFoundError:
+        from quant_strategy import _metrics
+    m=_metrics(returns,[],0)
+    return {"status":"COMPUTED_FROM_FORWARD_PAPER_CLOSES",
+            "observed_sessions":len(clean),"return_sessions":len(returns),
+            "minimum_return_sessions":30,
+            "sharpe_rf0":m["sharpe_rf0"],
+            "max_drawdown":m["max_drawdown"],
+            "observed_total_return":m["total_return"],
+            "cagr_annualized":m["cagr_annualized"],
+            "source":"paper ledger future completed closes only",
+            "not_from_backtest":True}
+
 def update_paper_state(previous,quant,quotes,price_day):
     state=json.loads(json.dumps(previous)) if previous else new_state()
     state["mode"]="PAPER_ONLY";state["live_enabled"]=False
@@ -284,6 +318,7 @@ def update_paper_state(previous,quant,quotes,price_day):
                 _log(state,price_day,"UNFILLED_ORDER_REWEIGHTED_BY_INVESTABILITY",
                      actual_fill_count=0,estimated_factor_scores=True,
                      top_weights=[[t,w] for t,w in sorted(new.items(),key=lambda kv:-kv[1])[:5]])
+        state["forward_performance"]=paper_performance(state.get("equity_history",[]))
         return state  # no same-day execution; only unfilled plan may migrate
     vix=quant.get("vix_trigger_policy",{})
     vix_date=vix.get("latest_vix_date")
@@ -337,6 +372,7 @@ def update_paper_state(previous,quant,quotes,price_day):
         history.append({"date":price_day,"equity":round(state["equity"],6),
                         "cash":round(state["cash"],6)})
     state["equity_history"]=history[-1500:]
+    state["forward_performance"]=paper_performance(state["equity_history"])
     state["risk_limits"]={"max_name_weight":MAX_NAME_WEIGHT,
       "max_sector_weight":MAX_SECTOR_WEIGHT,"max_gross_stock_exposure":MAX_STOCK_EXPOSURE,
       "maximum_price_staleness_days":MAX_PRICE_STALENESS_DAYS,
