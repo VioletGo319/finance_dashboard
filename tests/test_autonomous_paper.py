@@ -1,7 +1,7 @@
 """Autonomous paper ledger: causal delayed fills, replay, risk and safety."""
 import unittest
 from datetime import date,timedelta
-from scripts.autonomous_paper import update_paper_state, target_weights
+from scripts.autonomous_paper import update_paper_state, target_weights, paper_performance
 
 def sample(day="2026-11-06",vix=25.64):
     symbols=["AMD","TSM","AVGO","MU","ANET","GLW","APH","VRT"]
@@ -54,6 +54,22 @@ class AutonomousPaperTest(unittest.TestCase):
         from scripts.autonomous_paper import sector
         for s,v in w.items():groups[sector(s)]=groups.get(sector(s),0)+v
         self.assertTrue(all(v<=.40+1e-8 for v in groups.values()))
+    def test_paper_sharpe_requires_observed_sessions(self):
+        history=[{"date":f"2026-08-{i:02d}","equity":1000+i} for i in range(1,10)]
+        result=paper_performance(history)
+        self.assertIsNone(result["sharpe_rf0"])
+        self.assertEqual(result["status"],"INSUFFICIENT_OBSERVED_PAPER_SESSIONS")
+        long=[{"date":(date(2026,1,1)+timedelta(days=i)).isoformat(),
+               "equity":1000*(1.001+0.003*((i%3)-1))**i}
+              for i in range(34)]
+        result=paper_performance(long)
+        self.assertEqual(result["status"],"COMPUTED_FROM_FORWARD_PAPER_CLOSES")
+        self.assertTrue(result["not_from_backtest"])
+        self.assertIsNotNone(result["sharpe_rf0"])
+    def test_duplicate_paper_dates_not_used_twice(self):
+        history=[{"date":"2026-11-06","equity":1000},
+                 {"date":"2026-11-06","equity":1000}]
+        self.assertEqual(paper_performance(history)["observed_sessions"],1)
     def test_missing_price_prevents_fill(self):
         q,p=sample()
         a=update_paper_state(None,q,p,"2026-11-06")
