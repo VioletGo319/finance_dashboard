@@ -6,11 +6,13 @@ import json,os
 try:
     from scripts.quant_fundamentals import gather_fundamentals
     from scripts.forty_backtest import simulate_forty_price_only
+    from scripts.forty_score_weighted_backtest import simulate_forty_score_weighted
     from scripts.autonomous_universe import create_autonomous_universe
     from scripts.quant_strategy import investment_score, simulate_daily_close, volatility_daily, vix_target_exposure
 except ModuleNotFoundError:
     from quant_fundamentals import gather_fundamentals
     from forty_backtest import simulate_forty_price_only
+    from forty_score_weighted_backtest import simulate_forty_score_weighted
     from autonomous_universe import create_autonomous_universe
     from quant_strategy import investment_score, simulate_daily_close, volatility_daily, vix_target_exposure
 
@@ -146,16 +148,28 @@ def build_quant(result,quotes,as_of,write=True):
             label_key=f"{label} · 40 equal weight"+(" · VIX" if use_vix else "")
             forty_price_diagnostics[label_key]=simulate_forty_price_only(
                 quotes,tickers,start,trade_bps=10,vix_trigger=use_vix)
+    # Historical score-weighted 40-stock proxy: same portfolio allocator as
+    # autonomous paper, BUT causal prior-close price factors only. Current
+    # 2026 estimated fundamentals/Alpha are NEVER backfilled.
+    forty_score_weighted={}
+    for label,days in horizons.items():
+        start=(cutoff-timedelta(days=days)).isoformat()
+        for use_vix in (False,True):
+            key=f"{label} · 40 price-score weighted"+(" · VIX" if use_vix else "")
+            forty_score_weighted[key]=simulate_forty_score_weighted(
+                quotes,tickers,start,trade_bps=10,vix_trigger=use_vix)
     backtest=scenarios["1Y · Top 8 · 10 bps"]
 
     if backtest.get("status")=="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
         portfolio_status="HISTORICAL_PRICE_ONLY_RESEARCH_DIAGNOSTIC"
     else:portfolio_status="NOT_COMPUTABLE"
-    payload={"schema_version":"1.3","as_of":as_of,
+    payload={"schema_version":"1.4","as_of":as_of,
         "generated_at_utc":datetime.now(timezone.utc).isoformat(),
         "universe":tickers,"fundamental_audit":audit,
         "autonomous_universe":autonomous_universe,
         "forty_stock_historical_diagnostics":forty_price_diagnostics,
+        "forty_stock_weighted_price_diagnostics":forty_score_weighted,
+        "weighted_historical_scope":"Point-in-time price factors with forward score allocator geometry; NOT the historical six-factor fundamental/Alpha investing strategy",
         "forty_stock_historical_warning":"Price-only equal weight across previously listed current-universe stocks, NOT a historical backtest of forward autonomous estimated-factor rankings",
         "fundamentals_filing_cutoff":as_of,
         "fundamentals_coverage":{"fiscal_revenue":sum(x.get("revenue_fy_usd") is not None for x in facts.values()),
