@@ -271,8 +271,8 @@ const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const safeUrl=u=>typeof u==='string'&&/^https:\/\//i.test(u)?u:null;
 const fmt=v=>Number.isFinite(+v)&&v!==null&&v!==undefined&&v!==''?Number(v).toFixed(1):'N/A';
 const money=v=>Number.isFinite(+v)&&v!==null&&v!==undefined&&v!==''?'$'+Number(v).toFixed(2):'N/A';
-const scoreText=v=>fmt(v);
-const displayScore=s=>s.alpha!=null?fmt(s.alpha):s.provisional_alpha!=null?fmt(s.provisional_alpha)+'†':'N/A';
+const scoreText=v=>v!=null&&Number.isFinite(Number(v))?Number(v).toFixed(2):'N/A';
+const displayScore=s=>s.alpha!=null?scoreText(s.alpha):s.provisional_alpha!=null?scoreText(s.provisional_alpha)+'†':'N/A';
 const getScore=s=>s.alpha!=null?s.alpha:s.provisional_alpha;
 function pct(s){if(s.close==null||s.previous_close==null||!(+s.previous_close>0))return null;return ((+s.close/+s.previous_close)-1)*100}
 function getDelta(s){if(s.alpha!=null&&s.previous_alpha!=null)return (+s.alpha-+s.previous_alpha);if(s.provisional_alpha!=null&&s.previous_provisional_alpha!=null)return (+s.provisional_alpha-+s.previous_provisional_alpha);return null}
