@@ -95,6 +95,9 @@ for(const [lang,values] of Object.entries(autoQualityTranslations))values.forEac
 const fortyHistoricalLabels={"en":["40-stock Sharpe vs QQQ","Historical equal-weight price-only diagnostic. Forward factor estimates are not backfilled.","Window","40 + VIX","40, no VIX","QQQ","VIX max drawdown","Min stocks","Not yet computed"],"zh-CN":["40 股 Sharpe 对比 QQQ","历史等权价格策略诊断：不倒填当前估计的财务因子，也不代表模拟账户的实际历史收益。","期限","40 股 + VIX","40 股无 VIX","QQQ","VIX 最大回撤","最低参与数","尚未完成计算"],"fr":["Sharpe de 40 actions vs QQQ","Backtest historique équipondéré basé sur les prix.","Période","40 + VIX","40 sans VIX","QQQ","Perte max. VIX","Titres min.","Non calculé"],"es":["Sharpe de 40 acciones vs QQQ","Estudio histórico equiponderado basado en precios.","Período","40 + VIX","40 sin VIX","QQQ","Caída máxima VIX","Acciones mín.","No calculado"],"ja":["40銘柄のシャープ比率 vs QQQ","現在の推定財務因子を過去へ遡及しない株価のみの比較です。","期間","40 + VIX","40 VIXなし","QQQ","VIX最大下落","最低銘柄数","未計算"]};
 const fortyHistoricalKeys=["title","note","period","vix","plain","qqq","drawdown","eligible","none"];
 for(const [lang,values] of Object.entries(fortyHistoricalLabels))values.forEach((v,i)=>{locales[lang]["forty_"+fortyHistoricalKeys[i]]=v;});
+const weightedLabels={"en":["40 Weighted + VIX","40 Weighted, no VIX","40 Equal + VIX","Weighted + VIX total return","Weighted + VIX max drawdown","Weighted price-only proxy (NOT the historical forward fundamental/Alpha score). Monthly price factors use prior closes; same capped allocation shape as autonomous paper; no lookahead.","Forward paper Sharpe","Observed paper sessions","30 returns required","No historical performance assumed from new live plan"],"zh-CN":["40 股评分加权 + VIX","40 股评分加权无 VIX","40 股等权 + VIX","加权 + VIX 累计收益","加权 + VIX 最大回撤","历史加权仅基于当时已知的价格因子（非当前真实基本面／供应链 Alpha 的历史回测）。采用与自主模拟账户相同的权重计算与风控上限，无未来信息倒填。","前瞻模拟 Sharpe","前瞻交易日观测数","至少需 30 个收益日","新账户的历史业绩尚未形成"],"fr":["40 pondérées + VIX","40 pondérées sans VIX","40 égales + VIX","Rendement pondéré VIX","Repli pondéré VIX","Proxy historique fondé seulement sur les prix passés, pas sur les facteurs fondamentaux actuels.","Sharpe futur simulé","Sessions papier","30 rendements requis","Pas de rendements fictifs"],"es":["40 ponderadas + VIX","40 ponderadas sin VIX","40 iguales + VIX","Retorno ponderado VIX","Caída ponderada VIX","Proxy histórico solo con precios pasados, sin datos fundamentales actuales.","Sharpe simulado futuro","Sesiones observadas","Requiere 30 retornos","Sin retornos inventados"],"ja":["40銘柄加重+VIX","40銘柄加重・VIXなし","40銘柄均等+VIX","加重+VIXリターン","加重+VIX最大下落","当時の株価要因のみを使う歴史的比較。現在の財務・サプライチェーン因子は利用しません。","先行仮想シャープ","観測済み日数","30リターン必要","仮想の過去実績なし"]};
+const weightedKeys=["wvix","wplain","evix","wreturn","wdraw","wnote","papersharpe","papersessions","paperthreshold","paperwarning"];
+for(const [lang,items] of Object.entries(weightedLabels))items.forEach((v,i)=>{locales[lang]["weighted_"+weightedKeys[i]]=v;});
 let selectedScenario="1Y · VIX Trigger · Top 8 · 10 bps";
 let paperState=null,data=null,showOnly=false,chartMode="nav",seriesActive={strategy:true,spy:true,xlk:true};
 function L(){return (window.M7_I18N&&window.M7_I18N.language)||"en";}
@@ -145,14 +148,26 @@ function renderShell(){
   [row("vixVReturn",pc(vixBack.metrics?.total_return)),row("vixBReturn",pc(baseBack.metrics?.total_return)),
    row("vixVDrawdown",pc(vixBack.metrics?.max_drawdown)),row("vixBDrawdown",pc(baseBack.metrics?.max_drawdown))].join("")+
   (vixBack.status!=="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC"?'<div class="q-alert">'+esc(t("vixNoData"))+' · '+esc(vixBack.status||"")+'</div>':"");
- const forties=q.forty_stock_historical_diagnostics||{};
- document.getElementById("qFortyHistorical").innerHTML=Object.keys(forties).length
-  ?'<table class="q-table"><thead><tr>'+["period","vix","plain","qqq","drawdown","eligible"].map(k=>'<th>'+esc(t("forty_"+k))+'</th>').join('')+'</tr></thead><tbody>'
-    +["1Y","3Y","5Y"].map(y=>{
-      const a=forties[y+" · 40 equal weight · VIX"]||{};
-      const b=forties[y+" · 40 equal weight"]||{};
+ const forties=q.forty_stock_historical_diagnostics||{},
+       weighted=q.forty_stock_weighted_price_diagnostics||{};
+ document.getElementById("qFortyHistorical").innerHTML=Object.keys(weighted).length
+  ?'<div class="q-body"><p class="q-note">'+esc(t("weighted_wnote"))+'</p></div>'
+   +'<table class="q-table"><thead><tr>'+[
+       t("forty_period"),t("weighted_wvix"),t("weighted_wplain"),
+       t("weighted_evix"),"QQQ",t("weighted_wreturn"),t("weighted_wdraw"),t("forty_eligible")
+      ].map(k=>'<th>'+esc(k)+'</th>').join('')+'</tr></thead><tbody>'
+   +["1Y","3Y","5Y"].map(y=>{
+      const a=weighted[y+" · 40 price-score weighted · VIX"]||{};
+      const b=weighted[y+" · 40 price-score weighted"]||{};
+      const equal=forties[y+" · 40 equal weight · VIX"]||{};
       const valid=a.status==="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC";
-      return '<tr><td>'+esc(y)+'</td><td>'+fmt(a.metrics?.sharpe_rf0,3)+'</td><td>'+fmt(b.metrics?.sharpe_rf0,3)+'</td><td>'+fmt(a.benchmarks?.QQQ?.sharpe_rf0,3)+'</td><td>'+pc(a.metrics?.max_drawdown)+'</td><td>'+esc(valid?a.minimum_active_names:"N/A")+'/40</td></tr>';
+      return '<tr><td>'+esc(y)+'</td><td><strong>'+fmt(a.metrics?.sharpe_rf0,3)+'</strong></td>'
+        +'<td>'+fmt(b.metrics?.sharpe_rf0,3)+'</td>'
+        +'<td>'+fmt(equal.metrics?.sharpe_rf0,3)+'</td>'
+        +'<td>'+fmt(a.benchmarks?.QQQ?.sharpe_rf0,3)+'</td>'
+        +'<td>'+pc(a.metrics?.total_return)+'</td>'
+        +'<td>'+pc(a.metrics?.max_drawdown)+'</td>'
+        +'<td>'+esc(valid?a.minimum_active_names:"N/A")+'/40</td></tr>';
     }).join('')+'</tbody></table>'
   :'<div class="q-body q-empty">'+esc(t("forty_none"))+'</div>';
  document.getElementById("qMetrics").innerHTML=[
@@ -302,7 +317,11 @@ function renderAutonomous(){
   +metric(t("autonomous_equity"),autoMoney(a.equity),esc(a.last_price_day||""))
   +metric(t("autonomous_cash"),autoMoney(a.cash),t("autonomous_mode"))
   +metric(t("autonomous_pnl"),autoMoney(a.unrealized_pnl),"vs $1,000")
-  +metric(t("autonomous_fees"),autoMoney(a.total_fees),esc(a.trade_count||0)+" simulated fills")+'</div>'
+  +metric(t("autonomous_fees"),autoMoney(a.total_fees),esc(a.trade_count||0)+" simulated fills")
+  +metric(t("weighted_papersharpe"),fmt(a.forward_performance?.sharpe_rf0,3),
+          esc(a.forward_performance?.status||"N/A"))
+  +metric(t("weighted_papersessions"),String(a.forward_performance?.observed_sessions??0),
+          t("weighted_paperthreshold"))+'</div>'
   +'<div class="q-status q-auto-state">'+esc(a.status)+' · '+esc(pending.signal_day||a.last_price_day||"N/A")+'</div>'
   +'<div class="q-two">'+mini(t("autonomous_pending"),cells(weights,pc))+mini(t("autonomous_positions"),cells(positions,autoMoney))+'</div>'
   +renderUniverseQuality(data?.autonomous_universe,pending.weights||{})
