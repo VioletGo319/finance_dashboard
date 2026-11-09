@@ -19,9 +19,11 @@ ALLOCATION_VERSION="INVESTABILITY_SOFTMAX_V2"
 # At least 12% of the VIX stock budget is spread evenly across all 40 names.
 # The remaining 88% is allocated by confidence-adjusted investability score.
 WEIGHT_FLOOR_FRACTION=0.12
-SCORE_SOFTMAX_TEMPERATURE=1.75
+SCORE_SOFTMAX_TEMPERATURE=1.25
 SCORE_STD_FLOOR=7.5
 SCORE_Z_CLIP=2.5
+MAX_NAME_STOCK_BUDGET_FRACTION=0.10
+MAX_SECTOR_STOCK_BUDGET_FRACTION=0.45
 
 
 try:
@@ -73,6 +75,8 @@ def investability_weights(candidates,exposure):
     # The only invariant cash is 1-exposure; there is no hidden equal-weight
     # 70% allocation as in the previous version.
     weights={t:exposure*WEIGHT_FLOOR_FRACTION/n for t in names}
+    max_name=min(MAX_NAME_WEIGHT,exposure*MAX_NAME_STOCK_BUDGET_FRACTION)
+    max_sector=min(MAX_SECTOR_WEIGHT,exposure*MAX_SECTOR_STOCK_BUDGET_FRACTION)
     group={t:sector(t) for t in names}
     remaining=exposure-sum(weights.values())
     # Constrained proportional water filling. Whenever an individual or
@@ -83,8 +87,8 @@ def investability_weights(candidates,exposure):
         sector_totals={g:sum(weights[t] for t in names if group[t]==g)
                        for g in set(group.values())}
         active=[t for t in names if
-                weights[t]<MAX_NAME_WEIGHT-1e-9 and
-                sector_totals[group[t]]<MAX_SECTOR_WEIGHT-1e-9]
+                weights[t]<max_name-1e-9 and
+                sector_totals[group[t]]<max_sector-1e-9]
         if not active:return None
         z=sum(strength[t] for t in active)
         suggested={t:remaining*strength[t]/z for t in active}
@@ -92,9 +96,9 @@ def investability_weights(candidates,exposure):
         for t,d in suggested.items():by_group[group[t]]=by_group.get(group[t],0.)+d
         scales=[1.]
         for t,d in suggested.items():
-            if d>0:scales.append(max(0.,MAX_NAME_WEIGHT-weights[t])/d)
+            if d>0:scales.append(max(0.,max_name-weights[t])/d)
         for g,d in by_group.items():
-            if d>0:scales.append(max(0.,MAX_SECTOR_WEIGHT-sector_totals[g])/d)
+            if d>0:scales.append(max(0.,max_sector-sector_totals[g])/d)
         scale=min(scales)
         if scale<=1e-11:return None
         for t,d in suggested.items():
@@ -103,11 +107,11 @@ def investability_weights(candidates,exposure):
     if remaining>1e-6:return None
     # Rounding down preserves hard sector and single-stock caps.
     rounded={t:math.floor(max(0.,w)*1e8+1e-9)/1e8 for t,w in weights.items()}
-    if (any(w<=0 or w>MAX_NAME_WEIGHT+1e-9 for w in rounded.values())
+    if (any(w<=0 or w>max_name+1e-9 for w in rounded.values())
         or sum(rounded.values())>exposure+1e-8):
         return None
     for group_name in set(group.values()):
-        if sum(rounded[t] for t in names if group[t]==group_name)>MAX_SECTOR_WEIGHT+1e-8:
+        if sum(rounded[t] for t in names if group[t]==group_name)>max_sector+1e-8:
             return None
     return rounded
 
@@ -157,11 +161,13 @@ def weighting_policy():
     return {
         "allocation_version":ALLOCATION_VERSION,
         "inputs":"40 forward-only investability research scores (estimated factors confidence-shrunk)",
-        "weight_formula":"12% equally spread over 40; 88% in capped softmax of (research_score-mean)/max(std,7.5)",
+        "weight_formula":"12% equally spread over 40; 88% in capped softmax of (research_score-mean)/max(std,7.5), name <=10% of stock budget and sector <=45% of stock budget",
         "softmax_temperature":SCORE_SOFTMAX_TEMPERATURE,
         "minimum_stock_budget_fraction":WEIGHT_FLOOR_FRACTION,
         "single_name_nav_cap":MAX_NAME_WEIGHT,
         "sector_nav_cap":MAX_SECTOR_WEIGHT,
+        "single_name_max_fraction_of_stock_budget":MAX_NAME_STOCK_BUDGET_FRACTION,
+        "sector_max_fraction_of_stock_budget":MAX_SECTOR_STOCK_BUDGET_FRACTION,
         "remainder":"Redistribute capped excess to eligible stocks in score-proportional weights",
         "execution_prices":"Observed closes only; no estimated executions",
         "historical_validation":"Not backtested with historical investability scores"
@@ -277,7 +283,7 @@ def update_paper_state(previous,quant,quotes,price_day):
                 state["weighting_policy"]=weighting_policy()
                 _log(state,price_day,"UNFILLED_ORDER_REWEIGHTED_BY_INVESTABILITY",
                      actual_fill_count=0,estimated_factor_scores=True,
-                     top_weights=sorted(new.items(),key=lambda kv:-kv[1])[:5])
+                     top_weights=[[t,w] for t,w in sorted(new.items(),key=lambda kv:-kv[1])[:5]])
         return state  # no same-day execution; only unfilled plan may migrate
     vix=quant.get("vix_trigger_policy",{})
     vix_date=vix.get("latest_vix_date")
@@ -336,7 +342,9 @@ def update_paper_state(previous,quant,quotes,price_day):
       "maximum_price_staleness_days":MAX_PRICE_STALENESS_DAYS,
       "transaction_cost_bps_per_side":ONE_WAY_COST_BPS,
       "cash_interest":0,"margin":False,"short_selling":False,
-      "execution_price_imputation":False,"candidate_pool_target":40}
+      "execution_price_imputation":False,"candidate_pool_target":40,
+      "max_name_fraction_of_stock_budget":MAX_NAME_STOCK_BUDGET_FRACTION,
+      "max_sector_fraction_of_stock_budget":MAX_SECTOR_STOCK_BUDGET_FRACTION}
     state["paper_only_notice"]="Simulated at observed completed market closes, not broker fills. No live order API, no real funds or account connected."
     return state
 
