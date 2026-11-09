@@ -39,6 +39,50 @@ class FullUniverseTest(unittest.TestCase):
         self.assertLessEqual(max(weights.values()),.15+1e-8)
         for band, names in SECTOR_BANDS.items():
             self.assertLessEqual(sum(weights.get(t,0) for t in names),.40+1e-8)
+    def test_scores_materially_differentiate_weights(self):
+        prices,universe=fixture()
+        candidates=universe["candidates"]
+        weights,status=target_weights(candidates,prices,25.64,"2026-11-06",require_full=True)
+        self.assertEqual(status,"READY_ALL_40")
+        ranked=sorted(candidates,key=lambda x:x["research_score"],reverse=True)
+        top=[weights[x["ticker"]] for x in ranked[:10]]
+        bottom=[weights[x["ticker"]] for x in ranked[-10:]]
+        # Investability weighting is deliberately unlike the previous
+        # 70%-equal blend: top decile meaningfully outweighs bottom decile.
+        self.assertGreater(sum(top),2*sum(bottom))
+        self.assertGreater(max(weights.values()),2*min(weights.values()))
+    def test_hard_caps_with_entire_sector_at_top_score(self):
+        prices,universe=fixture()
+        from scripts.autonomous_paper import sector
+        candidates=[]
+        for x in universe["candidates"]:
+            x=dict(x)
+            x["research_score"]=100. if sector(x["ticker"])=="AI compute" else 12.
+            candidates.append(x)
+        weights,status=target_weights(candidates,prices,35.0,"2026-11-06",require_full=True)
+        self.assertEqual(status,"READY_ALL_40")
+        self.assertEqual(len(weights),40)
+        self.assertLessEqual(sum(weights.values()),1.00000001)
+        self.assertGreater(sum(weights.values()),.99999)
+        self.assertTrue(all(v>0 and v<=.15+1e-9 for v in weights.values()))
+        for name,tickers in SECTOR_BANDS.items():
+            self.assertLessEqual(sum(weights.get(t,0.) for t in tickers),.40+1e-9)
+    def test_same_day_unfilled_forty_reweights_without_new_fills(self):
+        prices,universe=fixture()
+        quant={"autonomous_universe":universe,"screener":{"ranked":[]},
+               "vix_trigger_policy":{"latest_vix_close":25.64,"latest_vix_date":"2026-11-06"}}
+        account=update_paper_state(None,quant,prices,"2026-11-06")
+        before=account["pending"]["weights"]
+        equal={ticker:.75/40 for ticker in before}
+        account["pending"]["weights"]=equal
+        account["pending"].pop("allocation_version",None)
+        updated=update_paper_state(account,quant,prices,"2026-11-06")
+        self.assertNotEqual(updated["pending"]["weights"],equal)
+        self.assertEqual(updated["pending"]["weights"],before)
+        self.assertEqual(updated["pending"]["allocation_version"],"INVESTABILITY_SOFTMAX_V2")
+        self.assertEqual(updated["trade_count"],0)
+        self.assertEqual(updated["cash"],1000)
+        self.assertEqual(updated,update_paper_state(updated,quant,prices,"2026-11-06"))
     def test_no_estimated_price_executions(self):
         quotes,universe=fixture()
         del quotes[SYMS[5]]
@@ -54,7 +98,7 @@ class FullUniverseTest(unittest.TestCase):
         self.assertEqual(a["trade_count"],0)
         self.assertEqual(len(a["pending"]["weights"]),40)
         self.assertEqual(a["cash"],1000)
-        self.assertEqual(a["allocation_method"],"40_STOCK_BROAD_DIVERSIFIED")
+        self.assertEqual(a["allocation_method"],"40_STOCK_INVESTABILITY_WEIGHTED")
     def test_upgrade_unfilled_legacy_order(self):
         quotes,universe=fixture()
         old={"screener":{"ranked":[{"ticker":t,"rank_eligible":True} for t in SYMS[:8]]},
