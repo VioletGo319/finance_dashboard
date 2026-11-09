@@ -4,7 +4,7 @@
   "previous_price_date": "2026-11-05",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-08T23:58:52.690686+00:00",
+  "retrieved_at_utc": "2026-11-09T00:09:12.418221+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -3224,8 +3224,9 @@
       "TSLA",
       "AAPL"
     ],
-    "quant_status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
-    "quant_eligible_count": 13
+    "quant_status": "NOT_GENERATED",
+    "quant_eligible_count": 13,
+    "quant_error": "name 'vix_target_exposure' is not defined"
   },
   "capex_sources": {
     "MSFT": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
@@ -3362,8 +3363,8 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "power": 3,
       "storage": 2,
+      "power": 3,
       "energy": 1
     },
     "unverified_is_unknown": true
