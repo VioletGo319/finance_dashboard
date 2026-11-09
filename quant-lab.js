@@ -98,8 +98,10 @@ for(const [lang,values] of Object.entries(fortyHistoricalLabels))values.forEach(
 const weightedLabels={"en":["40 Weighted + VIX","40 Weighted, no VIX","40 Equal + VIX","Weighted + VIX total return","Weighted + VIX max drawdown","Weighted price-only proxy (NOT the historical forward fundamental/Alpha score). Monthly price factors use prior closes; same capped allocation shape as autonomous paper; no lookahead.","Forward paper Sharpe","Observed paper sessions","30 returns required","No historical performance assumed from new live plan"],"zh-CN":["40 股评分加权 + VIX","40 股评分加权无 VIX","40 股等权 + VIX","加权 + VIX 累计收益","加权 + VIX 最大回撤","历史加权仅基于当时已知的价格因子（非当前真实基本面／供应链 Alpha 的历史回测）。采用与自主模拟账户相同的权重计算与风控上限，无未来信息倒填。","前瞻模拟 Sharpe","前瞻交易日观测数","至少需 30 个收益日","新账户的历史业绩尚未形成"],"fr":["40 pondérées + VIX","40 pondérées sans VIX","40 égales + VIX","Rendement pondéré VIX","Repli pondéré VIX","Proxy historique fondé seulement sur les prix passés, pas sur les facteurs fondamentaux actuels.","Sharpe futur simulé","Sessions papier","30 rendements requis","Pas de rendements fictifs"],"es":["40 ponderadas + VIX","40 ponderadas sin VIX","40 iguales + VIX","Retorno ponderado VIX","Caída ponderada VIX","Proxy histórico solo con precios pasados, sin datos fundamentales actuales.","Sharpe simulado futuro","Sesiones observadas","Requiere 30 retornos","Sin retornos inventados"],"ja":["40銘柄加重+VIX","40銘柄加重・VIXなし","40銘柄均等+VIX","加重+VIXリターン","加重+VIX最大下落","当時の株価要因のみを使う歴史的比較。現在の財務・サプライチェーン因子は利用しません。","先行仮想シャープ","観測済み日数","30リターン必要","仮想の過去実績なし"]};
 const weightedKeys=["wvix","wplain","evix","wreturn","wdraw","wnote","papersharpe","papersessions","paperthreshold","paperwarning"];
 for(const [lang,items] of Object.entries(weightedLabels))items.forEach((v,i)=>{locales[lang]["weighted_"+weightedKeys[i]]=v;});
+const auditUiLabels={"en":{"syncOk":"Synced with Overview","syncPending":"Snapshot mismatch: Supply Alpha hidden until Overview and Quant share an identical dated source","source":"Supplier model","archived":"Archived 8-stock research screen — not an active paper portfolio","active":"Active: 40-stock investability-weighted VIX paper account (next-close execution only)","high":"≥75% comparable coverage","mid":"50–74% exploratory coverage","low":"<50% limited evidence","all":"All coverage groups","rankCaution":"Ranks are comparable only within similar evidence coverage and factor sets. Missing fundamentals are not zero.","statusComputed":"Calculated historical price diagnostic","statusPending":"Waiting for new sample","statusNotAvailable":"Insufficient historical data","statusCurrent":"Current screening only","statusInsufficient":"Incomplete source coverage","statusPaper":"Awaiting next completed close","sourceDate":"Source date","backend":"Data source"},"zh-CN":{"syncOk":"与总览数据版本一致","syncPending":"数据版本不一致：在总览与量化页的来源快照同步前暂不显示 Supply Alpha","source":"供应链评分模型","archived":"历史 8 股研究篮子已归档，不是当前模拟交易组合","active":"当前有效策略：40 股投资性加权 + VIX 模拟账户（下一收盘日模拟执行）","high":"≥75% 高覆盖","mid":"50–74% 中覆盖探索","low":"<50% 低覆盖仅供参考","all":"所有覆盖分组","rankCaution":"仅建议比较覆盖率和缺失因子结构相近的股票；缺失基本面不等于零。","statusComputed":"已计算的历史价格诊断","statusPending":"尚无足够前瞻交易日","statusNotAvailable":"历史数据不足","statusCurrent":"当前截面评分","statusInsufficient":"数据覆盖不足","statusPaper":"等待下一完整交易日收盘","sourceDate":"来源日期","backend":"数据来源"},"fr":{"syncOk":"Synchronisé avec la vue d’ensemble","syncPending":"Source divergente : Alpha masqué jusqu'à synchronisation","source":"Modèle fournisseur","archived":"Ancien portefeuille de recherche à 8 titres archivé — pas de trading simulé actif","active":"Compte actif : 40 actions pondérées + VIX (simulation)","high":"Couverture ≥75%","mid":"Couverture 50–74%","low":"Couverture <50%","all":"Toutes les couvertures","rankCaution":"Comparer uniquement des titres à couverture et facteurs similaires.","statusComputed":"Diagnostic historique calculé","statusPending":"En attente de données","statusNotAvailable":"Historique insuffisant","statusCurrent":"Sélection actuelle","statusInsufficient":"Couverture insuffisante","statusPaper":"Prochaine clôture simulée","sourceDate":"Date de source","backend":"Source"},"es":{"syncOk":"Sincronizado con Resumen","syncPending":"Fuentes diferentes: Alpha oculto hasta sincronizar","source":"Modelo de proveedores","archived":"Antigua cartera de 8 valores archivada; no es simulación activa","active":"Activa: 40 acciones ponderadas + VIX (simulación)","high":"Cobertura ≥75%","mid":"Cobertura 50–74%","low":"Cobertura <50%","all":"Todas","rankCaution":"Comparar solo grupos con cobertura y factores equivalentes.","statusComputed":"Diagnóstico histórico calculado","statusPending":"Faltan datos","statusNotAvailable":"Historial insuficiente","statusCurrent":"Evaluación actual","statusInsufficient":"Cobertura insuficiente","statusPaper":"Esperando próximo cierre","sourceDate":"Fecha","backend":"Fuente"},"ja":{"syncOk":"概要と同一データ","syncPending":"データ不一致：同期まで Alpha を非表示","source":"供給モデル","archived":"旧8銘柄研究バスケットはアーカイブ済み（仮想取引対象外）","active":"有効な40銘柄加重＋VIX仮想口座","high":"75%以上","mid":"50–74%","low":"50%未満","all":"すべて","rankCaution":"欠損因子とカバレッジが同程度の銘柄のみ比較してください。","statusComputed":"計算済み価格診断","statusPending":"観測不足","statusNotAvailable":"履歴不足","statusCurrent":"現在のスクリーニング","statusInsufficient":"データ不足","statusPaper":"翌終値を待機","sourceDate":"データ日","backend":"データ出典"}};
+for(const [lang,fields] of Object.entries(auditUiLabels))Object.assign(locales[lang],Object.fromEntries(Object.entries(fields).map(([k,v])=>["audit_"+k,v])));
 let selectedScenario="1Y · VIX Trigger · Top 8 · 10 bps";
-let paperState=null,data=null,showOnly=false,chartMode="nav",seriesActive={strategy:true,spy:true,xlk:true};
+let paperState=null,data=null,showOnly=false,quantCoverageFilter="high",chartMode="nav",seriesActive={strategy:true,spy:true,xlk:true};
 function L(){return (window.M7_I18N&&window.M7_I18N.language)||"en";}
 function t(k){return (locales[L()]||locales.en)[k]||locales.en[k]||k;}
 function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
@@ -117,10 +119,28 @@ function renderShell(){
  const vixp=q.vix_trigger_policy||{};
  const m=back.metrics||{},bm=back.benchmarks?.QQQ||{},secs=q.fundamentals_coverage||{};
  const validity=back.status==="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC";
+ const main=window.M7_LIVE_DATA||{};
+ const sameSupplierVersion=Boolean(q.source_snapshot?.fingerprint &&
+    main.quant_source_fingerprint===q.source_snapshot.fingerprint &&
+    main.as_of===q.source_snapshot.as_of &&
+    main.model_version===q.source_snapshot.model_version);
+ const mainSupplierByTicker=q.source_alpha_by_ticker||{};
+ const localStatus=(status)=>({
+   "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":t("audit_statusComputed"),
+   "HISTORICAL_PRICE_ONLY_RESEARCH_DIAGNOSTIC":t("audit_statusComputed"),
+   "CURRENT_CROSS_SECTION_ONLY":t("audit_statusCurrent"),
+   "INSUFFICIENT_POINT_IN_TIME_FUNDAMENTALS":t("audit_statusInsufficient"),
+   "SCREENING_SCORE_ONLY_NOT_BACKTESTED":t("audit_statusCurrent"),
+   "INSUFFICIENT_FULL_HORIZON":t("audit_statusNotAvailable"),
+   "INSUFFICIENT_VIX_HISTORY":t("audit_statusNotAvailable")
+ }[status]||status||"N/A");
+
  host.innerHTML='<div class="q-root">'
   +'<div class="q-hero"><div><div class="q-eyebrow">'+esc(t("lab"))+'</div><h2>'+esc(t("title"))+'</h2><div class="q-muted">'+esc(t("subtitle"))+'</div><div class="q-pills" style="margin-top:12px"><span>'+esc(t("screenOnly"))+'</span><span>'+esc(t("backtestOnly"))+'</span><span>'+esc(q.as_of||"N/A")+'</span></div></div><div class="q-actions"><button id="qRefresh" class="q-action">'+esc(t("refresh"))+'</button><div class="q-status">'+esc(t("statusLine"))+': '+esc(q.fundamental_audit?.status||"N/A")+'</div></div></div>'
   +'<div class="q-alert">'+esc(t("notTested"))+' · '+esc(t("caveat"))+'</div>'
-   +'<div class="q-panel q-autonomy"><div class="q-head"><div><h3>'+esc(t("autonomous_title"))+'</h3><p>'+esc(t("autonomous_subtitle"))+'</p></div><span class="q-tag ok">'+esc(t("autonomous_mode"))+'</span></div><div class="q-body"><div class="q-auto-flow">'+[1,2,3,4,5].map((i)=>'<span>'+i+' · '+esc(t("autonomous_phase"+i))+'</span>').join('')+'</div><div id="qAutonomous"></div><p class="q-note">'+esc(t("autonomous_notice"))+'</p></div></div>'
+  +'<div class="q-status" role="status">'+esc(sameSupplierVersion?t("audit_syncOk"):t("audit_syncPending"))+' · '+esc(t("audit_sourceDate"))+': '+esc(q.source_snapshot?.as_of||"N/A")+' · '+esc(t("audit_source"))+': '+esc(q.source_snapshot?.model_version||"N/A")+'</div>'
+   +'<div class="q-insight">'+esc(t("audit_active"))+' · '+esc(q.as_of||"N/A")+'</div>'
+  +'<div class="q-panel q-autonomy"><div class="q-head"><div><h3>'+esc(t("autonomous_title"))+'</h3><p>'+esc(t("autonomous_subtitle"))+'</p></div><span class="q-tag ok">'+esc(t("autonomous_mode"))+'</span></div><div class="q-body"><div class="q-auto-flow">'+[1,2,3,4,5].map((i)=>'<span>'+i+' · '+esc(t("autonomous_phase"+i))+'</span>').join('')+'</div><div id="qAutonomous"></div><p class="q-note">'+esc(t("autonomous_notice"))+'</p></div></div>'
    +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("vixTrigger"))+'</h3><p>'+esc(t("vixCaution"))+'</p></div></div><div class="q-body"><div class="q-kpis">'+metric(t("vixClose"),fmt(vixp.latest_vix_close),esc(vixp.latest_vix_date||"N/A")+' · '+esc(vixp.source_provider||""))+metric(t("vixTarget"),pc(vixp.next_target_stock_exposure),t("vixHold")+": "+pc(typeof vixp.next_target_stock_exposure==="number"?1-vixp.next_target_stock_exposure:null))+'</div><div class="q-pills">'+(vixp.bands||[]).map(b=>'<span>VIX '+esc(b.vix)+' → '+pc(b.exposure)+'</span>').join('')+'</div><p class="q-note">'+esc(vixp.execution||"")+' · '+link(vixp.source,"VIX source")+'</p><div id="qVixCompare"></div></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("forty_title"))+'</h3><p>'+esc(t("forty_note"))+'</p></div></div><div class="q-scroll" id="qFortyHistorical"></div></div>'
   +'<div class="q-kpis">'+metric(t("return"),pc(m.total_return),"Strategy")
@@ -132,7 +152,7 @@ function renderShell(){
   +'<div class="q-chart" id="qChart"><div class="q-empty">'+esc(t("loading"))+'</div></div><div class="q-legend"><span><i style="background:#64e3cf"></i>'+esc(t("vixMode"))+'</span><span><i style="background:#c8a2ff"></i>'+esc(t("vixBase"))+'</span><span><i style="background:#82b2ff"></i>QQQ</span><span><i style="background:#ebb67d"></i>XLK</span></div></div>'
   +'<div class="q-two"><div class="q-panel"><div class="q-head"><div><h3>'+esc(t("perf"))+'</h3><p>'+esc(t("backtest"))+'</p></div></div><div class="q-body" id="qMetrics"></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("screen"))+'</h3><p>'+esc(t("screenNote"))+'</p></div></div><div class="q-body" id="qCoverage"></div></div></div>'
-  +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("rank"))+'</h3><p>'+esc(t("rankNote"))+'</p></div><div class="q-actions"><button type="button" id="qFilter" class="q-action" aria-pressed="'+showOnly+'">'+esc(t(showOnly?"showAll":"hideUnranked"))+'</button></div></div><div class="q-scroll"><table class="q-table"><thead><tr>'
+  +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("rank"))+'</h3><p>'+esc(t("audit_rankCaution"))+'</p></div><div class="q-actions"><label class="q-note" for="qCoverageFilter">'+esc(t("status"))+'</label><select class="pick" id="qCoverageFilter">'+["high","mid","low","all"].map(k=>'<option value="'+k+'" '+(k===quantCoverageFilter?'selected':'')+'>'+esc(t("audit_"+k))+'</option>').join('')+'</select><button type="button" id="qFilter" class="q-action" aria-pressed="'+showOnly+'">'+esc(t(showOnly?"showAll":"hideUnranked"))+'</button></div></div><div class="q-scroll"><table class="q-table"><thead><tr>'
   +[t("ticker"),t("score"),t("status"),t("price"),t("cap"),t("revenue"),t("growth"),t("ps"),t("supply"),t("monitor"),t("source")].map(h=>'<th>'+esc(h)+'</th>').join('')
   +'</tr></thead><tbody id="qRanking"></tbody></table></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("details"))+'</h3><p>'+esc(t("screenNote"))+'</p></div></div><div class="q-body" id="qFactorDetail"></div></div>'
@@ -182,30 +202,30 @@ function renderShell(){
   row("coverage",(secs.fiscal_revenue??0)+"/40"),
   row("eligible",(sc.eligible_count??0)+"/40"),
   row("period",(back.start_date||"N/A")+" → "+(back.end_date||"N/A")),
-  row("priceOnly",back.status||"N/A"),
+  row("priceOnly",localStatus(back.status)),
  ].join("")+'<div style="margin-top:13px" class="q-insight">'+esc(t("preview"))+'<br>'+esc(t("sourceWarning"))+'</div>';
- const rank=(sc.ranked||[]).filter(x=>!showOnly||x.rank_eligible);
- const meta=window.M7_LIVE_DATA?.suppliers||[];
- const byTicker=Object.fromEntries(meta.map(x=>[x.ticker,x]));
+ const rank=(sc.ranked||[]).filter(x=>(!showOnly||x.rank_eligible) && (
+  quantCoverageFilter==="all"||
+  (quantCoverageFilter==="high"&&x.factor_coverage>=.75)||
+  (quantCoverageFilter==="mid"&&x.factor_coverage>=.5&&x.factor_coverage<.75)||
+  (quantCoverageFilter==="low"&&x.factor_coverage<.5)));
+ const byTicker=mainSupplierByTicker;
  document.getElementById("qRanking").innerHTML=rank.map(x=>{
   const ticker=x.ticker;
-  const row=byTicker[ticker]||{};
-  return '<tr data-q-ticker="'+esc(ticker)+'" title="'+esc(x.status)+'" style="cursor:pointer"><td><strong>'+esc(ticker)+'</strong></td>'
+  const row=sameSupplierVersion?(byTicker[ticker]||{}):{};
+  return '<tr data-q-ticker="'+esc(ticker)+'" title="'+esc(localStatus(x.status))+'" tabindex="0" role="button" style="cursor:pointer"><td><strong>'+esc(ticker)+'</strong></td>'
    +'<td>'+(x.rank?'<span class="q-tag ok">'+esc(x.rank)+" · "+fmt(x.investability_score)+'</span>':'<span class="q-tag warm">'+esc(t("unranked"))+'</span>')+'</td>'
    +'<td>'+pc(x.factor_coverage,0)+'</td>'
-   +'<td class="q-number">'+fmt(row.close||null)+'</td>'
+   +'<td class="q-number">'+fmt(row.close??null)+'</td>'
    +'<td class="q-number">'+compact(x.market_cap_proxy_usd)+'</td>'
    +'<td class="q-number">'+compact(x.revenue_fy_usd)+'</td>'
    +'<td class="q-number">'+pc(x.revenue_growth_yoy)+'</td>'
    +'<td class="q-number">'+fmt(x.price_to_sales_proxy)+'</td>'
-   +'<td class="q-number">'+fmt(row.provisional_alpha)+'</td>'
+   +'<td class="q-number">'+fmt(row.alpha??row.provisional_alpha)+'</td>'
    +'<td class="q-number">'+fmt(row.monitor_score)+'</td>'
    +'<td>'+link(x.fundamental_source,"SEC ↗")+'</td></tr>';
  }).join("")||'<tr><td colspan="11">'+esc(t("noScore"))+'</td></tr>';
- const paper=q.prospective_screen_portfolio||{},selected=paper.selected||[];
- document.getElementById("qPaper").innerHTML=selected.length
-  ?'<div class="q-pills">'+selected.map(x=>'<span>'+esc(x)+' · '+pc(paper.target_weights?.[x])+'</span>').join('')+'</div><div class="q-metric"><span>'+esc(t("forward"))+'</span><span>'+esc(paper.first_eligible_execution||"N/A")+'</span></div><div class="q-alert">'+esc(t("notFilled"))+' · '+esc(t("paperNote"))+'</div>'
-  :'<div class="q-empty">'+esc(t("noPaper"))+'</div>';
+ document.getElementById("qPaper").innerHTML='<div class="q-alert">'+esc(t("audit_archived"))+' · '+esc(q.prospective_screen_portfolio?.signal_as_of||"N/A")+'</div>';
  const scenarios=Object.fromEntries(Object.entries(q.backtest_scenarios||{}).filter(([k])=>k.startsWith(selectedScenario.split(" · ")[0]+" · ")));
  document.getElementById("qScenarioMatrix").innerHTML=Object.keys(scenarios).length
   ?Object.entries(scenarios).map(([k,v])=>'<div class="q-metric"><span>'+esc(k)+'</span><span>'+esc(t("impact"))+': '+pc(v.metrics?.total_return)+' · Sharpe '+fmt(v.metrics?.sharpe_rf0)+'</span></div>').join('')
@@ -218,6 +238,9 @@ function renderShell(){
    selectedQuantTicker=tr.dataset.qTicker;
    factorDetail((sc.ranked||[]).find(x=>x.ticker===selectedQuantTicker));
  }));
+ document.querySelectorAll("#qRanking [data-q-ticker]").forEach(tr=>tr.addEventListener("keydown",e=>{
+   if(e.key==="Enter"||e.key===" "){e.preventDefault();tr.click();}
+ }));
  const months=back.monthly||[];
  const rr=months.map(x=>'<div class="q-month" title="'+esc(x.month)+' QQQ '+pc(x.qqq)+' XLK '+pc(x.xlk)+'" style="background:'+(x.strategy>=0?"#173f3b":"#492b37")+'"><span>'+esc(x.month)+'</span><strong class="'+(x.strategy>=0?"q-positive":"q-negative")+'">'+pc(x.strategy)+'</strong><small class="q-muted">QQQ '+pc(x.qqq)+'</small></div>').join("");
  document.getElementById("qMonthly").innerHTML=rr?'<div class="q-matrix">'+rr+'</div>':'<div class="q-empty">'+esc(t("none"))+'</div>';
@@ -227,6 +250,7 @@ function renderShell(){
  document.getElementById("qScenario")?.addEventListener("change",e=>{selectedScenario=e.target.value;renderShell();});
 
  document.getElementById("qFilter")?.addEventListener("click",()=>{showOnly=!showOnly;renderShell()});
+ document.getElementById("qCoverageFilter")?.addEventListener("change",e=>{quantCoverageFilter=e.target.value;renderShell()});
  document.getElementById("qChartNav")?.addEventListener("click",()=>{chartMode="nav";drawChart()});
  document.getElementById("qChartDD")?.addEventListener("click",()=>{chartMode="dd";drawChart()});
  drawChart();
@@ -310,6 +334,7 @@ function autoMoney(v){return typeof v==="number"&&Number.isFinite(v)?"$"+v.toLoc
 function renderAutonomous(){
  const el=document.getElementById("qAutonomous");if(!el)return;
  const a=paperState;if(!a){el.innerHTML='<div class="q-empty">'+esc(t("autonomous_empty"))+'</div>';return;}
+ const paperStatusMap={"AWAITING_NEXT_CLOSE":t("audit_statusPaper"),"PAPER_ACTIVE":t("audit_statusComputed"),"INSUFFICIENT_OBSERVED_PAPER_SESSIONS":t("audit_statusPending")};
  const pending=a.pending||{},weights=pending.weights||{},positions=a.positions_value||{},log=(a.audit||[]).slice(-10).reverse();
  const cells=(items,formatter)=>Object.entries(items).map(([k,v])=>'<tr><td>'+esc(k)+'</td><td>'+formatter(v)+'</td></tr>').join('');
  const mini=(title,rows)=>'<div><h4>'+esc(title)+'</h4><div class="q-scroll"><table class="q-table"><tbody>'+ (rows||'<tr><td>—</td></tr>')+'</tbody></table></div></div>';
@@ -319,10 +344,10 @@ function renderAutonomous(){
   +metric(t("autonomous_pnl"),autoMoney(a.unrealized_pnl),"vs $1,000")
   +metric(t("autonomous_fees"),autoMoney(a.total_fees),esc(a.trade_count||0)+" simulated fills")
   +metric(t("weighted_papersharpe"),fmt(a.forward_performance?.sharpe_rf0,3),
-          esc(a.forward_performance?.status||"N/A"))
+          esc(paperStatusMap[a.forward_performance?.status]||t("audit_statusPending")))
   +metric(t("weighted_papersessions"),String(a.forward_performance?.observed_sessions??0),
           t("weighted_paperthreshold"))+'</div>'
-  +'<div class="q-status q-auto-state">'+esc(a.status)+' · '+esc(pending.signal_day||a.last_price_day||"N/A")+'</div>'
+  +'<div class="q-status q-auto-state">'+esc(paperStatusMap[a.status]||a.status)+' · '+esc(pending.signal_day||a.last_price_day||"N/A")+'</div>'
   +'<div class="q-two">'+mini(t("autonomous_pending"),cells(weights,pc))+mini(t("autonomous_positions"),cells(positions,autoMoney))+'</div>'
   +renderUniverseQuality(data?.autonomous_universe,pending.weights||{})
   +'<h4>'+esc(t("autonomous_audit"))+'</h4><div class="q-auto-log">'+log.map(e=>'<div><span>'+esc(e.date)+'</span><strong>'+esc(e.event)+'</strong></div>').join('')+'</div>'
@@ -354,6 +379,7 @@ async function fetchQuant(force=false){
 }
 function renderLocale(){if(data)renderShell();else fetchQuant();}
 document.getElementById("m7Language")?.addEventListener("change",()=>setTimeout(renderLocale,30));
+window.addEventListener("m7-supplier-snapshot-updated",()=>{if(data)renderShell()});
 document.querySelector('[data-tab="quant"]')?.addEventListener("click",()=>{if(data)renderShell();else fetchQuant();});
 window.M7QuantLab={refresh:fetchQuant,get data(){return data}};
 fetchQuant();
