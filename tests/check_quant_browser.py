@@ -31,6 +31,13 @@ assert anchor in page
 page=page.replace(anchor,inject+anchor)
 audit="""<script>
  setTimeout(()=>{
+  const first=document.querySelector('#rankingBody tr[data-ticker]')?.dataset.ticker;
+  const overviewMatches=Boolean(first&&first===document.getElementById('selectedTicker')?.textContent);
+  document.documentElement.dataset.overviewSelection=overviewMatches?'PASS':'FAIL';
+  document.querySelector('[data-tab="audit"]')?.click();
+  const auditContent=document.querySelector('#auditRows')?.textContent||'';
+  const auditSeparated=auditContent.includes('完整六因子正式评分')&&auditContent.includes('探索性六因子评分');
+  document.documentElement.dataset.auditSeparated=auditSeparated?'PASS':'FAIL';
   document.querySelector('[data-tab="quant"]')?.click();
   setTimeout(()=>{
    try{
@@ -48,9 +55,28 @@ audit="""<script>
     const bench=document.querySelector('#qMetrics')?.textContent||'';
     const scenarios=document.querySelector('#qScenario')?.options?.length||0;
     const paper=document.querySelector('#qPaper')?.textContent||'';
+    const chosen='5Y · Top 5 · 10 bps';
+    const scenarioSelect=document.getElementById('qScenario');
+    let dynamicScenario=false, fiscalSeparated=false, metricUpdated=false;
+    if(scenarioSelect && [...scenarioSelect.options].some(x=>x.value===chosen)){
+      scenarioSelect.value=chosen;
+      scenarioSelect.dispatchEvent(new Event('change',{bubbles:true}));
+      const d=document.getElementById('qStrategyDescription')?.textContent.toLowerCase()||'';
+      const fy=document.getElementById('qFiscalPeriod')?.textContent||'';
+      const range=document.getElementById('qCoverage')?.textContent||'';
+      const expected=data.backtest_scenarios[chosen];
+      const metric=document.getElementById('qMetrics')?.textContent||'';
+      dynamicScenario=d.includes('top 5')&&!d.includes('top 8')&&d.includes('10');
+      fiscalSeparated=Boolean(fy)&&!fy.includes(expected.start_date+' → '+expected.end_date)
+        &&range.includes('Backtest window')&&range.includes('FY');
+      metricUpdated=metric.includes((100*expected.metrics.total_return).toFixed(1).slice(0,3));
+    }
+    document.documentElement.dataset.quantDynamicScenario=dynamicScenario?'PASS':'FAIL';
+    document.documentElement.dataset.quantFiscalVsWindow=fiscalSeparated?'PASS':'FAIL';
+    document.documentElement.dataset.quantMetricUpdated=metricUpdated?'PASS':'FAIL';
     const success=data?.screener?.eligible_count>0 && data?.backtest?.curve?.length>20 &&
        rows===expectedHigh && expectedHigh>0 && allRows===40 && defaultGroupIsHigh && !!graph && bench.includes('QQQ') && scenarios>=4 &&
-       paper.length>0;
+       paper.length>0 && overviewMatches && auditSeparated && dynamicScenario && fiscalSeparated && metricUpdated;
     document.documentElement.dataset.quantSmoke=success?'PASS':'FAIL';
     document.documentElement.dataset.quantRows=rows;
     document.documentElement.dataset.quantAllRows=allRows;
@@ -77,4 +103,4 @@ print("Quant smoke:",status)
 if status!="PASS":
     print("Missing data/DOM; browser stderr:",r.stderr[-900:])
     raise SystemExit(1)
-print("Quant research UI rendered 40 ranked rows, multiple benchmark scenarios, paper signal and live chart.")
+print("Quant research UI checked 5Y Top 5 scenario description, SEC fiscal period separation, current metrics, selected ranking, and distinct Alpha audit counts.")
