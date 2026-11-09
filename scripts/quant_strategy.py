@@ -158,7 +158,7 @@ def simulate_daily_close(quotes,tickers,initial_date=None,top_n=8,trade_bps=10,v
     at daily frequency, without daily equal-weight resets or leverage.
     """
     benchmarks=("QQQ","XLK")
-    names=(*tickers,*benchmarks,*("VIX",) if vix_trigger else ())
+    names=(*tickers,*benchmarks,*(("VIX",) if vix_trigger else ()))
     maps={t:dict(quotes.get(t,{}).get("bars") or []) for t in names}
     if any(len(maps[b])<100 for b in benchmarks):
         return {"status":"INSUFFICIENT_BENCHMARK_HISTORY","reason":"QQQ/XLK close history not available"}
