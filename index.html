@@ -461,7 +461,7 @@ $('#pathSupplier').addEventListener('change',renderPaths);
 $('#pathHops').addEventListener('change',renderPaths);
 $('#pathCustomer').addEventListener('change',renderPaths);
 $('#tabs').addEventListener('click',e=>{const b=e.target.closest('button[data-tab]');if(b)goto(b.dataset.tab)});$$('[data-goto]').forEach(x=>x.addEventListener('click',()=>goto(x.dataset.goto)));
-$('#ranking th[data-sort]').forEach(th=>{
+$$('#ranking th[data-sort]').forEach(th=>{
  const title=th.textContent.trim();
  th.innerHTML='<button type="button" aria-label="'+esc(title)+'">'+esc(title)+'</button>';
  th.addEventListener('click',()=>{
