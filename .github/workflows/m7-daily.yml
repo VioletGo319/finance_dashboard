@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/m7-daily.yml'
-    # Publish verified cross-page Supply Alpha fingerprint and backtest gates after audit remediation
+    # Validate distinct SEC FY period versus 5Y Top 5 backtest window, then publish
   workflow_dispatch:
   schedule:
     # After regular US market close: 17:30 EST / 18:30 EDT. v3.1 active 40-stock refresh.
@@ -71,6 +71,27 @@ jobs:
               raw=quant["source_alpha_by_ticker"][stock["ticker"]]
               for key in ("alpha","provisional_alpha","coverage","monitor_score","close","previous_close","price_date"):
                   assert raw.get(key)==stock.get(key),(stock["ticker"],key,raw.get(key),stock.get(key))
+          # FY end is a fiscal-period property; it is never the backtest window.
+          fy_rows=[row for row in quant.get("screener",{}).get("ranked",[])
+                   if row.get("revenue_fy_end")]
+          assert len(fy_rows)>=1, "No SEC fiscal end dates were exported"
+          for row in fy_rows:
+              assert row["revenue_fy_end"]<=row.get("revenue_filed","9999-12-31"), (
+                  row["ticker"],"FY end later than filing")
+              assert row["revenue_fy_end"]<=root["as_of"],(row["ticker"],"FY end after as-of")
+          five=quant["backtest_scenarios"]["5Y · Top 5 · 10 bps"]
+          assert five.get("top_n")==5
+          assert five.get("one_way_bps")==10
+          assert "top 5" in five.get("risk","")
+          print("FY_AND_SCENARIO_CHECK",json.dumps({
+             "fiscal_records":len(fy_rows),
+             "example_ticker":fy_rows[0]["ticker"],
+             "fiscal_year_end":fy_rows[0]["revenue_fy_end"],
+             "filing_date":fy_rows[0].get("revenue_filed"),
+             "five_year_top5_description":five["risk"],
+             "backtest_start":five.get("start_date"),
+             "backtest_end":five.get("end_date")
+          }))
           old=quant.get("prospective_screen_portfolio",{})
           assert old.get("status")=="ARCHIVED_8_NAME_NON_EXECUTABLE"
           assert old.get("display_in_active_portfolio") is False
@@ -110,7 +131,7 @@ jobs:
           import json
           from pathlib import Path
           q=json.loads(Path("data/quant/latest.json").read_text())
-          if q.get("schema_version")!="1.5":raise SystemExit("Cross-page supplier snapshot v1.5 absent; stale quant export")
+          if q.get("schema_version")!="1.6":raise SystemExit("Cross-page supplier snapshot v1.6 absent; stale quant export")
           p=q.get("vix_trigger_policy") or {}
           if p.get("latest_vix_close") is None:raise SystemExit("VIX source was unavailable; cannot publish VIX trigger")
           print("VIX_POLICY",json.dumps(p,ensure_ascii=False))
