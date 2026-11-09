@@ -195,7 +195,7 @@
         <button class="infra-filter" type="button" data-dim="storage">储能 · Storage</button>
       </div>
       <div class="filterrow">
-        <select class="pick" id="infraTicker"><option value="all">全部 12 家供应商</option></select>
+        <select class="pick" id="infraTicker"><option value="all">全部 40 家供应商</option></select>
         <label class="toggle"><input type="checkbox" id="infraOnlyVerified" checked>只显示已核验产品关联</label>
       </div>
       <div class="tablewrap"><table class="infra-table"><thead><tr>
@@ -402,9 +402,21 @@ if(candidatePolicies.length)$('#allPolicies').innerHTML+='<div class="empty"><b>
 const candidateFilings=(db.filing_candidates||[]).slice(0,10);
 if(candidateFilings.length)$('#allEvents').innerHTML+='<div class="empty"><b>SEC自动发现 · 待人工核验公告</b>（不是已确认合作）</div>'+candidateFilings.map(e=>`<div class="eventitem"><div class="eventmarker"></div><div><div class="eventtitle">${esc(e.title)}</div><div class="small muted">${esc(e.date)} · ${esc(e.client_ticker||'')} · 未审核</div>${link(e.source,'SEC 原文件 ↗')}</div></div>`).join('');
 }
+function auditModeLabel(mode){
+ const lang=window.M7_I18N?.language||new URLSearchParams(location.search).get("lang")||"en";
+ const labels={
+ en:{live:"Automated research feed",fixture:"Synthetic test fixture",partial:"Partial data / imported",offline:"Offline / unavailable"},
+ "zh-CN":{live:"自动采集研究数据",fixture:"合成测试数据",partial:"部分数据／手动导入",offline:"离线／数据未连接"},
+ fr:{live:"Données de recherche automatiques",fixture:"Données synthétiques",partial:"Données partielles ou importées",offline:"Hors ligne"},
+ es:{live:"Datos automáticos de investigación",fixture:"Datos sintéticos",partial:"Datos parciales o importados",offline:"Sin conexión"},
+ ja:{live:"自動研究データ",fixture:"合成テストデータ",partial:"一部データ／手動インポート",offline:"オフライン"}
+ };
+ const key=mode==="live"?"live":mode==="fixture"?"fixture":mode==="offline"?"offline":"partial";
+ return (labels[lang]||labels.en)[key];
+}
 function renderAudit(){const a=suppliers(),scoreCount=a.filter(s=>s.alpha!=null&&Number.isFinite(+s.alpha)).length,priceCount=a.filter(s=>s.close!=null&&s.previous_close!=null).length,verified=(db.relationships||[]).filter(r=>r.verified&&safeUrl(r.source)).length,rel=(db.relationships||[]).length,dated=(db.events||[]).filter(e=>e.date&&safeUrl(e.source)).length;
 const health=db.audit?.data_health||{};
-const checks=[['Price-only monitoring coverage',(health.monitor_present??0)+'/'+a.length],['Audited customer CapEx sources',Object.keys(db.capex_records||{}).length],['Observed customer revenue-share changes',(db.customer_share_changes||[]).length],['模式',db.mode==='live'?'LIVE / 自动采集':db.mode==='fixture'?'SYNTHETIC / 合成测试':'PARTIAL / 数据不足或用户导入'],['信号截面日期',db.as_of||'N/A'],['最新交易日价格日期',db.price_date||'N/A'],['前一交易日价格日期',db.previous_price_date||'N/A'],['有评分的研究股票',`${scoreCount}/${a.length}`],['完整收盘价对',`${priceCount}/${a.length}`],['关系证据附来源',`${verified}/${rel}`],['有日期且附来源的事件',`${dated}/${(db.events||[]).length}`],['标准化版本',db.model_version||'未提供；演示模型 V1'],['防未来信息审计','按披露日及 SEC filed 时间做截止，历史数据在本地 SQLite 审计'],['股价真实完整性','缺失价标 N/A；行情源及交易日见快照 JSON']];$('#auditRows').innerHTML=checks.map(([k,v])=>`<div class="auditrow"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join('');const items=[['Fabrinet 2026财年年报',SRC.fn,'客户收入比例：Nvidia 16.3%、Amazon 10.5%'],['Meta–Corning 官方公告',SRC.meta,'多年光纤合作，最高60亿美元'],['Nvidia–Coherent 官方公告',SRC.cohr,'采购承诺与20亿美元股权投资'],['Lumentum 官方投资者关系',SRC.lite,'多年供应及20亿美元股权投资'],['Broadcom 2026年8-K',SRC.google,'Google TPU与网络供货'],['Apple 官方新闻稿',SRC.apple,'Broadcom 多年芯片协议，预计超过300亿美元'],['美国联邦公报 BIS 规则',SRC.bis,'2026-01-15 生效，许可逐案审批'],['美国 CBP 进口税实施指引',SRC.tariff,'2026-01-15 生效，具体产品与例外']];$('#sourceIndex').innerHTML=items.map(([title,url,desc])=>`<div class="source">${link(url,title+' ↗')}<small>${esc(desc)}</small></div>`).join('');}
+const checks=[['Price-only monitoring coverage',(health.monitor_present??0)+'/'+a.length],['Audited customer CapEx sources',Object.keys(db.capex_records||{}).length],['Observed customer revenue-share changes',(db.customer_share_changes||[]).length],['模式',auditModeLabel(db.mode)],['信号截面日期',db.as_of||'N/A'],['最新交易日价格日期',db.price_date||'N/A'],['前一交易日价格日期',db.previous_price_date||'N/A'],['有评分的研究股票',`${scoreCount}/${a.length}`],['完整收盘价对',`${priceCount}/${a.length}`],['关系证据附来源',`${verified}/${rel}`],['有日期且附来源的事件',`${dated}/${(db.events||[]).length}`],['标准化版本',db.model_version||'未提供；演示模型 V1'],['防未来信息审计','按披露日与 SEC filed 时间截止；历史成分股与复权仍待验证'],['股价真实完整性','缺失价标 N/A；行情源及交易日见快照 JSON']];$('#auditRows').innerHTML=checks.map(([k,v])=>`<div class="auditrow"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join('');const items=[['Fabrinet 2026财年年报',SRC.fn,'客户收入比例：Nvidia 16.3%、Amazon 10.5%'],['Meta–Corning 官方公告',SRC.meta,'多年光纤合作，最高60亿美元'],['Nvidia–Coherent 官方公告',SRC.cohr,'采购承诺与20亿美元股权投资'],['Lumentum 官方投资者关系',SRC.lite,'多年供应及20亿美元股权投资'],['Broadcom 2026年8-K',SRC.google,'Google TPU与网络供货'],['Apple 官方新闻稿',SRC.apple,'Broadcom 多年芯片协议，预计超过300亿美元'],['美国联邦公报 BIS 规则',SRC.bis,'2026-01-15 生效，许可逐案审批'],['美国 CBP 进口税实施指引',SRC.tariff,'2026-01-15 生效，具体产品与例外']];$('#sourceIndex').innerHTML=items.map(([title,url,desc])=>`<div class="source">${link(url,title+' ↗')}<small>${esc(desc)}</small></div>`).join('');}
 function fillSelectors(){for(const id of ['#trendSelector','#factorSelector','#networkFilter']){let el=$(id),prior=el.value;let opts=id==='#networkFilter'?'<option value="all">全部供应商</option>':'';opts+=TICKERS.map(t=>`<option value="${t}">${t}</option>`).join('');el.innerHTML=opts;el.value=id==='#networkFilter'?(prior&&TICKERS.includes(prior)?prior:'all'):(TICKERS.includes(prior)?prior:currentTicker)}}
 
 let infrastructureFilter='all';
