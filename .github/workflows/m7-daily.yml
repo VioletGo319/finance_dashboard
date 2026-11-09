@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/m7-daily.yml'
-    # Calculate new causal weighted 40-name 1Y/3Y/5Y Sharpe and paper forward performance
+    # Rebuild synchronized Overview/Quant snapshot and enforce score audit
   workflow_dispatch:
   schedule:
     # After regular US market close: 17:30 EST / 18:30 EDT. v3.1 active 40-stock refresh.
@@ -51,6 +51,37 @@ jobs:
           print("Prices available:",d["audit"].get("market_prices_present"))
           print("Full six-factor scores:",d["audit"].get("official_alpha_count"))
           PY
+      - name: Enforce identical Overview and Quant supplier Alpha snapshots
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from scripts.quant_pipeline import supplier_snapshot_fingerprint
+          root=json.loads(Path("data/latest.json").read_text(encoding="utf-8"))
+          quant=json.loads(Path("data/quant/latest.json").read_text(encoding="utf-8"))
+          assert len(root.get("suppliers",[]))==40
+          assert len(quant.get("source_alpha_by_ticker",{}))==40
+          fingerprint=supplier_snapshot_fingerprint(root)
+          assert root.get("quant_source_fingerprint")==fingerprint, "Overview fingerprint mismatch"
+          assert quant.get("source_snapshot",{}).get("fingerprint")==fingerprint, "Quant fingerprint mismatch"
+          assert quant["source_snapshot"]["as_of"]==root["as_of"]
+          assert quant["source_snapshot"]["price_date"]==root["price_date"]
+          assert quant["source_snapshot"]["model_version"]==root["model_version"]
+          for stock in root["suppliers"]:
+              raw=quant["source_alpha_by_ticker"][stock["ticker"]]
+              for key in ("alpha","provisional_alpha","coverage","monitor_score","close","previous_close","price_date"):
+                  assert raw.get(key)==stock.get(key),(stock["ticker"],key,raw.get(key),stock.get(key))
+          old=quant.get("prospective_screen_portfolio",{})
+          assert old.get("status")=="ARCHIVED_8_NAME_NON_EXECUTABLE"
+          assert old.get("display_in_active_portfolio") is False
+          stm=next(s for s in root["suppliers"] if s["ticker"]=="STM")
+          print("CROSS_PAGE_SCORE_CONSISTENCY",json.dumps({
+             "same_fingerprint":True,"ticker_count":40,"as_of":root["as_of"],
+             "price_date":root["price_date"],"STM_supply_alpha":stm["provisional_alpha"],
+             "STM_coverage":stm["coverage"],
+             "archived_8_name_strategy":True
+          }))
+          PY
       - name: Print compact audited QQQ horizon results
         run: |
           python - <<'PY'
@@ -79,7 +110,7 @@ jobs:
           import json
           from pathlib import Path
           q=json.loads(Path("data/quant/latest.json").read_text())
-          if q.get("schema_version")!="1.4":raise SystemExit("Autonomous weighted 40-stock schema 1.4 absent; stale quant export")
+          if q.get("schema_version")!="1.5":raise SystemExit("Cross-page supplier snapshot v1.5 absent; stale quant export")
           p=q.get("vix_trigger_policy") or {}
           if p.get("latest_vix_close") is None:raise SystemExit("VIX source was unavailable; cannot publish VIX trigger")
           print("VIX_POLICY",json.dumps(p,ensure_ascii=False))
