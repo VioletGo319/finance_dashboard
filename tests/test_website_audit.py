@@ -12,7 +12,7 @@ class WebsiteAuditTests(unittest.TestCase):
         cls.pipeline=(ROOT/"scripts/quant_pipeline.py").read_text(encoding="utf-8")
 
     def test_same_supply_alpha_source_and_fail_closed(self):
-        self.assertIn("quant_source_fingerprint",self.index)
+        self.assertIn("window.M7_LIVE_DATA=structuredClone(fresh)",self.index)
         self.assertIn("m7-supplier-snapshot-updated",self.index)
         self.assertIn("source_alpha_by_ticker",self.quant)
         self.assertIn("sameSupplierVersion",self.quant)
