@@ -9,51 +9,54 @@
   "pending": {
     "signal_day": "2026-11-06",
     "weights": {
-      "AMD": 0.01991741,
-      "CEG": 0.01968502,
-      "ANET": 0.01958598,
-      "APH": 0.01951593,
-      "SMCI": 0.01922007,
-      "STM": 0.0191479,
-      "CRUS": 0.01908504,
-      "HUBB": 0.01905357,
-      "ETN": 0.01900527,
-      "MPWR": 0.01896403,
-      "MKSI": 0.0189251,
-      "GLW": 0.01888732,
-      "COHR": 0.01888252,
-      "NXPI": 0.01887811,
-      "VST": 0.01886173,
-      "MU": 0.01882058,
-      "TSM": 0.01881626,
-      "AVGO": 0.01881509,
-      "CLS": 0.01879849,
-      "VRT": 0.01873294,
-      "ASML": 0.01872432,
-      "GEV": 0.01869201,
-      "FN": 0.01865475,
-      "HPE": 0.0186289,
-      "DELL": 0.01862327,
-      "QCOM": 0.0186105,
-      "ON": 0.01851799,
-      "POWL": 0.01848994,
-      "LRCX": 0.01846662,
-      "KLAC": 0.01846462,
-      "LITE": 0.01843463,
-      "ACLS": 0.018429,
-      "ENTG": 0.01840004,
-      "UCTT": 0.01837581,
-      "SWKS": 0.01832485,
-      "MCHP": 0.01828335,
-      "AMAT": 0.01825004,
-      "FORM": 0.01816248,
-      "ONTO": 0.01798894,
-      "MRVL": 0.01787939
+      "AMD": 0.075,
+      "CEG": 0.075,
+      "ANET": 0.075,
+      "APH": 0.075,
+      "SMCI": 0.03971356,
+      "STM": 0.03265613,
+      "CRUS": 0.02760156,
+      "HUBB": 0.02539586,
+      "ETN": 0.02237825,
+      "MPWR": 0.02011505,
+      "MKSI": 0.01821294,
+      "GLW": 0.01656053,
+      "COHR": 0.01636334,
+      "NXPI": 0.01618428,
+      "VST": 0.01553965,
+      "MU": 0.01404844,
+      "TSM": 0.01390197,
+      "AVGO": 0.01386262,
+      "CLS": 0.01331837,
+      "VRT": 0.01140694,
+      "ASML": 0.01118143,
+      "GEV": 0.01038448,
+      "FN": 0.0095536,
+      "HPE": 0.0090275,
+      "DELL": 0.00891793,
+      "QCOM": 0.00867622,
+      "ON": 0.00716764,
+      "POWL": 0.00678448,
+      "LRCX": 0.00648869,
+      "KLAC": 0.00646422,
+      "LITE": 0.00611412,
+      "ACLS": 0.00605165,
+      "ENTG": 0.00574628,
+      "UCTT": 0.00550967,
+      "SWKS": 0.00506292,
+      "MCHP": 0.00474477,
+      "AMAT": 0.00451567,
+      "FORM": 0.00400876,
+      "ONTO": 0.00331471,
+      "MRVL": 0.0030256
     },
     "target_stock_exposure": 0.75,
     "vix": 25.64,
     "estimated_notional": 749.9998,
-    "status": "AWAITING_NEXT_COMPLETED_CLOSE"
+    "status": "AWAITING_NEXT_COMPLETED_CLOSE",
+    "allocation_version": "INVESTABILITY_SOFTMAX_V2",
+    "score_as_of": "2026-11-08",
+    "weighting": "confidence_adjusted_investability_softmax_with_caps"
   },
   "last_price_day": "2026-11-06",
   "last_allocation_month": "2026-11",
@@ -92,6 +95,34 @@
       "event": "UNFILLED_ORDER_UPGRADED_TO_40",
       "actual_fill_count": 0,
       "estimated_factor_scores": true
+    },
+    {
+      "date": "2026-11-06",
+      "event": "UNFILLED_ORDER_REWEIGHTED_BY_INVESTABILITY",
+      "actual_fill_count": 0,
+      "estimated_factor_scores": true,
+      "top_weights": [
+        [
+          "AMD",
+          0.075
+        ],
+        [
+          "CEG",
+          0.075
+        ],
+        [
+          "ANET",
+          0.075
+        ],
+        [
+          "APH",
+          0.075
+        ],
+        [
+          "SMCI",
+          0.03971356
+        ]
+      ]
     }
   ],
   "positions_value": {},
@@ -108,5 +139,19 @@
   },
   "paper_only_notice": "Simulated at observed completed market closes, not broker fills. No live order API, no real funds or account connected.",
   "candidate_universe_count": 40,
-  "allocation_method": "40_STOCK_BROAD_DIVERSIFIED"
+  "allocation_method": "40_STOCK_INVESTABILITY_WEIGHTED",
+  "weighting_policy": {
+    "allocation_version": "INVESTABILITY_SOFTMAX_V2",
+    "inputs": "40 forward-only investability research scores (estimated factors confidence-shrunk)",
+    "weight_formula": "12% equally spread over 40; 88% in capped softmax of (research_score-mean)/max(std,7.5), name <=10% of stock budget and sector <=45% of stock budget",
+    "softmax_temperature": 1.25,
+    "minimum_stock_budget_fraction": 0.12,
+    "single_name_nav_cap": 0.15,
+    "sector_nav_cap": 0.4,
+    "single_name_max_fraction_of_stock_budget": 0.1,
+    "sector_max_fraction_of_stock_budget": 0.45,
+    "remainder": "Redistribute capped excess to eligible stocks in score-proportional weights",
+    "execution_prices": "Observed closes only; no estimated executions",
+    "historical_validation": "Not backtested with historical investability scores"
+  }
 }
