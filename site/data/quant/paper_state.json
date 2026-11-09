@@ -9,18 +9,50 @@
   "pending": {
     "signal_day": "2026-11-06",
     "weights": {
-      "AMD": 0.09375,
-      "CEG": 0.09375,
-      "ANET": 0.09375,
-      "STM": 0.09375,
-      "CRUS": 0.09375,
-      "GLW": 0.09375,
-      "VST": 0.09375,
-      "CLS": 0.09375
+      "AMD": 0.01991741,
+      "CEG": 0.01968502,
+      "ANET": 0.01958598,
+      "APH": 0.01951593,
+      "SMCI": 0.01922007,
+      "STM": 0.0191479,
+      "CRUS": 0.01908504,
+      "HUBB": 0.01905357,
+      "ETN": 0.01900527,
+      "MPWR": 0.01896403,
+      "MKSI": 0.0189251,
+      "GLW": 0.01888732,
+      "COHR": 0.01888252,
+      "NXPI": 0.01887811,
+      "VST": 0.01886173,
+      "MU": 0.01882058,
+      "TSM": 0.01881626,
+      "AVGO": 0.01881509,
+      "CLS": 0.01879849,
+      "VRT": 0.01873294,
+      "ASML": 0.01872432,
+      "GEV": 0.01869201,
+      "FN": 0.01865475,
+      "HPE": 0.0186289,
+      "DELL": 0.01862327,
+      "QCOM": 0.0186105,
+      "ON": 0.01851799,
+      "POWL": 0.01848994,
+      "LRCX": 0.01846662,
+      "KLAC": 0.01846462,
+      "LITE": 0.01843463,
+      "ACLS": 0.018429,
+      "ENTG": 0.01840004,
+      "UCTT": 0.01837581,
+      "SWKS": 0.01832485,
+      "MCHP": 0.01828335,
+      "AMAT": 0.01825004,
+      "FORM": 0.01816248,
+      "ONTO": 0.01798894,
+      "MRVL": 0.01787939
     },
     "target_stock_exposure": 0.75,
     "vix": 25.64,
-    "estimated_notional": 750.0,
+    "estimated_notional": 749.9998,
     "status": "AWAITING_NEXT_COMPLETED_CLOSE"
   },
   "last_price_day": "2026-11-06",
@@ -54,6 +86,12 @@
       },
       "vix": 25.64,
       "execution": "NEXT_COMPLETED_CLOSE_ONLY"
+    },
+    {
+      "date": "2026-11-06",
+      "event": "UNFILLED_ORDER_UPGRADED_TO_40",
+      "actual_fill_count": 0,
+      "estimated_factor_scores": true
     }
   ],
   "positions_value": {},
@@ -68,5 +106,7 @@
     "margin": false,
     "short_selling": false
   },
-  "paper_only_notice": "Simulated at observed completed market closes, not broker fills. No live order API, no real funds or account connected."
+  "paper_only_notice": "Simulated at observed completed market closes, not broker fills. No live order API, no real funds or account connected.",
+  "candidate_universe_count": 40,
+  "allocation_method": "40_STOCK_BROAD_DIVERSIFIED"
 }
