@@ -56,6 +56,7 @@ jobs:
           import shutil
           shutil.copyfile("index.html","smoke.html")
           page=Path("smoke.html").read_text(encoding="utf-8")
+          page=page.replace("<head>", """<head><script>window.addEventListener('error',e=>document.documentElement.dataset.jsError=e.message);window.addEventListener('unhandledrejection',e=>document.documentElement.dataset.jsPromiseError=String(e.reason));</script>""")
           script="""<script>
           document.querySelector('button[data-tab="network"]').click();
           setTimeout(()=>{
@@ -82,6 +83,9 @@ jobs:
           d=Path("/tmp/m7-graph-dom.txt").read_text(encoding="utf-8")
           m=re.search(r'data-m7-smoke="([^"]+)"',d)
           print("Graph browser smoke:",m.group(1) if m else "not executed")
+          for key in ("data-js-error","data-js-promise-error","data-m7-nodes","data-m7-edges"):
+            value=re.search(re.escape(key)+r'="([^"]*)"',d)
+            print(key, value.group(1) if value else "not set")
           assert m and m.group(1)=="PASS", "Graph or factor module did not render in Chromium"
           PY
       - name: Audit all five languages in a real browser
