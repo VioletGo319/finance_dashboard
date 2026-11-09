@@ -92,7 +92,8 @@ def investment_score(stocks,facts,meta,provisional=None):
         for sym,v in candidates.items():
             x=v["raw"][factor]
             if x is None or not math.isfinite(x):scores[sym][factor]=None;continue
-            scores[sym][factor]=(100-rank_pct(x,values)) if factor in ("value","risk") else rank_pct(x,values)
+            percentile=rank_pct(x,values)
+            scores[sym][factor]=(100-percentile if factor in ("value","risk") else percentile) if percentile is not None else None
     output=[]
     for sym,v in candidates.items():
         available=[(f,w,scores[sym][f]) for f,w in fields.items() if scores[sym][f] is not None]
