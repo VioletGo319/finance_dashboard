@@ -70,7 +70,7 @@ function factorDetail(row){
       +'<div style="margin:5px 0 0;height:7px;border-radius:3px;background:#233449;overflow:hidden"><div style="height:100%;background:#72dccc;width:'+(value==null?0:Math.min(100,Math.max(0,value)))+'%"></div></div></div>';
  }).join("");
  d.innerHTML='<div class="q-insight"><strong>'+esc(row.ticker)+' · '+(row.investability_score==null?"N/A":fmt(row.investability_score)+'/100')+'</strong>'
-  +'<div class="q-muted">'+esc(row.status)+' · '+pc(row.factor_coverage,0)+'</div></div>'
+  +'<div class="q-muted">'+esc(row.rank_eligible?t("audit_statusCurrent"):t("audit_statusInsufficient"))+' · '+pc(row.factor_coverage,0)+'</div></div>'
   +'<div style="margin-top:8px">'+columns+'</div>'
   +'<div class="q-metric"><span>'+esc(t("period"))+'</span><span>'+esc(row.revenue_filed||"N/A")+'</span></div>'
   +'<div class="q-metric"><span>'+esc(t("source"))+'</span><span>'+link(row.fundamental_source,"SEC ↗")+'</span></div>'
@@ -342,7 +342,11 @@ function autoMoney(v){return typeof v==="number"&&Number.isFinite(v)?"$"+v.toLoc
 function renderAutonomous(){
  const el=document.getElementById("qAutonomous");if(!el)return;
  const a=paperState;if(!a){el.innerHTML='<div class="q-empty">'+esc(t("autonomous_empty"))+'</div>';return;}
- const paperStatusMap={"AWAITING_NEXT_CLOSE":t("audit_statusPaper"),"PAPER_ACTIVE":t("audit_statusComputed"),"INSUFFICIENT_OBSERVED_PAPER_SESSIONS":t("audit_statusPending")};
+ const paperUiTranslations={"en":["Paper account active (simulation)","Paper account halted; inspect the audit log"],"zh-CN":["模拟交易账户运行中","模拟账户已暂停，请检查审计日志"],"fr":["Compte simulé actif","Compte simulé suspendu; voir le journal"],"es":["Cuenta simulada activa","Cuenta simulada detenida; revise el registro"],"ja":["仮想口座運用中","仮想口座停止中・監査ログを確認"]};
+ for(const [lang,values] of Object.entries(paperUiTranslations)){
+  locales[lang].audit_paperActive=values[0];locales[lang].audit_paperHalted=values[1];
+ }
+ const paperStatusMap={"AWAITING_NEXT_CLOSE":t("audit_statusPaper"),"PAPER_ACTIVE":t("audit_paperActive"),"INSUFFICIENT_OBSERVED_PAPER_SESSIONS":t("audit_statusPending")};
  const pending=a.pending||{},weights=pending.weights||{},positions=a.positions_value||{},log=(a.audit||[]).slice(-10).reverse();
  const cells=(items,formatter)=>Object.entries(items).map(([k,v])=>'<tr><td>'+esc(k)+'</td><td>'+formatter(v)+'</td></tr>').join('');
  const mini=(title,rows)=>'<div><h4>'+esc(title)+'</h4><div class="q-scroll"><table class="q-table"><tbody>'+ (rows||'<tr><td>—</td></tr>')+'</tbody></table></div></div>';
@@ -355,7 +359,7 @@ function renderAutonomous(){
           esc(paperStatusMap[a.forward_performance?.status]||t("audit_statusPending")))
   +metric(t("weighted_papersessions"),String(a.forward_performance?.observed_sessions??0),
           t("weighted_paperthreshold"))+'</div>'
-  +'<div class="q-status q-auto-state">'+esc(paperStatusMap[a.status]||a.status)+' · '+esc(pending.signal_day||a.last_price_day||"N/A")+'</div>'
+  +'<div class="q-status q-auto-state">'+esc(a.status?.startsWith("HALTED_")?t("audit_paperHalted"):paperStatusMap[a.status]||a.status)+' · '+esc(pending.signal_day||a.last_price_day||"N/A")+'</div>'
   +'<div class="q-two">'+mini(t("autonomous_pending"),cells(weights,pc))+mini(t("autonomous_positions"),cells(positions,autoMoney))+'</div>'
   +renderUniverseQuality(data?.autonomous_universe,pending.weights||{})
   +'<h4>'+esc(t("autonomous_audit"))+'</h4><div class="q-auto-log">'+log.map(e=>'<div><span>'+esc(e.date)+'</span><strong>'+esc(e.event)+'</strong></div>').join('')+'</div>'
