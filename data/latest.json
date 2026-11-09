@@ -4,7 +4,7 @@
   "previous_price_date": "2026-11-05",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-09T05:47:29.241464+00:00",
+  "retrieved_at_utc": "2026-11-09T07:02:15.184010+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -3525,8 +3525,8 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "energy": 1,
       "power": 3,
+      "energy": 1,
       "storage": 2
     },
     "unverified_is_unknown": true
