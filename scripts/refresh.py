@@ -55,6 +55,24 @@ def get_stooq(symbol):
             pass
     return bars, url, "Stooq EOD"
 
+def get_cboe_vix(_symbol):
+    """Official daily VIX spot-index closing history; VIX is a signal, never a holding."""
+    url="https://cdn-api.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
+    rows=[]
+    lower=(date.today()-timedelta(days=2200)).isoformat()
+    for row in csv.DictReader(io.StringIO(fetch_text(url))):
+        try:
+            raw=(row.get("DATE") or row.get("Date") or "").strip()
+            d=(datetime.strptime(raw,"%m/%d/%Y").date().isoformat()
+               if "/" in raw else date.fromisoformat(raw).isoformat())
+            close=float(row.get("CLOSE") or row.get("Close") or 0)
+            if lower<=d<=MARKET_CUTOFF and close>0:
+                rows.append((d,close))
+        except (ValueError,TypeError):
+            continue
+    if not rows:raise ValueError("Empty Cboe VIX close history")
+    return rows,url,"Cboe VIX daily close"
+
 def get_yahoo(symbol):
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol)}?range=6y&interval=1d"
     j = json.loads(fetch_text(url))["chart"]["result"][0]
@@ -68,7 +86,9 @@ def get_yahoo(symbol):
 
 def prices(symbol):
     errors=[]
-    for retrieve in (get_stooq, get_yahoo):
+    retrievers=((get_cboe_vix,lambda _:get_yahoo("^VIX")) if symbol=="VIX"
+                else (get_stooq,get_yahoo))
+    for retrieve in retrievers:
         try:
             bars, url, provider = retrieve(symbol)
             bars=sorted(dict(bars).items())
@@ -388,7 +408,7 @@ def main():
     base["network"]=network
     base["model_version"]="v3.2-40-multihop-proxy"
     base["infrastructure"] = load_infrastructure_attributes()
-    universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK","SPY","QQQ")))
+    universe=tuple(dict.fromkeys(TICKERS+CLIENTS+("XLK","SPY","QQQ","VIX")))
     quotes={}
     for symbol in universe:
         quotes[symbol]=prices(symbol)
