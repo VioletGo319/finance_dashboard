@@ -110,6 +110,14 @@ function pc(v,d=1){return typeof v==="number"&&Number.isFinite(v)?(v*100).toLoca
 function compact(v){if(v===null||v===undefined||!Number.isFinite(v))return "N/A";const n=Math.abs(v);return (v/(n>=1e12?1e12:n>=1e9?1e9:n>=1e6?1e6:1)).toFixed(2)+(n>=1e12?"T":n>=1e9?"B":n>=1e6?"M":"");}
 function link(url,label){return typeof url==="string"&&url.startsWith("https://")?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(label||"SEC ↗")+'</a>':"N/A";}
 function metric(name,value,sub){return '<div class="q-kpi"><div class="name">'+esc(name)+'</div><div class="value">'+esc(value)+'</div><div class="sub">'+esc(sub||"")+'</div></div>';}
+const validationUi={"en":{"title":"Backtest Validation Gates","historical_universe":"Historical constituents","corporate_actions":"Split/dividend price reconciliation","walk_forward":"Locked walk-forward evaluation","status":"Not verified","warning":"Research diagnostics only. These gates must all pass before performance is treated as validated strategy evidence."},"zh-CN":{"title":"回测可信度验证门槛","historical_universe":"历史时点股票池","corporate_actions":"拆股／分红与复权价格核对","walk_forward":"锁定参数的 Walk-forward 样本外检验","status":"尚未核验","warning":"当前仅为研究性价格回测。上述验证全部通过之前，不得把历史收益视为已验证的策略 Alpha。"},"fr":{"title":"Contrôles de validation du backtest","historical_universe":"Constituants historiques","corporate_actions":"Ajustements fractionnements/dividendes","walk_forward":"Évaluation walk-forward indépendante","status":"Non vérifié","warning":"Résultats exploratoires uniquement; validation incomplète."},"es":{"title":"Controles de validación","historical_universe":"Universo histórico","corporate_actions":"Ajustes de splits y dividendos","walk_forward":"Validación fuera de muestra walk-forward","status":"Sin verificar","warning":"Resultados exploratorios; no constituyen alfa validada."},"ja":{"title":"バックテスト検証ゲート","historical_universe":"過去の構成銘柄","corporate_actions":"株式分割・配当調整","walk_forward":"ウォークフォワード検証","status":"未検証","warning":"これらを検証するまでは探索的な株価診断です。"}};
+for(const [lang,labels] of Object.entries(validationUi))Object.assign(locales[lang],Object.fromEntries(Object.entries(labels).map(([k,v])=>["validation_"+k,v])));
+function backtestValidationView(q){
+ const gates=q?.backtest_validation_gates||{},names=["historical_universe","corporate_actions","walk_forward"];
+ return '<section class="q-validation" aria-label="'+esc(t("validation_title"))+'"><h4>'+esc(t("validation_title"))+' · '+(gates.passed_count??0)+' / '+(gates.required_count??3)+'</h4>'
+  +names.map(k=>'<div class="q-validation-row"><span>'+esc(t("validation_"+k))+'</span><span>'+esc(t("validation_status"))+'</span></div>').join('')
+  +'<p class="q-note">'+esc(t("validation_warning"))+'</p></section>';
+}
 function renderShell(){
  const q=data||{},sc=q.screener||{},available=q.backtest_scenarios||{};
  if(!available[selectedScenario])selectedScenario="1Y · Top 8 · 10 bps";
@@ -160,7 +168,7 @@ function renderShell(){
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("sensitivity"))+'</h3></div></div><div class="q-body" id="qScenarioMatrix"></div></div></div>'
   +'<div class="q-two"><div class="q-panel"><div class="q-head"><div><h3>'+esc(t("month"))+'</h3></div></div><div class="q-body" id="qMonthly"></div></div>'
   +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("trades"))+'</h3></div></div><div class="q-scroll" id="qTrades"></div></div></div>'
-  +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("method"))+'</h3></div></div><div class="q-body"><div class="q-formula">Investability = 0.30×Supply Alpha† + 0.20×Market Monitor + 0.20×Revenue Growth + 0.15×Inverse P/S + 0.05×Size + 0.10×Inverse Volatility<br>Eligibility: ≥ 75% weighted data coverage + ≥ 1 fundamental component</div><p class="q-note">'+esc(t("sourceWarning"))+'</p><p class="q-note">'+esc(t("sourceData"))+'</p><p class="q-note">'+esc(t("risk"))+': '+esc((back.limitations||[]).join(" | "))+'</p></div></div>'
+  +'<div class="q-panel"><div class="q-head"><div><h3>'+esc(t("method"))+'</h3></div></div><div class="q-body"><div class="q-formula">Investability = 0.30×Supply Alpha† + 0.20×Market Monitor + 0.20×Revenue Growth + 0.15×Inverse P/S + 0.05×Size + 0.10×Inverse Volatility<br>Eligibility: ≥ 75% weighted data coverage + ≥ 1 fundamental component</div><p class="q-note">'+esc(t("sourceWarning"))+'</p><p class="q-note">'+esc(t("sourceData"))+'</p><p class="q-note">'+esc(t("risk"))+': '+esc((back.limitations||[]).join(" | "))+'</p>'+backtestValidationView(q)+'</div></div>'
   +'</div>';
  renderAutonomous();
  const row=(k,v)=>'<div class="q-metric"><span>'+esc(t(k))+'</span><span>'+esc(v)+'</span></div>';
