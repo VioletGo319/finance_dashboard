@@ -153,6 +153,20 @@ def target_weights(ranked,quotes,vix_close,price_day,require_full=False):
     weights={r["ticker"]:math.floor(exposure/n*1e8)/1e8 for r in choices}
     return weights,"READY"
 
+def weighting_policy():
+    return {
+        "allocation_version":ALLOCATION_VERSION,
+        "inputs":"40 forward-only investability research scores (estimated factors confidence-shrunk)",
+        "weight_formula":"12% equally spread over 40; 88% in capped softmax of (research_score-mean)/max(std,7.5)",
+        "softmax_temperature":SCORE_SOFTMAX_TEMPERATURE,
+        "minimum_stock_budget_fraction":WEIGHT_FLOOR_FRACTION,
+        "single_name_nav_cap":MAX_NAME_WEIGHT,
+        "sector_nav_cap":MAX_SECTOR_WEIGHT,
+        "remainder":"Redistribute capped excess to eligible stocks in score-proportional weights",
+        "execution_prices":"Observed closes only; no estimated executions",
+        "historical_validation":"Not backtested with historical investability scores"
+    }
+
 def new_state():
     return {"schema_version":"1.0","mode":"PAPER_ONLY","live_enabled":False,
             "status":"AWAITING_FIRST_FUTURE_FILL","starting_cash":STARTING_CASH,
@@ -239,24 +253,32 @@ def update_paper_state(previous,quant,quotes,price_day):
         state["status"]="HALTED_DATE_REGRESSION"
         return state
     if state.get("last_price_day")==price_day:
-        # Upgrade an unfilled legacy 8-name proposal in place, never re-fill it.
+        # The snapshot can be regenerated before the next market session.
+        # Reweight only a still-unfilled proposal from this completed close;
+        # never rewrite past trades or change a position already executed.
         universe=quant.get("autonomous_universe") or {}
         candidates=universe.get("candidates") or []
         old=state.get("pending")
         if (len(candidates)==40 and old and old.get("signal_day")==price_day
-            and not state.get("shares") and len(old.get("weights",{}))<40):
+            and not state.get("shares") and not state.get("last_fill_day")
+            and old.get("allocation_version")!=ALLOCATION_VERSION):
             new,reason=target_weights(candidates,quotes,
-                 quant.get("vix_trigger_policy",{}).get("latest_vix_close"),
-                 price_day,require_full=True)
+                quant.get("vix_trigger_policy",{}).get("latest_vix_close"),
+                price_day,require_full=True)
             if new is not None and len(new)==40:
                 old["weights"]=new
                 old["estimated_notional"]=round(state["equity"]*sum(new.values()),4)
                 old["status"]="AWAITING_NEXT_COMPLETED_CLOSE"
+                old["allocation_version"]=ALLOCATION_VERSION
+                old["score_as_of"]=universe.get("as_of")
+                old["weighting"]="confidence_adjusted_investability_softmax_with_caps"
                 state["candidate_universe_count"]=40
-                state["allocation_method"]="40_STOCK_BROAD_DIVERSIFIED"
-                _log(state,price_day,"UNFILLED_ORDER_UPGRADED_TO_40",
-                     actual_fill_count=0,estimated_factor_scores=True)
-        return state  # no same-day execution; only the unfilled plan can migrate
+                state["allocation_method"]="40_STOCK_INVESTABILITY_WEIGHTED"
+                state["weighting_policy"]=weighting_policy()
+                _log(state,price_day,"UNFILLED_ORDER_REWEIGHTED_BY_INVESTABILITY",
+                     actual_fill_count=0,estimated_factor_scores=True,
+                     top_weights=sorted(new.items(),key=lambda kv:-kv[1])[:5])
+        return state  # no same-day execution; only unfilled plan may migrate
     vix=quant.get("vix_trigger_policy",{})
     vix_date=vix.get("latest_vix_date")
     vix_close=vix.get("latest_vix_close")
@@ -276,7 +298,8 @@ def update_paper_state(previous,quant,quotes,price_day):
           quant.get("screener",{}).get("ranked",[]),
           quotes,vix_close,price_day,require_full=full_universe)
     state["candidate_universe_count"]=len(candidate_rows) if full_universe else None
-    state["allocation_method"]="40_STOCK_BROAD_DIVERSIFIED" if full_universe else "LEGACY_8_STOCK"
+    state["allocation_method"]="40_STOCK_INVESTABILITY_WEIGHTED" if full_universe else "LEGACY_8_STOCK"
+    if full_universe:state["weighting_policy"]=weighting_policy()
     if weights is None:
         state["status"]="HALTED_"+reason
         _log(state,price_day,"NO_ORDER",reason=reason)
@@ -293,6 +316,9 @@ def update_paper_state(previous,quant,quotes,price_day):
                           "estimated_notional":round(nav*sum(weights.values()),4),
                           "candidate_count":state["candidate_universe_count"],
                           "estimated_factor_scores":full_universe,
+                          "allocation_version":ALLOCATION_VERSION if full_universe else "LEGACY_EQUAL",
+                          "score_as_of":(quant.get("autonomous_universe") or {}).get("as_of") if full_universe else None,
+                          "weighting":"confidence_adjusted_investability_softmax_with_caps" if full_universe else "equal",
                           "status":"AWAITING_NEXT_COMPLETED_CLOSE"}
         state["last_allocation_month"]=price_day[:7]
         state["last_target_exposure"]=exposure
