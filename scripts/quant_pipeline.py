@@ -5,10 +5,12 @@ from pathlib import Path
 import json,os
 try:
     from scripts.quant_fundamentals import gather_fundamentals
+    from scripts.forty_backtest import simulate_forty_price_only
     from scripts.autonomous_universe import create_autonomous_universe
     from scripts.quant_strategy import investment_score, simulate_daily_close, volatility_daily, vix_target_exposure
 except ModuleNotFoundError:
     from quant_fundamentals import gather_fundamentals
+    from forty_backtest import simulate_forty_price_only
     from autonomous_universe import create_autonomous_universe
     from quant_strategy import investment_score, simulate_daily_close, volatility_daily, vix_target_exposure
 
@@ -137,6 +139,13 @@ def build_quant(result,quotes,as_of,write=True):
           "vix_return":(triggered.get("metrics") or {}).get("total_return"),
           "baseline_max_drawdown":(baseline.get("metrics") or {}).get("max_drawdown"),
           "vix_max_drawdown":(triggered.get("metrics") or {}).get("max_drawdown")}
+    forty_price_diagnostics={}
+    for label,days in horizons.items():
+        start=(cutoff-timedelta(days=days)).isoformat()
+        for use_vix in (False,True):
+            label_key=f"{label} · 40 equal weight"+(" · VIX" if use_vix else "")
+            forty_price_diagnostics[label_key]=simulate_forty_price_only(
+                quotes,tickers,start,trade_bps=10,vix_trigger=use_vix)
     backtest=scenarios["1Y · Top 8 · 10 bps"]
 
     if backtest.get("status")=="COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC":
@@ -146,6 +155,8 @@ def build_quant(result,quotes,as_of,write=True):
         "generated_at_utc":datetime.now(timezone.utc).isoformat(),
         "universe":tickers,"fundamental_audit":audit,
         "autonomous_universe":autonomous_universe,
+        "forty_stock_historical_diagnostics":forty_price_diagnostics,
+        "forty_stock_historical_warning":"Price-only equal weight across previously listed current-universe stocks, NOT a historical backtest of forward autonomous estimated-factor rankings",
         "fundamentals_filing_cutoff":as_of,
         "fundamentals_coverage":{"fiscal_revenue":sum(x.get("revenue_fy_usd") is not None for x in facts.values()),
           "revenue_growth":sum(x.get("revenue_growth_yoy") is not None for x in facts.values()),
