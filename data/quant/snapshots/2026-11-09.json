@@ -1,7 +1,7 @@
 {
   "schema_version": "1.6",
   "as_of": "2026-11-09",
-  "generated_at_utc": "2026-11-09T23:06:23.905075+00:00",
+  "generated_at_utc": "2026-11-10T04:16:59.303273+00:00",
   "universe": [
     "TSM",
     "AVGO",
@@ -269,7 +269,7 @@
     "MCHP": {
       "alpha": null,
       "provisional_alpha": null,
-      "close": 61.495,
+      "close": 61.5,
       "previous_close": 58.35,
       "coverage": 0.05,
       "monitor_score": 18.46,
@@ -2382,8 +2382,8 @@
       "requested_start": "2025-11-09",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-v1",
       "metrics": {
-        "total_return": 0.456838,
-        "cagr_annualized": 0.46123,
+        "total_return": 0.45684,
+        "cagr_annualized": 0.461232,
         "annualized_volatility": 0.483299,
         "sharpe_rf0": 1.028,
         "sortino_rf0": 1.417,
@@ -2392,7 +2392,7 @@
         "days": 250,
         "turnover_one_way": 1.14311,
         "total_transaction_cost_bps": 22.8623,
-        "ending_nav": 1.456838
+        "ending_nav": 1.45684
       },
       "benchmarks": {
         "QQQ": {
@@ -2451,8 +2451,8 @@
       "requested_start": "2025-11-09",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-VIX-v1",
       "metrics": {
-        "total_return": 0.191859,
-        "cagr_annualized": 0.193534,
+        "total_return": 0.191861,
+        "cagr_annualized": 0.193535,
         "annualized_volatility": 0.180037,
         "sharpe_rf0": 1.073,
         "sortino_rf0": 1.578,
@@ -2461,7 +2461,7 @@
         "days": 250,
         "turnover_one_way": 8.00745,
         "total_transaction_cost_bps": 160.1489,
-        "ending_nav": 1.191859
+        "ending_nav": 1.191861
       },
       "benchmarks": {
         "QQQ": {
@@ -2520,8 +2520,8 @@
       "requested_start": "2023-11-10",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-v1",
       "metrics": {
-        "total_return": 2.426472,
-        "cagr_annualized": 0.512546,
+        "total_return": 2.426477,
+        "cagr_annualized": 0.512547,
         "annualized_volatility": 0.414577,
         "sharpe_rf0": 1.207,
         "sortino_rf0": 1.712,
@@ -2530,7 +2530,7 @@
         "days": 750,
         "turnover_one_way": 2.10238,
         "total_transaction_cost_bps": 42.0475,
-        "ending_nav": 3.426472
+        "ending_nav": 3.426477
       },
       "benchmarks": {
         "QQQ": {
@@ -2589,8 +2589,8 @@
       "requested_start": "2023-11-10",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-VIX-v1",
       "metrics": {
-        "total_return": 0.673419,
-        "cagr_annualized": 0.188861,
+        "total_return": 0.673421,
+        "cagr_annualized": 0.188862,
         "annualized_volatility": 0.187753,
         "sharpe_rf0": 1.013,
         "sortino_rf0": 1.708,
@@ -2599,7 +2599,7 @@
         "days": 750,
         "turnover_one_way": 20.01625,
         "total_transaction_cost_bps": 400.325,
-        "ending_nav": 1.673419
+        "ending_nav": 1.673421
       },
       "benchmarks": {
         "QQQ": {
@@ -2658,7 +2658,7 @@
       "requested_start": "2021-11-09",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-v1",
       "metrics": {
-        "total_return": 3.037292,
+        "total_return": 3.037298,
         "cagr_annualized": 0.323726,
         "annualized_volatility": 0.383839,
         "sharpe_rf0": 0.923,
@@ -2668,7 +2668,7 @@
         "days": 1254,
         "turnover_one_way": 2.91433,
         "total_transaction_cost_bps": 58.2867,
-        "ending_nav": 4.037292
+        "ending_nav": 4.037298
       },
       "benchmarks": {
         "QQQ": {
@@ -2727,7 +2727,7 @@
       "requested_start": "2021-11-09",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-VIX-v1",
       "metrics": {
-        "total_return": 0.962389,
+        "total_return": 0.962392,
         "cagr_annualized": 0.145084,
         "annualized_volatility": 0.199233,
         "sharpe_rf0": 0.778,
@@ -2737,7 +2737,7 @@
         "days": 1254,
         "turnover_one_way": 34.65969,
         "total_transaction_cost_bps": 693.1938,
-        "ending_nav": 1.962389
+        "ending_nav": 1.962392
       },
       "benchmarks": {
         "QQQ": {
@@ -2798,8 +2798,8 @@
       "end_date": "2026-11-09",
       "requested_start": "2025-11-09",
       "metrics": {
-        "total_return": 0.380456,
-        "cagr_annualized": 0.384022,
+        "total_return": 0.380462,
+        "cagr_annualized": 0.384028,
         "annualized_volatility": 0.526114,
         "sharpe_rf0": 0.883,
         "sortino_rf0": 1.209,
@@ -2808,7 +2808,7 @@
         "days": 250,
         "turnover_one_way": 5.3631,
         "total_transaction_cost_bps": 107.2619,
-        "ending_nav": 1.380456
+        "ending_nav": 1.380462
       },
       "benchmarks": {
         "QQQ": {
@@ -2870,9 +2870,9 @@
       "end_date": "2026-11-09",
       "requested_start": "2025-11-09",
       "metrics": {
-        "total_return": 0.20893,
-        "cagr_annualized": 0.210767,
-        "annualized_volatility": 0.196557,
+        "total_return": 0.208935,
+        "cagr_annualized": 0.210772,
+        "annualized_volatility": 0.196558,
         "sharpe_rf0": 1.071,
         "sortino_rf0": 1.577,
         "max_drawdown": -0.164752,
@@ -2880,7 +2880,7 @@
         "days": 250,
         "turnover_one_way": 9.15763,
         "total_transaction_cost_bps": 183.1527,
-        "ending_nav": 1.20893
+        "ending_nav": 1.208935
       },
       "benchmarks": {
         "QQQ": {
@@ -2942,8 +2942,8 @@
       "end_date": "2026-11-09",
       "requested_start": "2023-11-10",
       "metrics": {
-        "total_return": 2.485305,
-        "cagr_annualized": 0.521223,
+        "total_return": 2.48532,
+        "cagr_annualized": 0.521225,
         "annualized_volatility": 0.432556,
         "sharpe_rf0": 1.188,
         "sortino_rf0": 1.683,
@@ -2952,7 +2952,7 @@
         "days": 750,
         "turnover_one_way": 15.26163,
         "total_transaction_cost_bps": 305.2326,
-        "ending_nav": 3.485305
+        "ending_nav": 3.48532
       },
       "benchmarks": {
         "QQQ": {
@@ -3014,8 +3014,8 @@
       "end_date": "2026-11-09",
       "requested_start": "2023-11-10",
       "metrics": {
-        "total_return": 0.724872,
-        "cagr_annualized": 0.20102,
+        "total_return": 0.724879,
+        "cagr_annualized": 0.201022,
         "annualized_volatility": 0.185649,
         "sharpe_rf0": 1.077,
         "sortino_rf0": 1.804,
@@ -3024,7 +3024,7 @@
         "days": 750,
         "turnover_one_way": 22.68507,
         "total_transaction_cost_bps": 453.7014,
-        "ending_nav": 1.724872
+        "ending_nav": 1.724879
       },
       "benchmarks": {
         "QQQ": {
@@ -3086,8 +3086,8 @@
       "end_date": "2026-11-09",
       "requested_start": "2021-11-09",
       "metrics": {
-        "total_return": 2.647458,
-        "cagr_annualized": 0.296988,
+        "total_return": 2.647474,
+        "cagr_annualized": 0.296989,
         "annualized_volatility": 0.393536,
         "sharpe_rf0": 0.858,
         "sortino_rf0": 1.224,
@@ -3096,7 +3096,7 @@
         "days": 1254,
         "turnover_one_way": 25.88221,
         "total_transaction_cost_bps": 517.6443,
-        "ending_nav": 3.647458
+        "ending_nav": 3.647474
       },
       "benchmarks": {
         "QQQ": {
@@ -3158,8 +3158,8 @@
       "end_date": "2026-11-09",
       "requested_start": "2021-11-09",
       "metrics": {
-        "total_return": 0.901902,
-        "cagr_annualized": 0.137902,
+        "total_return": 0.90191,
+        "cagr_annualized": 0.137903,
         "annualized_volatility": 0.194212,
         "sharpe_rf0": 0.761,
         "sortino_rf0": 1.202,
@@ -3168,7 +3168,7 @@
         "days": 1254,
         "turnover_one_way": 41.34224,
         "total_transaction_cost_bps": 826.8449,
-        "ending_nav": 1.901902
+        "ending_nav": 1.90191
       },
       "benchmarks": {
         "QQQ": {
@@ -4224,7 +4224,7 @@
           "size": 0.05,
           "risk": 0.1
         },
-        "market_cap_proxy_usd": 33467031942,
+        "market_cap_proxy_usd": 33469753060,
         "price_to_sales_proxy": 7.101,
         "revenue_fy_usd": 4713100000.0,
         "revenue_growth_yoy": 0.07076972010178118,
@@ -4629,9 +4629,9 @@
     "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
     "one_way_bps": 10,
     "metrics": {
-      "total_return": 0.188022,
-      "cagr_annualized": 0.189661,
-      "annualized_volatility": 0.570048,
+      "total_return": 0.188033,
+      "cagr_annualized": 0.189671,
+      "annualized_volatility": 0.570049,
       "sharpe_rf0": 0.592,
       "sortino_rf0": 0.803,
       "max_drawdown": -0.495139,
@@ -4639,7 +4639,7 @@
       "days": 250,
       "turnover_one_way": 9.13508,
       "total_transaction_cost_bps": 182.7016,
-      "ending_nav": 1.188022
+      "ending_nav": 1.188033
     },
     "benchmarks": {
       "QQQ": {
@@ -4669,7 +4669,7 @@
         "ending_nav": 1.156431
       }
     },
-    "information_ratio": 0.537,
+    "information_ratio": 0.538,
     "curve": [
       {
         "date": "2025-11-11",
@@ -6167,7 +6167,7 @@
       },
       {
         "date": "2026-11-09",
-        "strategy_nav": 1.188022,
+        "strategy_nav": 1.188033,
         "qqq_nav": 1.090047,
         "xlk_nav": 1.156431
       }
@@ -6247,7 +6247,7 @@
       },
       {
         "month": "2026-11",
-        "strategy": -0.11365,
+        "strategy": -0.11364,
         "qqq": -0.01613,
         "xlk": -0.04807
       }
@@ -6566,9 +6566,9 @@
       "risk": "equal weight top 5, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 0.240745,
-        "cagr_annualized": 0.242888,
-        "annualized_volatility": 0.600494,
+        "total_return": 0.240762,
+        "cagr_annualized": 0.242905,
+        "annualized_volatility": 0.600495,
         "sharpe_rf0": 0.664,
         "sortino_rf0": 0.908,
         "max_drawdown": -0.538484,
@@ -6576,7 +6576,7 @@
         "days": 250,
         "turnover_one_way": 9.93255,
         "total_transaction_cost_bps": 198.6511,
-        "ending_nav": 1.240745
+        "ending_nav": 1.240762
       },
       "benchmarks": {
         "QQQ": {
@@ -8104,7 +8104,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 1.240745,
+          "strategy_nav": 1.240762,
           "qqq_nav": 1.090047,
           "xlk_nav": 1.156431
         }
@@ -8184,7 +8184,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.09726,
+          "strategy": -0.09724,
           "qqq": -0.01613,
           "xlk": -0.04807
         }
@@ -8463,9 +8463,9 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 5,
       "metrics": {
-        "total_return": 0.198924,
-        "cagr_annualized": 0.200665,
-        "annualized_volatility": 0.570056,
+        "total_return": 0.198934,
+        "cagr_annualized": 0.200676,
+        "annualized_volatility": 0.570058,
         "sharpe_rf0": 0.608,
         "sortino_rf0": 0.826,
         "max_drawdown": -0.493135,
@@ -8473,7 +8473,7 @@
         "days": 250,
         "turnover_one_way": 9.13508,
         "total_transaction_cost_bps": 91.3508,
-        "ending_nav": 1.198924
+        "ending_nav": 1.198934
       },
       "benchmarks": {
         "QQQ": {
@@ -10001,7 +10001,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 1.198924,
+          "strategy_nav": 1.198934,
           "qqq_nav": 1.090047,
           "xlk_nav": 1.156431
         }
@@ -10081,7 +10081,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11289,
+          "strategy": -0.11288,
           "qqq": -0.01613,
           "xlk": -0.04807
         }
@@ -10399,9 +10399,9 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 0.188022,
-        "cagr_annualized": 0.189661,
-        "annualized_volatility": 0.570048,
+        "total_return": 0.188033,
+        "cagr_annualized": 0.189671,
+        "annualized_volatility": 0.570049,
         "sharpe_rf0": 0.592,
         "sortino_rf0": 0.803,
         "max_drawdown": -0.495139,
@@ -10409,7 +10409,7 @@
         "days": 250,
         "turnover_one_way": 9.13508,
         "total_transaction_cost_bps": 182.7016,
-        "ending_nav": 1.188022
+        "ending_nav": 1.188033
       },
       "benchmarks": {
         "QQQ": {
@@ -10439,7 +10439,7 @@
           "ending_nav": 1.156431
         }
       },
-      "information_ratio": 0.537,
+      "information_ratio": 0.538,
       "curve": [
         {
           "date": "2025-11-11",
@@ -11937,7 +11937,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 1.188022,
+          "strategy_nav": 1.188033,
           "qqq_nav": 1.090047,
           "xlk_nav": 1.156431
         }
@@ -12017,7 +12017,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11365,
+          "strategy": -0.11364,
           "qqq": -0.01613,
           "xlk": -0.04807
         }
@@ -12335,9 +12335,9 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 20,
       "metrics": {
-        "total_return": 0.166492,
-        "cagr_annualized": 0.16793,
-        "annualized_volatility": 0.570065,
+        "total_return": 0.166502,
+        "cagr_annualized": 0.16794,
+        "annualized_volatility": 0.570066,
         "sharpe_rf0": 0.559,
         "sortino_rf0": 0.758,
         "max_drawdown": -0.499127,
@@ -12345,7 +12345,7 @@
         "days": 250,
         "turnover_one_way": 9.13508,
         "total_transaction_cost_bps": 365.4033,
-        "ending_nav": 1.166492
+        "ending_nav": 1.166502
       },
       "benchmarks": {
         "QQQ": {
@@ -13873,7 +13873,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 1.166492,
+          "strategy_nav": 1.166502,
           "qqq_nav": 1.090047,
           "xlk_nav": 1.156431
         }
@@ -13953,7 +13953,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11516,
+          "strategy": -0.11515,
           "qqq": -0.01613,
           "xlk": -0.04807
         }
@@ -14271,9 +14271,9 @@
       "risk": "equal weight top 10, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 0.194725,
-        "cagr_annualized": 0.196427,
-        "annualized_volatility": 0.543334,
+        "total_return": 0.194734,
+        "cagr_annualized": 0.196435,
+        "annualized_volatility": 0.543335,
         "sharpe_rf0": 0.604,
         "sortino_rf0": 0.814,
         "max_drawdown": -0.48452,
@@ -14281,7 +14281,7 @@
         "days": 250,
         "turnover_one_way": 8.23011,
         "total_transaction_cost_bps": 164.6022,
-        "ending_nav": 1.194725
+        "ending_nav": 1.194734
       },
       "benchmarks": {
         "QQQ": {
@@ -15809,7 +15809,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 1.194725,
+          "strategy_nav": 1.194734,
           "qqq_nav": 1.090047,
           "xlk_nav": 1.156431
         }
@@ -15889,7 +15889,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11755,
+          "strategy": -0.11754,
           "qqq": -0.01613,
           "xlk": -0.04807
         }
@@ -16233,8 +16233,8 @@
       "risk": "equal weight top 5, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 2.424048,
-        "cagr_annualized": 0.512187,
+        "total_return": 2.424095,
+        "cagr_annualized": 0.512194,
         "annualized_volatility": 0.485087,
         "sharpe_rf0": 1.097,
         "sortino_rf0": 1.565,
@@ -16243,7 +16243,7 @@
         "days": 750,
         "turnover_one_way": 29.31809,
         "total_transaction_cost_bps": 586.3619,
-        "ending_nav": 3.424048
+        "ending_nav": 3.424095
       },
       "benchmarks": {
         "QQQ": {
@@ -20771,7 +20771,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 3.424048,
+          "strategy_nav": 3.424095,
           "qqq_nav": 1.79537,
           "xlk_nav": 1.903743
         }
@@ -20995,7 +20995,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.09726,
+          "strategy": -0.09725,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -21730,8 +21730,8 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 5,
       "metrics": {
-        "total_return": 2.536632,
-        "cagr_annualized": 0.528714,
+        "total_return": 2.536662,
+        "cagr_annualized": 0.528718,
         "annualized_volatility": 0.461949,
         "sharpe_rf0": 1.151,
         "sortino_rf0": 1.638,
@@ -21740,7 +21740,7 @@
         "days": 750,
         "turnover_one_way": 26.04403,
         "total_transaction_cost_bps": 260.4403,
-        "ending_nav": 3.536632
+        "ending_nav": 3.536662
       },
       "benchmarks": {
         "QQQ": {
@@ -26268,7 +26268,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 3.536632,
+          "strategy_nav": 3.536662,
           "qqq_nav": 1.79537,
           "xlk_nav": 1.903743
         }
@@ -26492,7 +26492,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11289,
+          "strategy": -0.11288,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -27338,8 +27338,8 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 2.445914,
-        "cagr_annualized": 0.515425,
+        "total_return": 2.445944,
+        "cagr_annualized": 0.515429,
         "annualized_volatility": 0.461929,
         "sharpe_rf0": 1.133,
         "sortino_rf0": 1.61,
@@ -27348,7 +27348,7 @@
         "days": 750,
         "turnover_one_way": 26.04403,
         "total_transaction_cost_bps": 520.8805,
-        "ending_nav": 3.445914
+        "ending_nav": 3.445944
       },
       "benchmarks": {
         "QQQ": {
@@ -31876,7 +31876,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 3.445914,
+          "strategy_nav": 3.445944,
           "qqq_nav": 1.79537,
           "xlk_nav": 1.903743
         }
@@ -32100,7 +32100,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11365,
+          "strategy": -0.11364,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -32946,8 +32946,8 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 20,
       "metrics": {
-        "total_return": 2.271215,
-        "cagr_annualized": 0.489163,
+        "total_return": 2.271243,
+        "cagr_annualized": 0.489167,
         "annualized_volatility": 0.461929,
         "sharpe_rf0": 1.095,
         "sortino_rf0": 1.553,
@@ -32956,7 +32956,7 @@
         "days": 750,
         "turnover_one_way": 26.04403,
         "total_transaction_cost_bps": 1041.7611,
-        "ending_nav": 3.271215
+        "ending_nav": 3.271243
       },
       "benchmarks": {
         "QQQ": {
@@ -37484,7 +37484,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 3.271215,
+          "strategy_nav": 3.271243,
           "qqq_nav": 1.79537,
           "xlk_nav": 1.903743
         }
@@ -37708,7 +37708,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11516,
+          "strategy": -0.11515,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -38554,8 +38554,8 @@
       "risk": "equal weight top 10, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 2.277137,
-        "cagr_annualized": 0.490068,
+        "total_return": 2.277159,
+        "cagr_annualized": 0.490072,
         "annualized_volatility": 0.445878,
         "sharpe_rf0": 1.12,
         "sortino_rf0": 1.57,
@@ -38564,7 +38564,7 @@
         "days": 750,
         "turnover_one_way": 24.35677,
         "total_transaction_cost_bps": 487.1354,
-        "ending_nav": 3.277137
+        "ending_nav": 3.277159
       },
       "benchmarks": {
         "QQQ": {
@@ -43092,7 +43092,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 3.277137,
+          "strategy_nav": 3.277159,
           "qqq_nav": 1.79537,
           "xlk_nav": 1.903743
         }
@@ -43316,7 +43316,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11755,
+          "strategy": -0.11754,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -44236,8 +44236,8 @@
       "risk": "equal weight top 5, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 2.054764,
-        "cagr_annualized": 0.251583,
+        "total_return": 2.054806,
+        "cagr_annualized": 0.251586,
         "annualized_volatility": 0.433052,
         "sharpe_rf0": 0.736,
         "sortino_rf0": 1.048,
@@ -44246,7 +44246,7 @@
         "days": 1254,
         "turnover_one_way": 48.32762,
         "total_transaction_cost_bps": 966.5524,
-        "ending_nav": 3.054764
+        "ending_nav": 3.054806
       },
       "benchmarks": {
         "QQQ": {
@@ -51798,7 +51798,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 3.054764,
+          "strategy_nav": 3.054806,
           "qqq_nav": 1.718481,
           "xlk_nav": 2.04292
         }
@@ -52166,7 +52166,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.09726,
+          "strategy": -0.09725,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -53357,8 +53357,8 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 5,
       "metrics": {
-        "total_return": 2.384351,
-        "cagr_annualized": 0.27762,
+        "total_return": 2.38438,
+        "cagr_annualized": 0.277622,
         "annualized_volatility": 0.415858,
         "sharpe_rf0": 0.798,
         "sortino_rf0": 1.139,
@@ -53367,7 +53367,7 @@
         "days": 1254,
         "turnover_one_way": 42.95704,
         "total_transaction_cost_bps": 429.5704,
-        "ending_nav": 3.384351
+        "ending_nav": 3.38438
       },
       "benchmarks": {
         "QQQ": {
@@ -60919,7 +60919,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 3.384351,
+          "strategy_nav": 3.38438,
           "qqq_nav": 1.718481,
           "xlk_nav": 2.04292
         }
@@ -61287,7 +61287,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11289,
+          "strategy": -0.11288,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -62661,8 +62661,8 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 2.242206,
-        "cagr_annualized": 0.266651,
+        "total_return": 2.242234,
+        "cagr_annualized": 0.266653,
         "annualized_volatility": 0.415847,
         "sharpe_rf0": 0.777,
         "sortino_rf0": 1.108,
@@ -62671,7 +62671,7 @@
         "days": 1254,
         "turnover_one_way": 42.95704,
         "total_transaction_cost_bps": 859.1408,
-        "ending_nav": 3.242206
+        "ending_nav": 3.242234
       },
       "benchmarks": {
         "QQQ": {
@@ -70223,7 +70223,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 3.242206,
+          "strategy_nav": 3.242234,
           "qqq_nav": 1.718481,
           "xlk_nav": 2.04292
         }
@@ -70591,7 +70591,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11365,
+          "strategy": -0.11364,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -71965,9 +71965,9 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 20,
       "metrics": {
-        "total_return": 1.975295,
-        "cagr_annualized": 0.244971,
-        "annualized_volatility": 0.415867,
+        "total_return": 1.97532,
+        "cagr_annualized": 0.244973,
+        "annualized_volatility": 0.415868,
         "sharpe_rf0": 0.736,
         "sortino_rf0": 1.047,
         "max_drawdown": -0.499127,
@@ -71975,7 +71975,7 @@
         "days": 1254,
         "turnover_one_way": 42.95704,
         "total_transaction_cost_bps": 1718.2815,
-        "ending_nav": 2.975295
+        "ending_nav": 2.97532
       },
       "benchmarks": {
         "QQQ": {
@@ -79527,7 +79527,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 2.975295,
+          "strategy_nav": 2.97532,
           "qqq_nav": 1.718481,
           "xlk_nav": 2.04292
         }
@@ -79895,7 +79895,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11516,
+          "strategy": -0.11515,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -81269,8 +81269,8 @@
       "risk": "equal weight top 10, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 2.931873,
-        "cagr_annualized": 0.316706,
+        "total_return": 2.9319,
+        "cagr_annualized": 0.316708,
         "annualized_volatility": 0.403242,
         "sharpe_rf0": 0.885,
         "sortino_rf0": 1.257,
@@ -81279,7 +81279,7 @@
         "days": 1254,
         "turnover_one_way": 39.29642,
         "total_transaction_cost_bps": 785.9285,
-        "ending_nav": 3.931873
+        "ending_nav": 3.9319
       },
       "benchmarks": {
         "QQQ": {
@@ -88831,7 +88831,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 3.931873,
+          "strategy_nav": 3.9319,
           "qqq_nav": 1.718481,
           "xlk_nav": 2.04292
         }
@@ -89199,7 +89199,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.11755,
+          "strategy": -0.11754,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -90695,9 +90695,9 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 0.192584,
-        "cagr_annualized": 0.194266,
-        "annualized_volatility": 0.213315,
+        "total_return": 0.192592,
+        "cagr_annualized": 0.194274,
+        "annualized_volatility": 0.213317,
         "sharpe_rf0": 0.939,
         "sortino_rf0": 1.376,
         "max_drawdown": -0.177975,
@@ -90705,7 +90705,7 @@
         "days": 250,
         "turnover_one_way": 10.08159,
         "total_transaction_cost_bps": 201.6318,
-        "ending_nav": 1.192584
+        "ending_nav": 1.192592
       },
       "benchmarks": {
         "QQQ": {
@@ -92731,7 +92731,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 1.192584,
+          "strategy_nav": 1.192592,
           "qqq_nav": 1.090047,
           "xlk_nav": 1.156431,
           "stock_exposure": 0.75,
@@ -92813,7 +92813,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.02998,
+          "strategy": -0.02997,
           "qqq": -0.01613,
           "xlk": -0.04807
         }
@@ -94482,9 +94482,9 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 0.799223,
-        "cagr_annualized": 0.218172,
-        "annualized_volatility": 0.191232,
+        "total_return": 0.799234,
+        "cagr_annualized": 0.218174,
+        "annualized_volatility": 0.191233,
         "sharpe_rf0": 1.126,
         "sortino_rf0": 1.874,
         "max_drawdown": -0.177975,
@@ -94492,7 +94492,7 @@
         "days": 750,
         "turnover_one_way": 24.75515,
         "total_transaction_cost_bps": 495.103,
-        "ending_nav": 1.799223
+        "ending_nav": 1.799234
       },
       "benchmarks": {
         "QQQ": {
@@ -100518,7 +100518,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 1.799223,
+          "strategy_nav": 1.799234,
           "qqq_nav": 1.79537,
           "xlk_nav": 1.903743,
           "stock_exposure": 0.75,
@@ -100744,7 +100744,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.02998,
+          "strategy": -0.02997,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -104877,8 +104877,8 @@
       "risk": "equal weight top 8, max 3 names per sector, no leverage, cash return 0",
       "one_way_bps": 10,
       "metrics": {
-        "total_return": 0.888354,
-        "cagr_annualized": 0.136268,
+        "total_return": 0.888366,
+        "cagr_annualized": 0.13627,
         "annualized_volatility": 0.197506,
         "sharpe_rf0": 0.744,
         "sortino_rf0": 1.165,
@@ -104887,7 +104887,7 @@
         "days": 1254,
         "turnover_one_way": 46.27886,
         "total_transaction_cost_bps": 925.5772,
-        "ending_nav": 1.888354
+        "ending_nav": 1.888366
       },
       "benchmarks": {
         "QQQ": {
@@ -114945,7 +114945,7 @@
         },
         {
           "date": "2026-11-09",
-          "strategy_nav": 1.888354,
+          "strategy_nav": 1.888366,
           "qqq_nav": 1.718481,
           "xlk_nav": 2.04292,
           "stock_exposure": 0.75,
@@ -115315,7 +115315,7 @@
         },
         {
           "month": "2026-11",
-          "strategy": -0.02998,
+          "strategy": -0.02997,
           "qqq": -0.01613,
           "xlk": -0.04808
         }
@@ -122388,12 +122388,12 @@
         "exposure": 1.0
       }
     ],
-    "latest_vix_close": 25.64,
-    "latest_vix_date": "2026-11-06",
+    "latest_vix_close": 19.92,
+    "latest_vix_date": "2026-11-09",
     "source": "https://cdn-api.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
     "source_provider": "Cboe VIX daily close",
     "fetch_error": null,
-    "next_target_stock_exposure": 0.75,
+    "next_target_stock_exposure": 0.25,
     "execution": "VIX signal at completed close, stock exposure change at next session close",
     "cash_interest_rate": 0.0,
     "no_leverage": true,
@@ -122404,8 +122404,8 @@
       "baseline_status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
       "vix_status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
       "same_window": true,
-      "baseline_return": 0.188022,
-      "vix_return": 0.192584,
+      "baseline_return": 0.188033,
+      "vix_return": 0.192592,
       "baseline_max_drawdown": -0.495139,
       "vix_max_drawdown": -0.177975
     },
@@ -122413,8 +122413,8 @@
       "baseline_status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
       "vix_status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
       "same_window": true,
-      "baseline_return": 2.445914,
-      "vix_return": 0.799223,
+      "baseline_return": 2.445944,
+      "vix_return": 0.799234,
       "baseline_max_drawdown": -0.495139,
       "vix_max_drawdown": -0.177975
     },
@@ -122422,8 +122422,8 @@
       "baseline_status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
       "vix_status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
       "same_window": true,
-      "baseline_return": 2.242206,
-      "vix_return": 0.888354,
+      "baseline_return": 2.242234,
+      "vix_return": 0.888366,
       "baseline_max_drawdown": -0.495139,
       "vix_max_drawdown": -0.230144
     }

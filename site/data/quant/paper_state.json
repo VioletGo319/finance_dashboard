@@ -4,73 +4,121 @@
   "live_enabled": false,
   "status": "AWAITING_NEXT_CLOSE",
   "starting_cash": 1000.0,
-  "cash": 1000.0,
-  "shares": {},
-  "pending": {
-    "signal_day": "2026-11-06",
-    "weights": {
-      "AMD": 0.075,
-      "CEG": 0.075,
-      "ANET": 0.075,
-      "APH": 0.075,
-      "SMCI": 0.03971356,
-      "STM": 0.03265613,
-      "CRUS": 0.02760156,
-      "HUBB": 0.02539586,
-      "ETN": 0.02237825,
-      "MPWR": 0.02011505,
-      "MKSI": 0.01821294,
-      "GLW": 0.01656053,
-      "COHR": 0.01636334,
-      "NXPI": 0.01618428,
-      "VST": 0.01553965,
-      "MU": 0.01404844,
-      "TSM": 0.01390197,
-      "AVGO": 0.01386262,
-      "CLS": 0.01331837,
-      "VRT": 0.01140694,
-      "ASML": 0.01118143,
-      "GEV": 0.01038448,
-      "FN": 0.0095536,
-      "HPE": 0.0090275,
-      "DELL": 0.00891793,
-      "QCOM": 0.00867622,
-      "ON": 0.00716764,
-      "POWL": 0.00678448,
-      "LRCX": 0.00648869,
-      "KLAC": 0.00646422,
-      "LITE": 0.00611412,
-      "ACLS": 0.00605165,
-      "ENTG": 0.00574628,
-      "UCTT": 0.00550967,
-      "SWKS": 0.00506292,
-      "MCHP": 0.00474477,
-      "AMAT": 0.00451567,
-      "FORM": 0.00400876,
-      "ONTO": 0.00331471,
-      "MRVL": 0.0030256
-    },
-    "target_stock_exposure": 0.75,
-    "vix": 25.64,
-    "estimated_notional": 749.9998,
-    "status": "AWAITING_NEXT_COMPLETED_CLOSE",
-    "allocation_version": "INVESTABILITY_SOFTMAX_V2",
-    "score_as_of": "2026-11-08",
-    "weighting": "confidence_adjusted_investability_softmax_with_caps"
+  "cash": 249.25017017,
+  "shares": {
+    "ACLS": 0.056221200297287256,
+    "AMAT": 0.01218639859668061,
+    "AMD": 0.1474694246726179,
+    "ANET": 0.4028576032658323,
+    "APH": 0.9292528806839302,
+    "ASML": 0.007389017016355526,
+    "AVGO": 0.04339119819707024,
+    "CEG": 0.2716505487341085,
+    "CLS": 0.05974506549434775,
+    "COHR": 0.07266459434255518,
+    "CRUS": 0.2333577950625634,
+    "DELL": 0.025751292194854322,
+    "ENTG": 0.041027274025417684,
+    "ETN": 0.06228291121625382,
+    "FN": 0.026107012078482816,
+    "FORM": 0.047051173708920195,
+    "GEV": 0.012521378445510888,
+    "GLW": 0.14282475204829667,
+    "HPE": 0.18989272191838455,
+    "HUBB": 0.0575126480512716,
+    "KLAC": 0.042701942132382084,
+    "LITE": 0.010255837359098229,
+    "LRCX": 0.029319461389001853,
+    "MCHP": 0.07715073170731707,
+    "MKSI": 0.0860765631646108,
+    "MPWR": 0.014491588919707504,
+    "MRVL": 0.019570504527813712,
+    "MU": 0.01916175407488236,
+    "NXPI": 0.06311629358084392,
+    "ON": 0.1037135002170453,
+    "ONTO": 0.01708261183261183,
+    "POWL": 0.04789608189198729,
+    "QCOM": 0.050599055228319825,
+    "SMCI": 1.388586013986014,
+    "STM": 0.7331865738661877,
+    "SWKS": 0.06112423035132199,
+    "TSM": 0.0357726570943338,
+    "UCTT": 0.12006254085857487,
+    "VRT": 0.056900982690676914,
+    "VST": 0.11603681302270014
   },
-  "last_price_day": "2026-11-06",
+  "pending": {
+    "signal_day": "2026-11-09",
+    "weights": {
+      "AMD": 0.025,
+      "CEG": 0.025,
+      "ANET": 0.025,
+      "APH": 0.025,
+      "CRUS": 0.01240068,
+      "VST": 0.00913902,
+      "COHR": 0.0087684,
+      "MKSI": 0.00762095,
+      "SMCI": 0.00747305,
+      "GLW": 0.00739332,
+      "STM": 0.00680967,
+      "MPWR": 0.00667417,
+      "HUBB": 0.00605369,
+      "CLS": 0.00529182,
+      "NXPI": 0.00500123,
+      "ETN": 0.00467477,
+      "MU": 0.00461089,
+      "ASML": 0.00417185,
+      "TSM": 0.00401442,
+      "VRT": 0.00363881,
+      "AVGO": 0.00355329,
+      "FN": 0.00320497,
+      "HPE": 0.00313612,
+      "GEV": 0.00309765,
+      "DELL": 0.00282429,
+      "ACLS": 0.00269823,
+      "LRCX": 0.00268346,
+      "KLAC": 0.00261985,
+      "ON": 0.00248347,
+      "UCTT": 0.00243178,
+      "QCOM": 0.00239853,
+      "ENTG": 0.00214876,
+      "LITE": 0.00208867,
+      "POWL": 0.00199771,
+      "AMAT": 0.00193768,
+      "MCHP": 0.00170794,
+      "ONTO": 0.0014514,
+      "SWKS": 0.00138362,
+      "MRVL": 0.00127745,
+      "FORM": 0.00113826
+    },
+    "target_stock_exposure": 0.25,
+    "vix": 19.92,
+    "estimated_notional": 249.8124,
+    "candidate_count": 40,
+    "estimated_factor_scores": true,
+    "allocation_version": "INVESTABILITY_SOFTMAX_V2",
+    "score_as_of": "2026-11-09",
+    "weighting": "confidence_adjusted_investability_softmax_with_caps",
+    "status": "AWAITING_NEXT_COMPLETED_CLOSE"
+  },
+  "last_price_day": "2026-11-09",
   "last_allocation_month": "2026-11",
-  "last_target_exposure": 0.75,
-  "last_fill_day": null,
-  "trade_count": 0,
-  "total_fees": 0.0,
-  "equity": 1000.0,
-  "unrealized_pnl": 0.0,
+  "last_target_exposure": 0.25,
+  "last_fill_day": "2026-11-09",
+  "trade_count": 40,
+  "total_fees": 0.750002,
+  "equity": 999.25,
+  "unrealized_pnl": -0.75,
   "equity_history": [
     {
       "date": "2026-11-06",
       "equity": 1000.0,
       "cash": 1000.0
+    },
+    {
+      "date": "2026-11-09",
+      "equity": 999.25,
+      "cash": 249.25017
     }
   ],
   "audit": [
@@ -123,10 +171,387 @@
           0.03971356
         ]
       ]
+    },
+    {
+      "date": "2026-11-09",
+      "event": "PAPER_FILLED",
+      "source_signal": "2026-11-06",
+      "fills": [
+        {
+          "ticker": "ACLS",
+          "side": "BUY",
+          "shares": 0.0562212,
+          "price": 107.64,
+          "fee": 0.006052
+        },
+        {
+          "ticker": "AMAT",
+          "side": "BUY",
+          "shares": 0.0121864,
+          "price": 370.55,
+          "fee": 0.004516
+        },
+        {
+          "ticker": "AMD",
+          "side": "BUY",
+          "shares": 0.1474694,
+          "price": 508.58,
+          "fee": 0.075
+        },
+        {
+          "ticker": "ANET",
+          "side": "BUY",
+          "shares": 0.4028576,
+          "price": 186.17,
+          "fee": 0.075
+        },
+        {
+          "ticker": "APH",
+          "side": "BUY",
+          "shares": 0.9292529,
+          "price": 80.71,
+          "fee": 0.075
+        },
+        {
+          "ticker": "ASML",
+          "side": "BUY",
+          "shares": 0.007389,
+          "price": 1513.25,
+          "fee": 0.011181
+        },
+        {
+          "ticker": "AVGO",
+          "side": "BUY",
+          "shares": 0.0433912,
+          "price": 319.48,
+          "fee": 0.013863
+        },
+        {
+          "ticker": "CEG",
+          "side": "BUY",
+          "shares": 0.2716505,
+          "price": 276.09,
+          "fee": 0.075
+        },
+        {
+          "ticker": "CLS",
+          "side": "BUY",
+          "shares": 0.0597451,
+          "price": 222.92,
+          "fee": 0.013318
+        },
+        {
+          "ticker": "COHR",
+          "side": "BUY",
+          "shares": 0.0726646,
+          "price": 225.19,
+          "fee": 0.016363
+        },
+        {
+          "ticker": "CRUS",
+          "side": "BUY",
+          "shares": 0.2333578,
+          "price": 118.28,
+          "fee": 0.027602
+        },
+        {
+          "ticker": "DELL",
+          "side": "BUY",
+          "shares": 0.0257513,
+          "price": 346.31,
+          "fee": 0.008918
+        },
+        {
+          "ticker": "ENTG",
+          "side": "BUY",
+          "shares": 0.0410273,
+          "price": 140.06,
+          "fee": 0.005746
+        },
+        {
+          "ticker": "ETN",
+          "side": "BUY",
+          "shares": 0.0622829,
+          "price": 359.3,
+          "fee": 0.022378
+        },
+        {
+          "ticker": "FN",
+          "side": "BUY",
+          "shares": 0.026107,
+          "price": 365.94,
+          "fee": 0.009554
+        },
+        {
+          "ticker": "FORM",
+          "side": "BUY",
+          "shares": 0.0470512,
+          "price": 85.2,
+          "fee": 0.004009
+        },
+        {
+          "ticker": "GEV",
+          "side": "BUY",
+          "shares": 0.0125214,
+          "price": 829.34,
+          "fee": 0.010384
+        },
+        {
+          "ticker": "GLW",
+          "side": "BUY",
+          "shares": 0.1428248,
+          "price": 115.95,
+          "fee": 0.016561
+        },
+        {
+          "ticker": "HPE",
+          "side": "BUY",
+          "shares": 0.1898927,
+          "price": 47.54,
+          "fee": 0.009028
+        },
+        {
+          "ticker": "HUBB",
+          "side": "BUY",
+          "shares": 0.0575126,
+          "price": 441.57,
+          "fee": 0.025396
+        },
+        {
+          "ticker": "KLAC",
+          "side": "BUY",
+          "shares": 0.0427019,
+          "price": 151.38,
+          "fee": 0.006464
+        },
+        {
+          "ticker": "LITE",
+          "side": "BUY",
+          "shares": 0.0102558,
+          "price": 596.16,
+          "fee": 0.006114
+        },
+        {
+          "ticker": "LRCX",
+          "side": "BUY",
+          "shares": 0.0293195,
+          "price": 221.31,
+          "fee": 0.006489
+        },
+        {
+          "ticker": "MCHP",
+          "side": "BUY",
+          "shares": 0.0771507,
+          "price": 61.5,
+          "fee": 0.004745
+        },
+        {
+          "ticker": "MKSI",
+          "side": "BUY",
+          "shares": 0.0860766,
+          "price": 211.59,
+          "fee": 0.018213
+        },
+        {
+          "ticker": "MPWR",
+          "side": "BUY",
+          "shares": 0.0144916,
+          "price": 1388.05,
+          "fee": 0.020115
+        },
+        {
+          "ticker": "MRVL",
+          "side": "BUY",
+          "shares": 0.0195705,
+          "price": 154.6,
+          "fee": 0.003026
+        },
+        {
+          "ticker": "MU",
+          "side": "BUY",
+          "shares": 0.0191618,
+          "price": 733.15,
+          "fee": 0.014048
+        },
+        {
+          "ticker": "NXPI",
+          "side": "BUY",
+          "shares": 0.0631163,
+          "price": 256.42,
+          "fee": 0.016184
+        },
+        {
+          "ticker": "ON",
+          "side": "BUY",
+          "shares": 0.1037135,
+          "price": 69.11,
+          "fee": 0.007168
+        },
+        {
+          "ticker": "ONTO",
+          "side": "BUY",
+          "shares": 0.0170826,
+          "price": 194.04,
+          "fee": 0.003315
+        },
+        {
+          "ticker": "POWL",
+          "side": "BUY",
+          "shares": 0.0478961,
+          "price": 141.65,
+          "fee": 0.006784
+        },
+        {
+          "ticker": "QCOM",
+          "side": "BUY",
+          "shares": 0.0505991,
+          "price": 171.47,
+          "fee": 0.008676
+        },
+        {
+          "ticker": "SMCI",
+          "side": "BUY",
+          "shares": 1.388586,
+          "price": 28.6,
+          "fee": 0.039714
+        },
+        {
+          "ticker": "STM",
+          "side": "BUY",
+          "shares": 0.7331866,
+          "price": 44.54,
+          "fee": 0.032656
+        },
+        {
+          "ticker": "SWKS",
+          "side": "BUY",
+          "shares": 0.0611242,
+          "price": 82.83,
+          "fee": 0.005063
+        },
+        {
+          "ticker": "TSM",
+          "side": "BUY",
+          "shares": 0.0357727,
+          "price": 388.62,
+          "fee": 0.013902
+        },
+        {
+          "ticker": "UCTT",
+          "side": "BUY",
+          "shares": 0.1200625,
+          "price": 45.89,
+          "fee": 0.00551
+        },
+        {
+          "ticker": "VRT",
+          "side": "BUY",
+          "shares": 0.056901,
+          "price": 200.47,
+          "fee": 0.011407
+        },
+        {
+          "ticker": "VST",
+          "side": "BUY",
+          "shares": 0.1160368,
+          "price": 133.92,
+          "fee": 0.01554
+        }
+      ],
+      "fees": 0.750002
+    },
+    {
+      "date": "2026-11-09",
+      "event": "ORDER_PROPOSED",
+      "target": {
+        "AMD": 0.025,
+        "CEG": 0.025,
+        "ANET": 0.025,
+        "APH": 0.025,
+        "CRUS": 0.01240068,
+        "VST": 0.00913902,
+        "COHR": 0.0087684,
+        "MKSI": 0.00762095,
+        "SMCI": 0.00747305,
+        "GLW": 0.00739332,
+        "STM": 0.00680967,
+        "MPWR": 0.00667417,
+        "HUBB": 0.00605369,
+        "CLS": 0.00529182,
+        "NXPI": 0.00500123,
+        "ETN": 0.00467477,
+        "MU": 0.00461089,
+        "ASML": 0.00417185,
+        "TSM": 0.00401442,
+        "VRT": 0.00363881,
+        "AVGO": 0.00355329,
+        "FN": 0.00320497,
+        "HPE": 0.00313612,
+        "GEV": 0.00309765,
+        "DELL": 0.00282429,
+        "ACLS": 0.00269823,
+        "LRCX": 0.00268346,
+        "KLAC": 0.00261985,
+        "ON": 0.00248347,
+        "UCTT": 0.00243178,
+        "QCOM": 0.00239853,
+        "ENTG": 0.00214876,
+        "LITE": 0.00208867,
+        "POWL": 0.00199771,
+        "AMAT": 0.00193768,
+        "MCHP": 0.00170794,
+        "ONTO": 0.0014514,
+        "SWKS": 0.00138362,
+        "MRVL": 0.00127745,
+        "FORM": 0.00113826
+      },
+      "vix": 19.92,
+      "execution": "NEXT_COMPLETED_CLOSE_ONLY"
     }
   ],
-  "positions_value": {},
-  "cash_weight": 1.0,
+  "positions_value": {
+    "ACLS": 6.05165,
+    "AMAT": 4.51567,
+    "AMD": 75.0,
+    "ANET": 75.0,
+    "APH": 75.0,
+    "ASML": 11.18143,
+    "AVGO": 13.86262,
+    "CEG": 75.0,
+    "CLS": 13.31837,
+    "COHR": 16.36334,
+    "CRUS": 27.60156,
+    "DELL": 8.91793,
+    "ENTG": 5.74628,
+    "ETN": 22.37825,
+    "FN": 9.5536,
+    "FORM": 4.00876,
+    "GEV": 10.38448,
+    "GLW": 16.56053,
+    "HPE": 9.0275,
+    "HUBB": 25.39586,
+    "KLAC": 6.46422,
+    "LITE": 6.11412,
+    "LRCX": 6.48869,
+    "MCHP": 4.74477,
+    "MKSI": 18.21294,
+    "MPWR": 20.11505,
+    "MRVL": 3.0256,
+    "MU": 14.04844,
+    "NXPI": 16.18428,
+    "ON": 7.16764,
+    "ONTO": 3.31471,
+    "POWL": 6.78448,
+    "QCOM": 8.67622,
+    "SMCI": 39.71356,
+    "STM": 32.65613,
+    "SWKS": 5.06292,
+    "TSM": 13.90197,
+    "UCTT": 5.50967,
+    "VRT": 11.40694,
+    "VST": 15.53965
+  },
+  "cash_weight": 0.249437,
   "risk_limits": {
     "max_name_weight": 0.15,
     "max_sector_weight": 0.4,
@@ -135,7 +560,11 @@
     "transaction_cost_bps_per_side": 10,
     "cash_interest": 0,
     "margin": false,
-    "short_selling": false
+    "short_selling": false,
+    "execution_price_imputation": false,
+    "candidate_pool_target": 40,
+    "max_name_fraction_of_stock_budget": 0.1,
+    "max_sector_fraction_of_stock_budget": 0.45
   },
   "paper_only_notice": "Simulated at observed completed market closes, not broker fills. No live order API, no real funds or account connected.",
   "candidate_universe_count": 40,
@@ -156,7 +585,7 @@
   },
   "forward_performance": {
     "status": "INSUFFICIENT_OBSERVED_PAPER_SESSIONS",
-    "observed_sessions": 1,
+    "observed_sessions": 2,
     "minimum_return_sessions": 30,
     "sharpe_rf0": null,
     "max_drawdown": null,
