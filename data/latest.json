@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-11-09",
+  "as_of": "2026-11-10",
   "price_date": "2026-11-09",
   "previous_price_date": "2026-11-06",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-10T04:16:43.857692+00:00",
+  "retrieved_at_utc": "2026-11-10T20:32:49.034747+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -30,6 +30,13 @@
         {
           "date": "2026-11-09",
           "alpha": 39.11,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 37.89,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -108,6 +115,13 @@
         {
           "date": "2026-11-09",
           "alpha": 57.08,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 55.95,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
@@ -193,6 +207,13 @@
         },
         {
           "date": "2026-11-09",
+          "alpha": 64.36,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-10",
           "alpha": 64.36,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -286,6 +307,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 41.92,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -364,6 +392,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 31.66,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -439,6 +474,13 @@
         {
           "date": "2026-11-09",
           "alpha": 39.9,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 39.43,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
@@ -529,6 +571,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 67.64,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -608,6 +657,13 @@
         {
           "date": "2026-11-09",
           "alpha": 63.16,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 63.37,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
@@ -694,6 +750,13 @@
         {
           "date": "2026-11-09",
           "alpha": 34.35,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 33.49,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -869,6 +932,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 72.53,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
@@ -953,6 +1023,13 @@
         },
         {
           "date": "2026-11-09",
+          "alpha": 79.07,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-10",
           "alpha": 79.07,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1043,6 +1120,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 59.11,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -1126,6 +1210,13 @@
         {
           "date": "2026-11-09",
           "alpha": 56.31,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 56.45,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
@@ -1215,6 +1306,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 46.53,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -1294,6 +1392,13 @@
         {
           "date": "2026-11-09",
           "alpha": 43.95,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 43.81,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
@@ -1380,6 +1485,13 @@
         {
           "date": "2026-11-09",
           "alpha": 24.73,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 17.07,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -1653,6 +1765,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 16.2,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -1730,6 +1849,13 @@
         {
           "date": "2026-11-09",
           "alpha": 14.86,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 16.57,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -1813,6 +1939,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 18.77,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -1893,6 +2026,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 20.6,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -1970,6 +2110,13 @@
         {
           "date": "2026-11-09",
           "alpha": 17.06,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 19.5,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -2570,6 +2717,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 72.53,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -2653,6 +2807,13 @@
         {
           "date": "2026-11-09",
           "alpha": 60.17,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-10",
+          "alpha": 61.46,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
@@ -3164,6 +3325,78 @@
   ],
   "policy_candidates": [
     {
+      "date": "2026-11-10",
+      "title": "Notice Pursuant to the National Cooperative Research and Production Act of 1993-OpenGMSL Association",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22913/notice-pursuant-to-the-national-cooperative-research-and-production-act-of-1993-opengmsl-association",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Modification of Significant New Uses of Certain Chemical Substances (23-1.M)",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22888/modification-of-significant-new-uses-of-certain-chemical-substances-23-1m",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Proposed Aggregate Production Quotas for Schedule I and II Controlled Substances and Assessment of Annual Needs for the List I Chemicals Ephedrine, Pseudoephedrine, and Phenylpropanolamine for 2027",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22843/proposed-aggregate-production-quotas-for-schedule-i-and-ii-controlled-substances-and-assessment-of",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Adjustment to the 2026 Aggregate Production Quota for d,l-Amphetamine, d-Amphetamine (for Sale), Hydromorphone and Methylphenidate (for Sale) Pursuant to 21 U.S.C. 826(h)",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22842/adjustment-to-the-2026-aggregate-production-quota-for-dl-amphetamine-d-amphetamine-for-sale",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Unemployment Insurance Program National Minimum Weekly Work Search Requirements",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22903/unemployment-insurance-program-national-minimum-weekly-work-search-requirements",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Airworthiness Directives; Airbus SAS Airplanes",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22897/airworthiness-directives-airbus-sas-airplanes",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Validation of Certain In Vitro Diagnostic Devices for Emerging Pathogens During a Section 564 Declared Emergency; Guidance for Industry and Food and Drug Administration Staff; Availability",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22883/validation-of-certain-in-vitro-diagnostic-devices-for-emerging-pathogens-during-a-section-564",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Proposed Data Collection Submitted for Public Comment and Recommendations",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22881/proposed-data-collection-submitted-for-public-comment-and-recommendations",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Color Additive Petition From Environmental Defense Fund et al.; Request To Amend the Color Additive Regulations To Remove the Solvents Ethylene Dichloride, Methylene Chloride, and Trichloroethylene",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22865/color-additive-petition-from-environmental-defense-fund-et-al-request-to-amend-the-color-additive",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Self-Regulatory Organizations; 24X National Exchange LLC; Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Amend the Transaction Fees Applicable to Members of the Exchange",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22852/self-regulatory-organizations-24x-national-exchange-llc-notice-of-filing-and-immediate-effectiveness",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Notice of Intent To Reorganize HUD and Revise Headquarters and Field Operating Model",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22838/notice-of-intent-to-reorganize-hud-and-revise-headquarters-and-field-operating-model",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "Medicare and Medicaid Programs; Cutting Administrative Requirements for Excellence in Patient Care",
+      "source": "https://www.federalregister.gov/documents/2026/11/10/2026-22812/medicare-and-medicaid-programs-cutting-administrative-requirements-for-excellence-in-patient-care",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
       "date": "2026-11-09",
       "title": "Crystalline Silicon Photovoltaic Cells, Whether or Not Assembled Into Modules, From the Lao People's Democratic Republic: Amended Final Determination of Sales at Less Than Fair Value; Crystalline Silicon Photovoltaic Cells, Whether or Not Assembled Into Modules, From India, Indonesia, and the Lao People's Democratic Republic: Antidumping Duty Orders",
       "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22825/crystalline-silicon-photovoltaic-cells-whether-or-not-assembled-into-modules-from-the-lao-peoples",
@@ -3212,66 +3445,6 @@
       "status": "UNREVIEWED policy candidate; excluded from factor scores"
     },
     {
-      "date": "2026-11-09",
-      "title": "Agency Forms Undergoing Paperwork Reduction Act Review",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22820/agency-forms-undergoing-paperwork-reduction-act-review",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "Agency Forms Undergoing Paperwork Reduction Act Review",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22819/agency-forms-undergoing-paperwork-reduction-act-review",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "Medicare Drug Price Negotiation Program and Medicare Prescription Drug Benefit Program",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22792/medicare-drug-price-negotiation-program-and-medicare-prescription-drug-benefit-program",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "National Emission Standards for Hazardous Air Pollutants: Polyvinyl Chloride and Copolymer Production Reconsideration; New Major Source Process Wastewater Standards",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22788/national-emission-standards-for-hazardous-air-pollutants-polyvinyl-chloride-and-copolymer-production",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "Hazardous Materials: Notice of Actions on Special Permits",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22779/hazardous-materials-notice-of-actions-on-special-permits",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "Hazardous Materials: Notice of Applications for Modification to Special Permits",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22778/hazardous-materials-notice-of-applications-for-modification-to-special-permits",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "Hazardous Materials: Notice of Applications for New Special Permits",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22777/hazardous-materials-notice-of-applications-for-new-special-permits",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "Self-Regulatory Organizations; The Nasdaq Stock Market LLC; Notice of Filing and Immediate Effectiveness of Proposed Rule Change to Set Fees for Nasdaq TotalView Plus and Nasdaq Basic Plus",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22759/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "Self-Regulatory Organizations; Nasdaq Texas, LLC; Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Introduce Conforming Changes to Nasdaq Texas Rules in Connection With the Establishment of Fees for Nasdaq TotalView Plus and Nasdaq Basic Plus",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22757/self-regulatory-organizations-nasdaq-texas-llc-notice-of-filing-and-immediate-effectiveness-of",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "Self-Regulatory Organizations; Investors Exchange LLC; Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Amend Rule 11.271 Regarding the Resumption of Trading Following a Level 3 Market-Wide Circuit Breaker Halt",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22752/self-regulatory-organizations-investors-exchange-llc-notice-of-filing-and-immediate-effectiveness-of",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
       "date": "2026-11-06",
       "title": "Air Plan Approval; California; Revised Format for Materials Incorporated by Reference",
       "source": "https://www.federalregister.gov/documents/2026/11/06/2026-22671/air-plan-approval-california-revised-format-for-materials-incorporated-by-reference",
@@ -3296,27 +3469,9 @@
       "status": "UNREVIEWED policy candidate; excluded from factor scores"
     },
     {
-      "date": "2026-11-06",
-      "title": "Airworthiness Directives; Dassault Aviation Airplanes",
-      "source": "https://www.federalregister.gov/documents/2026/11/06/2026-22664/airworthiness-directives-dassault-aviation-airplanes",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
       "date": "2026-11-05",
       "title": "Significant New Use Rules on Certain Chemical Substances (25-3.5e)",
       "source": "https://www.federalregister.gov/documents/2026/11/05/2026-22576/significant-new-use-rules-on-certain-chemical-substances-25-35e",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-05",
-      "title": "Initiation of Antidumping and Countervailing Duty Administrative Reviews",
-      "source": "https://www.federalregister.gov/documents/2026/11/05/2026-22629/initiation-of-antidumping-and-countervailing-duty-administrative-reviews",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-05",
-      "title": "Deepwater Port Application Processing and Licensing",
-      "source": "https://www.federalregister.gov/documents/2026/11/05/2026-22617/deepwater-port-application-processing-and-licensing",
       "status": "UNREVIEWED policy candidate; excluded from factor scores"
     },
     {
@@ -3341,6 +3496,12 @@
       "date": "2026-10-29",
       "title": "Notice Regarding the Uyghur Forced Labor Prevention Act Entity List",
       "source": "https://www.federalregister.gov/documents/2026/10/29/2026-22094/notice-regarding-the-uyghur-forced-labor-prevention-act-entity-list",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-10-28",
+      "title": "Exemptions To Permit Circumvention of Access Controls on Copyrighted Works",
+      "source": "https://www.federalregister.gov/documents/2026/10/28/2026-21939/exemptions-to-permit-circumvention-of-access-controls-on-copyrighted-works",
       "status": "UNREVIEWED policy candidate; excluded from factor scores"
     }
   ],
@@ -3533,9 +3694,9 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "power": 3,
+      "storage": 2,
       "energy": 1,
-      "storage": 2
+      "power": 3
     },
     "unverified_is_unknown": true
   },
@@ -3842,7 +4003,7 @@
   },
   "network": {
     "graph_version": "3.2-dated-multisector-graph",
-    "as_of": "2026-11-09",
+    "as_of": "2026-11-10",
     "verified_edges": [
       {
         "supplier": "FN",
@@ -5747,5 +5908,5 @@
       "method": "disclosed_customer_revenue_share_change_pp"
     }
   ],
-  "quant_source_fingerprint": "3087ad3ab699fbc616d46ff1aba7bfedba80cfd30153a108e2e835b74a9822eb"
+  "quant_source_fingerprint": "5c46d132e02aac40ea6400d940587eba206513231b6237988ee3d6f15a7de3a2"
 }
