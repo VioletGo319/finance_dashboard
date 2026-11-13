@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-11-12",
+  "as_of": "2026-11-13",
   "price_date": "2026-11-12",
   "previous_price_date": "2026-11-11",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-13T02:49:36.899584+00:00",
+  "retrieved_at_utc": "2026-11-13T20:36:04.645657+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -51,6 +51,13 @@
         {
           "date": "2026-11-12",
           "alpha": 32.04,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 36.55,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -101,7 +108,7 @@
       "alpha": null,
       "provisional_alpha": 36.55,
       "previous_alpha": null,
-      "previous_provisional_alpha": 32.04,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -150,6 +157,13 @@
         {
           "date": "2026-11-12",
           "alpha": 60.0,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 61.28,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
@@ -208,7 +222,7 @@
       "alpha": null,
       "provisional_alpha": 61.28,
       "previous_alpha": null,
-      "previous_provisional_alpha": 60.0,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -257,6 +271,13 @@
         {
           "date": "2026-11-12",
           "alpha": 61.52,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 63.37,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
@@ -318,7 +339,7 @@
       "alpha": null,
       "provisional_alpha": 63.37,
       "previous_alpha": null,
-      "previous_provisional_alpha": 61.52,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -370,6 +391,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 40.58,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -417,7 +445,7 @@
       "alpha": null,
       "provisional_alpha": 40.58,
       "previous_alpha": null,
-      "previous_provisional_alpha": 33.88,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -469,6 +497,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 29.95,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -516,7 +551,7 @@
       "alpha": null,
       "provisional_alpha": 29.95,
       "previous_alpha": null,
-      "previous_provisional_alpha": 25.45,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -565,6 +600,13 @@
         {
           "date": "2026-11-12",
           "alpha": 41.84,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 37.96,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
@@ -624,7 +666,7 @@
       "alpha": null,
       "provisional_alpha": 37.96,
       "previous_alpha": null,
-      "previous_provisional_alpha": 41.84,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -673,6 +715,13 @@
         {
           "date": "2026-11-12",
           "alpha": 66.36,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 66.79,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
@@ -727,7 +776,7 @@
       "alpha": null,
       "provisional_alpha": 66.79,
       "previous_alpha": null,
-      "previous_provisional_alpha": 66.36,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -776,6 +825,13 @@
         {
           "date": "2026-11-12",
           "alpha": 66.56,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 68.77,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
@@ -834,7 +890,7 @@
       "alpha": null,
       "provisional_alpha": 68.77,
       "previous_alpha": null,
-      "previous_provisional_alpha": 66.56,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -886,6 +942,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 35.08,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -933,7 +996,7 @@
       "alpha": null,
       "provisional_alpha": 35.08,
       "previous_alpha": null,
-      "previous_provisional_alpha": 30.94,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1079,6 +1142,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 74.95,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
@@ -1136,7 +1206,7 @@
       "alpha": null,
       "provisional_alpha": 74.95,
       "previous_alpha": null,
-      "previous_provisional_alpha": 75.23,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1185,6 +1255,13 @@
         {
           "date": "2026-11-12",
           "alpha": 73.96,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 76.09,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
@@ -1243,7 +1320,7 @@
       "alpha": null,
       "provisional_alpha": 76.09,
       "previous_alpha": null,
-      "previous_provisional_alpha": 73.96,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1291,6 +1368,13 @@
         },
         {
           "date": "2026-11-12",
+          "alpha": 62.31,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-13",
           "alpha": 62.31,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1350,7 +1434,7 @@
       "alpha": null,
       "provisional_alpha": 62.31,
       "previous_alpha": null,
-      "previous_provisional_alpha": 62.31,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1399,6 +1483,13 @@
         {
           "date": "2026-11-12",
           "alpha": 55.26,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 54.98,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
@@ -1457,7 +1548,7 @@
       "alpha": null,
       "provisional_alpha": 54.98,
       "previous_alpha": null,
-      "previous_provisional_alpha": 55.26,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1506,6 +1597,13 @@
         {
           "date": "2026-11-12",
           "alpha": 44.75,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 43.47,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
@@ -1560,7 +1658,7 @@
       "alpha": null,
       "provisional_alpha": 43.47,
       "previous_alpha": null,
-      "previous_provisional_alpha": 44.75,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1609,6 +1707,13 @@
         {
           "date": "2026-11-12",
           "alpha": 43.19,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 42.76,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
@@ -1667,7 +1772,7 @@
       "alpha": null,
       "provisional_alpha": 42.76,
       "previous_alpha": null,
-      "previous_provisional_alpha": 43.19,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1716,6 +1821,13 @@
         {
           "date": "2026-11-12",
           "alpha": 22.06,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 25.47,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -1770,7 +1882,7 @@
       "alpha": null,
       "provisional_alpha": 25.47,
       "previous_alpha": null,
-      "previous_provisional_alpha": 22.06,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2010,6 +2122,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 18.89,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2059,7 +2178,7 @@
       "alpha": null,
       "provisional_alpha": 18.89,
       "previous_alpha": null,
-      "previous_provisional_alpha": 23.03,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2108,6 +2227,13 @@
         {
           "date": "2026-11-12",
           "alpha": 21.2,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 17.42,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -2160,7 +2286,7 @@
       "alpha": null,
       "provisional_alpha": 17.42,
       "previous_alpha": null,
-      "previous_provisional_alpha": 21.2,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2209,6 +2335,13 @@
         {
           "date": "2026-11-12",
           "alpha": 23.76,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 19.25,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -2261,7 +2394,7 @@
       "alpha": null,
       "provisional_alpha": 19.25,
       "previous_alpha": null,
-      "previous_provisional_alpha": 23.76,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2310,6 +2443,13 @@
         {
           "date": "2026-11-12",
           "alpha": 23.39,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 16.69,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -2362,7 +2502,7 @@
       "alpha": null,
       "provisional_alpha": 16.69,
       "previous_alpha": null,
-      "previous_provisional_alpha": 23.39,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2411,6 +2551,13 @@
         {
           "date": "2026-11-12",
           "alpha": 26.69,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 21.45,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
@@ -2463,7 +2610,7 @@
       "alpha": null,
       "provisional_alpha": 21.45,
       "previous_alpha": null,
-      "previous_provisional_alpha": 26.69,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -3032,6 +3179,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 69.76,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -3087,7 +3241,7 @@
       "alpha": null,
       "provisional_alpha": 69.76,
       "previous_alpha": null,
-      "previous_provisional_alpha": 68.27,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -3136,6 +3290,13 @@
         {
           "date": "2026-11-12",
           "alpha": 59.96,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-13",
+          "alpha": 59.75,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
@@ -3190,7 +3351,7 @@
       "alpha": null,
       "provisional_alpha": 59.75,
       "previous_alpha": null,
-      "previous_provisional_alpha": 59.96,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     }
@@ -3663,6 +3824,84 @@
   ],
   "policy_candidates": [
     {
+      "date": "2026-11-13",
+      "title": "Pesticide Registration Maintenance Fee; Cancellation Order for Certain Pesticide Registrations",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23117/pesticide-registration-maintenance-fee-cancellation-order-for-certain-pesticide-registrations",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Agency Information Collection Activities; Submission to the Office of Management and Budget (OMB) for Review and Approval; Comment Request; Electronic Logbook for the Commercial Shrimp Fishery in the Gulf of America",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23192/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Agency Information Collection Activities; Submission to the Office of Management and Budget (OMB) for Review and Approval; Comment Request; Mandatory Shrimp Vessel and Gear Characterization Survey",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23191/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Agency Information Collection Activities: Proposed Collection; Comment Request",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23189/agency-information-collection-activities-proposed-collection-comment-request",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Proposed Flood Hazard Determinations",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23165/proposed-flood-hazard-determinations",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Proposed Flood Hazard Determinations",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23164/proposed-flood-hazard-determinations",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Changes in Flood Hazard Determinations",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23163/changes-in-flood-hazard-determinations",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Changes in Flood Hazard Determinations",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23162/changes-in-flood-hazard-determinations",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Notice of Permit Applications Received Under the Antarctic Conservation Act of 1978",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23158/notice-of-permit-applications-received-under-the-antarctic-conservation-act-of-1978",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Request for Information",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23155/request-for-information",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "South Atlantic Fishery Management Council; Public Meeting",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23142/south-atlantic-fishery-management-council-public-meeting",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Combined Notice of Filings #1",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23131/combined-notice-of-filings-1",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Agency Information Collection Activities; Submission to the Office of Management and Budget for Review and Approval; Comment Request; Toxic Substances Control Act (TSCA) Section 8(a)(7) Reporting and Recordkeeping Requirements for Perfluoroalkyl and Polyfluoroalkyl Substances (Renewal)",
+      "source": "https://www.federalregister.gov/documents/2026/11/13/2026-23125/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-for",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
       "date": "2026-11-12",
       "title": "Schedules of Controlled Substances: Placement of Oveporexton in Schedule IV",
       "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23075/schedules-of-controlled-substances-placement-of-oveporexton-in-schedule-iv",
@@ -3672,78 +3911,6 @@
       "date": "2026-11-12",
       "title": "Pesticides; Notice of Receipt of Requests to Voluntarily Cancel Certain Pesticide Registrations and Amend Registrations To Terminate Certain Uses With a 30-Day Comment Period (September 2026)",
       "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23021/pesticides-notice-of-receipt-of-requests-to-voluntarily-cancel-certain-pesticide-registrations-and",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Standard Instrument Approach Procedures, and Takeoff Minimums and Obstacle Departure Procedures; Miscellaneous Amendments",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23073/standard-instrument-approach-procedures-and-takeoff-minimums-and-obstacle-departure-procedures",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Standard Instrument Approach Procedures, and Takeoff Minimums and Obstacle Departure Procedures; Miscellaneous Amendments",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23072/standard-instrument-approach-procedures-and-takeoff-minimums-and-obstacle-departure-procedures",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Center for Scientific Review; Notice of Closed Meetings",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23063/center-for-scientific-review-notice-of-closed-meetings",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Respirable Crystalline Silica and Respiratory Protection",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23048/respirable-crystalline-silica-and-respiratory-protection",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Committee and Quarterly Board Meetings; Correction",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23034/committee-and-quarterly-board-meetings-correction",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "National Cybersecurity Center of Excellence (NCCoE) Projects and Activities",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23031/national-cybersecurity-center-of-excellence-nccoe-projects-and-activities",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Coral, Coral Reefs, and Live/Hardbottom Habitats of the South Atlantic and the Shrimp Fishery of the South Atlantic Region; Amendments 11/12",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23020/coral-coral-reefs-and-livehardbottom-habitats-of-the-south-atlantic-and-the-shrimp-fishery-of-the",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Amendment of Jet Route J-21 in the Vicinity of Laredo, TX",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23017/amendment-of-jet-route-j-21-in-the-vicinity-of-laredo-tx",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Privacy Act of 1974; System of Records",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23010/privacy-act-of-1974-system-of-records",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Hematology and Pathology Devices; Reclassification of Immunohistochemistry Test Systems for Use With a Corresponding Approved Oncology Therapeutic Product",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23005/hematology-and-pathology-devices-reclassification-of-immunohistochemistry-test-systems-for-use-with",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Housing and Community Development Act of 1980: Verification of Eligible Status",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-23003/housing-and-community-development-act-of-1980-verification-of-eligible-status",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Patient-Level Data for Drugs and Biological Products Submissions Containing Real-World Data and Real-World Evidence; Request for Information",
-      "source": "https://www.federalregister.gov/documents/2026/11/12/2026-22996/patient-level-data-for-drugs-and-biological-products-submissions-containing-real-world-data-and",
       "status": "UNREVIEWED policy candidate; excluded from factor scores"
     },
     {
@@ -3810,12 +3977,6 @@
       "date": "2026-11-06",
       "title": "Air Plan Approval; California; Revised Format for Materials Incorporated by Reference",
       "source": "https://www.federalregister.gov/documents/2026/11/06/2026-22671/air-plan-approval-california-revised-format-for-materials-incorporated-by-reference",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-06",
-      "title": "Heightened Requirements for Foreign Importers of Record",
-      "source": "https://www.federalregister.gov/documents/2026/11/06/2026-22735/heightened-requirements-for-foreign-importers-of-record",
       "status": "UNREVIEWED policy candidate; excluded from factor scores"
     },
     {
@@ -4032,9 +4193,9 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "power": 3,
       "energy": 1,
-      "storage": 2
+      "storage": 2,
+      "power": 3
     },
     "unverified_is_unknown": true
   },
@@ -4341,7 +4502,7 @@
   },
   "network": {
     "graph_version": "3.2-dated-multisector-graph",
-    "as_of": "2026-11-12",
+    "as_of": "2026-11-13",
     "verified_edges": [
       {
         "supplier": "FN",
@@ -6246,5 +6407,5 @@
       "method": "disclosed_customer_revenue_share_change_pp"
     }
   ],
-  "quant_source_fingerprint": "957d0bc2481b5ec8260fce60b54fd45a6a3801bf8757e00c5a90b5e295807d0b"
+  "quant_source_fingerprint": "bbdeed94ea734ee6040541463a91962ee4fa379ca0fc5c6d28205811fe754268"
 }
