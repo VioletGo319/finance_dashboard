@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-11-13",
+  "as_of": "2026-11-14",
   "price_date": "2026-11-13",
   "previous_price_date": "2026-11-12",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-14T02:37:42.816043+00:00",
+  "retrieved_at_utc": "2026-11-14T18:48:40.347673+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -61,6 +61,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 30.7,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -108,7 +115,7 @@
       "alpha": null,
       "provisional_alpha": 30.7,
       "previous_alpha": null,
-      "previous_provisional_alpha": 36.55,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -163,6 +170,13 @@
         },
         {
           "date": "2026-11-13",
+          "alpha": 61.28,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-14",
           "alpha": 61.28,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -222,7 +236,7 @@
       "alpha": null,
       "provisional_alpha": 61.28,
       "previous_alpha": null,
-      "previous_provisional_alpha": 61.28,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -278,6 +292,13 @@
         {
           "date": "2026-11-13",
           "alpha": 63.37,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 64.12,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
@@ -339,7 +360,7 @@
       "alpha": null,
       "provisional_alpha": 64.12,
       "previous_alpha": null,
-      "previous_provisional_alpha": 63.37,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -398,6 +419,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 34.0,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -445,7 +473,7 @@
       "alpha": null,
       "provisional_alpha": 34.0,
       "previous_alpha": null,
-      "previous_provisional_alpha": 40.58,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -504,6 +532,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 23.74,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -551,7 +586,7 @@
       "alpha": null,
       "provisional_alpha": 23.74,
       "previous_alpha": null,
-      "previous_provisional_alpha": 29.95,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -607,6 +642,13 @@
         {
           "date": "2026-11-13",
           "alpha": 37.96,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 37.39,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
@@ -666,7 +708,7 @@
       "alpha": null,
       "provisional_alpha": 37.39,
       "previous_alpha": null,
-      "previous_provisional_alpha": 37.96,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -725,6 +767,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 66.14,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -776,7 +825,7 @@
       "alpha": null,
       "provisional_alpha": 66.14,
       "previous_alpha": null,
-      "previous_provisional_alpha": 66.79,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -835,6 +884,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 64.93,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -890,7 +946,7 @@
       "alpha": null,
       "provisional_alpha": 64.93,
       "previous_alpha": null,
-      "previous_provisional_alpha": 68.77,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -949,6 +1005,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 29.24,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -996,7 +1059,7 @@
       "alpha": null,
       "provisional_alpha": 29.24,
       "previous_alpha": null,
-      "previous_provisional_alpha": 35.08,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1149,6 +1212,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 75.38,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
@@ -1206,7 +1276,7 @@
       "alpha": null,
       "provisional_alpha": 75.38,
       "previous_alpha": null,
-      "previous_provisional_alpha": 74.95,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1265,6 +1335,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 76.8,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -1320,7 +1397,7 @@
       "alpha": null,
       "provisional_alpha": 76.8,
       "previous_alpha": null,
-      "previous_provisional_alpha": 76.09,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1375,6 +1452,13 @@
         },
         {
           "date": "2026-11-13",
+          "alpha": 62.31,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-14",
           "alpha": 62.31,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1434,7 +1518,7 @@
       "alpha": null,
       "provisional_alpha": 62.31,
       "previous_alpha": null,
-      "previous_provisional_alpha": 62.31,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1489,6 +1573,13 @@
         },
         {
           "date": "2026-11-13",
+          "alpha": 54.98,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-14",
           "alpha": 54.98,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1548,7 +1639,7 @@
       "alpha": null,
       "provisional_alpha": 54.98,
       "previous_alpha": null,
-      "previous_provisional_alpha": 54.98,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1607,6 +1698,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 43.47,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -1658,7 +1756,7 @@
       "alpha": null,
       "provisional_alpha": 43.47,
       "previous_alpha": null,
-      "previous_provisional_alpha": 43.47,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1713,6 +1811,13 @@
         },
         {
           "date": "2026-11-13",
+          "alpha": 42.76,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-14",
           "alpha": 42.76,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1772,7 +1877,7 @@
       "alpha": null,
       "provisional_alpha": 42.76,
       "previous_alpha": null,
-      "previous_provisional_alpha": 42.76,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1831,6 +1936,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 25.96,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -1882,7 +1994,7 @@
       "alpha": null,
       "provisional_alpha": 25.96,
       "previous_alpha": null,
-      "previous_provisional_alpha": 25.47,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2129,6 +2241,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 23.76,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2178,7 +2297,7 @@
       "alpha": null,
       "provisional_alpha": 23.76,
       "previous_alpha": null,
-      "previous_provisional_alpha": 18.89,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2237,6 +2356,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 22.29,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2286,7 +2412,7 @@
       "alpha": null,
       "provisional_alpha": 22.29,
       "previous_alpha": null,
-      "previous_provisional_alpha": 17.42,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2345,6 +2471,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 24.13,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2394,7 +2527,7 @@
       "alpha": null,
       "provisional_alpha": 24.13,
       "previous_alpha": null,
-      "previous_provisional_alpha": 19.25,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2453,6 +2586,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 21.93,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2502,7 +2642,7 @@
       "alpha": null,
       "provisional_alpha": 21.93,
       "previous_alpha": null,
-      "previous_provisional_alpha": 16.69,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2561,6 +2701,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 26.32,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2610,7 +2757,7 @@
       "alpha": null,
       "provisional_alpha": 26.32,
       "previous_alpha": null,
-      "previous_provisional_alpha": 21.45,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -3186,6 +3333,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 71.11,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -3241,7 +3395,7 @@
       "alpha": null,
       "provisional_alpha": 71.11,
       "previous_alpha": null,
-      "previous_provisional_alpha": 69.76,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -3300,6 +3454,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-14",
+          "alpha": 59.96,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -3351,7 +3512,7 @@
       "alpha": null,
       "provisional_alpha": 59.96,
       "previous_alpha": null,
-      "previous_provisional_alpha": 59.75,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     }
@@ -4193,9 +4354,9 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "storage": 2,
       "power": 3,
-      "energy": 1
+      "energy": 1,
+      "storage": 2
     },
     "unverified_is_unknown": true
   },
@@ -4502,7 +4663,7 @@
   },
   "network": {
     "graph_version": "3.2-dated-multisector-graph",
-    "as_of": "2026-11-13",
+    "as_of": "2026-11-14",
     "verified_edges": [
       {
         "supplier": "FN",
@@ -6407,5 +6568,5 @@
       "method": "disclosed_customer_revenue_share_change_pp"
     }
   ],
-  "quant_source_fingerprint": "8e4793b26842211e294fc35d258e5002fce3a4a505363df0f6baac097e27257c"
+  "quant_source_fingerprint": "d6f5a2cb4fc977f11312653fb88bb6826ffae01d5b332291092b837e0b0ad2d4"
 }
