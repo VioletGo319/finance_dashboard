@@ -4,7 +4,7 @@
   "previous_price_date": "2026-11-13",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-16T22:58:44.425137+00:00",
+  "retrieved_at_utc": "2026-11-17T04:43:23.880678+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -129,7 +129,7 @@
       "alpha": null,
       "provisional_alpha": 35.08,
       "previous_alpha": null,
-      "previous_provisional_alpha": 30.7,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -264,7 +264,7 @@
       "alpha": null,
       "provisional_alpha": 58.58,
       "previous_alpha": null,
-      "previous_provisional_alpha": 61.28,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -402,7 +402,7 @@
       "alpha": null,
       "provisional_alpha": 65.26,
       "previous_alpha": null,
-      "previous_provisional_alpha": 64.12,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -529,7 +529,7 @@
       "alpha": null,
       "provisional_alpha": 41.67,
       "previous_alpha": null,
-      "previous_provisional_alpha": 34.0,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -656,7 +656,7 @@
       "alpha": null,
       "provisional_alpha": 29.95,
       "previous_alpha": null,
-      "previous_provisional_alpha": 23.74,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -792,7 +792,7 @@
       "alpha": null,
       "provisional_alpha": 36.44,
       "previous_alpha": null,
-      "previous_provisional_alpha": 37.39,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -923,7 +923,7 @@
       "alpha": null,
       "provisional_alpha": 67.28,
       "previous_alpha": null,
-      "previous_provisional_alpha": 66.14,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1058,7 +1058,7 @@
       "alpha": null,
       "provisional_alpha": 66.85,
       "previous_alpha": null,
-      "previous_provisional_alpha": 64.93,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1185,7 +1185,7 @@
       "alpha": null,
       "provisional_alpha": 34.35,
       "previous_alpha": null,
-      "previous_provisional_alpha": 29.24,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1416,7 +1416,7 @@
       "alpha": null,
       "provisional_alpha": 75.52,
       "previous_alpha": null,
-      "previous_provisional_alpha": 75.38,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1551,7 +1551,7 @@
       "alpha": null,
       "provisional_alpha": 78.72,
       "previous_alpha": null,
-      "previous_provisional_alpha": 76.8,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1686,7 +1686,7 @@
       "alpha": null,
       "provisional_alpha": 57.77,
       "previous_alpha": null,
-      "previous_provisional_alpha": 62.31,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1821,7 +1821,7 @@
       "alpha": null,
       "provisional_alpha": 54.41,
       "previous_alpha": null,
-      "previous_provisional_alpha": 54.98,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1952,7 +1952,7 @@
       "alpha": null,
       "provisional_alpha": 43.47,
       "previous_alpha": null,
-      "previous_provisional_alpha": 43.47,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2087,7 +2087,7 @@
       "alpha": null,
       "provisional_alpha": 42.05,
       "previous_alpha": null,
-      "previous_provisional_alpha": 42.76,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2218,7 +2218,7 @@
       "alpha": null,
       "provisional_alpha": 26.2,
       "previous_alpha": null,
-      "previous_provisional_alpha": 25.96,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2535,7 +2535,7 @@
       "alpha": null,
       "provisional_alpha": 18.89,
       "previous_alpha": null,
-      "previous_provisional_alpha": 23.76,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2664,7 +2664,7 @@
       "alpha": null,
       "provisional_alpha": 15.96,
       "previous_alpha": null,
-      "previous_provisional_alpha": 22.29,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2793,7 +2793,7 @@
       "alpha": null,
       "provisional_alpha": 19.25,
       "previous_alpha": null,
-      "previous_provisional_alpha": 24.13,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2904,7 +2904,7 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 1406.785,
+      "close": 1406.79,
       "previous_close": 1495.16,
       "price_date": "2026-11-16",
       "previous_price_date": "2026-11-13",
@@ -2922,7 +2922,7 @@
       "alpha": null,
       "provisional_alpha": 15.22,
       "previous_alpha": null,
-      "previous_provisional_alpha": 21.93,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -3051,7 +3051,7 @@
       "alpha": null,
       "provisional_alpha": 22.18,
       "previous_alpha": null,
-      "previous_provisional_alpha": 26.32,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -3362,7 +3362,7 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 25.025,
+      "close": 25.03,
       "previous_close": 26.87,
       "price_date": "2026-11-16",
       "previous_price_date": "2026-11-13",
@@ -3703,7 +3703,7 @@
       "alpha": null,
       "provisional_alpha": 75.8,
       "previous_alpha": null,
-      "previous_provisional_alpha": 71.11,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -3834,7 +3834,7 @@
       "alpha": null,
       "provisional_alpha": 61.52,
       "previous_alpha": null,
-      "previous_provisional_alpha": 59.96,
+      "previous_provisional_alpha": null,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     }
@@ -4539,7 +4539,7 @@
     "quant_status": "COMPUTED_PRICE_ONLY_RESEARCH_DIAGNOSTIC",
     "quant_eligible_count": 13,
     "quant_error": "name 'vix_target_exposure' is not defined",
-    "autonomous_paper_status": "PAPER_ACTIVE"
+    "autonomous_paper_status": "AWAITING_NEXT_CLOSE"
   },
   "capex_sources": {
     "MSFT": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
@@ -4676,9 +4676,9 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "energy": 1,
       "storage": 2,
-      "power": 3
+      "power": 3,
+      "energy": 1
     },
     "unverified_is_unknown": true
   },
