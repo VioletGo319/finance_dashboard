@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-11-16",
-  "price_date": "2026-11-16",
-  "previous_price_date": "2026-11-13",
+  "as_of": "2026-11-17",
+  "price_date": "2026-11-17",
+  "previous_price_date": "2026-11-16",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-17T04:43:23.880678+00:00",
+  "retrieved_at_utc": "2026-11-17T21:51:42.483337+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -82,6 +82,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 32.15,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -90,7 +97,7 @@
         "tightness": 47.73,
         "customer_momentum": 20.45,
         "policy": null,
-        "residual_momentum": 41.03
+        "residual_momentum": 20.51
       },
       "factor_sources": {
         "tightness": [
@@ -111,10 +118,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 373.45,
-      "previous_close": 398.73,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 359.69,
+      "previous_close": 373.45,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -123,13 +130,13 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 45.13,
+      "monitor_score": 14.36,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 35.08,
+      "provisional_alpha": 32.15,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 35.08,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -209,15 +216,22 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 62.42,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": 33.33,
         "tightness": 84.09,
-        "customer_momentum": 68.18,
+        "customer_momentum": 81.82,
         "policy": null,
-        "residual_momentum": 79.49
+        "residual_momentum": 84.62
       },
       "factor_sources": {
         "demand": [
@@ -246,10 +260,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 333.4,
-      "previous_close": 347.01,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 341.6,
+      "previous_close": 333.4,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -258,13 +272,13 @@
       "indirect_clients": 0,
       "paths": 2,
       "third_hop_clients": 0,
-      "monitor_score": 84.62,
+      "monitor_score": 87.7,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 58.58,
+      "provisional_alpha": 62.42,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 58.58,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -344,13 +358,20 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 64.88,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
         "acceleration": 37.5,
         "demand": 75.0,
         "tightness": 84.09,
-        "customer_momentum": 75.0,
+        "customer_momentum": 72.73,
         "policy": null,
         "residual_momentum": 97.44
       },
@@ -384,10 +405,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 187.02,
-      "previous_close": 197.29,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 186.42,
+      "previous_close": 187.02,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ANET?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -400,9 +421,9 @@
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 65.26,
+      "provisional_alpha": 64.88,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 65.26,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -482,6 +503,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 42.04,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -490,7 +518,7 @@
         "tightness": 47.73,
         "customer_momentum": 20.45,
         "policy": null,
-        "residual_momentum": 87.18
+        "residual_momentum": 89.74
       },
       "factor_sources": {
         "tightness": [
@@ -511,10 +539,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 203.43,
-      "previous_close": 218.15,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 210.86,
+      "previous_close": 203.43,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/COHR?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -523,13 +551,13 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 54.36,
+      "monitor_score": 82.56,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 41.67,
+      "provisional_alpha": 42.04,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 41.67,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -609,6 +637,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 31.05,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -617,7 +652,7 @@
         "tightness": 47.73,
         "customer_momentum": 20.45,
         "policy": null,
-        "residual_momentum": 5.13
+        "residual_momentum": 12.82
       },
       "factor_sources": {
         "tightness": [
@@ -638,10 +673,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 546.0,
-      "previous_close": 596.62,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 559.97,
+      "previous_close": 546.0,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/LITE?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -650,13 +685,13 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 7.18,
+      "monitor_score": 18.98,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 29.95,
+      "provisional_alpha": 31.05,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 29.95,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -736,6 +771,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 37.01,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
@@ -744,7 +786,7 @@
         "tightness": 84.09,
         "customer_momentum": 45.45,
         "policy": null,
-        "residual_momentum": 58.97
+        "residual_momentum": 69.23
       },
       "factor_sources": {
         "demand": [
@@ -774,10 +816,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 311.01,
-      "previous_close": 327.98,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 314.75,
+      "previous_close": 311.01,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/FN?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -786,13 +828,13 @@
       "indirect_clients": 0,
       "paths": 2,
       "third_hop_clients": 0,
-      "monitor_score": 35.38,
+      "monitor_score": 42.56,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 36.44,
+      "provisional_alpha": 37.01,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 36.44,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -872,15 +914,22 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 67.14,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": 95.83,
         "tightness": 47.73,
-        "customer_momentum": 52.27,
+        "customer_momentum": 50.0,
         "policy": null,
-        "residual_momentum": 28.21
+        "residual_momentum": 33.33
       },
       "factor_sources": {
         "demand": [
@@ -905,10 +954,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 106.17,
-      "previous_close": 114.08,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 108.49,
+      "previous_close": 106.17,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/GLW?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -917,13 +966,13 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 20.0,
+      "monitor_score": 39.49,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 67.28,
+      "provisional_alpha": 67.14,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 67.28,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1003,6 +1052,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 66.21,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -1011,7 +1067,7 @@
         "tightness": 100.0,
         "customer_momentum": 59.09,
         "policy": null,
-        "residual_momentum": 33.33
+        "residual_momentum": 25.64
       },
       "factor_sources": {
         "demand": [
@@ -1040,10 +1096,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 238.48,
-      "previous_close": 240.34,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 236.47,
+      "previous_close": 238.48,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CLS?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -1052,13 +1108,13 @@
       "indirect_clients": 0,
       "paths": 3,
       "third_hop_clients": 0,
-      "monitor_score": 60.0,
+      "monitor_score": 54.36,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 66.85,
+      "provisional_alpha": 66.21,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 66.85,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1138,6 +1194,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 33.25,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -1146,7 +1209,7 @@
         "tightness": 47.73,
         "customer_momentum": 20.45,
         "policy": null,
-        "residual_momentum": 35.9
+        "residual_momentum": 28.21
       },
       "factor_sources": {
         "tightness": [
@@ -1167,10 +1230,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 719.02,
-      "previous_close": 778.31,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 712.42,
+      "previous_close": 719.02,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -1179,13 +1242,13 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 48.21,
+      "monitor_score": 46.67,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 34.35,
+      "provisional_alpha": 33.25,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 34.35,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1202,7 +1265,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 69.23
+        "residual_momentum": 76.92
       },
       "factor_sources": {
         "residual_momentum": [
@@ -1214,10 +1277,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 188.67,
-      "previous_close": 202.07,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 190.37,
+      "previous_close": 188.67,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VRT?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -1226,7 +1289,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 54.87,
+      "monitor_score": 73.84,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -1249,7 +1312,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 51.28
+        "residual_momentum": 58.97
       },
       "factor_sources": {
         "residual_momentum": [
@@ -1261,10 +1324,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 75.43,
-      "previous_close": 78.23,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 76.36,
+      "previous_close": 75.43,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/APH?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -1273,7 +1336,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 41.02,
+      "monitor_score": 45.64,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -1359,15 +1422,22 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 72.82,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
         "acceleration": 100.0,
         "demand": 25.0,
         "tightness": 84.09,
-        "customer_momentum": 100.0,
+        "customer_momentum": 86.36,
         "policy": null,
-        "residual_momentum": 82.05
+        "residual_momentum": 74.36
       },
       "factor_sources": {
         "demand": [
@@ -1398,10 +1468,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 44.53,
-      "previous_close": 46.73,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 44.22,
+      "previous_close": 44.53,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/STM?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -1410,13 +1480,13 @@
       "indirect_clients": 0,
       "paths": 2,
       "third_hop_clients": 0,
-      "monitor_score": 82.05,
+      "monitor_score": 76.41,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 75.52,
+      "provisional_alpha": 72.82,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 75.52,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1496,15 +1566,22 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 78.36,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": 75.0,
         "tightness": 84.09,
-        "customer_momentum": 75.0,
+        "customer_momentum": 72.73,
         "policy": null,
-        "residual_momentum": 92.31
+        "residual_momentum": 94.87
       },
       "factor_sources": {
         "demand": [
@@ -1533,10 +1610,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 504.28,
-      "previous_close": 534.06,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 503.41,
+      "previous_close": 504.28,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -1545,13 +1622,13 @@
       "indirect_clients": 0,
       "paths": 2,
       "third_hop_clients": 0,
-      "monitor_score": 86.15,
+      "monitor_score": 82.56,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 78.72,
+      "provisional_alpha": 78.36,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 78.72,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1631,6 +1708,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 57.77,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -1668,10 +1752,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 145.36,
-      "previous_close": 156.76,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 148.74,
+      "previous_close": 145.36,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -1680,13 +1764,13 @@
       "indirect_clients": 0,
       "paths": 2,
       "third_hop_clients": 0,
-      "monitor_score": 12.31,
+      "monitor_score": 14.36,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.6,
       "alpha": null,
       "provisional_alpha": 57.77,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 57.77,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1766,15 +1850,22 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 54.6,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
         "acceleration": 75.0,
         "demand": 8.33,
         "tightness": 47.73,
-        "customer_momentum": 90.91,
+        "customer_momentum": 95.45,
         "policy": null,
-        "residual_momentum": 71.79
+        "residual_momentum": 61.54
       },
       "factor_sources": {
         "demand": [
@@ -1803,10 +1894,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 116.13,
-      "previous_close": 120.19,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 116.01,
+      "previous_close": 116.13,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CRUS?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -1815,13 +1906,13 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 70.77,
+      "monitor_score": 53.34,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 54.41,
+      "provisional_alpha": 54.6,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 54.41,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -1901,15 +1992,22 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 43.75,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": 8.33,
         "tightness": 47.73,
-        "customer_momentum": 90.91,
+        "customer_momentum": 95.45,
         "policy": null,
-        "residual_momentum": 64.1
+        "residual_momentum": 53.85
       },
       "factor_sources": {
         "demand": [
@@ -1934,10 +2032,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 168.52,
-      "previous_close": 172.47,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 166.67,
+      "previous_close": 168.52,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/QCOM?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -1946,13 +2044,13 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 67.18,
+      "monitor_score": 44.62,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 43.47,
+      "provisional_alpha": 43.75,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 43.47,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2032,15 +2130,22 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 42.38,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
         "acceleration": 37.5,
         "demand": 8.33,
         "tightness": 47.73,
-        "customer_momentum": 90.91,
+        "customer_momentum": 95.45,
         "policy": null,
-        "residual_momentum": 74.36
+        "residual_momentum": 66.67
       },
       "factor_sources": {
         "demand": [
@@ -2069,10 +2174,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 86.5,
-      "previous_close": 89.94,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 85.93,
+      "previous_close": 86.5,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/SWKS?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -2081,13 +2186,13 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 82.56,
+      "monitor_score": 77.95,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.9,
       "alpha": null,
-      "provisional_alpha": 42.05,
+      "provisional_alpha": 42.38,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 42.05,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2167,6 +2272,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 27.66,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2175,7 +2287,7 @@
         "tightness": 22.73,
         "customer_momentum": 20.45,
         "policy": null,
-        "residual_momentum": 53.85
+        "residual_momentum": 64.1
       },
       "factor_sources": {
         "tightness": [
@@ -2200,10 +2312,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 42.87,
-      "previous_close": 46.35,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 43.14,
+      "previous_close": 42.87,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/UCTT?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -2212,13 +2324,13 @@
       "indirect_clients": 1,
       "paths": 2,
       "third_hop_clients": 1,
-      "monitor_score": 41.54,
+      "monitor_score": 43.59,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 26.2,
+      "provisional_alpha": 27.66,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 26.2,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2235,7 +2347,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 61.54
+        "residual_momentum": 48.72
       },
       "factor_sources": {
         "residual_momentum": [
@@ -2247,10 +2359,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 67.69,
-      "previous_close": 71.06,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 67.93,
+      "previous_close": 67.69,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ON?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -2259,7 +2371,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 61.54,
+      "monitor_score": 53.85,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -2282,7 +2394,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 94.87
+        "residual_momentum": 79.49
       },
       "factor_sources": {
         "residual_momentum": [
@@ -2294,10 +2406,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 254.19,
-      "previous_close": 265.09,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 252.51,
+      "previous_close": 254.19,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/NXPI?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -2306,7 +2418,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 86.67,
+      "monitor_score": 65.13,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -2341,10 +2453,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 1314.0,
-      "previous_close": 1390.54,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 1317.37,
+      "previous_close": 1314.0,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MPWR?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -2353,7 +2465,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 75.38,
+      "monitor_score": 82.56,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -2388,10 +2500,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 58.64,
-      "previous_close": 61.68,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 59.43,
+      "previous_close": 58.64,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MCHP?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -2400,7 +2512,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 21.02,
+      "monitor_score": 32.3,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -2486,6 +2598,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 19.25,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2494,7 +2613,7 @@
         "tightness": 9.09,
         "customer_momentum": 20.45,
         "policy": null,
-        "residual_momentum": 43.59
+        "residual_momentum": 46.15
       },
       "factor_sources": {
         "tightness": [
@@ -2517,10 +2636,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 350.25,
-      "previous_close": 370.5,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 349.23,
+      "previous_close": 350.25,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -2529,13 +2648,13 @@
       "indirect_clients": 1,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 40.51,
+      "monitor_score": 33.84,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 18.89,
+      "provisional_alpha": 19.25,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 18.89,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2615,6 +2734,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 18.15,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2623,7 +2749,7 @@
         "tightness": 9.09,
         "customer_momentum": 20.45,
         "policy": null,
-        "residual_momentum": 23.08
+        "residual_momentum": 38.46
       },
       "factor_sources": {
         "tightness": [
@@ -2646,10 +2772,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 210.83,
-      "previous_close": 225.92,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 210.69,
+      "previous_close": 210.83,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -2658,13 +2784,13 @@
       "indirect_clients": 1,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 32.31,
+      "monitor_score": 31.28,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 15.96,
+      "provisional_alpha": 18.15,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 15.96,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2744,6 +2870,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 19.99,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2752,7 +2885,7 @@
         "tightness": 9.09,
         "customer_momentum": 20.45,
         "policy": null,
-        "residual_momentum": 46.15
+        "residual_momentum": 51.28
       },
       "factor_sources": {
         "tightness": [
@@ -2775,10 +2908,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 143.96,
-      "previous_close": 152.32,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 144.56,
+      "previous_close": 143.96,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/KLAC?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -2787,13 +2920,13 @@
       "indirect_clients": 1,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 44.1,
+      "monitor_score": 37.95,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 19.25,
+      "provisional_alpha": 19.99,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 19.25,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -2873,6 +3006,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 14.86,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -2881,7 +3021,7 @@
         "tightness": 9.09,
         "customer_momentum": 20.45,
         "policy": null,
-        "residual_momentum": 17.95
+        "residual_momentum": 15.38
       },
       "factor_sources": {
         "tightness": [
@@ -2904,10 +3044,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 1406.79,
-      "previous_close": 1495.16,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 1383.11,
+      "previous_close": 1406.79,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ASML?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -2916,13 +3056,13 @@
       "indirect_clients": 1,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 18.97,
+      "monitor_score": 12.3,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 15.22,
+      "provisional_alpha": 14.86,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 15.22,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -3002,6 +3142,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 24.38,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -3010,7 +3157,7 @@
         "tightness": 9.09,
         "customer_momentum": 20.45,
         "policy": null,
-        "residual_momentum": 66.67
+        "residual_momentum": 82.05
       },
       "factor_sources": {
         "tightness": [
@@ -3033,10 +3180,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 196.77,
-      "previous_close": 203.62,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 199.57,
+      "previous_close": 196.77,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ONTO?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3045,13 +3192,13 @@
       "indirect_clients": 1,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 75.9,
+      "monitor_score": 84.1,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.35,
       "alpha": null,
-      "provisional_alpha": 22.18,
+      "provisional_alpha": 24.38,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 22.18,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -3068,7 +3215,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 48.72
+        "residual_momentum": 41.03
       },
       "factor_sources": {
         "residual_momentum": [
@@ -3080,10 +3227,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 99.22,
-      "previous_close": 104.42,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 97.98,
+      "previous_close": 99.22,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ACLS?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3092,7 +3239,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 35.38,
+      "monitor_score": 28.72,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3115,7 +3262,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 89.74
+        "residual_momentum": 92.31
       },
       "factor_sources": {
         "residual_momentum": [
@@ -3127,10 +3274,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 140.02,
-      "previous_close": 147.41,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 140.78,
+      "previous_close": 140.02,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ENTG?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3139,7 +3286,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 85.64,
+      "monitor_score": 91.28,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3162,7 +3309,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 76.92
+        "residual_momentum": 87.18
       },
       "factor_sources": {
         "residual_momentum": [
@@ -3174,10 +3321,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 204.38,
-      "previous_close": 215.65,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 206.44,
+      "previous_close": 204.38,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/MKSI?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3186,7 +3333,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 68.72,
+      "monitor_score": 70.77,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3209,7 +3356,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 30.77
+        "residual_momentum": 43.59
       },
       "factor_sources": {
         "residual_momentum": [
@@ -3221,10 +3368,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 81.14,
-      "previous_close": 87.53,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 83.03,
+      "previous_close": 81.14,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/FORM?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3233,7 +3380,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 35.9,
+      "monitor_score": 47.69,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3268,10 +3415,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 320.55,
-      "previous_close": 344.53,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 322.79,
+      "previous_close": 320.55,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/DELL?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3280,7 +3427,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 11.79,
+      "monitor_score": 20.0,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3303,7 +3450,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 38.46
+        "residual_momentum": 35.9
       },
       "factor_sources": {
         "residual_momentum": [
@@ -3315,10 +3462,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 46.57,
-      "previous_close": 48.29,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 46.09,
+      "previous_close": 46.57,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/HPE?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3327,7 +3474,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 48.72,
+      "monitor_score": 34.87,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3350,7 +3497,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 15.38
+        "residual_momentum": 5.13
       },
       "factor_sources": {
         "residual_momentum": [
@@ -3362,10 +3509,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 25.03,
-      "previous_close": 26.87,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 24.14,
+      "previous_close": 25.03,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/SMCI?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3374,7 +3521,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 10.25,
+      "monitor_score": 3.08,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3397,7 +3544,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 25.64
+        "residual_momentum": 30.77
       },
       "factor_sources": {
         "residual_momentum": [
@@ -3409,10 +3556,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 336.88,
-      "previous_close": 352.97,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 337.11,
+      "previous_close": 336.88,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ETN?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3421,7 +3568,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 26.67,
+      "monitor_score": 27.69,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3444,7 +3591,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 12.82
+        "residual_momentum": 17.95
       },
       "factor_sources": {
         "residual_momentum": [
@@ -3456,10 +3603,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 424.43,
-      "previous_close": 436.98,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 424.82,
+      "previous_close": 424.43,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/HUBB?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3468,7 +3615,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 29.23,
+      "monitor_score": 34.36,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3503,10 +3650,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 151.2,
-      "previous_close": 142.72,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 150.86,
+      "previous_close": 151.2,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/POWL?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3515,7 +3662,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 72.82,
+      "monitor_score": 73.85,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3538,7 +3685,7 @@
         "tightness": null,
         "customer_momentum": null,
         "policy": null,
-        "residual_momentum": 10.26
+        "residual_momentum": 23.08
       },
       "factor_sources": {
         "residual_momentum": [
@@ -3550,10 +3697,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 763.57,
-      "previous_close": 803.13,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 779.91,
+      "previous_close": 763.57,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/GEV?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3562,7 +3709,7 @@
       "indirect_clients": 0,
       "paths": 0,
       "third_hop_clients": 0,
-      "monitor_score": 11.28,
+      "monitor_score": 40.52,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.05,
       "alpha": null,
@@ -3648,15 +3795,22 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 72.46,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": 75.0,
         "tightness": 68.18,
-        "customer_momentum": 81.82,
+        "customer_momentum": 72.73,
         "policy": null,
-        "residual_momentum": 84.62
+        "residual_momentum": 71.79
       },
       "factor_sources": {
         "demand": [
@@ -3685,10 +3839,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 277.82,
-      "previous_close": 280.2,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 268.07,
+      "previous_close": 277.82,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CEG?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3697,13 +3851,13 @@
       "indirect_clients": 0,
       "paths": 2,
       "third_hop_clients": 0,
-      "monitor_score": 85.64,
+      "monitor_score": 75.89,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 75.8,
+      "provisional_alpha": 72.46,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 75.8,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     },
@@ -3783,15 +3937,22 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-17",
+          "alpha": 61.24,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
         "acceleration": null,
         "demand": 95.83,
         "tightness": 27.27,
-        "customer_momentum": 52.27,
+        "customer_momentum": 54.55,
         "policy": null,
-        "residual_momentum": 20.51
+        "residual_momentum": 10.26
       },
       "factor_sources": {
         "demand": [
@@ -3816,10 +3977,10 @@
         "residual_momentum": "Peer rank of 20-session return minus 60-session beta x XLK return, closing-price data",
         "policy": "N/A: dated policy filings found, but comparable firm-level signed exposure is not confirmed."
       },
-      "close": 130.16,
-      "previous_close": 133.01,
-      "price_date": "2026-11-16",
-      "previous_price_date": "2026-11-13",
+      "close": 127.15,
+      "previous_close": 130.16,
+      "price_date": "2026-11-17",
+      "previous_price_date": "2026-11-16",
       "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VST?range=6y&interval=1d",
       "price_provider": "Yahoo chart",
       "price_fresh": true,
@@ -3828,13 +3989,13 @@
       "indirect_clients": 0,
       "paths": 1,
       "third_hop_clients": 0,
-      "monitor_score": 35.89,
+      "monitor_score": 26.67,
       "monitor_method": "PRICE ONLY: 60% sector-adjusted 20-day residual rank + 40% five-session price-return rank; NOT M7 supply Alpha",
       "coverage": 0.6,
       "alpha": null,
-      "provisional_alpha": 61.52,
+      "provisional_alpha": 61.24,
       "previous_alpha": null,
-      "previous_provisional_alpha": null,
+      "previous_provisional_alpha": 61.52,
       "confidence": "研究探索",
       "explanation": "已核实客户关系；行情来自 Yahoo chart。六因子数据不完整，仅提供带覆盖率的探索性评分。"
     }
@@ -4242,6 +4403,14 @@
     },
     {
       "ticker": "NVDA",
+      "date": "2026-11-17",
+      "title": "NVDA 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "NVDA",
       "date": "2026-11-12",
       "title": "NVDA 8-K",
       "form": "8-K",
@@ -4307,6 +4476,84 @@
   ],
   "policy_candidates": [
     {
+      "date": "2026-11-17",
+      "title": "Modernizing the Commission's National Environmental Policy Act Rules",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23385/modernizing-the-commissions-national-environmental-policy-act-rules",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Appellate Procedures for the Board of Immigration Appeals",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23320/appellate-procedures-for-the-board-of-immigration-appeals",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Marine Mammals; Proposed Incidental Harassment Authorization for the Southern Beaufort Sea Stock of Polar Bears During Exploration Activities in the Arctic National Wildlife Refuge 1002 Area Alaska; Draft Environmental Assessment",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23318/marine-mammals-proposed-incidental-harassment-authorization-for-the-southern-beaufort-sea-stock-of",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Statement of Organization, Functions, and Delegations of Authority",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23394/statement-of-organization-functions-and-delegations-of-authority",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Agency Information Collection Activities; Comment Request; National Assessment of Educational Progress (NAEP) 2028",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23391/agency-information-collection-activities-comment-request-national-assessment-of-educational-progress",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Modernizing the Labor Market Test and Improving Protections for U.S. Workers in the PERM Immigrant Visa Program",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23370/modernizing-the-labor-market-test-and-improving-protections-for-us-workers-in-the-perm-immigrant",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Determination That M.V.I. PEDIATRIC (Multiple Vitamins for Injection) Was Not Withdrawn From Sale for Reasons of Safety or Effectiveness",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23367/determination-that-mvi-pediatric-multiple-vitamins-for-injection-was-not-withdrawn-from-sale-for",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Determination That M.V.I. ADULT (Multiple Vitamins for Injection) Was Not Withdrawn From Sale for Reasons of Safety or Effectiveness",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23366/determination-that-mvi-adult-multiple-vitamins-for-injection-was-not-withdrawn-from-sale-for-reasons",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Rulemaking To Provide That N-acetyl-L-cysteine Is Not Excluded From the Dietary Supplement Definition",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23351/rulemaking-to-provide-that-n-acetyl-l-cysteine-is-not-excluded-from-the-dietary-supplement",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Agency Information Collection Activities: Proposed Collection; Comment Request",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23350/agency-information-collection-activities-proposed-collection-comment-request",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Self-Regulatory Organizations; Nasdaq Texas, LLC; Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Amend Rule General 8 Regarding Fees for Interfirm Cabinet Connectivity",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23341/self-regulatory-organizations-nasdaq-texas-llc-notice-of-filing-and-immediate-effectiveness-of",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Self-Regulatory Organizations; The Nasdaq Stock Market LLC; Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Amend Rule General 8 Regarding Fees for Interfirm Cabinet Connectivity",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23340/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Self-Regulatory Organizations; Nasdaq PHLX LLC; Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Amend Rule General 8 Regarding Fees for Interfirm Cabinet Connectivity",
+      "source": "https://www.federalregister.gov/documents/2026/11/17/2026-23326/self-regulatory-organizations-nasdaq-phlx-llc-notice-of-filing-and-immediate-effectiveness-of",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
       "date": "2026-11-16",
       "title": "Certain Pea Protein From the People's Republic of China: Preliminary Results, Partial Rescission, and Preliminary Determination of No Shipments of Antidumping Duty Administrative Review; 2023-2025",
       "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23260/certain-pea-protein-from-the-peoples-republic-of-china-preliminary-results-partial-rescission-and",
@@ -4316,78 +4563,6 @@
       "date": "2026-11-16",
       "title": "Airworthiness Directives; Dassault Aviation Airplanes",
       "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23229/airworthiness-directives-dassault-aviation-airplanes",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Veterans Day, 2026",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23348/veterans-day-2026",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Certain Railway Tank Cars and Subassemblies Thereof From Mexico: Initiation of Countervailing Duty Investigation",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23291/certain-railway-tank-cars-and-subassemblies-thereof-from-mexico-initiation-of-countervailing-duty",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Certain Railway Tank Cars and Subassemblies Thereof From Mexico: Initiation of Less-Than-Fair-Value Investigation",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23290/certain-railway-tank-cars-and-subassemblies-thereof-from-mexico-initiation-of-less-than-fair-value",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Restoring Flexibility To Support Head Start Program Access",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23279/restoring-flexibility-to-support-head-start-program-access",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Fisheries of the Exclusive Economic Zone off Alaska; Pelagic Trawl Gear Definition",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23251/fisheries-of-the-exclusive-economic-zone-off-alaska-pelagic-trawl-gear-definition",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Western Pacific Fishery Management Council; Public Meetings",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23247/western-pacific-fishery-management-council-public-meetings",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Medicare, Medicaid, and Children's Health Insurance Programs: Announcement of the Extension and Modification of the Nationwide Temporary Moratorium on Enrollment of Hospices",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23242/medicare-medicaid-and-childrens-health-insurance-programs-announcement-of-the-extension-and",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Medicare, Medicaid, and Children's Health Insurance Programs: Announcement of the Extension and Modification of the Nationwide Temporary Moratorium on Enrollment of Home Health Agencies (HHAs)",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23241/medicare-medicaid-and-childrens-health-insurance-programs-announcement-of-the-extension-and",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Privacy Act of 1974; Matching Program",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23237/privacy-act-of-1974-matching-program",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Dole State and Tribal Outreach Grant Program",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23220/dole-state-and-tribal-outreach-grant-program",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Air Plan Partial Approval and Partial Conditional Approval; South Carolina; Minor Source Permit Program Revisions and Control of Oxides of Nitrogen and Source Testing Requirements",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23219/air-plan-partial-approval-and-partial-conditional-approval-south-carolina-minor-source-permit",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-16",
-      "title": "Endangered Species; Receipt of Recovery Permit Applications",
-      "source": "https://www.federalregister.gov/documents/2026/11/16/2026-23218/endangered-species-receipt-of-recovery-permit-applications",
       "status": "UNREVIEWED policy candidate; excluded from factor scores"
     },
     {
@@ -4439,24 +4614,6 @@
       "status": "UNREVIEWED policy candidate; excluded from factor scores"
     },
     {
-      "date": "2026-11-09",
-      "title": "Extension of the Suspension of Expansion of End-User Controls for Affiliates of Certain Listed Entities",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22793/extension-of-the-suspension-of-expansion-of-end-user-controls-for-affiliates-of-certain-listed",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "60-Day Notice of Proposed Information Collection: Shrimp Exporter's/Importer's Declaration",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22786/60-day-notice-of-proposed-information-collection-shrimp-exportersimporters-declaration",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-09",
-      "title": "Pesticides; Notice of Receipt of Requests to Voluntarily Cancel Certain Pesticide Registrations and/or Amend Registrations To Terminate Certain Uses With a 30-Day Comment Period (June 2026)",
-      "source": "https://www.federalregister.gov/documents/2026/11/09/2026-22769/pesticides-notice-of-receipt-of-requests-to-voluntarily-cancel-certain-pesticide-registrations-andor",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
       "date": "2026-11-06",
       "title": "Air Plan Approval; California; Revised Format for Materials Incorporated by Reference",
       "source": "https://www.federalregister.gov/documents/2026/11/06/2026-22671/air-plan-approval-california-revised-format-for-materials-incorporated-by-reference",
@@ -4466,24 +4623,6 @@
       "date": "2026-11-05",
       "title": "Significant New Use Rules on Certain Chemical Substances (25-3.5e)",
       "source": "https://www.federalregister.gov/documents/2026/11/05/2026-22576/significant-new-use-rules-on-certain-chemical-substances-25-35e",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-02",
-      "title": "Foreign-Trade Zone (FTZ) 17, Notification of Proposed Production Activity; Honeywell Aerospace US LLC; (Aircraft Components); Olathe, Kansas",
-      "source": "https://www.federalregister.gov/documents/2026/11/02/2026-22302/foreign-trade-zone-ftz-17-notification-of-proposed-production-activity-honeywell-aerospace-us-llc",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-02",
-      "title": "Significant New Use Rules on Certain Chemical Substances (26-7)",
-      "source": "https://www.federalregister.gov/documents/2026/11/02/2026-22295/significant-new-use-rules-on-certain-chemical-substances-26-7",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-02",
-      "title": "Certain Dynamic Random Access Memory (DRAM) Devices, Products Containing the Same and Components Thereof (II); Notice of a Commission Determination Not To Review an Initial Determination Granting a Joint Motion To Terminate the Investigation as to All Respondents and To Limit Service of the Settlement Agreement; Termination of the Investigation",
-      "source": "https://www.federalregister.gov/documents/2026/11/02/2026-22283/certain-dynamic-random-access-memory-dram-devices-products-containing-the-same-and-components",
       "status": "UNREVIEWED policy candidate; excluded from factor scores"
     }
   ],
@@ -4676,9 +4815,9 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
+      "energy": 1,
       "storage": 2,
-      "power": 3,
-      "energy": 1
+      "power": 3
     },
     "unverified_is_unknown": true
   },
@@ -4985,7 +5124,7 @@
   },
   "network": {
     "graph_version": "3.2-dated-multisector-graph",
-    "as_of": "2026-11-16",
+    "as_of": "2026-11-17",
     "verified_edges": [
       {
         "supplier": "FN",
@@ -6890,5 +7029,5 @@
       "method": "disclosed_customer_revenue_share_change_pp"
     }
   ],
-  "quant_source_fingerprint": "75ae1d262d13d78ff8dce755de8750f7efcd9bfbfd1540529d7e7029fa9880a1"
+  "quant_source_fingerprint": "830c9e0d01c6937d4786145b5939b494cc63153c14444f94695b37af6ffd083a"
 }
