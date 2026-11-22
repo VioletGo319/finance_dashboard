@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-11-21",
+  "as_of": "2026-11-22",
   "price_date": "2026-11-20",
   "previous_price_date": "2026-11-19",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-22T02:32:15.461832+00:00",
+  "retrieved_at_utc": "2026-11-22T20:27:17.359973+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -113,6 +113,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 31.05,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 31.05,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -275,6 +282,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 60.42,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 60.42,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -445,6 +459,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 63.23,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 63.23,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -622,6 +643,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-22",
+          "alpha": 43.51,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -784,6 +812,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-22",
+          "alpha": 33.98,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -942,6 +977,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 38.15,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 38.15,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1117,6 +1159,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-22",
+          "alpha": 68.35,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -1279,6 +1328,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 71.97,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 71.97,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1449,6 +1505,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 32.52,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 32.52,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1709,6 +1772,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
+        },
+        {
+          "date": "2026-11-22",
+          "alpha": 72.53,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
@@ -1877,6 +1947,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 75.23,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 75.23,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -2051,6 +2128,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-22",
+          "alpha": 62.31,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -2217,6 +2301,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 53.31,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 53.31,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -2391,6 +2482,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-22",
+          "alpha": 41.62,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -2553,6 +2651,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 39.25,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 39.25,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -2723,6 +2828,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 29.49,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 29.49,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -3081,6 +3193,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-22",
+          "alpha": 19.62,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -3241,6 +3360,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 20.72,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 20.72,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -3409,6 +3535,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-22",
+          "alpha": 22.18,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -3573,6 +3706,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-22",
+          "alpha": 15.22,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -3733,6 +3873,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 25.11,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 25.11,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -4418,6 +4565,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-22",
+          "alpha": 67.84,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -4584,6 +4738,13 @@
         },
         {
           "date": "2026-11-21",
+          "alpha": 61.52,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-22",
           "alpha": 61.52,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -5084,22 +5245,6 @@
       "form": "8-K",
       "source": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm",
       "status": "UNVERIFIED filing candidate; excluded from scores"
-    },
-    {
-      "ticker": "META",
-      "date": "2026-10-22",
-      "title": "META 10-Q",
-      "form": "10-Q",
-      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm",
-      "status": "UNVERIFIED filing candidate; excluded from scores"
-    },
-    {
-      "ticker": "TSLA",
-      "date": "2026-10-22",
-      "title": "TSLA 10-Q",
-      "form": "10-Q",
-      "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm",
-      "status": "UNVERIFIED filing candidate; excluded from scores"
     }
   ],
   "policy_candidates": [
@@ -5431,9 +5576,9 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
+      "storage": 2,
       "power": 3,
-      "energy": 1,
-      "storage": 2
+      "energy": 1
     },
     "unverified_is_unknown": true
   },
@@ -5740,7 +5885,7 @@
   },
   "network": {
     "graph_version": "3.2-dated-multisector-graph",
-    "as_of": "2026-11-21",
+    "as_of": "2026-11-22",
     "verified_edges": [
       {
         "supplier": "FN",
@@ -7645,5 +7790,5 @@
       "method": "disclosed_customer_revenue_share_change_pp"
     }
   ],
-  "quant_source_fingerprint": "fcc16a547be1ad3e866ed9b1d6c29f22e5ade2426cde8c5bee7cc77461637553"
+  "quant_source_fingerprint": "0002c4a56ea4a1d110907672a8da719e28e52083831f5089f5a818f17ac5adf1"
 }
