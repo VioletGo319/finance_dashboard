@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-11-22",
+  "as_of": "2026-11-23",
   "price_date": "2026-11-20",
   "previous_price_date": "2026-11-19",
   "mode": "partial",
   "model_version": "v3.2-40-multihop-proxy",
-  "retrieved_at_utc": "2026-11-23T02:58:57.895277+00:00",
+  "retrieved_at_utc": "2026-11-24T01:07:51.402956+00:00",
   "suppliers": [
     {
       "ticker": "TSM",
@@ -120,6 +120,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 31.05,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 31.05,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -289,6 +296,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 60.42,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 60.42,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -466,6 +480,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 63.23,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 63.23,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -650,6 +671,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-23",
+          "alpha": 43.51,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -819,6 +847,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-23",
+          "alpha": 33.98,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -984,6 +1019,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 38.15,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 38.15,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1166,6 +1208,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-23",
+          "alpha": 68.35,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -1335,6 +1384,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 71.97,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 71.97,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1512,6 +1568,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 32.52,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 32.52,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -1779,6 +1842,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.9
+        },
+        {
+          "date": "2026-11-23",
+          "alpha": 72.53,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
         }
       ],
       "factors": {
@@ -1954,6 +2024,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 75.23,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 75.23,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -2135,6 +2212,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-23",
+          "alpha": 62.31,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -2308,6 +2392,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 53.31,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 53.31,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -2489,6 +2580,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-23",
+          "alpha": 41.62,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -2658,6 +2756,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 39.25,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.9
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 39.25,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -2835,6 +2940,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 29.49,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 29.49,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -3200,6 +3312,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-23",
+          "alpha": 19.62,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -3367,6 +3486,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 20.72,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 20.72,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -3542,6 +3668,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-23",
+          "alpha": 22.18,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -3713,6 +3846,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.35
+        },
+        {
+          "date": "2026-11-23",
+          "alpha": 15.22,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
         }
       ],
       "factors": {
@@ -3880,6 +4020,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 25.11,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.35
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 25.11,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -4572,6 +4719,13 @@
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
           "coverage": 0.6
+        },
+        {
+          "date": "2026-11-23",
+          "alpha": 67.84,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
         }
       ],
       "factors": {
@@ -4745,6 +4899,13 @@
         },
         {
           "date": "2026-11-22",
+          "alpha": 61.52,
+          "mode": "provisional",
+          "model_version": "v3.2-40-multihop-proxy",
+          "coverage": 0.6
+        },
+        {
+          "date": "2026-11-23",
           "alpha": 61.52,
           "mode": "provisional",
           "model_version": "v3.2-40-multihop-proxy",
@@ -5208,6 +5369,14 @@
     },
     {
       "ticker": "NVDA",
+      "date": "2026-11-23",
+      "title": "NVDA 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000090/nvda-20261122.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "NVDA",
       "date": "2026-11-17",
       "title": "NVDA 8-K",
       "form": "8-K",
@@ -5220,6 +5389,14 @@
       "title": "NVDA 8-K",
       "form": "8-K",
       "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+      "status": "UNVERIFIED filing candidate; excluded from scores"
+    },
+    {
+      "ticker": "META",
+      "date": "2026-11-23",
+      "title": "META 8-K",
+      "form": "8-K",
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026075541/meta-20261118.htm",
       "status": "UNVERIFIED filing candidate; excluded from scores"
     },
     {
@@ -5248,6 +5425,102 @@
     }
   ],
   "policy_candidates": [
+    {
+      "date": "2026-11-23",
+      "title": "Cybersecurity Labeling for Internet of Things",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23812/cybersecurity-labeling-for-internet-of-things",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Miscellaneous Technical Amendments; Technical Amendment",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23786/miscellaneous-technical-amendments-technical-amendment",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Defense Trade Advisory Group; Notice of Open Meeting",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23775/defense-trade-advisory-group-notice-of-open-meeting",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Agency Information Collection Activities; Submission to the Office of Management and Budget (OMB) for Review and Approval; Comment Request; Additional Protocol Report Forms",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23758/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Establishment of Class E Airspace; Columbus, TX",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23838/establishment-of-class-e-airspace-columbus-tx",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Amendment of Class D and E Airspace and Removal of Class E Airspace Over Lebanon, NH",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23824/amendment-of-class-d-and-e-airspace-and-removal-of-class-e-airspace-over-lebanon-nh",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Horse Protection Amendments; Extension of Postponement of Regulations",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23818/horse-protection-amendments-extension-of-postponement-of-regulations",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "National Institute for Occupational Safety and Health (NIOSH) Center for Occupational Robotics Research (CORR); Request for Information",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23799/national-institute-for-occupational-safety-and-health-niosh-center-for-occupational-robotics",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Request for Public Comment on the Proposed Short-Term Exposure Limit for Occupational Exposure to Carbon Monoxide",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23798/request-for-public-comment-on-the-proposed-short-term-exposure-limit-for-occupational-exposure-to",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Meeting of the Microbiome Subcommittee of the Presidential Advisory Council on Combating Antibiotic-Resistant Bacteria",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23797/meeting-of-the-microbiome-subcommittee-of-the-presidential-advisory-council-on-combating",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "EPA Response to State Initial Designations for the 2024 Revised Secondary Annual Sulfur Dioxide National Ambient Air Quality Standard: Notice of Availability and Public Comment Period",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23791/epa-response-to-state-initial-designations-for-the-2024-revised-secondary-annual-sulfur-dioxide",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Privacy Act of 1974; System of Records",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23780/privacy-act-of-1974-system-of-records",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Employee or Independent Contractor Status Under the Fair Labor Standards Act, Family and Medical Leave Act, and Migrant and Seasonal Agricultural Worker Protection Act",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23777/employee-or-independent-contractor-status-under-the-fair-labor-standards-act-family-and-medical",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Marine Mammals; Incidental Take During Specified Activities; Proposed Incidental Harassment Authorization for Southwest Alaska Stock of Northern Sea Otters in Kodiak, Alaska",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23771/marine-mammals-incidental-take-during-specified-activities-proposed-incidental-harassment",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Agency Information Collection Activities: Requests for Comments; Clearance of Renewed Approval of Information Collection: Domestic and International Flight Plans",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23764/agency-information-collection-activities-requests-for-comments-clearance-of-renewed-approval-of",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Tobacco Products Scientific Advisory Committee; Notice of Meeting; Establishment of a Public Docket; Request for Comments",
+      "source": "https://www.federalregister.gov/documents/2026/11/23/2026-23750/tobacco-products-scientific-advisory-committee-notice-of-meeting-establishment-of-a-public-docket",
+      "status": "UNREVIEWED policy candidate; excluded from factor scores"
+    },
     {
       "date": "2026-11-20",
       "title": "Information Collection Activities; Submission to the Office of Management and Budget (OMB) for Review and Approval; Comment Request; Streamlined Supply Chain Information Collection Request",
@@ -5312,66 +5585,6 @@
       "date": "2026-11-20",
       "title": "Arms Sales Notification",
       "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23641/arms-sales-notification",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-20",
-      "title": "Arms Sales Notification",
-      "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23640/arms-sales-notification",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-20",
-      "title": "Arms Sales Notification",
-      "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23639/arms-sales-notification",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-20",
-      "title": "Arms Sales Notification",
-      "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23638/arms-sales-notification",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-20",
-      "title": "Privacy Act of 1974; Systems of Records",
-      "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23721/privacy-act-of-1974-systems-of-records",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-20",
-      "title": "Agency Information Collection Activities; Submission to the Office of Management and Budget (OMB) for Review and Approval; Comment Request; Annual Integrated Economic Survey",
-      "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23717/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-20",
-      "title": "Implementation of HAVANA Act of 2021",
-      "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23713/implementation-of-havana-act-of-2021",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-20",
-      "title": "Custodial Deposits: Implementing the 21st Century ROAD to Housing Act",
-      "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23669/custodial-deposits-implementing-the-21st-century-road-to-housing-act",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-20",
-      "title": "Self-Regulatory Organizations; MEMX LLC; Notice of Filing and Immediate Effectiveness of a Proposed Rule Change To Amend Its Rules To Permit the Listing of Binary Options Overlying Key Performance Indicators",
-      "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23650/self-regulatory-organizations-memx-llc-notice-of-filing-and-immediate-effectiveness-of-a-proposed",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-20",
-      "title": "Self-Regulatory Organizations; Miami International Securities Exchange, LLC; Notice of Filing and Immediate Effectiveness of a Proposed Rule Change To Permit the Listing of Binary Options Overlying Key Performance Indicators Reported by Certain Issuers of Stock",
-      "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23649/self-regulatory-organizations-miami-international-securities-exchange-llc-notice-of-filing-and",
-      "status": "UNREVIEWED policy candidate; excluded from factor scores"
-    },
-    {
-      "date": "2026-11-20",
-      "title": "Self-Regulatory Organizations; Municipal Securities Rulemaking Board; Notice of Filing and Immediate Effectiveness of a Proposed Rule Change To Amend MSRB Rule G-3, on Professional Qualification Requirements, To Reduce the Waiting Periods for Retaking Professional Qualification Examinations for Brokers, Dealers, and Municipal Securities Dealers and Municipal Advisors to Preserve Alignment With FINRA Rule 1210.06",
-      "source": "https://www.federalregister.gov/documents/2026/11/20/2026-23648/self-regulatory-organizations-municipal-securities-rulemaking-board-notice-of-filing-and-immediate",
       "status": "UNREVIEWED policy candidate; excluded from factor scores"
     },
     {
@@ -5576,8 +5789,8 @@
       "quantities": "unknown_without_primary_source"
     },
     "classification_counts": {
-      "energy": 1,
       "storage": 2,
+      "energy": 1,
       "power": 3
     },
     "unverified_is_unknown": true
@@ -5885,7 +6098,7 @@
   },
   "network": {
     "graph_version": "3.2-dated-multisector-graph",
-    "as_of": "2026-11-22",
+    "as_of": "2026-11-23",
     "verified_edges": [
       {
         "supplier": "FN",
@@ -7790,5 +8003,5 @@
       "method": "disclosed_customer_revenue_share_change_pp"
     }
   ],
-  "quant_source_fingerprint": "0002c4a56ea4a1d110907672a8da719e28e52083831f5089f5a818f17ac5adf1"
+  "quant_source_fingerprint": "ae134dd3e5bb5ecadf9d60a783f81a74d004c981b1682fe6b4cdc34787e9e042"
 }

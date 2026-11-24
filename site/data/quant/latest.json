@@ -1,7 +1,7 @@
 {
   "schema_version": "1.6",
-  "as_of": "2026-11-22",
-  "generated_at_utc": "2026-11-23T02:59:10.774465+00:00",
+  "as_of": "2026-11-23",
+  "generated_at_utc": "2026-11-24T01:08:18.903759+00:00",
   "universe": [
     "TSM",
     "AVGO",
@@ -45,12 +45,18 @@
     "VST"
   ],
   "fundamental_audit": {
-    "status": "cached",
-    "cache_as_of": "2026-11-08"
+    "source": "SEC EDGAR companyfacts",
+    "cutoff": "2026-11-23",
+    "sec_user_agent_configured": true,
+    "errors": {},
+    "revenue_covered": 38,
+    "share_count_covered": 37,
+    "status": "retrieved",
+    "cached_records_used": 0
   },
   "source_snapshot": {
-    "fingerprint": "0002c4a56ea4a1d110907672a8da719e28e52083831f5089f5a818f17ac5adf1",
-    "as_of": "2026-11-22",
+    "fingerprint": "ae134dd3e5bb5ecadf9d60a783f81a74d004c981b1682fe6b4cdc34787e9e042",
+    "as_of": "2026-11-23",
     "price_date": "2026-11-20",
     "model_version": "v3.2-40-multihop-proxy",
     "score_definition": "Official six-factor Alpha if complete; otherwise provisional six-factor score normalized by available weights. NOT Quant investability percentile."
@@ -64,7 +70,7 @@
       "coverage": 0.35,
       "monitor_score": 12.82,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "AVGO": {
       "alpha": null,
@@ -74,7 +80,7 @@
       "coverage": 0.6,
       "monitor_score": 77.44,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "ANET": {
       "alpha": null,
@@ -84,7 +90,7 @@
       "coverage": 0.9,
       "monitor_score": 80.51,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "COHR": {
       "alpha": null,
@@ -94,7 +100,7 @@
       "coverage": 0.35,
       "monitor_score": 86.67,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "LITE": {
       "alpha": null,
@@ -104,7 +110,7 @@
       "coverage": 0.35,
       "monitor_score": 21.02,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "FN": {
       "alpha": null,
@@ -114,7 +120,7 @@
       "coverage": 0.9,
       "monitor_score": 83.59,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "GLW": {
       "alpha": null,
@@ -124,7 +130,7 @@
       "coverage": 0.6,
       "monitor_score": 37.95,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "CLS": {
       "alpha": null,
@@ -134,7 +140,7 @@
       "coverage": 0.6,
       "monitor_score": 50.77,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "MU": {
       "alpha": null,
@@ -144,7 +150,7 @@
       "coverage": 0.35,
       "monitor_score": 13.85,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "VRT": {
       "alpha": null,
@@ -154,7 +160,7 @@
       "coverage": 0.05,
       "monitor_score": 55.38,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "APH": {
       "alpha": null,
@@ -164,7 +170,7 @@
       "coverage": 0.05,
       "monitor_score": 71.28,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "STM": {
       "alpha": null,
@@ -174,7 +180,7 @@
       "coverage": 0.9,
       "monitor_score": 58.97,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "AMD": {
       "alpha": null,
@@ -184,7 +190,7 @@
       "coverage": 0.6,
       "monitor_score": 53.85,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "MRVL": {
       "alpha": null,
@@ -194,7 +200,7 @@
       "coverage": 0.6,
       "monitor_score": 2.05,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "CRUS": {
       "alpha": null,
@@ -204,7 +210,7 @@
       "coverage": 0.9,
       "monitor_score": 61.02,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "QCOM": {
       "alpha": null,
@@ -214,7 +220,7 @@
       "coverage": 0.6,
       "monitor_score": 47.69,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "SWKS": {
       "alpha": null,
@@ -224,7 +230,7 @@
       "coverage": 0.9,
       "monitor_score": 17.44,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "UCTT": {
       "alpha": null,
@@ -234,7 +240,7 @@
       "coverage": 0.35,
       "monitor_score": 50.26,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "ON": {
       "alpha": null,
@@ -244,7 +250,7 @@
       "coverage": 0.05,
       "monitor_score": 53.33,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "NXPI": {
       "alpha": null,
@@ -254,7 +260,7 @@
       "coverage": 0.05,
       "monitor_score": 73.33,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "MPWR": {
       "alpha": null,
@@ -264,7 +270,7 @@
       "coverage": 0.05,
       "monitor_score": 68.72,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "MCHP": {
       "alpha": null,
@@ -274,7 +280,7 @@
       "coverage": 0.05,
       "monitor_score": 38.46,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "AMAT": {
       "alpha": null,
@@ -284,7 +290,7 @@
       "coverage": 0.35,
       "monitor_score": 38.46,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "LRCX": {
       "alpha": null,
@@ -294,7 +300,7 @@
       "coverage": 0.35,
       "monitor_score": 42.05,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "KLAC": {
       "alpha": null,
@@ -304,7 +310,7 @@
       "coverage": 0.35,
       "monitor_score": 54.36,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "ASML": {
       "alpha": null,
@@ -314,7 +320,7 @@
       "coverage": 0.35,
       "monitor_score": 31.28,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "ONTO": {
       "alpha": null,
@@ -324,7 +330,7 @@
       "coverage": 0.35,
       "monitor_score": 68.72,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "ACLS": {
       "alpha": null,
@@ -334,7 +340,7 @@
       "coverage": 0.05,
       "monitor_score": 58.46,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "ENTG": {
       "alpha": null,
@@ -344,7 +350,7 @@
       "coverage": 0.05,
       "monitor_score": 74.87,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "MKSI": {
       "alpha": null,
@@ -354,7 +360,7 @@
       "coverage": 0.05,
       "monitor_score": 73.85,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "FORM": {
       "alpha": null,
@@ -364,7 +370,7 @@
       "coverage": 0.05,
       "monitor_score": 52.31,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "DELL": {
       "alpha": null,
@@ -374,7 +380,7 @@
       "coverage": 0.05,
       "monitor_score": 11.79,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "HPE": {
       "alpha": null,
@@ -384,7 +390,7 @@
       "coverage": 0.05,
       "monitor_score": 36.92,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "SMCI": {
       "alpha": null,
@@ -394,7 +400,7 @@
       "coverage": 0.05,
       "monitor_score": 9.23,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "ETN": {
       "alpha": null,
@@ -404,7 +410,7 @@
       "coverage": 0.05,
       "monitor_score": 52.31,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "HUBB": {
       "alpha": null,
@@ -414,7 +420,7 @@
       "coverage": 0.05,
       "monitor_score": 48.2,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "POWL": {
       "alpha": null,
@@ -424,7 +430,7 @@
       "coverage": 0.05,
       "monitor_score": 87.69,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "GEV": {
       "alpha": null,
@@ -434,7 +440,7 @@
       "coverage": 0.05,
       "monitor_score": 53.34,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "CEG": {
       "alpha": null,
@@ -444,7 +450,7 @@
       "coverage": 0.6,
       "monitor_score": 48.72,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     },
     "VST": {
       "alpha": null,
@@ -454,12 +460,12 @@
       "coverage": 0.6,
       "monitor_score": 41.02,
       "price_date": "2026-11-20",
-      "as_of": "2026-11-22"
+      "as_of": "2026-11-23"
     }
   },
   "autonomous_universe": {
     "mode": "FORWARD_ONLY_ESTIMATED_RESEARCH",
-    "as_of": "2026-11-22",
+    "as_of": "2026-11-23",
     "universe_count": 40,
     "candidates": [
       {
@@ -477,34 +483,34 @@
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 1
       },
       {
@@ -522,34 +528,34 @@
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 2
       },
       {
@@ -567,34 +573,34 @@
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 3
       },
       {
@@ -614,80 +620,80 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 3,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 4
       },
       {
         "ticker": "CEG",
         "sector": "Infrastructure",
-        "research_score": 61.2679,
+        "research_score": 61.6846,
         "factor_scores": {
           "supply_alpha": 66.6667,
           "monitor": 41.0256,
           "growth": 62.1622,
-          "value": 66.6667,
+          "value": 69.4444,
           "size": 63.8889,
           "risk": 74.359
         },
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 5
       },
       {
@@ -705,52 +711,100 @@
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 11,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "size": {
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 11,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.8,
         "estimated_factor_weight": 0.2,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 6
+      },
+      {
+        "ticker": "POWL",
+        "sector": "Infrastructure",
+        "research_score": 56.3322,
+        "factor_scores": {
+          "supply_alpha": 50.0,
+          "monitor": 100.0,
+          "growth": 48.6486,
+          "value": 61.1111,
+          "size": 5.5556,
+          "risk": 48.7179
+        },
+        "factor_provenance": {
+          "supply_alpha": {
+            "kind": "ESTIMATED_FACTOR_SCORE",
+            "method": "GLOBAL_MEDIAN",
+            "peer_count": 13,
+            "as_of": "2026-11-23",
+            "not_verified_fundamental": true
+          },
+          "monitor": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "growth": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "value": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "size": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "risk": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          }
+        },
+        "observed_factor_coverage": 0.7,
+        "estimated_factor_weight": 0.3,
+        "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
+        "source_rank_eligible": false,
+        "as_of": "2026-11-23",
+        "candidate_rank": 7
       },
       {
         "ticker": "MKSI",
         "sector": "Semicap",
-        "research_score": 55.8222,
+        "research_score": 55.6383,
         "factor_scores": {
           "supply_alpha": 50.0,
           "monitor": 84.6154,
-          "growth": 43.2432,
-          "value": 75.0,
-          "size": 22.2222,
+          "growth": 40.5405,
+          "value": 77.7778,
+          "size": 19.4444,
           "risk": 53.8462
         },
         "factor_provenance": {
@@ -758,36 +812,36 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
-        "candidate_rank": 7
+        "as_of": "2026-11-23",
+        "candidate_rank": 8
       },
       {
         "ticker": "COHR",
@@ -806,36 +860,36 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 3,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
-        "candidate_rank": 8
+        "as_of": "2026-11-23",
+        "candidate_rank": 9
       },
       {
         "ticker": "AVGO",
@@ -852,93 +906,45 @@
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
-        "candidate_rank": 9
-      },
-      {
-        "ticker": "POWL",
-        "sector": "Infrastructure",
-        "research_score": 54.0304,
-        "factor_scores": {
-          "supply_alpha": 50.0,
-          "monitor": 100.0,
-          "growth": 40.5405,
-          "value": 50.0,
-          "size": 5.5556,
-          "risk": 48.7179
-        },
-        "factor_provenance": {
-          "supply_alpha": {
-            "kind": "ESTIMATED_FACTOR_SCORE",
-            "method": "GLOBAL_MEDIAN",
-            "peer_count": 13,
-            "as_of": "2026-11-22",
-            "not_verified_fundamental": true
-          },
-          "monitor": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "growth": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "value": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "size": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "risk": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          }
-        },
-        "observed_factor_coverage": 0.7,
-        "estimated_factor_weight": 0.3,
-        "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
-        "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 10
       },
       {
         "ticker": "ETN",
         "sector": "Infrastructure",
-        "research_score": 53.4111,
+        "research_score": 52.741,
         "factor_scores": {
           "supply_alpha": 50.0,
           "monitor": 50.0,
-          "growth": 45.9459,
-          "value": 58.3333,
+          "growth": 43.2432,
+          "value": 55.5556,
           "size": 69.4444,
           "risk": 84.6154
         },
@@ -947,35 +953,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 11
       },
       {
@@ -995,84 +1001,36 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 12
-      },
-      {
-        "ticker": "SMCI",
-        "sector": "Servers",
-        "research_score": 52.4516,
-        "factor_scores": {
-          "supply_alpha": 50.0,
-          "monitor": 2.5641,
-          "growth": 94.5946,
-          "value": 100.0,
-          "size": 25.0,
-          "risk": 28.2051
-        },
-        "factor_provenance": {
-          "supply_alpha": {
-            "kind": "ESTIMATED_FACTOR_SCORE",
-            "method": "GLOBAL_MEDIAN",
-            "peer_count": 13,
-            "as_of": "2026-11-22",
-            "not_verified_fundamental": true
-          },
-          "monitor": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "growth": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "value": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "size": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "risk": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          }
-        },
-        "observed_factor_coverage": 0.7,
-        "estimated_factor_weight": 0.3,
-        "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
-        "source_rank_eligible": false,
-        "as_of": "2026-11-22",
-        "candidate_rank": 13
       },
       {
         "ticker": "GLW",
@@ -1089,34 +1047,82 @@
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
+        "candidate_rank": 13
+      },
+      {
+        "ticker": "SMCI",
+        "sector": "Servers",
+        "research_score": 52.3544,
+        "factor_scores": {
+          "supply_alpha": 50.0,
+          "monitor": 2.5641,
+          "growth": 94.5946,
+          "value": 100.0,
+          "size": 22.2222,
+          "risk": 28.2051
+        },
+        "factor_provenance": {
+          "supply_alpha": {
+            "kind": "ESTIMATED_FACTOR_SCORE",
+            "method": "GLOBAL_MEDIAN",
+            "peer_count": 13,
+            "as_of": "2026-11-23",
+            "not_verified_fundamental": true
+          },
+          "monitor": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "growth": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "value": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "size": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "risk": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          }
+        },
+        "observed_factor_coverage": 0.7,
+        "estimated_factor_weight": 0.3,
+        "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
+        "source_rank_eligible": false,
+        "as_of": "2026-11-23",
         "candidate_rank": 14
       },
       {
@@ -1134,45 +1140,45 @@
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 15
       },
       {
         "ticker": "GEV",
         "sector": "Infrastructure",
-        "research_score": 52.1787,
+        "research_score": 51.887,
         "factor_scores": {
           "supply_alpha": 50.0,
           "monitor": 56.4103,
           "growth": 37.8378,
-          "value": 52.7778,
+          "value": 50.0,
           "size": 83.3333,
           "risk": 71.7949
         },
@@ -1181,35 +1187,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 16
       },
       {
@@ -1227,45 +1233,45 @@
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 17
       },
       {
         "ticker": "NXPI",
         "sector": "AI compute",
-        "research_score": 50.7911,
+        "research_score": 50.8778,
         "factor_scores": {
           "supply_alpha": 41.6667,
           "monitor": 82.0513,
-          "growth": 8.1081,
-          "value": 55.5556,
+          "growth": 10.8108,
+          "value": 52.7778,
           "size": 55.5556,
           "risk": 94.8718
         },
@@ -1274,36 +1280,81 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 7,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 18
+      },
+      {
+        "ticker": "CRUS",
+        "sector": "AI compute",
+        "research_score": 50.5891,
+        "factor_scores": {
+          "supply_alpha": 25.0,
+          "monitor": 71.7949,
+          "growth": 32.4324,
+          "value": 80.5556,
+          "size": 8.3333,
+          "risk": 97.4359
+        },
+        "factor_provenance": {
+          "supply_alpha": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "monitor": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "growth": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "value": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "size": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "risk": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          }
+        },
+        "observed_factor_coverage": 1.0,
+        "estimated_factor_weight": 0.0,
+        "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
+        "source_rank_eligible": true,
+        "as_of": "2026-11-23",
+        "candidate_rank": 19
       },
       {
         "ticker": "MPWR",
@@ -1322,91 +1373,46 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 7,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
-        "candidate_rank": 19
-      },
-      {
-        "ticker": "CRUS",
-        "sector": "AI compute",
-        "research_score": 50.1724,
-        "factor_scores": {
-          "supply_alpha": 25.0,
-          "monitor": 71.7949,
-          "growth": 32.4324,
-          "value": 77.7778,
-          "size": 8.3333,
-          "risk": 97.4359
-        },
-        "factor_provenance": {
-          "supply_alpha": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "monitor": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "growth": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "value": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "size": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "risk": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          }
-        },
-        "observed_factor_coverage": 1.0,
-        "estimated_factor_weight": 0.0,
-        "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
-        "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 20
       },
       {
         "ticker": "HUBB",
         "sector": "Infrastructure",
-        "research_score": 50.0295,
+        "research_score": 50.3212,
         "factor_scores": {
           "supply_alpha": 50.0,
           "monitor": 38.4615,
           "growth": 27.027,
-          "value": 69.4444,
+          "value": 72.2222,
           "size": 30.5556,
           "risk": 100.0
         },
@@ -1415,35 +1421,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 21
       },
       {
@@ -1463,84 +1469,36 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 7,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 22
-      },
-      {
-        "ticker": "KLAC",
-        "sector": "Semicap",
-        "research_score": 49.2499,
-        "factor_scores": {
-          "supply_alpha": 50.0,
-          "monitor": 61.5385,
-          "growth": 48.6486,
-          "value": 16.6667,
-          "size": 75.0,
-          "risk": 56.4103
-        },
-        "factor_provenance": {
-          "supply_alpha": {
-            "kind": "ESTIMATED_FACTOR_SCORE",
-            "method": "GLOBAL_MEDIAN",
-            "peer_count": 13,
-            "as_of": "2026-11-22",
-            "not_verified_fundamental": true
-          },
-          "monitor": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "growth": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "value": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "size": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          },
-          "risk": {
-            "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
-          }
-        },
-        "observed_factor_coverage": 0.7,
-        "estimated_factor_weight": 0.3,
-        "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
-        "source_rank_eligible": false,
-        "as_of": "2026-11-22",
-        "candidate_rank": 23
       },
       {
         "ticker": "HPE",
@@ -1559,93 +1517,84 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
-        "candidate_rank": 24
+        "as_of": "2026-11-23",
+        "candidate_rank": 23
       },
       {
-        "ticker": "ASML",
+        "ticker": "KLAC",
         "sector": "Semicap",
-        "research_score": 47.8531,
+        "research_score": 48.8715,
         "factor_scores": {
           "supply_alpha": 50.0,
-          "monitor": 17.9487,
-          "growth": 37.1621,
-          "value": 40.2778,
-          "size": 36.1111,
-          "risk": 89.7436
+          "monitor": 61.5385,
+          "growth": 45.9459,
+          "value": 16.6667,
+          "size": 75.0,
+          "risk": 56.4103
         },
         "factor_provenance": {
           "supply_alpha": {
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
-            "kind": "ESTIMATED_FACTOR_SCORE",
-            "method": "SECTOR_MEDIAN",
-            "peer_count": 9,
-            "as_of": "2026-11-22",
-            "not_verified_fundamental": true
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
           },
           "value": {
-            "kind": "ESTIMATED_FACTOR_SCORE",
-            "method": "SECTOR_MEDIAN",
-            "peer_count": 9,
-            "as_of": "2026-11-22",
-            "not_verified_fundamental": true
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
           },
           "size": {
-            "kind": "ESTIMATED_FACTOR_SCORE",
-            "method": "SECTOR_MEDIAN",
-            "peer_count": 9,
-            "as_of": "2026-11-22",
-            "not_verified_fundamental": true
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
-        "observed_factor_coverage": 0.3,
-        "estimated_factor_weight": 0.7,
+        "observed_factor_coverage": 0.7,
+        "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
-        "candidate_rank": 25
+        "as_of": "2026-11-23",
+        "candidate_rank": 24
       },
       {
         "ticker": "LRCX",
@@ -1664,35 +1613,92 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
+        "candidate_rank": 25
+      },
+      {
+        "ticker": "ASML",
+        "sector": "Semicap",
+        "research_score": 47.8323,
+        "factor_scores": {
+          "supply_alpha": 50.0,
+          "monitor": 17.9487,
+          "growth": 37.1621,
+          "value": 40.2778,
+          "size": 34.7222,
+          "risk": 89.7436
+        },
+        "factor_provenance": {
+          "supply_alpha": {
+            "kind": "ESTIMATED_FACTOR_SCORE",
+            "method": "GLOBAL_MEDIAN",
+            "peer_count": 13,
+            "as_of": "2026-11-23",
+            "not_verified_fundamental": true
+          },
+          "monitor": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          },
+          "growth": {
+            "kind": "ESTIMATED_FACTOR_SCORE",
+            "method": "SECTOR_MEDIAN",
+            "peer_count": 9,
+            "as_of": "2026-11-23",
+            "not_verified_fundamental": true
+          },
+          "value": {
+            "kind": "ESTIMATED_FACTOR_SCORE",
+            "method": "SECTOR_MEDIAN",
+            "peer_count": 9,
+            "as_of": "2026-11-23",
+            "not_verified_fundamental": true
+          },
+          "size": {
+            "kind": "ESTIMATED_FACTOR_SCORE",
+            "method": "SECTOR_MEDIAN",
+            "peer_count": 9,
+            "as_of": "2026-11-23",
+            "not_verified_fundamental": true
+          },
+          "risk": {
+            "kind": "OBSERVED_FACTOR_SCORE",
+            "as_of": "2026-11-23"
+          }
+        },
+        "observed_factor_coverage": 0.3,
+        "estimated_factor_weight": 0.7,
+        "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
+        "source_rank_eligible": false,
+        "as_of": "2026-11-23",
         "candidate_rank": 26
       },
       {
@@ -1712,35 +1718,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 27
       },
       {
@@ -1760,44 +1766,44 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 7,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 12,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "value": {
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 11,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "size": {
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 11,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.3,
         "estimated_factor_weight": 0.7,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 28
       },
       {
@@ -1817,46 +1823,46 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 29
       },
       {
         "ticker": "ACLS",
         "sector": "Semicap",
-        "research_score": 45.7447,
+        "research_score": 46.0363,
         "factor_scores": {
           "supply_alpha": 50.0,
           "monitor": 66.6667,
           "growth": 0.0,
-          "value": 72.2222,
+          "value": 75.0,
           "size": 2.7778,
           "risk": 46.1538
         },
@@ -1865,35 +1871,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 30
       },
       {
@@ -1913,35 +1919,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 3,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 31
       },
       {
@@ -1961,46 +1967,46 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 32
       },
       {
         "ticker": "ON",
         "sector": "AI compute",
-        "research_score": 43.7374,
+        "research_score": 44.029,
         "factor_scores": {
           "supply_alpha": 41.6667,
           "monitor": 53.8462,
           "growth": 2.7027,
-          "value": 61.1111,
+          "value": 63.8889,
           "size": 33.3333,
           "risk": 64.1026
         },
@@ -2009,35 +2015,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 7,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 33
       },
       {
@@ -2057,35 +2063,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 34
       },
       {
@@ -2105,35 +2111,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "SECTOR_MEDIAN",
             "peer_count": 7,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 35
       },
       {
@@ -2153,35 +2159,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 36
       },
       {
@@ -2201,35 +2207,35 @@
             "kind": "ESTIMATED_FACTOR_SCORE",
             "method": "GLOBAL_MEDIAN",
             "peer_count": 13,
-            "as_of": "2026-11-22",
+            "as_of": "2026-11-23",
             "not_verified_fundamental": true
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 0.7,
         "estimated_factor_weight": 0.3,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": false,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 37
       },
       {
@@ -2247,124 +2253,124 @@
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 38
       },
       {
         "ticker": "QCOM",
         "sector": "AI compute",
-        "research_score": 35.2284,
+        "research_score": 36.1856,
         "factor_scores": {
           "supply_alpha": 16.6667,
           "monitor": 35.8974,
-          "growth": 10.8108,
-          "value": 63.8889,
+          "growth": 13.5135,
+          "value": 66.6667,
           "size": 72.2222,
           "risk": 76.9231
         },
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 39
       },
       {
         "ticker": "SWKS",
         "sector": "AI compute",
-        "research_score": 27.7454,
+        "research_score": 23.6088,
         "factor_scores": {
           "supply_alpha": 8.3333,
           "monitor": 12.8205,
-          "growth": 13.5135,
-          "value": 80.5556,
-          "size": 19.4444,
+          "growth": 8.1081,
+          "value": 58.3333,
+          "size": 25.0,
           "risk": 69.2308
         },
         "factor_provenance": {
           "supply_alpha": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "monitor": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "growth": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "value": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "size": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           },
           "risk": {
             "kind": "OBSERVED_FACTOR_SCORE",
-            "as_of": "2026-11-22"
+            "as_of": "2026-11-23"
           }
         },
         "observed_factor_coverage": 1.0,
         "estimated_factor_weight": 0.0,
         "estimation_warning": "Factor scores are provisional estimates, not verified SEC values",
         "source_rank_eligible": true,
-        "as_of": "2026-11-22",
+        "as_of": "2026-11-23",
         "candidate_rank": 40
       }
     ],
@@ -3226,7 +3232,7 @@
   },
   "weighted_historical_scope": "Point-in-time price factors with forward score allocator geometry; NOT the historical six-factor fundamental/Alpha investing strategy",
   "forty_stock_historical_warning": "Price-only equal weight across previously listed current-universe stocks, NOT a historical backtest of forward autonomous estimated-factor rankings",
-  "fundamentals_filing_cutoff": "2026-11-22",
+  "fundamentals_filing_cutoff": "2026-11-23",
   "fundamentals_coverage": {
     "fiscal_revenue": 38,
     "revenue_growth": 38,
@@ -3234,7 +3240,7 @@
   },
   "screener": {
     "status": "CURRENT_CROSS_SECTION_ONLY",
-    "as_of": "2026-11-22",
+    "as_of": "2026-11-23",
     "formula": "30% sourced supply-chain exploratory Alpha (if 45%+ coverage), 20% price monitor, 20% revenue growth, 15% inverse P/S, 5% log market cap, 10% inverse realized volatility; available weights renormalized, min 75% and at least one fundamental factor",
     "universe_survivorship": "Current 40 names, not historical constituents",
     "ranked": [
@@ -3344,6 +3350,41 @@
         "rank": 3
       },
       {
+        "ticker": "CEG",
+        "investability_score": 61.68,
+        "rank_eligible": true,
+        "factor_coverage": 1.0,
+        "component_scores": {
+          "supply_alpha": 66.6667,
+          "monitor": 41.0256,
+          "growth": 62.1622,
+          "value": 69.4444,
+          "size": 63.8889,
+          "risk": 74.35900000000001
+        },
+        "weights": {
+          "supply_alpha": 0.3,
+          "monitor": 0.2,
+          "growth": 0.2,
+          "value": 0.15,
+          "size": 0.05,
+          "risk": 0.1
+        },
+        "market_cap_proxy_usd": 84116114848,
+        "price_to_sales_proxy": 3.712,
+        "revenue_fy_usd": 22663000000.0,
+        "revenue_growth_yoy": 0.1950537861210715,
+        "revenue_filed": "2026-02-24",
+        "revenue_fy_end": "2025-12-31",
+        "shares_filed": "2026-08-06",
+        "price_date": "2026-11-20",
+        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CEG?range=6y&interval=1d",
+        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001868275.json",
+        "adr_caution": false,
+        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
+        "rank": 4
+      },
+      {
         "ticker": "STM",
         "investability_score": 61.37,
         "rank_eligible": true,
@@ -3375,41 +3416,6 @@
         "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/STM?range=6y&interval=1d",
         "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000932787.json",
         "adr_caution": true,
-        "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
-        "rank": 4
-      },
-      {
-        "ticker": "CEG",
-        "investability_score": 61.27,
-        "rank_eligible": true,
-        "factor_coverage": 1.0,
-        "component_scores": {
-          "supply_alpha": 66.6667,
-          "monitor": 41.0256,
-          "growth": 62.1622,
-          "value": 66.66669999999999,
-          "size": 63.8889,
-          "risk": 74.35900000000001
-        },
-        "weights": {
-          "supply_alpha": 0.3,
-          "monitor": 0.2,
-          "growth": 0.2,
-          "value": 0.15,
-          "size": 0.05,
-          "risk": 0.1
-        },
-        "market_cap_proxy_usd": 84116114848,
-        "price_to_sales_proxy": 3.712,
-        "revenue_fy_usd": 22663000000.0,
-        "revenue_growth_yoy": 0.1950537861210715,
-        "revenue_filed": "2026-02-24",
-        "revenue_fy_end": "2025-12-31",
-        "shares_filed": "2026-08-06",
-        "price_date": "2026-11-20",
-        "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/CEG?range=6y&interval=1d",
-        "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001868275.json",
-        "adr_caution": false,
         "status": "SCREENING_SCORE_ONLY_NOT_BACKTESTED",
         "rank": 5
       },
@@ -3539,13 +3545,13 @@
           "size": 0.05,
           "risk": 0.1
         },
-        "market_cap_proxy_usd": 38681956224,
-        "price_to_sales_proxy": 2.2,
+        "market_cap_proxy_usd": 39115237216,
+        "price_to_sales_proxy": 2.224,
         "revenue_fy_usd": 17586000000.0,
         "revenue_growth_yoy": 0.1913826976492108,
         "revenue_filed": "2026-02-27",
         "revenue_fy_end": "2025-12-31",
-        "shares_filed": "2026-08-10",
+        "shares_filed": "2026-11-09",
         "price_date": "2026-11-20",
         "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/VST?range=6y&interval=1d",
         "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001692819.json",
@@ -3555,14 +3561,14 @@
       },
       {
         "ticker": "CRUS",
-        "investability_score": 50.17,
+        "investability_score": 50.59,
         "rank_eligible": true,
         "factor_coverage": 1.0,
         "component_scores": {
           "supply_alpha": 25.0,
           "monitor": 71.7949,
           "growth": 32.4324,
-          "value": 77.7778,
+          "value": 80.5556,
           "size": 8.3333,
           "risk": 97.4359
         },
@@ -3625,14 +3631,14 @@
       },
       {
         "ticker": "QCOM",
-        "investability_score": 35.23,
+        "investability_score": 36.19,
         "rank_eligible": true,
         "factor_coverage": 1.0,
         "component_scores": {
           "supply_alpha": 16.6667,
           "monitor": 35.8974,
-          "growth": 10.8108,
-          "value": 63.8889,
+          "growth": 13.5135,
+          "value": 66.66669999999999,
           "size": 72.2222,
           "risk": 76.9231
         },
@@ -3660,15 +3666,15 @@
       },
       {
         "ticker": "SWKS",
-        "investability_score": 27.75,
+        "investability_score": 23.61,
         "rank_eligible": true,
         "factor_coverage": 1.0,
         "component_scores": {
           "supply_alpha": 8.3333,
           "monitor": 12.8205,
-          "growth": 13.5135,
-          "value": 80.5556,
-          "size": 19.4444,
+          "growth": 8.1081,
+          "value": 58.3333,
+          "size": 25.0,
           "risk": 69.2308
         },
         "weights": {
@@ -3679,13 +3685,13 @@
           "size": 0.05,
           "risk": 0.1
         },
-        "market_cap_proxy_usd": 11121443318,
-        "price_to_sales_proxy": 2.721,
-        "revenue_fy_usd": 4086900000.0,
-        "revenue_growth_yoy": -0.021804691239827645,
-        "revenue_filed": "2025-11-07",
-        "revenue_fy_end": "2025-10-03",
-        "shares_filed": "2026-07-28",
+        "market_cap_proxy_usd": 17358104964,
+        "price_to_sales_proxy": 4.384,
+        "revenue_fy_usd": 3959600000.0,
+        "revenue_growth_yoy": -0.0311483031148303,
+        "revenue_filed": "2026-11-10",
+        "revenue_fy_end": "2026-10-02",
+        "shares_filed": "2026-11-10",
         "price_date": "2026-11-20",
         "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/SWKS?range=6y&interval=1d",
         "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000004127.json",
@@ -3702,7 +3708,7 @@
           "supply_alpha": null,
           "monitor": 66.6667,
           "growth": 0.0,
-          "value": 72.2222,
+          "value": 75.0,
           "size": 2.7778,
           "risk": 46.1538
         },
@@ -3939,8 +3945,8 @@
         "component_scores": {
           "supply_alpha": null,
           "monitor": 50.0,
-          "growth": 45.9459,
-          "value": 58.3333,
+          "growth": 43.2432,
+          "value": 55.5556,
           "size": 69.4444,
           "risk": 84.6154
         },
@@ -4008,7 +4014,7 @@
           "supply_alpha": null,
           "monitor": 56.4103,
           "growth": 37.8378,
-          "value": 52.7778,
+          "value": 50.0,
           "size": 83.3333,
           "risk": 71.7949
         },
@@ -4076,7 +4082,7 @@
           "supply_alpha": null,
           "monitor": 38.4615,
           "growth": 27.027,
-          "value": 69.4444,
+          "value": 72.2222,
           "size": 30.5556,
           "risk": 100.0
         },
@@ -4109,7 +4115,7 @@
         "component_scores": {
           "supply_alpha": null,
           "monitor": 61.5385,
-          "growth": 48.6486,
+          "growth": 45.9459,
           "value": 16.666700000000006,
           "size": 75.0,
           "risk": 56.4103
@@ -4245,9 +4251,9 @@
         "component_scores": {
           "supply_alpha": null,
           "monitor": 84.6154,
-          "growth": 43.2432,
-          "value": 75.0,
-          "size": 22.2222,
+          "growth": 40.5405,
+          "value": 77.7778,
+          "size": 19.4444,
           "risk": 53.8462
         },
         "weights": {
@@ -4347,8 +4353,8 @@
         "component_scores": {
           "supply_alpha": null,
           "monitor": 82.0513,
-          "growth": 8.1081,
-          "value": 55.5556,
+          "growth": 10.8108,
+          "value": 52.7778,
           "size": 55.5556,
           "risk": 94.87180000000001
         },
@@ -4382,7 +4388,7 @@
           "supply_alpha": null,
           "monitor": 53.8462,
           "growth": 2.7027,
-          "value": 61.1111,
+          "value": 63.8889,
           "size": 33.3333,
           "risk": 64.1026
         },
@@ -4428,13 +4434,13 @@
           "size": 0.05,
           "risk": 0.1
         },
-        "market_cap_proxy_usd": 8350473870,
-        "price_to_sales_proxy": 8.307,
+        "market_cap_proxy_usd": 8352189082,
+        "price_to_sales_proxy": 8.308,
         "revenue_fy_usd": 1005263000.0,
         "revenue_growth_yoy": 0.018172407960531656,
         "revenue_filed": "2026-02-24",
         "revenue_fy_end": "2026-01-03",
-        "shares_filed": "2026-08-06",
+        "shares_filed": "2026-11-09",
         "price_date": "2026-11-20",
         "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/ONTO?range=6y&interval=1d",
         "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000704532.json",
@@ -4449,8 +4455,8 @@
         "component_scores": {
           "supply_alpha": null,
           "monitor": 100.0,
-          "growth": 40.5405,
-          "value": 50.0,
+          "growth": 48.6486,
+          "value": 61.1111,
           "size": 5.5556,
           "risk": 48.7179
         },
@@ -4462,13 +4468,13 @@
           "size": 0.05,
           "risk": 0.1
         },
-        "market_cap_proxy_usd": 5398577334,
-        "price_to_sales_proxy": 4.889,
-        "revenue_fy_usd": 1104318000.0,
-        "revenue_growth_yoy": 0.09083958607446396,
-        "revenue_filed": "2025-11-19",
-        "revenue_fy_end": "2025-09-30",
-        "shares_filed": "2026-08-04",
+        "market_cap_proxy_usd": 5402416677,
+        "price_to_sales_proxy": 4.3,
+        "revenue_fy_usd": 1256246000.0,
+        "revenue_growth_yoy": 0.13757631406895476,
+        "revenue_filed": "2026-11-17",
+        "revenue_fy_end": "2026-09-30",
+        "shares_filed": "2026-11-17",
         "price_date": "2026-11-20",
         "price_source": "https://query1.finance.yahoo.com/v8/finance/chart/POWL?range=6y&interval=1d",
         "fundamental_source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000080420.json",
@@ -4485,7 +4491,7 @@
           "monitor": 2.5641,
           "growth": 94.5946,
           "value": 100.0,
-          "size": 25.0,
+          "size": 22.2222,
           "risk": 28.2051
         },
         "weights": {
@@ -122728,7 +122734,7 @@
     "status": "ARCHIVED_8_NAME_NON_EXECUTABLE",
     "strategy_id": "LEGACY_8_NAME_SCREEN_ARCHIVED",
     "display_in_active_portfolio": false,
-    "signal_as_of": "2026-11-22",
+    "signal_as_of": "2026-11-23",
     "signal_last_completed_price_date": "2026-11-20",
     "first_eligible_execution": "next completed US session close after signal snapshot; not a filled order",
     "rebalancing": "ARCHIVED reference only; never executable",
@@ -122737,8 +122743,8 @@
       "CLS",
       "AMD",
       "ANET",
-      "STM",
       "CEG",
+      "STM",
       "AVGO",
       "GLW",
       "FN"
@@ -122747,8 +122753,8 @@
       "CLS": 0.125,
       "AMD": 0.125,
       "ANET": 0.125,
-      "STM": 0.125,
       "CEG": 0.125,
+      "STM": 0.125,
       "AVGO": 0.125,
       "GLW": 0.125,
       "FN": 0.125
