@@ -1,7 +1,7 @@
 {
   "schema_version": "1.6",
   "as_of": "2026-11-24",
-  "generated_at_utc": "2026-11-24T23:12:21.118084+00:00",
+  "generated_at_utc": "2026-11-25T04:59:55.941538+00:00",
   "universe": [
     "TSM",
     "AVGO",
@@ -122734,8 +122734,8 @@
         "exposure": 1.0
       }
     ],
-    "latest_vix_close": 26.62,
-    "latest_vix_date": "2026-11-23",
+    "latest_vix_close": 26.36,
+    "latest_vix_date": "2026-11-24",
     "source": "https://cdn-api.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
     "source_provider": "Cboe VIX daily close",
     "fetch_error": null,
