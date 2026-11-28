@@ -1,7 +1,7 @@
 {
   "schema_version": "1.6",
   "as_of": "2026-11-27",
-  "generated_at_utc": "2026-11-27T22:14:23.186494+00:00",
+  "generated_at_utc": "2026-11-28T04:07:11.861583+00:00",
   "universe": [
     "TSM",
     "AVGO",
@@ -199,7 +199,7 @@
     "CRUS": {
       "alpha": null,
       "provisional_alpha": 56.16,
-      "close": 121.375,
+      "close": 121.38,
       "previous_close": 117.83,
       "coverage": 0.9,
       "monitor_score": 91.79,
@@ -2382,8 +2382,8 @@
       "requested_start": "2025-11-27",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-v1",
       "metrics": {
-        "total_return": 0.381273,
-        "cagr_annualized": 0.384847,
+        "total_return": 0.381274,
+        "cagr_annualized": 0.384848,
         "annualized_volatility": 0.51081,
         "sharpe_rf0": 0.894,
         "sortino_rf0": 1.242,
@@ -2392,7 +2392,7 @@
         "days": 250,
         "turnover_one_way": 1.1259,
         "total_transaction_cost_bps": 22.5179,
-        "ending_nav": 1.381273
+        "ending_nav": 1.381274
       },
       "benchmarks": {
         "QQQ": {
@@ -2451,8 +2451,8 @@
       "requested_start": "2025-11-27",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-VIX-v1",
       "metrics": {
-        "total_return": 0.133983,
-        "cagr_annualized": 0.135124,
+        "total_return": 0.133984,
+        "cagr_annualized": 0.135125,
         "annualized_volatility": 0.215473,
         "sharpe_rf0": 0.695,
         "sortino_rf0": 1.018,
@@ -2461,7 +2461,7 @@
         "days": 250,
         "turnover_one_way": 8.2482,
         "total_transaction_cost_bps": 164.964,
-        "ending_nav": 1.133983
+        "ending_nav": 1.133984
       },
       "benchmarks": {
         "QQQ": {
@@ -2520,8 +2520,8 @@
       "requested_start": "2023-11-28",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-v1",
       "metrics": {
-        "total_return": 2.078997,
-        "cagr_annualized": 0.457703,
+        "total_return": 2.079,
+        "cagr_annualized": 0.457704,
         "annualized_volatility": 0.427327,
         "sharpe_rf0": 1.097,
         "sortino_rf0": 1.554,
@@ -2530,7 +2530,7 @@
         "days": 752,
         "turnover_one_way": 2.09538,
         "total_transaction_cost_bps": 41.9077,
-        "ending_nav": 3.078997
+        "ending_nav": 3.079
       },
       "benchmarks": {
         "QQQ": {
@@ -2589,8 +2589,8 @@
       "requested_start": "2023-11-28",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-VIX-v1",
       "metrics": {
-        "total_return": 0.615095,
-        "cagr_annualized": 0.174271,
+        "total_return": 0.615096,
+        "cagr_annualized": 0.174272,
         "annualized_volatility": 0.201283,
         "sharpe_rf0": 0.896,
         "sortino_rf0": 1.48,
@@ -2599,7 +2599,7 @@
         "days": 752,
         "turnover_one_way": 20.77626,
         "total_transaction_cost_bps": 415.5251,
-        "ending_nav": 1.615095
+        "ending_nav": 1.615096
       },
       "benchmarks": {
         "QQQ": {
@@ -2658,7 +2658,7 @@
       "requested_start": "2021-11-27",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-v1",
       "metrics": {
-        "total_return": 2.748704,
+        "total_return": 2.748708,
         "cagr_annualized": 0.304144,
         "annualized_volatility": 0.392481,
         "sharpe_rf0": 0.873,
@@ -2668,7 +2668,7 @@
         "days": 1254,
         "turnover_one_way": 2.90189,
         "total_transaction_cost_bps": 58.0378,
-        "ending_nav": 3.748704
+        "ending_nav": 3.748708
       },
       "benchmarks": {
         "QQQ": {
@@ -2727,7 +2727,7 @@
       "requested_start": "2021-11-27",
       "strategy_id": "M7-FORTY-EQUALWEIGHT-VIX-v1",
       "metrics": {
-        "total_return": 0.892499,
+        "total_return": 0.892501,
         "cagr_annualized": 0.136769,
         "annualized_volatility": 0.207061,
         "sharpe_rf0": 0.721,
@@ -2737,7 +2737,7 @@
         "days": 1254,
         "turnover_one_way": 35.66859,
         "total_transaction_cost_bps": 713.3718,
-        "ending_nav": 1.892499
+        "ending_nav": 1.892501
       },
       "benchmarks": {
         "QQQ": {
@@ -2798,8 +2798,8 @@
       "end_date": "2026-11-27",
       "requested_start": "2025-11-27",
       "metrics": {
-        "total_return": 0.296595,
-        "cagr_annualized": 0.299292,
+        "total_return": 0.296597,
+        "cagr_annualized": 0.299294,
         "annualized_volatility": 0.537724,
         "sharpe_rf0": 0.757,
         "sortino_rf0": 1.044,
@@ -2808,7 +2808,7 @@
         "days": 250,
         "turnover_one_way": 5.29011,
         "total_transaction_cost_bps": 105.8022,
-        "ending_nav": 1.296595
+        "ending_nav": 1.296597
       },
       "benchmarks": {
         "QQQ": {
@@ -2870,9 +2870,9 @@
       "end_date": "2026-11-27",
       "requested_start": "2025-11-27",
       "metrics": {
-        "total_return": 0.137451,
-        "cagr_annualized": 0.138623,
-        "annualized_volatility": 0.216388,
+        "total_return": 0.137452,
+        "cagr_annualized": 0.138624,
+        "annualized_volatility": 0.216389,
         "sharpe_rf0": 0.708,
         "sortino_rf0": 1.034,
         "max_drawdown": -0.17716,
@@ -2880,7 +2880,7 @@
         "days": 250,
         "turnover_one_way": 9.37605,
         "total_transaction_cost_bps": 187.5209,
-        "ending_nav": 1.137451
+        "ending_nav": 1.137452
       },
       "benchmarks": {
         "QQQ": {
@@ -2942,7 +2942,7 @@
       "end_date": "2026-11-27",
       "requested_start": "2023-11-28",
       "metrics": {
-        "total_return": 2.229059,
+        "total_return": 2.229062,
         "cagr_annualized": 0.481135,
         "annualized_volatility": 0.441927,
         "sharpe_rf0": 1.111,
@@ -2952,7 +2952,7 @@
         "days": 752,
         "turnover_one_way": 15.20281,
         "total_transaction_cost_bps": 304.0561,
-        "ending_nav": 3.229059
+        "ending_nav": 3.229062
       },
       "benchmarks": {
         "QQQ": {
@@ -3014,7 +3014,7 @@
       "end_date": "2026-11-27",
       "requested_start": "2023-11-28",
       "metrics": {
-        "total_return": 0.681954,
+        "total_return": 0.681956,
         "cagr_annualized": 0.190342,
         "annualized_volatility": 0.196091,
         "sharpe_rf0": 0.985,
@@ -3024,7 +3024,7 @@
         "days": 752,
         "turnover_one_way": 23.44267,
         "total_transaction_cost_bps": 468.8534,
-        "ending_nav": 1.681954
+        "ending_nav": 1.681956
       },
       "benchmarks": {
         "QQQ": {
@@ -3086,7 +3086,7 @@
       "end_date": "2026-11-27",
       "requested_start": "2021-11-27",
       "metrics": {
-        "total_return": 2.431604,
+        "total_return": 2.431606,
         "cagr_annualized": 0.281185,
         "annualized_volatility": 0.399595,
         "sharpe_rf0": 0.821,
@@ -3096,7 +3096,7 @@
         "days": 1254,
         "turnover_one_way": 25.81354,
         "total_transaction_cost_bps": 516.2708,
-        "ending_nav": 3.431604
+        "ending_nav": 3.431606
       },
       "benchmarks": {
         "QQQ": {
@@ -3158,7 +3158,7 @@
       "end_date": "2026-11-27",
       "requested_start": "2021-11-27",
       "metrics": {
-        "total_return": 0.85055,
+        "total_return": 0.850552,
         "cagr_annualized": 0.13166,
         "annualized_volatility": 0.200312,
         "sharpe_rf0": 0.716,
@@ -3168,7 +3168,7 @@
         "days": 1254,
         "turnover_one_way": 42.32044,
         "total_transaction_cost_bps": 846.4088,
-        "ending_nav": 1.85055
+        "ending_nav": 1.850552
       },
       "benchmarks": {
         "QQQ": {
@@ -3364,7 +3364,7 @@
           "size": 0.05,
           "risk": 0.1
         },
-        "market_cap_proxy_usd": 6052006562,
+        "market_cap_proxy_usd": 6052255872,
         "price_to_sales_proxy": 3.03,
         "revenue_fy_usd": 1997379000.0,
         "revenue_growth_yoy": 0.053427155120809866,
@@ -122708,12 +122708,12 @@
         "exposure": 1.0
       }
     ],
-    "latest_vix_close": 26.8,
-    "latest_vix_date": "2026-11-26",
+    "latest_vix_close": 23.81,
+    "latest_vix_date": "2026-11-27",
     "source": "https://cdn-api.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
     "source_provider": "Cboe VIX daily close",
     "fetch_error": null,
-    "next_target_stock_exposure": 0.75,
+    "next_target_stock_exposure": 0.5,
     "execution": "VIX signal at completed close, stock exposure change at next session close",
     "cash_interest_rate": 0.0,
     "no_leverage": true,
